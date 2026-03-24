@@ -9,13 +9,13 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 14rem;
+        width: 18rem; /* 幅を14remから18remに拡大 */
         z-index: 1000;
     }
 
-    /* ロゴエリア（余白を削除し、サイズを調整） */
+    /* ロゴエリア */
     .l-side .logo-unit {
-        padding: 0rem; /* 周囲の余白を最小限に設定 */
+        padding: 2rem 0; /* 上下にゆとりを持たせる */
         text-align: center;
     }
     .l-side .logo-unit a {
@@ -24,7 +24,7 @@
     .l-side .logo-unit img {
         width: 100%;
         height: auto;
-        max-width: 9rem; /* 15remから半分に縮小 */
+        max-width: 12rem; /* ロゴを9remから12remに拡大 */
     }
 
     /* ナビゲーションリンク */
@@ -44,16 +44,16 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1.5vh 1.5rem;
-        font-size: 1rem;
-        font-weight: 500;
+        padding: 2.2vh 2rem; /* 縦幅と横の余白を拡大 */
+        font-size: 1.2rem; /* 文字サイズを1remから1.2remに拡大 */
+        font-weight: 600; /* 文字を少し太くして読みやすく */
         text-decoration: none;
         color: #333;
         transition: .3s;
         background: #fff;
     }
     .l-side .link .l-pulldown .head .icon {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         color: #ccc;
         transition: .3s;
     }
@@ -74,7 +74,7 @@
     .l-side .link .l-pulldown .body {
         position: fixed;
         top: 0;
-        left: 16rem;
+        left: 18rem; /* サイドバーの幅（18rem）に合わせて調整 */
         z-index: 1001;
         padding: 4rem 3.5rem;
         width: 34rem;
@@ -93,74 +93,24 @@
         transform: translateX(0);
     }
 
-    /* メガメニュー内コンテンツ */
-    .l-side .body .menu-title {
-        font-family: "Lora", serif;
-        font-size: 1.8rem;
-        color: rgba(255, 255, 255, 0.3);
-        margin-bottom: 2.5rem;
-        letter-spacing: 0.1em;
-        line-height: 1;
-    }
-    .l-side .body .menu-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2.5rem 2rem;
-        padding: 0;
-    }
-    .l-side .body .menu-item {
-        list-style: none;
-    }
-    .l-side .body .menu-item a {
-        text-decoration: none;
-        display: block;
-    }
-    .l-side .body .menu-item .img-box {
-        aspect-ratio: 16 / 9;
-        overflow: hidden;
-        margin-bottom: 1rem;
-        background: rgba(255, 255, 255, 0.1);
-        border: 0.5px solid rgba(255, 255, 255, 0.2);
-    }
-    .l-side .body .menu-item .img-box img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: .5s;
-    }
-    .l-side .body .menu-item .label {
-        font-size: 1rem;
-        font-weight: 600;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        gap: 0.8rem;
-    }
-    .l-side .body .menu-item .label::before {
-        content: "";
-        width: 1rem;
-        height: 1px;
-        background: #9e9779;
-    }
-
     /* サイドバー下部 */
     .l-side .side-bottom {
         border-top: 1px solid #eee;
     }
     .l-side .side-tel {
-        padding: 2vh 1.5rem;
+        padding: 2.5vh 1.5rem;
         text-align: center;
     }
     .l-side .side-tel .label {
         display: block;
         font-size: 1.1rem;
         color: #666;
-        margin-bottom: 0.5rem;
-        font-weight: 500;
+        margin-bottom: 0.8rem;
+        font-weight: 600;
     }
     .l-side .side-tel .num {
         display: block;
-        font-size: 1.5rem;
+        font-size: 1.8rem; /* 電話番号を1.5remから1.8remに拡大 */
         font-weight: 700;
         font-family: "Lora", serif;
         color: #111;
@@ -171,7 +121,7 @@
         display: block;
         font-size: 1rem;
         color: #999;
-        margin-top: 0.5rem;
+        margin-top: 0.8rem;
     }
     .l-side .side-contact-btn {
         background: #982020;
@@ -180,7 +130,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 3.5vh 1rem;
+        padding: 4vh 1rem; /* ボタンの縦幅を拡大 */
         text-decoration: none;
         transition: .3s;
     }
@@ -188,14 +138,13 @@
         background: #b12525;
     }
     .l-side .side-contact-btn svg {
-        width: 22px;
-        height: 22px;
-        margin-bottom: 1rem;
+        width: 24px; /* アイコンを少し大きく */
+        height: 24px;
+        margin-bottom: 1.2rem;
     }
     .l-side .side-contact-btn span {
-        font-size: 1rem;
-        font-weight: 600;
-        letter-spacing: 0.05em;
+        font-size: 1.2rem; /* ボタン内テキストを1remから1.2remに拡大 */
+        font-weight: 700;
     }
 </style>
 
