@@ -9,7 +9,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 20rem;
+        width: 14rem;
         z-index: 1000;
     }
 
@@ -40,32 +40,32 @@
     .l-side .link .l-pulldown {
         position: relative;
     }
-    .l-side .link .l-pulldown . {
+    .l-side .link .l-pulldown .head {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 1.5vh 1.5rem;
-        font-size: 1.7rem;
+        font-size: 1rem;
         font-weight: 500;
         text-decoration: none;
         color: #333;
         transition: .3s;
         background: #fff;
     }
-    .l-side .link .l-pulldown . .icon {
+    .l-side .link .l-pulldown .head .icon {
         font-size: 1.1rem;
         color: #ccc;
         transition: .3s;
     }
 
     /* ホバー時・アクティブ時のスタイル */
-    .l-side .link .l-pulldown:hover .,
-    .l-side .link .l-pulldown.is-active . {
+    .l-side .link .l-pulldown:hover .head,
+    .l-side .link .l-pulldown.is-active .head {
         background: #982020;
         color: #fff;
     }
-    .l-side .link .l-pulldown:hover . .icon,
-    .l-side .link .l-pulldown.is-active . .icon {
+    .l-side .link .l-pulldown:hover .head .icon,
+    .l-side .link .l-pulldown.is-active .head .icon {
         color: #fff;
         transform: translateX(3px);
     }
@@ -153,14 +153,14 @@
     }
     .l-side .side-tel .label {
         display: block;
-        font-size: 1.7rem;
+        font-size: 1.1rem;
         color: #666;
         margin-bottom: 0.5rem;
         font-weight: 500;
     }
     .l-side .side-tel .num {
         display: block;
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         font-weight: 700;
         font-family: "Lora", serif;
         color: #111;
@@ -169,7 +169,7 @@
     }
     .l-side .side-tel .time {
         display: block;
-        font-size: 1.5rem;
+        font-size: 1rem;
         color: #999;
         margin-top: 0.5rem;
     }
@@ -193,7 +193,7 @@
         margin-bottom: 1rem;
     }
     .l-side .side-contact-btn span {
-        font-size: 1.7rem;
+        font-size: 1rem;
         font-weight: 600;
         letter-spacing: 0.05em;
     }
@@ -209,7 +209,7 @@
         <!-- ナビゲーションリンク -->
         <ul class="link">
             <li class="l-pulldown">
-                <a href="#" class=""><span>エリオについて</span> <i class="icon">❯</i></a>
+                <a href="#" class="head"><span>エリオについて</span> <i class="icon">❯</i></a>
                 <div class="body">
                     <p class="menu-title">ABOUT US</p>
                     <ul class="menu-grid">
@@ -236,7 +236,7 @@
             </li>
 
             <li class="l-pulldown">
-                <a href="#" class=""><span>コース案内</span> <i class="icon">❯</i></a>
+                <a href="#" class="head"><span>コース案内</span> <i class="icon">❯</i></a>
                 <div class="body">
                     <p class="menu-title">COURSE</p>
                     <ul class="menu-grid">
@@ -268,10 +268,10 @@
                 </div>
             </li>
 
-            <li class="l-pulldown"><a href="#" class=""><span>校舎案内</span> <i class="icon">❯</i></a></li>
+            <li class="l-pulldown"><a href="#" class="head"><span>校舎案内</span> <i class="icon">❯</i></a></li>
 
             <li class="l-pulldown">
-                <a href="#" class=""><span>学習メソッド</span> <i class="icon">❯</i></a>
+                <a href="#" class="head"><span>学習メソッド</span> <i class="icon">❯</i></a>
                 <div class="body">
                     <p class="menu-title">METHOD</p>
                     <h3 style="color:#9e9779; font-size:1.1rem; margin-bottom:1.5rem; border-left:2px solid #9e9779; padding-left:1rem;">学習メソッド一覧</h3>
@@ -283,9 +283,9 @@
                 </div>
             </li>
 
-            <li class="l-pulldown"><a href="#" class=""><span>入会までの流れ</span> <i class="icon">❯</i></a></li>
-            <li class="l-pulldown"><a href="#" class=""><span>よくある質問</span> <i class="icon">❯</i></a></li>
-            <li class="l-pulldown"><a href="#" class=""><span>体験会 & 説明会</span> <i class="icon">❯</i></a></li>
+            <li class="l-pulldown"><a href="#" class="head"><span>入会までの流れ</span> <i class="icon">❯</i></a></li>
+            <li class="l-pulldown"><a href="#" class="head"><span>よくある質問</span> <i class="icon">❯</i></a></li>
+            <li class="l-pulldown"><a href="#" class="head"><span>体験会 & 説明会</span> <i class="icon">❯</i></a></li>
         </ul>
     </div>
     
