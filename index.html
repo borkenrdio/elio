@@ -52,6 +52,8 @@
         .flex.bet { justify-content: space-between; }
         .flex.vcenter { align-items: center; }
         .flex.vert { flex-direction: column; }
+        .flex.vend { align-items: flex-end; }
+        .flex.hstart { justify-content: flex-start; }
         .ta-center { text-align: center; }
         .white { color: #fff; }
 
@@ -85,6 +87,8 @@
             flex: 1;
             min-width: 0; 
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         /* アニメーション */
@@ -108,6 +112,7 @@
             cursor: pointer;
             border: 1px solid transparent;
             font-weight: 500;
+            text-decoration: none;
         }
         .md-btn.w-line { border-color: #fff; color: #fff; }
         .md-btn.w400 { width: 400px; max-width: 100%; }
@@ -117,10 +122,10 @@
         /* ヒーローセクション */
         #top-mv { height: 100vh; width: 100%; background-color: #1a1a1a; }
         .swiper-slide { position: relative; overflow: hidden; }
-        .slide-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; transition: 6s transform ease-out; }
+        .slide-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; transition: 6s transform ease-out; background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="%23222"/></svg>'); }
         .swiper-slide-active .slide-img { transform: scale(1.1); }
         .lay-content { position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding-bottom: 15vh; z-index: 10; }
-        .slide-box { color: #fff; text-shadow: 0 0 20px rgba(0,0,0,0.3); }
+        .slide-box { color: #fff; text-shadow: 0 0 20px rgba(0,0,0,0.5); }
         .slide-main { font-size: 5rem; line-height: 1.2; margin-bottom: 2rem; }
         .slide-sub { font-size: 2rem; margin-bottom: 4rem; }
 
@@ -147,7 +152,7 @@
         .method-group-title { display: flex; align-items: baseline; margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
         .method-group-title .main { font-size: 2rem; font-weight: 700; margin-right: 20px; }
         .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-        .method-btn-link { display: flex; align-items: center; justify-content: space-between; border: 1px solid #ddd; padding: 18px 20px; font-size: 1.4rem; background: #fff; }
+        .method-btn-link { display: flex; align-items: center; justify-content: space-between; border: 1px solid #ddd; padding: 18px 20px; font-size: 1.4rem; background: #fff; text-decoration: none; color: inherit; transition: .3s; }
         .method-btn-link:hover { border-color: #9e9779; background: #fdfaf0; }
 
         /* SP表示 */
@@ -248,8 +253,8 @@
                     <!-- 学習メソッド -->
                     <section class="method-section">
                         <div class="wrap">
-                            <div class="method-head ta-center">
-                                <span class="lora sub" style="color: #9e9779; font-weight: 700;">CONTENTS</span>
+                            <div class="method-head ta-center" style="margin-bottom: 40px;">
+                                <span class="lora sub" style="color: #9e9779; font-weight: 700; display: block; margin-bottom: 10px;">CONTENTS</span>
                                 <h2 class="serif" style="font-size: 3rem;">学習コンテンツ & 学習メソッド</h2>
                             </div>
                             
@@ -322,7 +327,10 @@
                 const response = await fetch(path);
                 if (response.ok) {
                     const html = await response.text();
-                    document.getElementById(id).innerHTML = html;
+                    const target = document.getElementById(id);
+                    if (target) {
+                        target.innerHTML = html;
+                    }
                 }
             } catch (e) {
                 console.error(e);
@@ -336,6 +344,7 @@
             loadPart('cta-placeholder', 'parts/CTA.html');
             loadPart('footer-placeholder', 'parts/footer.html');
 
+            /* Swiperの初期化 */
             const mainSwiper = new Swiper('#top-mv', {
                 loop: true,
                 effect: 'fade',
@@ -343,6 +352,7 @@
                 autoplay: { delay: 5000 },
             });
 
+            /* IntersectionObserverによるアニメーション制御 */
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
