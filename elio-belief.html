@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>エリオの信念 | 会員制難関受験専門塾エリオ（elio）</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
+    
+    <style>
+        @charset "UTF-8";
+        
+        html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, main, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            font-size: 100%;
+            vertical-align: baseline;
+            box-sizing: border-box;
+        }
+
+        html {
+            line-height: 1;
+            font-size: 62.5%;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        a {
+            transition-duration: .5s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            vertical-align: middle;
+        }
+        
+        body {
+            font-family: "Noto Sans JP", -apple-system, sans-serif;
+            font-size: 1.6rem;
+            line-height: 1.8;
+            color: #111;
+            width: 100%;
+            overflow-x: hidden;
+            background: #fff;
+        }
+
+        .flex { display: flex; }
+        .flex.bet { justify-content: space-between; }
+        .flex.vcenter { align-items: center; }
+        .flex.hcenter { justify-content: center; }
+        .flex.vert { flex-direction: column; }
+        .flex.break { flex-wrap: wrap; }
+        .flex.str { align-items: stretch; }
+        .serif { font-family: "Noto Serif JP", serif; }
+        .lora { font-family: Lora, serif; letter-spacing: .05em; }
+        .noto { font-family: "Noto Sans JP", sans-serif; }
+
+        .anime { opacity: 0; transition: opacity 1s, transform 1s; }
+        .anime.active { opacity: 1; transform: none; }
+        .fade-in { opacity: 0; }
+        .active .fade-in { opacity: 1; }
+        .bottom-in { transform: translateY(20px); }
+        .active .bottom-in { transform: translateY(0); }
+
+        .md-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            padding: 1em;
+            overflow: hidden;
+            transition: .5s;
+            cursor: pointer;
+            text-align: center;
+            border: 0;
+        }
+        .md-btn.red { background-color: #982020; color: #fff; border: 1px solid #982020; }
+        .md-btn.red:hover { background-color: #c22929; }
+        .md-btn.black { background-color: #222; color: #fff; border: 1px solid #222; }
+
+        .md-btn .bar {
+            position: absolute;
+            top: 50%;
+            right: 2rem;
+            width: 1.7rem;
+            height: 1px;
+            background: rgba(255, 255, 255, .5);
+            transform: translateY(-50%);
+            transition: .5s;
+        }
+        .md-btn:hover .bar { right: 1rem; }
+
+        .md-uline {
+            display: inline-block;
+            position: relative;
+            text-decoration: none;
+        }
+        .md-uline:before {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            content: "";
+            background: #9e9779;
+            transition: .5s;
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+        .md-uline:hover:before {
+            transform: scaleX(1);
+        }
+
+        @media screen and (min-width: 769px) {
+            .sp { display: none !important; }
+            .pc-frame { display: flex; min-width: 1200px; }
+            .pc-frame-left { width: 16rem; position: relative; z-index: 1000; }
+            .pc-frame-right { width: calc(100% - 16rem); flex-grow: 1; }
+            
+            .wrap {
+                margin: 0 auto;
+                max-width: 1060px;
+                padding: 0 60px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .pc { display: none !important; }
+            .wrap { padding: 0 20px; }
+        }
+
+        .l-page.l-belief .mv-md {
+            height: 400px;
+            background-color: #333;
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://via.placeholder.com/1200x600?text=Belief+Main+Visual');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 0 6rem;
+        }
+
+        .l-page.l-belief .mv-md .title-box { color: #fff; }
+        .l-page.l-belief .mv-md .title-box .title-line { width: 20px; height: 1px; background: #fff; margin-bottom: 2rem; }
+        .l-page.l-belief .mv-md .title-box .title-head { font-size: 1.8rem; margin-bottom: 1rem; letter-spacing: 0.2em; }
+        .l-page.l-belief .mv-md .title { font-size: 3.8rem; color: #9e9779; letter-spacing: 0.2em; font-family: Lora, serif; }
+
+        .l-page.l-belief .intro-center { padding: 10rem 0 8rem; text-align: center; }
+        .l-page.l-belief .title-heaad { font-size: 5rem; color: #9e9779; letter-spacing: 0.2em; font-family: Lora, serif; margin-bottom: 3rem; }
+        .l-page.l-belief .head-title { font-size: 2.8rem; font-weight: 500; line-height: 1.6; }
+
+        .anker-list { display: flex; justify-content: center; border-top: 1px solid #e6e6e6; border-bottom: 1px solid #e6e6e6; padding: 2.7rem 0; gap: 4rem; margin-bottom: 11rem; }
+        .anker-list li a { font-weight: 500; color: #111; font-size: 1.5rem; }
+
+        .idea { padding-bottom: 14rem; }
+        .idea-list li { display: flex; justify-content: space-between; margin-bottom: 11rem; }
+        .idea-list li h3 { width: 38%; font-size: 3.2rem; line-height: 1.75; position: relative; padding-top: 4rem; letter-spacing: 0.1em; }
+        .idea-list li h3:before { content: ""; position: absolute; top: 0; left: 0; width: 16px; height: 2px; background: #982020; }
+        .idea-list li .text { width: 55%; font-size: 1.5rem; line-height: 2.5; color: #666; font-weight: 500; }
+
+        .theory { background: #ebebeb; padding: 7rem 0 9rem; }
+        .theory .title-label { font-size: 1.8rem; font-weight: 600; color: #666; text-align: center; letter-spacing: 0.2em; margin-bottom: 2rem; }
+        .theory h3 { font-size: 3.2rem; text-align: center; margin-bottom: 10rem; line-height: 1.5; letter-spacing: 0.2em; }
+        .theory .flex-box { display: flex; gap: 6rem; align-items: center; margin-bottom: 9rem; }
+        .theory .flex-box img { width: 50%; }
+        .theory .text-box h4 { font-size: 2.4rem; margin-bottom: 4rem; font-weight: 600; }
+        .theory .text-box .text { color: #666; line-height: 2.5; font-weight: 500; }
+
+        .theory-list { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+        .theory-list li { width: calc(25% - 12px); background: #fff; padding: 3rem; min-height: 25rem; }
+        .theory-card-head { display: flex; align-items: center; margin-bottom: 1.5rem; }
+        .theory-card-head i { font-size: 3rem; color: #982020; margin-right: 1.2rem; }
+        .theory-card-head h5 { font-weight: 600; font-size: 1.6rem; color: #111; }
+        .theory-list li .text { font-size: 1.3rem; line-height: 2; color: #666; font-weight: 500; }
+
+        .elio { padding: 12rem 0; }
+        .elio .title-label { font-size: 1.4rem; font-weight: 600; color: #666; text-align: center; letter-spacing: 0.2em; margin-bottom: 2rem; font-family: Lora, serif; }
+        .elio h3 { font-size: 3.2rem; text-align: center; margin-bottom: 8rem; letter-spacing: 0.2em; font-weight: 600; }
+        .elio-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8rem 4rem; }
+        .elio-list li .img-box { position: relative; margin-bottom: 2.5rem; }
+        .elio-list li .img-box .number { position: absolute; top: -25px; left: 50%; background: #333; color: #9e9779; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; font-size: 2.4rem; transform: translateX(-50%); z-index: 10; font-family: Lora, serif; }
+        .elio-list li h4 { font-size: 2rem; font-weight: 600; margin-bottom: 2rem; text-align: center; letter-spacing: 0.1em; color: #333; }
+        .elio-list li .text { font-size: 1.3rem; color: #666; line-height: 2; font-weight: 500; }
+
+        .member { padding: 12rem 0; background-color: #f5f5f5; text-align: center; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1600x800?text=Member+Background'); background-size: cover; background-position: center; color: #fff; }
+        .member .title-label { font-size: 1.6rem; color: #9e9779; margin-bottom: 2.5rem; letter-spacing: 0.2em; }
+        .member h3 { font-size: 2.6rem; margin-bottom: 7rem; line-height: 1.8; letter-spacing: 0.15em; font-weight: 600; }
+        .member-list { max-width: 880px; margin: 0 auto; background: #fff; padding: 6.5rem 6rem; border-top: 8px solid #9e9779; text-align: left; box-shadow: 0 20px 45px rgba(0,0,0,0.3); color: #111; }
+        .member-list h4 { font-size: 2.2rem; color: #9e9779; text-align: center; margin-bottom: 1.5rem; font-weight: 600; }
+        .member-list .title-bottom { text-align: center; color: #666; margin-bottom: 4.5rem; font-size: 1.3rem; font-weight: 500; letter-spacing: 0.15em; }
+        .member-list .text { font-size: 1.5rem; line-height: 2.5; color: #444; font-weight: 400; }
+
+        @media screen and (max-width: 768px) {
+            .idea-list li, .theory .flex-box { flex-direction: column; }
+            .idea-list li h3, .idea-list li .text, .theory .flex-box img, .theory .text-box { width: 100%; }
+            .idea-list li h3 { margin-bottom: 2rem; }
+            .theory-list li { width: 100%; min-height: auto; }
+            .elio-list { grid-template-columns: 1fr; }
+            .anker-list { flex-wrap: wrap; gap: 1rem 2rem; padding: 2rem 0; }
+        }
+    </style>
+</head>
+
+<body class="l-page l-belief">
+
+    <div id="header-placeholder"></div>
+
+    <div class="pc-frame">
+        <aside id="sidebar-placeholder" class="pc pc-frame-left"></aside>
+
+        <div class="pc-frame-right">
+            <div class="bread pc">
+                <div class="wrap" style="padding:15px 0; font-size:1.1rem; color:#888;">HOME > エリオについて > エリオの信念</div>
+            </div>
+
+            <main id="contents">
+                <article class="l-main">
+                    
+                    <section class="mv-md">
+                        <div class="title-box">
+                            <div class="title-line"></div>
+                            <p class="title-head noto">エリオの信念</p>
+                            <h1 class="title lora">BELIEF</h1>
+                        </div>
+                    </section>
+
+                    <section class="intro-center anime fade-in bottom-in">
+                        <div class="wrap">
+                            <p class="title-heaad lora">STUDY × FUTURE</p>
+                            <h2 class="head-title serif">難関突破、そして燃え尽きない頭脳の育成を。</h2>
+                        </div>
+                    </section>
+
+                    <div class="wrap">
+                        <ul class="anker-list noto">
+                            <li><a class="md-uline" href="#idea">教育理念</a></li>
+                            <li><a class="md-uline" href="#theory">MI理論</a></li>
+                            <li><a class="md-uline" href="#elio">elioとは</a></li>
+                            <li><a class="md-uline" href="#member">会員制について</a></li>
+                        </ul>
+                    </div>
+
+                    <section class="idea" id="idea">
+                        <div class="wrap serif">
+                            <ul class="idea-list">
+                                <li class="anime fade-in">
+                                    <h3>未来を生きる<br>子どもたちのために</h3>
+                                    <p class="text noto">2030年には今ある職業の50%が消滅するとも言われています。今の子どもたちが生きる未来は今とは大きく様変わりするでしょう。もはや東大等難関大学合格がゴールではありません。もっとその先へ、目を向けましょう。目的を持つことで、子どもたち一人ひとりの心に『未来への志』が育つのです。私たちがこのelio（エリオ）で取り組みたいのは、子どもたちの未来に向けて輝く眼と頭脳と心の教育です。</p>
+                                </li>
+                                <li class="anime fade-in">
+                                    <h3>真のリーダーシップ<br>を育てる塾を</h3>
+                                    <p class="text noto">暗記と反復に依存した受け身の教育では、次代のリーダーは育ちません。私たちは「ただ学ぶ」のではなく、「何のために学ぶか」を子どもたちに伝えます。将来の進路も見据えた真のキャリア教育を実践したい。そのために［メディカルサイエンス］［フューチャーサイエンス］［ビジネスクリエーション］という、3つの『学びの目標フィールド』を設定しました。学ぶ意欲と学ぶ力を育てたい―これがelioの使命です。</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="theory" id="theory">
+                        <div class="wrap">
+                            <p class="title-label lora">MI Theory</p>
+                            <h3 class="serif">elioが採用する、能力伸長を図るための理論</h3>
+                            <div class="flex-box anime fade-in">
+                                <img src="https://via.placeholder.com/500x400?text=MI+Diagram" alt="MI理論図解">
+                                <div class="text-box serif">
+                                    <h4>７つの能力の伸長を図る教育</h4>
+                                    <p class="text noto">MIとは、ハーバード大学のハワード・ガードナー教授が唱えた「多重知能」のこと。教授は知能を一つきりではなく、独立した複数の知能によって構成されていると考えています。elioは得意な分野からアプローチすることで、多重知能全体を伸ばしたいと考えます。</p>
+                                </div>
+                            </div>
+                            
+                            <ul class="theory-list noto">
+                                <li class="anime fade-in">
+                                    <div class="theory-card-head"><i class="icon-translator"></i><h5>言語的知能</h5></div>
+                                    <p class="text">話し言葉と書き言葉に対する感受性、言語を学ぶ能力、目標達成のために言語を用いる能力。</p>
+                                </li>
+                                <li class="anime fade-in">
+                                    <div class="theory-card-head"><i class="icon-interview"></i><h5>対人的知能</h5></div>
+                                    <p class="text">他人の意図、動機づけ、欲求を理解し、さまざまな場面で円滑に関係性を構築する能力。</p>
+                                </li>
+                                <li class="anime fade-in">
+                                    <div class="theory-card-head"><i class="icon-radar"></i><h5>空間的知能</h5></div>
+                                    <p class="text">広い空間のパターンを認識して操作する能力（限定された範囲のパターンについても含む）。</p>
+                                </li>
+                                <li class="anime fade-in">
+                                    <div class="theory-card-head"><i class="icon-music-player"></i><h5>音楽的知能</h5></div>
+                                    <p class="text">リズムや音程、音色など、音楽的なパターンの演奏や作曲、鑑賞のスキルに関係する能力。</p>
+                                </li>
+                                <li class="anime fade-in">
+                                    <div class="theory-card-head"><i class="icon-calculator"></i><h5>論理数学的知能</h5></div>
+                                    <p class="text">問題を論理的に分析、数学的な操作を実行、問題を科学的に究明する能力に関係する知能。</p>
+                                </li>
+                                <li class="anime fade-in">
+                                    <div class="theory-card-head"><i class="icon-walk"></i><h5>身体運動的知能</h5></div>
+                                    <p class="text">問題解決や何かを作り出すために、体全体もしくは体の一部（手など）を使う能力。</p>
+                                </li>
+                                <li class="anime fade-in">
+                                    <div class="theory-card-head"><i class="icon-brain"></i><h5>内省的知能</h5></div>
+                                    <p class="text">自分自身を理解し、自己の効果的な作業モデルをもち、自身の生活を統制する能力。</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="elio" id="elio">
+                        <div class="wrap">
+                            <p class="title-label lora">ABOUT elio</p>
+                            <h3 class="serif">難関突破、そして燃え尽きない頭脳の育成を。</h3>
+                            <ul class="elio-list serif">
+                                <li class="anime fade-in">
+                                    <div class="img-box">
+                                        <p class="number">1</p>
+                                        <img src="https://via.placeholder.com/400x260?text=Lessons" alt="授業">
+                                    </div>
+                                    <h4>授業は生徒と講師の対決</h4>
+                                    <p class="text noto">学力成長の源泉である授業を大切にします。難関合格は偏差値とにらめっこしていても生まれません。生徒の可能性を見抜く力は合格指導の経験で培われます。</p>
+                                </li>
+                                <li class="anime fade-in">
+                                    <div class="img-box">
+                                        <p class="number">2</p>
+                                        <img src="https://via.placeholder.com/400x260?text=Goal" alt="医師・科学者・起業家">
+                                    </div>
+                                    <h4>医師・科学者・起業家を目指す志</h4>
+                                    <p class="text noto">子どもたちにとって将来の目標、さらに目指す職業を志として持つことは、学ぶ意欲を高めるだけでなく、人間力の伸長を図る上でも効果が大きいと考えられます。</p>
+                                </li>
+                                <li class="anime fade-in">
+                                    <div class="img-box">
+                                        <p class="number">3</p>
+                                        <img src="https://via.placeholder.com/400x260?text=Global" alt="世界">
+                                    </div>
+                                    <h4>elioから世界トップ大学へ</h4>
+                                    <p class="text noto">国内に縛られた窮屈な選択ではなく、世界の中で大学進学を考える時代。世界へ飛び出して学ぶことを、elioではしっかりとサポートしていきます。</p>
+                                </li>
+                                <li class="anime fade-in">
+                                    <div class="img-box">
+                                        <p class="number">4</p>
+                                        <img src="https://via.placeholder.com/400x260?text=Membership" alt="会員制">
+                                    </div>
+                                    <h4>会員制という独自スタイル</h4>
+                                    <p class="text noto">本物にこだわる。だからelioは会員制を採用。成績だけによる選抜はしません。考えを共有できる方に、elioが目指す学力を求める生徒に通ってもらいたいのです。</p>
+                                </li>
+                                <li class="anime fade-in">
+                                    <div class="img-box">
+                                        <p class="number">5</p>
+                                        <img src="https://via.placeholder.com/400x260?text=Development" alt="能力開発">
+                                    </div>
+                                    <h4>能力開発から始める一貫指導</h4>
+                                    <p class="text noto">将来の学力の礎をつくる小学校低学年、大切なのは知識の蓄積ではありません。MI理論に基づき、好奇心の内側から知力を引き出す指導を実践します。</p>
+                                </li>
+                                <li class="anime fade-in">
+                                    <div class="img-box">
+                                        <p class="number">6</p>
+                                        <img src="https://via.placeholder.com/400x260?text=Family" alt="一致団結">
+                                    </div>
+                                    <h4>ご家庭と一致団結し受験に挑む</h4>
+                                    <p class="text noto">中学受験には周囲の大人によるサポートが求められます。elioではご家庭と密に連携し、適切な役割分担をしながら第一志望校合格を目指します。</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="member" id="member">
+                        <div class="wrap">
+                            <p class="title-label noto">会員制について</p>
+                            <h3 class="serif">責任をもって志望校合格を通過点とした未来へのプランを提示するため、<br class="pc">elioは会員制を導入しています。</h3>
+                            <div class="member-list serif">
+                                <h4>当塾の会員権利はご家庭に付与いたします。</h4>
+                                <p class="title-bottom noto">- 入会審査について -</p>
+                                <p class="text noto">入会希望の生徒には面接、体験授業を行います。また、保護者面接も必須とさせていただきます。お子さまの将来の進路や職業についての考え、教育方針などを伺い、入会後末永くお付き合いできるかを慎重に判断してまいります。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div id="cta-placeholder"></div>
+                </article>
+            </main>
+
+            <div id="footer-placeholder"></div>
+        </div>
+    </div>
+
+    <script>
+        async function loadPart(id, path) {
+            try {
+                const response = await fetch(path);
+                if (response.ok) {
+                    const html = await response.text();
+                    document.getElementById(id).innerHTML = html;
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadPart('header-placeholder', 'parts/header.html');
+            loadPart('sidebar-placeholder', 'parts/menu.html');
+            loadPart('cta-placeholder', 'parts/CTA.html');
+            loadPart('footer-placeholder', 'parts/footer.html');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('active');
+                });
+            }, { threshold: 0.1 });
+            
+            setTimeout(() => {
+                document.querySelectorAll('.anime').forEach(el => observer.observe(el));
+            }, 1000);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
