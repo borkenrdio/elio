@@ -32,22 +32,6 @@
             scroll-behavior: smooth;
         }
 
-        ol, ul {
-            list-style: none;
-        }
-
-        a {
-            transition-duration: .5s;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            vertical-align: middle;
-        }
-        
         body {
             font-family: "Noto Sans JP", -apple-system, sans-serif;
             font-size: 1.6rem;
@@ -58,7 +42,7 @@
             background: #fff;
         }
 
-        /* ルール4: フォントおよびスタイルの適用 */
+        /* ルール4: フォント定義 */
         .serif { font-family: "Noto Serif JP", serif; }
         .lora { font-family: Lora, serif; letter-spacing: .05em; }
         .noto { font-family: "Noto Sans JP", sans-serif; }
@@ -67,17 +51,41 @@
         .flex { display: flex; }
         .flex.bet { justify-content: space-between; }
         .flex.vcenter { align-items: center; }
-        .flex.hcenter { justify-content: center; }
-        .flex.vstart { align-items: flex-start; }
-        .flex.vend { align-items: flex-end; }
         .flex.vert { flex-direction: column; }
-        .flex.break { flex-wrap: wrap; }
-        
         .ta-center { text-align: center; }
         .white { color: #fff; }
 
         /* ルール3: コンテナ幅制限 */
         .wrap { margin: 0 auto; width: 100%; max-width: 1060px; padding: 0 20px; }
+
+        /* ルール3: 基本レイアウト構造（PC表示） */
+        .pc-frame { 
+            display: flex; 
+            width: 100%; 
+            align-items: flex-start; 
+        }
+        
+        /* 左カラム：サイドバー (16rem) */
+        .pc-frame-left { 
+            width: 16rem; 
+            height: 100vh;
+            border-right: 1px solid #dadada;
+            position: sticky;
+            top: 0;
+            background: #fff;
+            overflow-y: auto;
+            flex-shrink: 0;
+            align-self: flex-start;
+            z-index: 1000;
+        }
+
+        /* 右カラム：メインコンテンツ (残りの幅) */
+        .pc-frame-right { 
+            width: calc(100% - 16rem);
+            flex: 1;
+            min-width: 0; 
+            min-height: 100vh;
+        }
 
         /* アニメーション */
         .anime { opacity: 0; transition: all 1s ease; }
@@ -102,36 +110,12 @@
             font-weight: 500;
         }
         .md-btn.w-line { border-color: #fff; color: #fff; }
-        .md-btn.b-line { border-color: #333; color: #333; }
         .md-btn.w400 { width: 400px; max-width: 100%; }
-        .md-btn.red { background-color: #982020; color: #fff; border: 1px solid #982020; }
-        .md-btn.red:hover { background-color: #c22929; }
         .md-btn .bar { position: absolute; top: 50%; right: 2rem; width: 2rem; height: 1px; background: currentColor; transform: translateY(-50%); transition: .5s; }
         .md-btn:hover .bar { right: 1rem; }
 
-        /* ルール3: 基本レイアウト構造（PC表示） */
-        .pc-frame { display: flex; width: 100%; align-items: flex-start; }
-        
-        .pc-frame-left { 
-            width: 16rem; 
-            height: 100vh;
-            border-right: 1px solid #dadada;
-            position: sticky;
-            top: 0;
-            background: #fff;
-            overflow-y: auto;
-            flex-shrink: 0;
-            align-self: flex-start;
-        }
-
-        .pc-frame-right { 
-            width: calc(100% - 16rem); 
-            flex-grow: 1; 
-            min-height: 100vh;
-        }
-
         /* ヒーローセクション */
-        #top-mv { height: 100vh; width: 100%; background-color: #222; }
+        #top-mv { height: 100vh; width: 100%; background-color: #1a1a1a; }
         .swiper-slide { position: relative; overflow: hidden; }
         .slide-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; transition: 6s transform ease-out; }
         .swiper-slide-active .slide-img { transform: scale(1.1); }
@@ -140,13 +124,13 @@
         .slide-main { font-size: 5rem; line-height: 1.2; margin-bottom: 2rem; }
         .slide-sub { font-size: 2rem; margin-bottom: 4rem; }
 
-        /* 各セクション */
+        /* セクション */
         section.sec { padding: 100px 0; }
         .sec-head { margin-bottom: 60px; }
         .sec-head .sub { color: #9e9779; font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; display: block; }
         .sec-head .main { font-size: 3.6rem; }
 
-        /* コース案内（ダーク） */
+        /* ダークコース案内 */
         section.sec-course { background: #0a0a0a; color: #fff; }
         .course-list { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
         .course-item { border: 1px solid #333; transition: .3s; display: flex; background: #111; }
@@ -156,18 +140,17 @@
         .course-item .sub { color: #9e9779; font-size: 1.2rem; margin-bottom: 15px; display: block; }
         .course-item .text { font-size: 1.3rem; opacity: 0.7; }
 
-        /* 学習メソッド */
+        /* メソッド */
         .method-section { background: #fdfaf0; padding: 100px 0; }
         .method-container { background: #fff; padding: 60px 50px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
         .method-group { margin-bottom: 50px; }
-        .method-group:last-child { margin-bottom: 0; }
         .method-group-title { display: flex; align-items: baseline; margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
         .method-group-title .main { font-size: 2rem; font-weight: 700; margin-right: 20px; }
         .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
         .method-btn-link { display: flex; align-items: center; justify-content: space-between; border: 1px solid #ddd; padding: 18px 20px; font-size: 1.4rem; background: #fff; }
         .method-btn-link:hover { border-color: #9e9779; background: #fdfaf0; }
 
-        /* SP対応 */
+        /* SP表示 */
         @media screen and (max-width: 768px) {
             .pc { display: none !important; }
             .pc-frame { display: block; }
@@ -271,7 +254,6 @@
                             </div>
                             
                             <div class="method-container">
-                                <!-- 低学年 -->
                                 <div class="method-group">
                                     <div class="method-group-title">
                                         <span class="main serif">低学年（小1～小2）</span>
@@ -283,8 +265,6 @@
                                         <a href="#" class="method-btn-link noto">HALLO プログラミング</a>
                                     </div>
                                 </div>
-                                
-                                <!-- 高学年 -->
                                 <div class="method-group">
                                     <div class="method-group-title">
                                         <span class="main serif">高学年（小3～小6）</span>
@@ -296,8 +276,6 @@
                                         <a href="#" class="method-btn-link noto">学校別特化指導</a>
                                     </div>
                                 </div>
-
-                                <!-- 個別指導 -->
                                 <div class="method-group">
                                     <div class="method-group-title">
                                         <span class="main serif">個別指導</span>
@@ -309,8 +287,6 @@
                                         <a href="#" class="method-btn-link noto">完全1対1個別指導</a>
                                     </div>
                                 </div>
-
-                                <!-- 中高生 -->
                                 <div class="method-group">
                                     <div class="method-group-title">
                                         <span class="main serif">中学生・高校生</span>
