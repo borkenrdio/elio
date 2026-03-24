@@ -7,13 +7,14 @@
 
     /* 上部セクション（お問い合わせエリア） */
     .cta-upper {
-        padding: 2.5rem 0 2rem;
+        padding: 6rem 0 5rem; /* 上下の余白を大幅に拡大 */
+        border-top: 1px solid #eee;
     }
 
     /* 左右の余白設定 */
     .cta-wrap {
         margin: 0 auto;
-        max-width: 1060px;
+        max-width: 1160px; /* 全体幅を少し拡大 */
         padding: 0 60px;
         width: 100%;
         box-sizing: border-box;
@@ -23,7 +24,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 3rem;
+        gap: 5rem; /* 左右の要素の間隔を広げる */
     }
 
     /* 左側：見出しと説明文 */
@@ -32,65 +33,66 @@
     }
     .cta-title-col .dash {
         display: block;
-        width: 20px;
-        height: 1px;
+        width: 30px; /* ダッシュを少し長く */
+        height: 1.5px;
         background: #333;
-        margin-bottom: 0.6rem;
+        margin-bottom: 1.2rem;
     }
     .cta-title-col .en {
-        font-size: 2rem;
+        font-size: 3.2rem; /* 2remから3.2remに大幅拡大 */
         color: #9e9779;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.15em;
         font-family: "Lora", serif;
         line-height: 1;
-        margin-bottom: 0.4rem;
-    }
-    .cta-title-col .jp {
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: #333;
         margin-bottom: 0.8rem;
     }
+    .cta-title-col .jp {
+        font-size: 1.6rem; /* 1.1remから1.6remに拡大 */
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 1.5rem;
+    }
     .cta-desc {
-        font-size: 1rem;
-        color: #666;
-        line-height: 1.5;
+        font-size: 1.15rem; /* 1remから1.15remに拡大 */
+        color: #555;
+        line-height: 1.8;
     }
 
     /* 右側：アクションエリア */
     .cta-action-col {
-        width: 32rem;
+        width: 38rem; /* 32remから38remに横幅を拡大 */
         flex-shrink: 0;
     }
     .cta-tel-box {
-        border: 1px solid #eee;
-        padding: 1.5rem 1.5rem; /* 縦幅を0.6remから1.2remに拡大 */
+        border: 1px solid #ddd;
+        padding: 2.2rem 2.5rem; /* 縦横の余白をさらに拡大 */
         display: flex;
         align-items: center;
-        gap: 1.5rem;
-        margin-bottom: 1rem;
+        gap: 2rem;
+        margin-bottom: 1.2rem;
     }
     .cta-tel-box svg {
-        width: 18px;
-        height: 18px;
+        width: 24px; /* アイコンを18pxから24pxに拡大 */
+        height: 24px;
         color: #111;
     }
     .cta-tel-content {
         flex-grow: 1;
         display: flex;
-        align-items: baseline;
+        align-items: center; /* ベースラインから中央揃えに変更 */
         justify-content: space-between;
     }
     .cta-tel-content .num {
-        font-size: 1.8rem;
+        font-size: 2.4rem; /* 1.8remから2.4remに大幅拡大 */
         font-weight: 700;
         font-family: "Lora", serif;
         color: #111;
         line-height: 1;
     }
     .cta-tel-content .info {
-        font-size: 0.85rem;
-        color: #888;
+        font-size: 1rem; /* 0.85remから1remに拡大 */
+        font-weight: 500;
+        color: #666;
     }
 
     .cta-btn-red {
@@ -99,7 +101,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 1.8rem 2rem; /* 縦幅を0.8remから1.4remに拡大 */
+        padding: 2.5rem 3rem; /* 1.8remから2.5remに縦幅を拡大 */
         text-decoration: none;
         transition: background 0.3s;
     }
@@ -107,67 +109,75 @@
         background: #b12525;
     }
     .cta-btn-red span {
-        font-size: 1.15rem;
-        font-weight: 600;
+        font-size: 1.5rem; /* 1.15remから1.5remに拡大 */
+        font-weight: 700;
         display: flex;
         align-items: center;
-        gap: 1.2rem;
+        gap: 1.5rem;
     }
     .cta-btn-red svg {
-        width: 16px;
-        height: 16px;
+        width: 22px; /* アイコンを16pxから22pxに拡大 */
+        height: 22px;
     }
     .cta-btn-red .bar {
-        width: 12px;
-        height: 1px;
+        width: 20px; /* バーを12pxから20pxに長く */
+        height: 1.5px;
         background: #fff;
         opacity: 0.8;
     }
 
     /* 下部：4つの黒ボタン（グレー背景の帯） */
     .cta-lower {
-        background: #f5f5f5;
-        padding: 1.2rem 0;
+        background: #f0f0f0; /* 背景を少し濃くして視認性アップ */
+        padding: 2rem 0; /* 1.2remから2remに拡大 */
     }
     .cta-nav-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 8px;
+        gap: 12px; /* 隙間を8pxから12pxに拡大 */
     }
     .cta-nav-item {
         background: #333;
         color: #fff;
-        padding: 1rem 0.8rem;
+        padding: 2.2rem 1.2rem; /* 1remから2.2remに縦幅を大幅拡大 */
         display: flex;
+        flex-direction: column; /* アイコンと文字を上下に並べる（より見やすく） */
         align-items: center;
         justify-content: center;
-        gap: 0.8rem;
+        gap: 1.2rem;
         text-decoration: none;
-        transition: background 0.3s;
+        transition: all 0.3s;
     }
     .cta-nav-item:hover {
-        background: #111;
+        background: #000;
+        transform: translateY(-3px); /* ホバー時に少し浮かせる演出 */
     }
     .cta-nav-item svg {
-        width: 16px;
-        height: 16px;
-        opacity: 0.8;
+        width: 28px; /* アイコンを16pxから28pxに拡大 */
+        height: 28px;
+        opacity: 0.9;
     }
     .cta-nav-item span {
-        font-size: 1rem;
-        font-weight: 600;
-        letter-spacing: 0.05em;
+        font-size: 1.15rem; /* 1remから1.15remに拡大 */
+        font-weight: 700;
+        letter-spacing: 0.08em;
     }
 
     /* レスポンシブ調整 */
     @media screen and (max-width: 1024px) {
+        .cta-upper { padding: 4rem 0; }
         .cta-wrap { padding: 0 30px; }
-        .cta-main-row { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
-        .cta-action-col { width: 100%; }
+        .cta-main-row { flex-direction: column; gap: 3rem; align-items: center; text-align: center; }
+        .cta-title-col .dash { margin: 0 auto 1.2rem; }
+        .cta-action-col { width: 100%; max-width: 500px; }
         .cta-nav-grid { grid-template-columns: repeat(2, 1fr); }
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 640px) {
+        .cta-tel-content { flex-direction: column; gap: 0.8rem; }
+        .cta-tel-content .num { font-size: 2rem; }
         .cta-nav-grid { grid-template-columns: 1fr; }
+        .cta-btn-red { padding: 2rem; }
+        .cta-btn-red span { font-size: 1.2rem; }
     }
 </style>
 
