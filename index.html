@@ -6,13 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>会員制難関受験専門塾エリオ（elio）</title>
     
+    <!-- 外部フォント -->
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:400,500,600,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
     
+    <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     
     <style>
+        /* 基本リセット設定 */
         html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, main, menu, nav, output, ruby, section, summary, time, mark, audio, video {
             margin: 0;
             padding: 0;
@@ -55,6 +58,7 @@
             background: #fff;
         }
 
+        /* 共通ユーティリティ */
         .flex { display: flex; }
         .flex.bet { justify-content: space-between; }
         .flex.vcenter { align-items: center; }
@@ -70,10 +74,12 @@
         .ta-center { text-align: center; }
         .white { color: #fff; }
 
+        /* コンテナ */
         .wrap { margin: 0 auto; width: 100%; max-width: 1060px; padding: 0 20px; }
         .w1420 { max-width: 1420px; }
         .w1220 { max-width: 1220px; }
 
+        /* アニメーション */
         .anime { opacity: 0; transition: all 1s ease; }
         .anime.bottom-in { transform: translateY(30px); }
         .anime.blur { filter: blur(10px); }
@@ -81,6 +87,7 @@
         .wave2 { transition-delay: 0.2s; }
         .wave3 { transition-delay: 0.4s; }
 
+        /* ボタン */
         .md-btn {
             display: inline-flex;
             align-items: center;
@@ -102,24 +109,29 @@
         .md-btn .bar { position: absolute; top: 50%; right: 2rem; width: 2rem; height: 1px; background: currentColor; transform: translateY(-50%); transition: .5s; }
         .md-btn:hover .bar { right: 1rem; }
 
-        .pc-frame { display: flex; width: 100%; }
+        /* レイアウト構造 */
+        .pc-frame { 
+            display: flex; 
+            width: 100%; 
+            align-items: flex-start; /* 追従固定に必須の設定 */
+        }
         
         .pc-frame-left { 
-            width: 16rem; 
-            min-height: 100vh;
-            border-right: 1px solid #dadada;
-            position: sticky;
+            width: 18rem; 
+            position: sticky; /* 固定設定 */
             top: 0;
+            height: 100vh;
+            z-index: 1000;
             background: #fff;
-            overflow-y: auto;
         }
 
         .pc-frame-right { 
-            width: calc(100% - 16rem); 
+            width: calc(100% - 18rem); 
             flex-grow: 1; 
             min-height: 100vh;
         }
 
+        /* ヒーローセクション */
         #top-mv { height: 100vh; width: 100%; background-color: #222; }
         .swiper-slide { position: relative; overflow: hidden; }
         .slide-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; transition: 6s transform ease-out; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)); }
@@ -129,11 +141,13 @@
         .slide-main { font-size: 5rem; line-height: 1.2; margin-bottom: 2rem; }
         .slide-sub { font-size: 2rem; margin-bottom: 4rem; }
 
+        /* セクション共通 */
         section.sec { padding: 100px 0; }
         .sec-head { margin-bottom: 60px; }
         .sec-head .sub { color: #9e9779; font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; display: block; }
         .sec-head .main { font-size: 3.6rem; }
 
+        /* 各セクションスタイル */
         section.sec-course { background: #0a0a0a; color: #fff; }
         .course-list { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
         .course-item { border: 1px solid #333; transition: .3s; display: flex; background: #111; }
@@ -164,6 +178,7 @@
         .method-btn-link { display: flex; align-items: center; justify-content: space-between; border: 1px solid #ddd; padding: 18px 20px; font-size: 1.4rem; background: #fff; transition: .3s; }
         .method-btn-link:hover { border-color: #9e9779; background: #fdfaf0; }
 
+        /* モバイル対応 */
         @media screen and (max-width: 768px) {
             .pc { display: none !important; }
             .pc-frame { display: block; }
@@ -181,12 +196,14 @@
     <div id="header-placeholder"></div>
 
     <div class="pc-frame">
+        <!-- 外部メニュー読み込み用プレースホルダー -->
         <aside id="sidebar-placeholder" class="pc pc-frame-left"></aside>
 
         <div class="pc-frame-right">
             <main id="contents">
                 <article class="l-main">
                     
+                    <!-- ヒーローセクション -->
                     <div id="top-mv" class="swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -206,6 +223,7 @@
                         </div>
                     </div>
 
+                    <!-- 導入テキスト -->
                     <section class="mv-intro" style="padding: 60px 0; background: #f4f4f4;">
                         <div class="wrap">
                             <h1 class="noto" style="font-size: 1.8rem; line-height: 2; color: #333; font-weight: 500; text-align: center;">
@@ -214,6 +232,7 @@
                         </div>
                     </section>
 
+                    <!-- コース案内 -->
                     <section id="course" class="sec sec-course">
                         <div class="wrap w1220">
                             <div class="sec-head ta-center">
@@ -253,6 +272,7 @@
                         </div>
                     </section>
 
+                    <!-- 特徴セクション -->
                     <section class="sec bg-white">
                         <div class="wrap w1060">
                             <div class="point-list">
@@ -276,6 +296,7 @@
                         </div>
                     </section>
 
+                    <!-- ポリシー -->
                     <section class="sec pol bg-white">
                         <div class="wrap w1060">
                             <div class="sec-head ta-center">
@@ -299,6 +320,7 @@
                         </div>
                     </section>
 
+                    <!-- 学習メソッド一覧 -->
                     <section class="method-section">
                         <div class="wrap">
                             <div class="method-head ta-center">
@@ -363,10 +385,12 @@
                 </article>
             </main>
 
+            <!-- 外部フッター -->
             <div id="footer-placeholder"></div>
         </div>
     </div>
 
+    <!-- スクリプト -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         async function loadPart(id, path) {
@@ -385,11 +409,13 @@
         }
 
         window.addEventListener('DOMContentLoaded', () => {
+            // 各パーツの読み込み
             loadPart('header-placeholder', 'parts/header.html');
             loadPart('sidebar-placeholder', 'parts/menu.html');
             loadPart('cta-placeholder', 'parts/CTA.html');
             loadPart('footer-placeholder', 'parts/footer.html');
 
+            // Swiper初期化
             const mainSwiper = new Swiper('#top-mv', {
                 loop: true,
                 effect: 'fade',
@@ -397,6 +423,7 @@
                 autoplay: { delay: 5000 },
             });
 
+            // スクロールアニメーション初期化
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
