@@ -58,6 +58,11 @@
             background: #fff;
         }
 
+        /* ルール4: フォントおよびスタイルの適用 */
+        .serif { font-family: "Noto Serif JP", serif; }
+        .lora { font-family: Lora, serif; letter-spacing: .05em; }
+        .noto { font-family: "Noto Sans JP", sans-serif; }
+
         /* 共通ユーティリティ */
         .flex { display: flex; }
         .flex.bet { justify-content: space-between; }
@@ -68,16 +73,11 @@
         .flex.vert { flex-direction: column; }
         .flex.break { flex-wrap: wrap; }
         
-        .serif { font-family: "Noto Serif JP", serif; }
-        .lora { font-family: Lora, serif; letter-spacing: .05em; }
-        .noto { font-family: "Noto Sans JP", sans-serif; }
         .ta-center { text-align: center; }
         .white { color: #fff; }
 
-        /* コンテナ */
+        /* ルール3: コンテナ幅制限 */
         .wrap { margin: 0 auto; width: 100%; max-width: 1060px; padding: 0 20px; }
-        .w1420 { max-width: 1420px; }
-        .w1220 { max-width: 1220px; }
 
         /* アニメーション */
         .anime { opacity: 0; transition: all 1s ease; }
@@ -109,7 +109,7 @@
         .md-btn .bar { position: absolute; top: 50%; right: 2rem; width: 2rem; height: 1px; background: currentColor; transform: translateY(-50%); transition: .5s; }
         .md-btn:hover .bar { right: 1rem; }
 
-        /* レイアウト構造 */
+        /* ルール3: 基本レイアウト構造（PC表示） */
         .pc-frame { display: flex; width: 100%; align-items: flex-start; }
         
         .pc-frame-left { 
@@ -140,13 +140,13 @@
         .slide-main { font-size: 5rem; line-height: 1.2; margin-bottom: 2rem; }
         .slide-sub { font-size: 2rem; margin-bottom: 4rem; }
 
-        /* セクション共通 */
+        /* 各セクション */
         section.sec { padding: 100px 0; }
         .sec-head { margin-bottom: 60px; }
         .sec-head .sub { color: #9e9779; font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; display: block; }
         .sec-head .main { font-size: 3.6rem; }
 
-        /* コースセクション（ダーク） */
+        /* コース案内（ダーク） */
         section.sec-course { background: #0a0a0a; color: #fff; }
         .course-list { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
         .course-item { border: 1px solid #333; transition: .3s; display: flex; background: #111; }
@@ -155,19 +155,6 @@
         .course-item .head { font-size: 2.2rem; margin-bottom: 10px; }
         .course-item .sub { color: #9e9779; font-size: 1.2rem; margin-bottom: 15px; display: block; }
         .course-item .text { font-size: 1.3rem; opacity: 0.7; }
-
-        /* 講師・キャリア */
-        .point-list { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .point-item .img-box { aspect-ratio: 16 / 7; background: #f4f4f4; margin-bottom: 25px; }
-        .point-item .label { color: #9e9779; font-size: 1.2rem; margin-bottom: 10px; display: block; }
-        .point-item .head { font-size: 2.2rem; margin-bottom: 20px; line-height: 1.4; }
-        .point-item .text { font-size: 1.4rem; color: #555; margin-bottom: 20px; }
-
-        /* ポリシー */
-        .policy-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .policy-item .head { font-size: 1.8rem; margin-bottom: 15px; border-top: 1px solid #eee; padding-top: 15px; }
-        .policy-item .no { color: #9e9779; margin-right: 10px; font-weight: 700; }
-        .policy-item .img-box { aspect-ratio: 3 / 2; background: #f9f9f9; }
 
         /* 学習メソッド */
         .method-section { background: #fdfaf0; padding: 100px 0; }
@@ -180,14 +167,14 @@
         .method-btn-link { display: flex; align-items: center; justify-content: space-between; border: 1px solid #ddd; padding: 18px 20px; font-size: 1.4rem; background: #fff; }
         .method-btn-link:hover { border-color: #9e9779; background: #fdfaf0; }
 
-        /* モバイル対応 */
+        /* SP対応 */
         @media screen and (max-width: 768px) {
             .pc { display: none !important; }
             .pc-frame { display: block; }
             .pc-frame-right { width: 100%; }
             .pc-frame-left { display: none; }
             section.sec { padding: 60px 0; }
-            .course-list, .point-list, .policy-list, .method-grid { grid-template-columns: 1fr; }
+            .course-list, .method-grid { grid-template-columns: 1fr; }
             .slide-main { font-size: 3rem; }
         }
     </style>
@@ -195,11 +182,11 @@
 
 <body>
 
-    <!-- 外部ヘッダー -->
+    <!-- ルール1: ヘッダープレースホルダー -->
     <div id="header-placeholder"></div>
 
     <div class="pc-frame">
-        <!-- 外部メニュー（サイドバー） -->
+        <!-- ルール1: メニュー（サイドバー）プレースホルダー -->
         <aside id="sidebar-placeholder" class="pc pc-frame-left"></aside>
 
         <div class="pc-frame-right">
@@ -212,7 +199,7 @@
                             <div class="swiper-slide">
                                 <div class="slide-img"></div>
                                 <div class="lay-content flex vend hstart">
-                                    <div class="wrap w1220">
+                                    <div class="wrap">
                                         <div class="slide-box">
                                             <h2 class="slide-main serif anime blur active">STUDY × FUTURE</h2>
                                             <p class="slide-sub serif anime blur wave2 active">21世紀を生きる力を育てる</p>
@@ -237,7 +224,7 @@
 
                     <!-- コース案内 -->
                     <section id="course" class="sec sec-course">
-                        <div class="wrap w1220">
+                        <div class="wrap">
                             <div class="sec-head ta-center">
                                 <span class="lora sub anime bottom-in">COURSE</span>
                                 <h2 class="serif main white anime bottom-in wave2">コース案内</h2>
@@ -270,54 +257,6 @@
                                         <h3 class="head serif">中学生・高校生</h3>
                                         <p class="text serif">東大・京大・医学部など、国内最難関校合格へ本気で挑む学生を支えます。</p>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- 指導者・キャリア -->
-                    <section class="sec bg-white">
-                        <div class="wrap w1060">
-                            <div class="point-list">
-                                <div class="point-item anime bottom-in">
-                                    <div class="img-box"></div>
-                                    <div class="data">
-                                        <span class="label lora">EDUCATOR INTRODUCTION</span>
-                                        <h3 class="head serif">難関指導実績が豊富な<br>選抜されたエリオの講師陣</h3>
-                                        <p class="text">エリオの講師は、最難関合格実績をもつプロフェッショナル。お子さま一人ひとりの能力を見極め、力を最大限に引き出します。</p>
-                                    </div>
-                                </div>
-                                <div class="point-item anime bottom-in wave2">
-                                    <div class="img-box"></div>
-                                    <div class="data">
-                                        <span class="label lora">CAREER EDUCATION</span>
-                                        <h3 class="head serif">医師・科学者・起業家<br>将来を見据えたキャリア教育</h3>
-                                        <p class="text">メディカル・ビジネスの最前線で活躍する顧問陣が監修。志望校合格を通過点とした、未来への教育プログラムを提供します。</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- ポリシー -->
-                    <section class="sec pol bg-white">
-                        <div class="wrap w1060">
-                            <div class="sec-head ta-center">
-                                <span class="lora sub">EDUCATIONAL POLICY</span>
-                                <h2 class="serif main">難関突破、そして燃え尽きない頭脳の育成を。</h2>
-                            </div>
-                            <div class="policy-list">
-                                <div class="policy-item">
-                                    <div class="img-box"></div>
-                                    <h3 class="head serif"><span class="no">01</span>会員制の独自スタイル</h3>
-                                </div>
-                                <div class="policy-item">
-                                    <div class="img-box"></div>
-                                    <h3 class="head serif"><span class="no">02</span>ご家庭との一致団結</h3>
-                                </div>
-                                <div class="policy-item">
-                                    <div class="img-box"></div>
-                                    <h3 class="head serif"><span class="no">03</span>世界トップ大学への道</h3>
                                 </div>
                             </div>
                         </div>
@@ -387,13 +326,13 @@
                         </div>
                     </section>
 
-                    <!-- 外部CTA -->
+                    <!-- ルール1: CTAプレースホルダー -->
                     <div id="cta-placeholder"></div>
 
                 </article>
             </main>
 
-            <!-- 外部フッター -->
+            <!-- ルール1: フッタープレースホルダー -->
             <div id="footer-placeholder"></div>
         </div>
     </div>
@@ -401,6 +340,7 @@
     <!-- スクリプト -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
+        /* ルール5: JavaScriptの実装例 */
         async function loadPart(id, path) {
             try {
                 const response = await fetch(path);
@@ -414,6 +354,7 @@
         }
 
         window.addEventListener('DOMContentLoaded', () => {
+            /* ルール2: 外部HTMLファイルのパス指定 */
             loadPart('header-placeholder', 'parts/header.html');
             loadPart('sidebar-placeholder', 'parts/menu.html');
             loadPart('cta-placeholder', 'parts/CTA.html');
