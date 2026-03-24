@@ -1,0 +1,303 @@
+<style>
+    /* レイアウト基本設定 */
+    .l-side {
+        border-right: 1px solid #dadada;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 14rem;
+        z-index: 1000;
+    }
+
+    /* ロゴエリア（余白を削除し、サイズを調整） */
+    .l-side .logo-unit {
+        padding: 0rem; /* 周囲の余白を最小限に設定 */
+        text-align: center;
+    }
+    .l-side .logo-unit a {
+        display: block;
+    }
+    .l-side .logo-unit img {
+        width: 100%;
+        height: auto;
+        max-width: 9rem; /* 15remから半分に縮小 */
+    }
+
+    /* ナビゲーションリンク */
+    .l-side .link {
+        border-top: 1px solid #eee;
+        padding: 0;
+        margin: 0;
+    }
+    .l-side .link > li {
+        border-bottom: 1px solid #eee;
+        list-style: none;
+    }
+    .l-side .link .l-pulldown {
+        position: relative;
+    }
+    .l-side .link .l-pulldown .head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5vh 1.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+        text-decoration: none;
+        color: #333;
+        transition: .3s;
+        background: #fff;
+    }
+    .l-side .link .l-pulldown .head .icon {
+        font-size: 1.1rem;
+        color: #ccc;
+        transition: .3s;
+    }
+
+    /* ホバー時・アクティブ時のスタイル */
+    .l-side .link .l-pulldown:hover .head,
+    .l-side .link .l-pulldown.is-active .head {
+        background: #982020;
+        color: #fff;
+    }
+    .l-side .link .l-pulldown:hover .head .icon,
+    .l-side .link .l-pulldown.is-active .head .icon {
+        color: #fff;
+        transform: translateX(3px);
+    }
+
+    /* メガメニュー */
+    .l-side .link .l-pulldown .body {
+        position: fixed;
+        top: 0;
+        left: 16rem;
+        z-index: 1001;
+        padding: 4rem 3.5rem;
+        width: 34rem;
+        height: 100vh;
+        background: #982020;
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        transition: .4s cubic-bezier(0.2, 1, 0.3, 1);
+        transform: translateX(-10px);
+        overflow-y: auto;
+    }
+    .l-side .link .l-pulldown:hover .body {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* メガメニュー内コンテンツ */
+    .l-side .body .menu-title {
+        font-family: "Lora", serif;
+        font-size: 1.8rem;
+        color: rgba(255, 255, 255, 0.3);
+        margin-bottom: 2.5rem;
+        letter-spacing: 0.1em;
+        line-height: 1;
+    }
+    .l-side .body .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem 2rem;
+        padding: 0;
+    }
+    .l-side .body .menu-item {
+        list-style: none;
+    }
+    .l-side .body .menu-item a {
+        text-decoration: none;
+        display: block;
+    }
+    .l-side .body .menu-item .img-box {
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        margin-bottom: 1rem;
+        background: rgba(255, 255, 255, 0.1);
+        border: 0.5px solid rgba(255, 255, 255, 0.2);
+    }
+    .l-side .body .menu-item .img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: .5s;
+    }
+    .l-side .body .menu-item .label {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+    }
+    .l-side .body .menu-item .label::before {
+        content: "";
+        width: 1rem;
+        height: 1px;
+        background: #9e9779;
+    }
+
+    /* サイドバー下部 */
+    .l-side .side-bottom {
+        border-top: 1px solid #eee;
+    }
+    .l-side .side-tel {
+        padding: 2vh 1.5rem;
+        text-align: center;
+    }
+    .l-side .side-tel .label {
+        display: block;
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+    }
+    .l-side .side-tel .num {
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 700;
+        font-family: "Lora", serif;
+        color: #111;
+        letter-spacing: 0.01em;
+        white-space: nowrap;
+    }
+    .l-side .side-tel .time {
+        display: block;
+        font-size: 1rem;
+        color: #999;
+        margin-top: 0.5rem;
+    }
+    .l-side .side-contact-btn {
+        background: #982020;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 3.5vh 1rem;
+        text-decoration: none;
+        transition: .3s;
+    }
+    .l-side .side-contact-btn:hover {
+        background: #b12525;
+    }
+    .l-side .side-contact-btn svg {
+        width: 22px;
+        height: 22px;
+        margin-bottom: 1rem;
+    }
+    .l-side .side-contact-btn span {
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+    }
+</style>
+
+<div class="l-side">
+    <div class="side-top">
+        <!-- ロゴエリア -->
+        <div class="logo-unit">
+            <a href="/"><img src="elio-logo.png" alt="elio"></a>
+        </div>
+
+        <!-- ナビゲーションリンク -->
+        <ul class="link">
+            <li class="l-pulldown">
+                <a href="#" class="head"><span>エリオについて</span> <i class="icon">❯</i></a>
+                <div class="body">
+                    <p class="menu-title">ABOUT US</p>
+                    <ul class="menu-grid">
+                        <li class="menu-item">
+                            <a href="#">
+                                <div class="img-box"><img src="about-belief.jpg" alt="エリオの信念"></div>
+                                <span class="label">エリオの信念</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">
+                                <div class="img-box"><img src="about-teacher.jpg" alt="講師紹介"></div>
+                                <span class="label">講師紹介</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">
+                                <div class="img-box"><img src="about-advisor.jpg" alt="顧問紹介"></div>
+                                <span class="label">顧問紹介</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="l-pulldown">
+                <a href="#" class="head"><span>コース案内</span> <i class="icon">❯</i></a>
+                <div class="body">
+                    <p class="menu-title">COURSE</p>
+                    <ul class="menu-grid">
+                        <li class="menu-item">
+                            <a href="#">
+                                <div class="img-box"><img src="course-1-2.jpg" alt="小学1・2年生"></div>
+                                <span class="label">小学1年生～小学2年生</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">
+                                <div class="img-box"><img src="course-3-6.jpg" alt="小学3・6年生"></div>
+                                <span class="label">小学3年生～小学6年生</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">
+                                <div class="img-box"><img src="course-individual.jpg" alt="個別指導"></div>
+                                <span class="label">elioの個別指導</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">
+                                <div class="img-box"><img src="course-junior-high.jpg" alt="中高生"></div>
+                                <span class="label">中学生・高校生</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="l-pulldown"><a href="#" class="head"><span>校舎案内</span> <i class="icon">❯</i></a></li>
+
+            <li class="l-pulldown">
+                <a href="#" class="head"><span>学習メソッド</span> <i class="icon">❯</i></a>
+                <div class="body">
+                    <p class="menu-title">METHOD</p>
+                    <h3 style="color:#9e9779; font-size:1.1rem; margin-bottom:1.5rem; border-left:2px solid #9e9779; padding-left:1rem;">学習メソッド一覧</h3>
+                    <ul style="display:grid; grid-template-columns:1fr; gap:0.8rem; padding:0;">
+                        <li class="menu-item"><a href="#"><span class="label">オリジナル教材</span></a></li>
+                        <li class="menu-item"><a href="#"><span class="label">四谷大塚</span></a></li>
+                        <li class="menu-item"><a href="#"><span class="label">Premium Campus</span></a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="l-pulldown"><a href="#" class="head"><span>入会までの流れ</span> <i class="icon">❯</i></a></li>
+            <li class="l-pulldown"><a href="#" class="head"><span>よくある質問</span> <i class="icon">❯</i></a></li>
+            <li class="l-pulldown"><a href="#" class="head"><span>体験会 & 説明会</span> <i class="icon">❯</i></a></li>
+        </ul>
+    </div>
+    
+    <div class="side-bottom">
+        <div class="side-tel">
+            <span class="label">総合電話窓口</span>
+            <span class="num">075-231-7711</span>
+            <span class="time">対応時間 13:00〜20:00</span>
+        </div>
+        <a href="#" class="side-contact-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            <span>お問い合わせ・資料請求</span>
+        </a>
+    </div>
+</div>
