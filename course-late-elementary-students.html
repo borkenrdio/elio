@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>中学受験（小3〜小6）｜会員制難関受験専門塾エリオ（elio）</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
+    
+    <style>
+        html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, main, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+            margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; box-sizing: border-box;
+        }
+
+        html { font-size: 62.5%; scroll-behavior: smooth; }
+
+        body {
+            font-family: "Noto Sans JP", sans-serif;
+            font-size: 1.6rem; line-height: 1.8; color: #111; overflow-x: hidden; background: #fff;
+        }
+
+        ul, ol { list-style: none; }
+        a { transition-duration: .5s; text-decoration: none; color: inherit; }
+        img { max-width: 100%; height: auto; vertical-align: middle; }
+
+        .serif { font-family: "Noto Serif JP", serif; }
+        .lora { font-family: Lora, serif; letter-spacing: .05em; }
+        .noto { font-family: "Noto Sans JP", sans-serif; }
+
+        @media screen and (min-width: 769px) {
+            .sp { display: none !important; }
+            .pc-frame { display: flex; min-width: 1200px; }
+            .pc-frame-left { width: 16rem; position: relative; z-index: 1000; }
+            .pc-frame-right { width: calc(100% - 16rem); flex-grow: 1; }
+            .wrap { margin: 0 auto; max-width: 1060px; padding: 0 60px; }
+        }
+
+        @media screen and (max-width: 768px) {
+            .pc { display: none !important; }
+            .wrap { padding: 0 20px; }
+        }
+
+        .anime { opacity: 0; transition: all 1s ease; }
+        .anime.bottom-in { transform: translateY(30px); }
+        .active { opacity: 1 !important; transform: none !important; }
+
+        .mv-md { padding: 8rem 0; border-top: 1px solid #eee; background: #fff; }
+        .mv-md .title-box .title-head { position: relative; padding-top: 2rem; font-size: 1.8rem; font-weight: 500; margin-bottom: 1rem; color: #666; }
+        .mv-md .title-box .title-head:after { content: ""; position: absolute; top: 0; left: 0; width: 16px; height: 1px; background: #333; }
+        .mv-md .title { font-size: 4.2rem; color: #9e9779; letter-spacing: .2em; font-weight: 300; }
+
+        .intro-sec { padding: 8rem 0; border-top: 1px solid #e6e6e6; }
+        .head-text-box { margin-bottom: 6rem; }
+        .head-text-box .title-head { color: #9e9779; font-size: 1.4rem; font-weight: 700; margin-bottom: 1.5rem; display: block; }
+        .head-text-box h2 { font-size: 3rem; font-weight: 600; margin-bottom: 3rem; color: #111; line-height: 1.5; }
+        .head-text-box .text { font-size: 1.5rem; font-weight: 500; color: #333; line-height: 2.2; }
+
+        .main-list li { display: flex; gap: 6rem; padding: 8rem 0; border-top: 1px solid #eee; align-items: center; }
+        .main-list li:nth-child(even) { flex-direction: row-reverse; }
+        .main-list img { width: 45%; flex-shrink: 0; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .main-list .text-box { flex-grow: 1; }
+        .main-list .number { display: block; font-size: 3rem; color: #e0e0e0; margin-bottom: 1rem; font-weight: 300; }
+        .main-list h3 { font-size: 2.4rem; font-weight: 700; margin-bottom: 2rem; color: #111; position: relative; padding-left: 2rem; border-left: 4px solid #9e9779; }
+        .main-list h3 .title-text span { display: block; font-size: 1.4rem; color: #9e9779; font-weight: 700; margin-bottom: 0.5rem; }
+        .main-list .text { font-size: 1.5rem; color: #444; line-height: 2.4; }
+
+        .message-sec { padding: 10rem 0; background: #fafafa; }
+        .message-sec .flex-box { display: flex; gap: 8rem; align-items: center; }
+        .message-sec img { width: 40%; flex-shrink: 0; border-radius: 50% 50% 0 0; }
+        .message-sec .title-head { font-size: 1.4rem; color: #9e9779; margin-bottom: 1rem; font-weight: 700; display: block; }
+        .message-sec h2 { font-size: 3rem; margin-bottom: 3rem; line-height: 1.4; }
+        .message-sec .text { font-size: 1.5rem; line-height: 2.4; color: #444; }
+
+        @media screen and (max-width: 768px) {
+            .pc-frame-left { display: none; }
+            .pc-frame-right { width: 100%; }
+            .mv-md { padding: 5rem 0; }
+            .mv-md .title { font-size: 3.2rem; }
+            .intro-sec { padding: 5rem 0; }
+            .head-text-box h2 { font-size: 2.2rem; }
+            .main-list li, .main-list li:nth-child(even) { flex-direction: column; gap: 3rem; padding: 5rem 0; }
+            .main-list img { width: 100%; }
+            .message-sec .flex-box { flex-direction: column; gap: 4rem; }
+            .message-sec img { width: 80%; }
+        }
+    </style>
+</head>
+
+<body class="l-page l-course-child">
+
+    <div id="header-placeholder"></div>
+
+    <div class="pc-frame">
+        <aside id="sidebar-placeholder" class="pc pc-frame-left"></aside>
+
+        <div class="pc-frame-right">
+            <div class="bread pc">
+                <div class="wrap" style="padding:15px 0; font-size:1.1rem; color:#888;">HOME > コース案内 > 中学受験</div>
+            </div>
+
+            <main id="contents">
+                <article class="l-main serif">
+                    
+                    <section class="mv-md">
+                        <div class="wrap">
+                            <div class="title-box anime bottom-in">
+                                <p class="title-head">コース案内 - 小学3年生～小学6年生</p>
+                                <h1 class="title lora">COURSE</h1>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="intro-sec">
+                        <div class="wrap">
+                            <div class="head-text-box anime bottom-in">
+                                <span class="title-head">小学3年生～小学6年生</span>
+                                <h2>
+                                    御三家・筑駒・難関中学合格への<br>難関受験特化コース
+                                </h2>
+                                <p class="text noto">
+                                    難関中学合格を目指して、正しい学習習慣の定着と、その後の飛躍のための礎を築きあげます。<br>また、それと同時に、知的好奇心と息切れしない積極性、早い段階からの「知徳」の獲得を目指します。
+                                </p>
+                            </div>
+
+                            <ol class="main-list">
+                                <li class="anime bottom-in">
+                                    <img src="img/fourth-to-sixth-grade_img_01.jpg" alt="対話形式の授業">
+                                    <div class="text-box">
+                                        <span class="lora number">01</span>
+                                        <h3>少人数授業だから可能な対話形式</h3>
+                                        <p class="text noto">
+                                            大量に問題をこなすのではなく、良質なテーマに対し「どうして？」を共に考えます。遠くからながめるのではなく、進んで手を動かし、自分の「問い」としてとらえ、自らの言葉で伝え合います。少し背伸びをしながら、「未知」を一つひとつ解決へと導きます。elioでは生徒一人ひとりとの対話を大切にするため、完全少人数定員クラスを採用しています。
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="anime bottom-in">
+                                    <img src="img/2402_fourth-to-sixth-grade_img_02.png" alt="精鋭講師陣">
+                                    <div class="text-box">
+                                        <span class="lora number">02</span>
+                                        <h3>本当の学力を育む精鋭講師陣</h3>
+                                        <p class="text noto">
+                                            合格を目標としつつ、決してそれがゴールにならないように、その後の成長を大切にします。しっかりと自分の足で立ち、歩み出せるよう後押しをします。そのために、厳しい基準をもとに選ばれた講師陣がサポートします。合格実績はもちろんのこと、さまざまな経験を積んだそれぞれの分野の講師が、教科指導から、進路指導、キャリア教育を行います。
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="anime bottom-in">
+                                    <img src="img/fourth-to-sixth-grade_img_03.jpg" alt="同じ志を持つ仲間">
+                                    <div class="text-box">
+                                        <span class="lora number">03</span>
+                                        <h3>同じ志を持った仲間の中で学ぶ</h3>
+                                        <p class="text noto">
+                                            どんな問題もひとりだけでは解決できません。また、良質の問題であれば、決して解法がひとつであるともかぎりません。そして、一方的に正解だけを求めるのではなく、対話重視型の入試形態への変化に対応し、複数の正解が認められる時代になりました。たくさんの「なぜ」に向き合い、同じ目標や望みを持った仲間たちと、力を磨きます。
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="anime bottom-in">
+                                    <img src="img/fourth-to-sixth-grade_img_04.jpg" alt="小3・小4の基礎作り">
+                                    <div class="text-box">
+                                        <span class="lora number">04</span>
+                                        <h3>
+                                            <span class="title-text">
+                                                <span>小学3・4年生</span>難関中学受験へ向けた基礎作り
+                                            </span>
+                                        </h3>
+                                        <p class="text noto">
+                                            本格的にはじまる中学受験の学習ですが、時間をかけてじっくりと行うからこそ「正しく」「正確で」「丁寧な」取り組みが求められます。小５・小６で高く遠くはばたくための土台作りを行います。また、点数化できる知識の習得だけではなく、担当講師の直接的な目で、日々の成長とこれからの展望をしっかりと見定めます。
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="anime bottom-in">
+                                    <img src="img/2402_fourth-to-sixth-grade_img_05.png" alt="小5の思考力強化">
+                                    <div class="text-box">
+                                        <span class="lora number">05</span>
+                                        <h3>
+                                            <span class="title-text">
+                                                <span>小学5年生</span>しっかりとした「考える力」でさらなる高みへ
+                                            </span>
+                                        </h3>
+                                        <p class="text noto">
+                                            小４までに学習した内容を、小５でさらに発展させていきますが、難問をこなすということが重要なわけではありません。小６からさらに高みへと向かうために、小５の間に「力の伸びしろ」を鍛えます。実践的な入試問題に当たる段階へと入る前に、担当講師との議論を通した授業で、しっかりとした「考える力」を身につけていきます。
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="anime bottom-in">
+                                    <img src="img/fourth-to-sixth-grade_img_06.jpg" alt="小6の実践力育成">
+                                    <div class="text-box">
+                                        <span class="lora number">06</span>
+                                        <h3>
+                                            <span class="title-text">
+                                                <span>小学6年生</span>本番に向けた「実践力」「伝える力」と本当の「生きる力」
+                                            </span>
+                                        </h3>
+                                        <p class="text noto">
+                                            小５までに培ってきた力を「実践力」へと発展させます。小６では入試問題を意識して、高度な内容に入っていきますが、ただ正解だけを求めるのではなく、豊かで確かな知識に加えて、自分の考えを自分の言葉で表現することに力点を置きます。そのために、問題のテーマをつかみ、丁寧に考えぬいたうえで、自らの言葉を使って、しっかりと「伝える力」を身につけていきます。
+                                        </p>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </section>
+
+                    <section class="message-sec">
+                        <div class="wrap">
+                            <div class="flex-box anime bottom-in">
+                                <img src="img/fourth-to-sixth-grade_message_img.png" alt="メッセージ画像">
+                                <div class="text-box">
+                                    <span class="title-head lora">MESSAGE</span>
+                                    <h2>難関校合格へ全力で指導します。</h2>
+                                    <p class="text noto">
+                                        人生で１回しか挑戦できない中学受験において、難関校合格に向けての取り組みを自らの意思で行うことができたのならば、それは将来に向けて非常に大切な経験となります。学習指導・進路相談・メンタルケアまでelioの講師陣が責任もってお預かりします。中学受験における成功とは、進学後にもっとも成長をとげられる学校を選択できること、そして生徒が自ら学びを楽しむことです。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div id="cta-placeholder"></div>
+
+                </article>
+            </main>
+
+            <div id="footer-placeholder"></div>
+        </div>
+    </div>
+
+    <script>
+        async function loadPart(id, path) {
+            try {
+                const response = await fetch(path);
+                if (response.ok) {
+                    const html = await response.text();
+                    const el = document.getElementById(id);
+                    if (el) el.innerHTML = html;
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadPart('header-placeholder', 'parts/header.html');
+            loadPart('sidebar-placeholder', 'parts/menu.html');
+            loadPart('cta-placeholder', 'parts/CTA.html');
+            loadPart('footer-placeholder', 'parts/footer.html');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.anime').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
