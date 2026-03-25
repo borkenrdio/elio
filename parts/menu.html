@@ -62,7 +62,7 @@
             padding: 2.2vh 2rem;
             font-family: "Shippori Mincho", "Noto Serif JP", serif;
             font-size: 1.1rem;
-            font-weight: 700; /* 600から700へ変更 */
+            font-weight: 700;
             text-decoration: none;
             color: #333;
             transition: .3s;
@@ -97,15 +97,20 @@
             color: #fff;
             visibility: hidden;
             opacity: 0;
-            transition: .4s cubic-bezier(0.2, 1, 0.3, 1);
+            /* 閉じる時のアニメーションにディレイを追加して操作性を向上 */
+            transition: opacity .3s, transform .3s, visibility .3s;
+            transition-delay: 0.15s; 
             transform: translateX(-10px);
             overflow-y: auto;
             box-sizing: border-box;
         }
+        
+        /* ホバー時は即座に表示させる */
         .l-side .link .l-pulldown:hover .body {
             visibility: visible;
             opacity: 1;
             transform: translateX(0);
+            transition-delay: 0s;
         }
 
         /* タイトルテキスト */
@@ -116,7 +121,7 @@
             letter-spacing: 0.15em;
             margin-bottom: 3.5rem;
             text-transform: uppercase;
-            font-weight: 600; /* 500から600へ変更 */
+            font-weight: 600;
         }
 
         /* グリッドレイアウト */
@@ -164,7 +169,7 @@
             align-items: center;
             font-family: "Shippori Mincho", "Noto Serif JP", serif;
             font-size: 1.15rem;
-            font-weight: 700; /* 600から700へ変更 */
+            font-weight: 700;
             letter-spacing: 0.02em;
         }
         .menu-item .label::before {
@@ -193,14 +198,14 @@
         }
         .l-side .side-tel .num {
             display: block;
-            font-size: 2.1rem;
+            font-size: 2.1rem; /* 1.8remから2.1remへ修正反映 */
             font-weight: 700;
             font-family: "Lora", serif;
             color: #111;
         }
         .l-side .side-tel .time {
             display: block;
-            font-size: 1.1rem;
+            font-size: 1.1rem; /* 0.85remから1.1remへ修正反映 */
             color: #999;
             margin-top: 0.5rem;
         }
@@ -219,7 +224,7 @@
             background: #b12525;
         }
         .l-side .side-contact-btn span {
-            font-size: 1.3rem;
+            font-size: 1.3rem; /* 1.1remから1.3remへ修正反映 */
             font-weight: 700;
             margin-top: 0.8rem;
         }
