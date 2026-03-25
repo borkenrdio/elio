@@ -1,7 +1,4 @@
 <style>
-    /* -----------------------------------------------------
-        基本レイアウト
-    ----------------------------------------------------- */
     .l-side {
         border-right: 1px solid #dadada;
         height: 100vh;
@@ -17,11 +14,8 @@
         transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
-    /* -----------------------------------------------------
-        スマホ専用ヘッダーバー
-    ----------------------------------------------------- */
     .sp-bar {
-        display: none; /* PCでは非表示 */
+        display: none;
         position: fixed;
         top: 0;
         left: 0;
@@ -40,8 +34,8 @@
         width: auto;
     }
     .menu-trigger {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
         position: relative;
         background: none;
         border: none;
@@ -51,22 +45,21 @@
     .menu-trigger span {
         display: block;
         position: absolute;
-        left: 5px;
+        left: 10px;
         width: 20px;
         height: 1.5px;
         background: #333;
         transition: all 0.3s;
     }
-    .menu-trigger span:nth-child(1) { top: 10px; }
-    .menu-trigger span:nth-child(2) { top: 18px; }
+    
+    .menu-trigger span:nth-child(1) { top: 13px; }
+    .menu-trigger span:nth-child(2) { top: 19px; }
+    .menu-trigger span:nth-child(3) { top: 25px; }
 
-    /* メニュー開閉時のボタンアニメーション */
-    .is-active .menu-trigger span:nth-child(1) { transform: translateY(4px) rotate(45deg); }
-    .is-active .menu-trigger span:nth-child(2) { transform: translateY(-4px) rotate(-45deg); }
+    .is-active .menu-trigger span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .is-active .menu-trigger span:nth-child(2) { opacity: 0; }
+    .is-active .menu-trigger span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
-    /* -----------------------------------------------------
-        メニュー内コンテンツ
-    ----------------------------------------------------- */
     .l-side .logo-unit {
         padding: 1.2rem 1.5rem;
         text-align: center;
@@ -97,7 +90,6 @@
     .l-side .link li:hover > .head { background: #982020; color: #fff; }
     .l-side .link li:hover > .head .icon { color: #fff; transform: translateX(3px); }
 
-    /* メガメニュー本体 (PC) */
     .l-side .link .l-pulldown .body {
         position: fixed;
         top: 0;
@@ -129,21 +121,11 @@
     .l-side .side-bottom { border-top: 1px solid #eee; }
     .l-side .side-tel { padding: 2.5vh 1.5rem; text-align: center; }
     .l-side .side-tel .label { display: block; font-size: 1rem; color: #666; margin-bottom: 0.5rem; font-weight: 700; }
-    
-    /* 修正点：電話番号リンクのスタイルを調整 */
-    .l-side .side-tel .num {
-        display: block;
-        font-size: 2.1rem;
-        font-weight: 700;
-        font-family: "Lora", serif;
-        color: #111;
-        text-decoration: none;
-    }
+    .l-side .side-tel .num { display: block; font-size: 2.1rem; font-weight: 700; font-family: "Lora", serif; color: #111; text-decoration: none; }
     .l-side .side-tel .time { display: block; font-size: 1.1rem; color: #999; margin-top: 0.5rem; font-weight: 600; }
     .l-side .side-contact-btn { background: #982020; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3.5vh 1rem; text-decoration: none; }
     .l-side .side-contact-btn span { font-size: 1.3rem; font-weight: 700; margin-top: 0.8rem; }
 
-    /* スマホ用オーバレイ背景 */
     .menu-overlay {
         display: none;
         position: fixed;
@@ -158,9 +140,6 @@
     }
     .is-active .menu-overlay { display: block; opacity: 1; }
 
-    /* -----------------------------------------------------
-        レスポンス (スマホ・タブレット)
-    ----------------------------------------------------- */
     @media screen and (max-width: 768px) {
         .sp-bar { display: flex; }
         
@@ -200,7 +179,6 @@
     }
 </style>
 
-<!-- スマホ用バー -->
 <div class="sp-bar">
     <div class="sp-logo">
         <a href="index.html"><img src="img/logo.png" alt="elio"></a>
@@ -208,13 +186,12 @@
     <button class="menu-trigger" onclick="toggleMenu()">
         <span></span>
         <span></span>
+        <span></span>
     </button>
 </div>
 
-<!-- 背景オーバーレイ -->
 <div class="menu-overlay" onclick="toggleMenu()"></div>
 
-<!-- サイドバー本体 -->
 <div class="l-side" id="sidebar">
     <div class="side-top">
         <div class="logo-unit pc">
@@ -292,7 +269,6 @@
     <div class="side-bottom">
         <div class="side-tel">
             <span class="label">総合電話窓口</span>
-            <!-- 修正箇所：href="tel:..." を追加 -->
             <a href="tel:0752317711" class="num">075-231-7711</a>
             <span class="time">対応時間 13:00〜20:00</span>
         </div>
