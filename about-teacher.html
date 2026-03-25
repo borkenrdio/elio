@@ -1,491 +1,257 @@
 <!DOCTYPE html>
-
 <html lang="ja">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <title>講師紹介 | 会員制難関受験専門塾エリオ（elio）</title>
-
     
-
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700&display=swap" rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:400,500,600,700&display=swap" rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
-
     
-
     <style>
-
         /* 共通土台（リセット・レイアウト） */
-
         html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, main, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-
             margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; box-sizing: border-box;
-
         }
-
         html { font-size: 62.5%; scroll-behavior: smooth; }
-
         body {
-
-            font-family: "Noto Sans JP", sans-serif;
-
+            /* 全体を明朝体に統一し、基本の太さを600に設定 */
+            font-family: "Noto Serif JP", serif;
+            font-weight: 600;
             font-size: 1.6rem; line-height: 1.8; color: #111; overflow-x: hidden; background: #fff;
-
         }
-
         ul { list-style: none; }
-
         a { transition-duration: .5s; text-decoration: none; color: inherit; }
-
         img { max-width: 100%; height: auto; vertical-align: middle; }
 
-
-
-        .serif { font-family: "Noto Serif JP", serif; }
-
+        .serif { font-family: "Noto Serif JP", serif; font-weight: 600; }
         .lora { font-family: Lora, serif; letter-spacing: .05em; }
-
-        .noto { font-family: "Noto Sans JP", sans-serif; }
-
-
+        /* notoクラスも明朝体かつ太字に書き換え */
+        .noto { font-family: "Noto Serif JP", serif; font-weight: 600; }
 
         /* PCレイアウト枠 */
-
         @media screen and (min-width: 769px) {
-
             .sp { display: none !important; }
-
             .pc-frame { display: flex; min-width: 1200px; }
-
             .pc-frame-left { width: 16rem; position: relative; z-index: 1000; }
-
             .pc-frame-right { width: calc(100% - 16rem); flex-grow: 1; }
-
             .wrap { margin: 0 auto; max-width: 1060px; padding: 0 60px; }
-
         }
-
-
 
         @media screen and (max-width: 768px) {
-
             .pc { display: none !important; }
-
             .wrap { padding: 0 20px; }
-
         }
-
-
 
         /* 講師紹介ページ固有スタイル */
-
         .mv-md { padding: 8rem 0; border-top: 1px solid #eee; background: #fff; }
-
-        .mv-md .title-box .title-head { position: relative; padding-top: 2rem; font-size: 1.8rem; font-weight: 500; margin-bottom: 1rem; color: #666; }
-
+        .mv-md .title-box .title-head { 
+            position: relative; 
+            padding-top: 2rem; 
+            font-size: 1.8rem; 
+            font-weight: 600; 
+            margin-bottom: 1rem; 
+            color: #666; 
+            font-family: "Noto Serif JP", serif;
+        }
         .mv-md .title-box .title-head:after { content: ""; position: absolute; top: 0; left: 0; width: 16px; height: 1px; background: #333; }
-
         .mv-md .title { font-size: 4.2rem; color: #9e9779; letter-spacing: .2em; font-weight: 300; }
 
-
-
         .teachers { padding: 8rem 0; border-top: 1px solid #e6e6e6; }
-
         .head-text-box { margin-bottom: 6rem; }
-
-        .head-text-box h2 { font-size: 2.8rem; font-weight: 600; margin-bottom: 3rem; color: #111; }
-
-        .head-text-box .text { font-size: 1.5rem; font-weight: 500; color: #333; line-height: 2; }
-
-
+        .head-text-box h2 { font-size: 2.8rem; font-weight: 700; margin-bottom: 3rem; color: #111; font-family: "Noto Serif JP", serif; }
+        .head-text-box .text { font-size: 1.5rem; font-weight: 600; color: #333; line-height: 2; font-family: "Noto Serif JP", serif; }
 
         /* 講師名リンク */
-
         .teacher-name-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px 40px; margin-bottom: 10rem; }
-
         .teacher-name-list li { border-bottom: 1px solid #eee; }
-
         .teacher-link { display: flex; flex-direction: column; align-items: flex-start; padding: 3rem 2rem; position: relative; transition: .3s; }
-
         .teacher-link:hover { background: #982020; color: #fff; }
-
-        .teacher-link .title { font-size: 1.2rem; font-weight: 400; margin-bottom: 1rem; color: #888; display: block; transition: .3s; }
-
-        .teacher-link .name { font-size: 2.2rem; font-weight: 700; color: #333; display: block; transition: .3s; }
-
+        .teacher-link .title { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: #888; display: block; transition: .3s; font-family: "Noto Serif JP", serif; }
+        .teacher-link .name { font-size: 2.2rem; font-weight: 700; color: #333; display: block; transition: .3s; font-family: "Noto Serif JP", serif; }
         .teacher-link:after { content: ""; position: absolute; right: 2.5rem; top: 50%; width: 1px; height: 3.5rem; background: #e0e0e0; transform: translateY(-50%) rotate(25deg); transition: .3s; }
-
         .teacher-link:hover .title, .teacher-link:hover .name { color: #fff; }
-
         .teacher-link:hover:after { background: rgba(255, 255, 255, 0.4); }
 
-
-
         /* 講師詳細カード */
-
         .teacher-details-list > li { display: flex; gap: 5rem; padding: 8rem 0; border-top: 1px solid #eee; align-items: flex-start; scroll-margin-top: 4rem; }
-
         .teacher-details-list > li img { width: 320px; flex-shrink: 0; background: #f9f9f9; }
-
         .teacher-details-list .text-box { flex-grow: 1; }
-
         .teacher-details-list .info-box { margin-bottom: 1.5rem; display: flex; flex-direction: column; }
-
-        .teacher-details-list .info-box .jpn { font-size: 1.4rem; color: #9e9779; font-weight: 700; }
-
+        .teacher-details-list .info-box .jpn { font-size: 1.4rem; color: #9e9779; font-weight: 700; font-family: "Noto Serif JP", serif; }
         .teacher-details-list .info-box .en { font-size: 1.2rem; color: #999; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.1em; }
-
-        .teacher-details-list h2 { font-size: 3.4rem; font-weight: 700; margin-bottom: 2.5rem; color: #111; letter-spacing: 0.1em; }
-
-        .teacher-details-list .desc { font-size: 1.5rem; color: #444; line-height: 2.4; }
-
-
+        .teacher-details-list h2 { font-size: 3.4rem; font-weight: 700; margin-bottom: 2.5rem; color: #111; letter-spacing: 0.1em; font-family: "Noto Serif JP", serif; }
+        .teacher-details-list .desc { font-size: 1.5rem; color: #444; line-height: 2.4; font-weight: 600; font-family: "Noto Serif JP", serif; }
 
         @media screen and (max-width: 1024px) {
-
             .teacher-name-list { grid-template-columns: repeat(2, 1fr); }
-
         }
-
         @media screen and (max-width: 768px) {
-
             .teacher-name-list { grid-template-columns: 1fr; gap: 0; }
-
             .teacher-details-list > li { flex-direction: column; gap: 3rem; padding: 5rem 0; }
-
             .teacher-details-list > li img { width: 100%; }
-
             .teacher-details-list h2 { font-size: 2.8rem; }
-
         }
-
     </style>
-
 </head>
-
-
 
 <body class="l-page l-lecturer">
 
-
-
     <div id="header-placeholder"></div>
 
-
-
     <div class="pc-frame">
-
         <aside id="sidebar-placeholder" class="pc pc-frame-left"></aside>
 
-
-
         <div class="pc-frame-right">
-
             <div class="bread pc">
-
-                <div class="wrap" style="padding:15px 0; font-size:1.1rem; color:#888;">HOME > エリオについて > 講師紹介</div>
-
+                <div class="wrap serif" style="padding:15px 0; font-size:1.1rem; color:#888;">HOME > エリオについて > 講師紹介</div>
             </div>
 
-
-
             <main id="contents">
-
                 <article class="l-main serif">
-
                     <!-- メインビジュアル -->
-
                     <section class="mv-md">
-
                         <div class="wrap">
-
                             <div class="title-box">
-
-                                <p class="title-head">講師紹介</p>
-
+                                <p class="title-head serif">講師紹介</p>
                                 <h1 class="title lora">LECTURER</h1>
-
                             </div>
-
                         </div>
-
                     </section>
-
-
 
                     <section class="teachers">
-
                         <div class="wrap">
-
                             <div class="head-text-box">
-
-                                <h2>難関指導実績が豊富な選抜された講師陣</h2>
-
-                                <p class="text noto">
-
+                                <h2 class="serif">難関指導実績が豊富な選抜された講師陣</h2>
+                                <p class="text serif">
                                     elioの講師は、最難関合格実績をもつ選抜された講師です。難関合格は偏差値とにらめっこしていても生まれません。<br>生徒の可能性を引き出す力は合格指導の経験で培われます。お子さま一人ひとりの能力や性格を見極め、合格へ向かう力を最大限に引き出します。
-
                                 </p>
-
                             </div>
 
-
-
                             <!-- 講師名リスト -->
-
                             <ul class="teacher-name-list">
-
-                                <li><a class="teacher-link" href="#teacher-takeyama"><span class="title">エリオ代表／小学５・６年生学年主任／算数</span><span class="name">竹山 隼矢</span></a></li>
-
-                                <li><a class="teacher-link" href="#teacher-yoshimoto"><span class="title">エリオ京都校 教室長／理科</span><span class="name">吉本 格</span></a></li>
-
-                                <li><a class="teacher-link" href="#teacher-endo"><span class="title">算数</span><span class="name">遠藤 幸治</span></a></li>
-
-                                <li><a class="teacher-link" href="#teacher-daido"><span class="title">算数</span><span class="name">大同 翔音</span></a></li>
-
-                                <li><a class="teacher-link" href="#teacher-tanigawa"><span class="title">国語</span><span class="name">谷川 誠</span></a></li>
-
-                                <li><a class="teacher-link" href="#teacher-senni"><span class="title">国語</span><span class="name">仙仁 透</span></a></li>
-
-                                <li><a class="teacher-link" href="#teacher-yamada"><span class="title">社会</span><span class="name">山田 将生</span></a></li>
-
-                                <li><a class="teacher-link" href="#teacher-yamazaki"><span class="title">英語</span><span class="name">山﨑 謙介</span></a></li>
-
+                                <li><a class="teacher-link" href="#teacher-takeyama"><span class="title serif">エリオ代表／小学５・６年生学年主任／算数</span><span class="name serif">竹山 隼矢</span></a></li>
+                                <li><a class="teacher-link" href="#teacher-yoshimoto"><span class="title serif">エリオ京都校 教室長／理科</span><span class="name serif">吉本 格</span></a></li>
+                                <li><a class="teacher-link" href="#teacher-endo"><span class="title serif">算数</span><span class="name serif">遠藤 幸治</span></a></li>
+                                <li><a class="teacher-link" href="#teacher-daido"><span class="title serif">算数</span><span class="name serif">大同 翔音</span></a></li>
+                                <li><a class="teacher-link" href="#teacher-tanigawa"><span class="title serif">国語</span><span class="name serif">谷川 誠</span></a></li>
+                                <li><a class="teacher-link" href="#teacher-senni"><span class="title serif">国語</span><span class="name serif">仙仁 透</span></a></li>
+                                <li><a class="teacher-link" href="#teacher-yamada"><span class="title serif">社会</span><span class="name serif">山田 将生</span></a></li>
+                                <li><a class="teacher-link" href="#teacher-yamazaki"><span class="title serif">英語</span><span class="name serif">山﨑 謙介</span></a></li>
                             </ul>
-
-
 
                             <!-- 講師詳細リスト -->
-
                             <ul class="teacher-details-list">
-
                                 <li id="teacher-takeyama">
-
                                     <img src="img/teacher-takeyama.jpg" alt="竹山 隼矢">
-
                                     <div class="text-box">
-
                                         <p class="info-box">
-
-                                            <span class="jpn">エリオ代表／算数</span>
-
+                                            <span class="jpn serif">エリオ代表／算数</span>
                                             <span class="en lora">Chief Executive Educator</span>
-
                                         </p>
-
-                                        <h2>竹山 隼矢</h2>
-
-                                        <p class="desc noto">大手進学塾で都内西部をはじめ中学受験の地域責任者を務める他、複数の基幹校舎で教室責任者として活躍。得点だけではなく、問題ごとの正誤を数値分析する独自の手法で子ども達の学びの癖を把握する。直接指導をする受験生の第一志望校合格率は80％をこえる。</p>
-
+                                        <h2 class="serif">竹山 隼矢</h2>
+                                        <p class="desc serif">大手進学塾で都内西部をはじめ中学受験の地域責任者を務める他、複数の基幹校舎で教室責任者として活躍。得点だけではなく、問題ごとの正誤を数値分析する独自の手法で子ども達の学びの癖を把握する。直接指導をする受験生の第一志望校合格率は80％をこえる。</p>
                                     </div>
-
                                 </li>
-
                                 <li id="teacher-yoshimoto">
-
                                     <img src="img/teacher-yoshimoto.jpg" alt="吉本 格">
-
                                     <div class="text-box">
-
                                         <p class="info-box">
-
-                                            <span class="jpn">エリオ京都校 教室長／理科</span>
-
+                                            <span class="jpn serif">エリオ京都校 教室長／理科</span>
                                             <span class="en lora">Senior Executive Educator</span>
-
                                         </p>
-
-                                        <h2>吉本 格</h2>
-
-                                        <p class="desc noto">大手塾で全国の教室を統括する高校入試数学科責任者、神奈川県内の高校入試部門統括、エリアマネージャーなどを歴任。算数・数学に関する本を6冊出版。授業時にはコーチとして、時にはカウンセラーとして、お子さまをしっかりと導きます。</p>
-
+                                        <h2 class="serif">吉本 格</h2>
+                                        <p class="desc serif">大手塾で全国の教室を統括する高校入試数学科責任者、神奈川県内の高校入試部門統括、エリアマネージャーなどを歴任。算数・数学に関する本を6冊出版。授業時にはコーチとして、時にはカウンセラーとして、お子さまをしっかりと導きます。</p>
                                     </div>
-
                                 </li>
-
                                 <li id="teacher-endo">
-
                                     <img src="img/teacher-endo.jpg" alt="遠藤 幸治">
-
                                     <div class="text-box">
-
                                         <p class="info-box">
-
-                                            <span class="jpn">算数</span>
-
+                                            <span class="jpn serif">算数</span>
                                             <span class="en lora">Executive Educator</span>
-
                                         </p>
-
-                                        <h2>遠藤 幸治</h2>
-
-                                        <p class="desc noto">長年にわたり大手進学塾にて年長～小3を専門に指導してきた経験を活かし、子どもたちの可能性を最大限に引き出す指導を行う。日々触れ合う中で小さな変化に気付き、『良いところをたくさん見つけて伸ばす』ことを大切にした指導をします。</p>
-
+                                        <h2 class="serif">遠藤 幸治</h2>
+                                        <p class="desc serif">長年にわたり大手進学塾にて年長～小3を専門に指導してきた経験を活かし、子どもたちの可能性を最大限に引き出す指導を行う。日々触れ合う中で小さな変化に気付き、『良いところをたくさん見つけて伸ばす』ことを大切にした指導をします。</p>
                                     </div>
-
                                 </li>
-
                                 <li id="teacher-daido">
-
                                     <img src="img/teacher-daido.jpg" alt="大同 翔音">
-
                                     <div class="text-box">
-
                                         <p class="info-box">
-
-                                            <span class="jpn">算数</span>
-
+                                            <span class="jpn serif">算数</span>
                                             <span class="en lora">Executive Educator</span>
-
                                         </p>
-
-                                        <h2>大同 翔音</h2>
-
-                                        <p class="desc noto">難関中受験の指導歴は15年を超え、近年では大手模試の作問にも従事。正解だけを求めた知識の詰め込みではなく、理解に基づくインプットと、自ら考え説明できるアウトプットまでを重視した授業を展開。</p>
-
+                                        <h2 class="serif">大同 翔音</h2>
+                                        <p class="desc serif">難関中受験の指導歴は15年を超え、近年では大手模試の作問にも従事。正解だけを求めた知識の詰め込みではなく、理解に基づくインプットと、自ら考え説明できるアウトプットまでを重視した授業を展開。</p>
                                     </div>
-
                                 </li>
-
                                 <li id="teacher-senni">
-
                                     <img src="img/teacher-yamaguchi.jpg" alt="山口 雄大">
-
                                     <div class="text-box">
-
                                         <p class="info-box">
-
-                                            <span class="jpn">国語</span>
-
+                                            <span class="jpn serif">国語</span>
                                             <span class="en lora">Educator</span>
-
                                         </p>
-
-                                        <h2>山口 雄大</h2>
-
-                                        <p class="desc noto">受験国語の伝道者。子どもが生来保有する論理性を活かした「シンプルに考える」授業、精密で情理を備えた記述添削指導は比類がない。開成・桜蔭を筆頭に、薫陶を受けた塾生は幅広く、語り口のユーモアとエスプリ、またドラマの虜になった教え子たちは、官僚から詩人まで多士済々。</p>
-
+                                        <h2 class="serif">山口 雄大</h2>
+                                        <p class="desc serif">受験国語の伝道者。子どもが生来保有する論理性を活かした「シンプルに考える」授業、精密で情理を備えた記述添削指導は比類がない。開成・桜蔭を筆頭に、薫陶を受けた塾生は幅広く、語り口のユーモアとエスプリ、またドラマの虜になった教え子たちは、官僚から詩人まで多士済々。</p>
                                     </div>
-
                                 </li>
-
                                 <li id="teacher-yamada">
-
                                     <img src="img/teacher-yamada.jpg" alt="山田 将生">
-
                                     <div class="text-box">
-
                                         <p class="info-box">
-
-                                            <span class="jpn">社会</span>
-
+                                            <span class="jpn serif">社会</span>
                                             <span class="en lora">Educator</span>
-
                                         </p>
-
-                                        <h2>山田 将生</h2>
-
-                                        <p class="desc noto">大手進学塾で10年以上にわたり難関校受験指導に携わり、御三家・神奈川御三家中学をはじめ多くの合格実績を出した後、地方議員を経て現職。全47都道府県を訪れ各地の事情にも精通し、豊富な知識と経験に裏打ちされた授業を展開。</p>
-
+                                        <h2 class="serif">山田 将生</h2>
+                                        <p class="desc serif">大手進学塾で10年以上にわたり難関校受験指導に携わり、御三家・神奈川御三家中学をはじめ多くの合格実績を出した後、地方議員を経て現職。全47都道府県を訪れ各地の事情にも精通し、豊富な知識と経験に裏打ちされた授業を展開。</p>
                                     </div>
-
                                 </li>
-
                                 <li id="teacher-yamazaki">
-
                                     <img src="img/teacher-yamazaki.jpg" alt="山﨑 謙介">
-
                                     <div class="text-box">
-
                                         <p class="info-box">
-
-                                            <span class="jpn">英語</span>
-
+                                            <span class="jpn serif">英語</span>
                                             <span class="en lora">Educator</span>
-
                                         </p>
-
-                                        <h2>山﨑 謙介</h2>
-
-                                        <p class="desc noto">実践的な英語力を育む指導に加え、中学受験・高校受験を見据えた文法・読解指導においても高い実績を持つ。お子さまが英語を楽しみながら、かつ確実な得点力に繋がるような授業を展開します。</p>
-
+                                        <h2 class="serif">山﨑 謙介</h2>
+                                        <p class="desc serif">実践的な英語力を育む指導に加え、中学受験・高校受験を見据えた文法・読解指導においても高い実績を持つ。お子さまが英語を楽しみながら、かつ確実な得点力に繋がるような授業を展開します。</p>
                                     </div>
-
                                 </li>
-
                             </ul>
-
                         </div>
-
                     </section>
 
-
-
                     <div id="cta-placeholder"></div>
-
                 </article>
-
             </main>
 
-
-
             <div id="footer-placeholder"></div>
-
         </div>
-
     </div>
 
-
-
     <script>
-
         async function loadPart(id, path) {
-
             try {
-
                 const response = await fetch(path);
-
                 if (response.ok) {
-
                     const html = await response.text();
-
                     document.getElementById(id).innerHTML = html;
-
                 }
-
             } catch (e) {
-
                 console.error(e);
-
             }
-
         }
 
-
-
         window.addEventListener('DOMContentLoaded', () => {
-
             loadPart('header-placeholder', 'parts/header.html');
-
             loadPart('sidebar-placeholder', 'parts/menu.html');
-
             loadPart('cta-placeholder', 'parts/CTA.html');
-
             loadPart('footer-placeholder', 'parts/footer.html');
-
         });
-
     </script>
-
 </body>
-
 </html>
