@@ -28,7 +28,7 @@
             z-index: 1000;
         }
 
-        /* ロゴエリア：パディングで上下左右に余白を調整 */
+        /* ロゴエリア */
         .l-side .logo-unit {
             padding: 1.2rem 1.5rem;
             text-align: center;
@@ -45,7 +45,7 @@
             display: block;
         }
 
-        /* ナビゲーションリンク：フォントを明朝体の太字に変更 */
+        /* ナビゲーションリンク */
         .l-side .link {
             border-top: 1px solid #eee;
             padding: 0;
@@ -74,12 +74,12 @@
             transition: .3s;
         }
 
-        /* サイドバーホバー時 */
-        .l-side .link .l-pulldown:hover .head {
+        /* アクティブ時のヘッドスタイル（JavaScriptでクラスを制御） */
+        .l-side .link .l-pulldown.is-active .head {
             background: #982020;
             color: #fff;
         }
-        .l-side .link .l-pulldown:hover .head .icon {
+        .l-side .link .l-pulldown.is-active .head .icon {
             color: #fff;
             transform: translateX(3px);
         }
@@ -97,20 +97,19 @@
             color: #fff;
             visibility: hidden;
             opacity: 0;
-            /* 閉じる時のアニメーションにディレイを追加して操作性を向上 */
             transition: opacity .3s, transform .3s, visibility .3s;
-            transition-delay: 0.15s; 
             transform: translateX(-10px);
             overflow-y: auto;
             box-sizing: border-box;
+            pointer-events: none; /* 閉じている時はイベントを無視 */
         }
         
-        /* ホバー時は即座に表示させる */
-        .l-side .link .l-pulldown:hover .body {
+        /* アクティブ時のボディスタイル */
+        .l-side .link .l-pulldown.is-active .body {
             visibility: visible;
             opacity: 1;
             transform: translateX(0);
-            transition-delay: 0s;
+            pointer-events: auto; /* 開いている時はリンクをクリック可能に */
         }
 
         /* タイトルテキスト */
@@ -153,7 +152,6 @@
             display: block;
             transition: transform .6s cubic-bezier(0.2, 1, 0.3, 1);
             opacity: 1;
-            image-rendering: -webkit-optimize-contrast;
             image-rendering: auto;
             backface-visibility: hidden;
             transform: translateZ(0);
@@ -163,7 +161,7 @@
             transform: scale(1.04) translateZ(0);
         }
 
-        /* ラベル：フォントを明朝体の太字に変更 */
+        /* ラベル */
         .menu-item .label {
             display: flex;
             align-items: center;
@@ -198,14 +196,14 @@
         }
         .l-side .side-tel .num {
             display: block;
-            font-size: 2.1rem; /* 1.8remから2.1remへ修正反映 */
+            font-size: 2.1rem;
             font-weight: 700;
             font-family: "Lora", serif;
             color: #111;
         }
         .l-side .side-tel .time {
             display: block;
-            font-size: 1.1rem; /* 0.85remから1.1remへ修正反映 */
+            font-size: 1.1rem;
             color: #999;
             margin-top: 0.5rem;
         }
@@ -224,7 +222,7 @@
             background: #b12525;
         }
         .l-side .side-contact-btn span {
-            font-size: 1.3rem; /* 1.1remから1.3remへ修正反映 */
+            font-size: 1.3rem;
             font-weight: 700;
             margin-top: 0.8rem;
         }
@@ -234,12 +232,10 @@
 
 <div class="l-side">
     <div class="side-top">
-        <!-- ロゴエリア -->
         <div class="logo-unit">
-            <a href="index.html"><img src="img/logo.png" alt="elio"></a>
+            <a href="index.html"><img src="https://via.placeholder.com/200x60?text=elio+LOGO" alt="elio"></a>
         </div>
 
-        <!-- ナビゲーションリンク -->
         <ul class="link">
             <li class="l-pulldown">
                 <a href="about" class="head"><span>エリオについて</span> <i class="icon">❯</i></a>
@@ -248,13 +244,13 @@
                     <ul class="menu-grid">
                         <li class="menu-item">
                             <a href="about-belief">
-                                <div class="img-box"><img src="img/facility-door.jpg" alt="エリオの信念"></div>
+                                <div class="img-box"><img src="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=800" alt="エリオの信念"></div>
                                 <span class="label">エリオの信念</span>
                             </a>
                         </li>
                         <li class="menu-item">
                             <a href="about-teacher">
-                                <div class="img-box"><img src="img/teacher-three.jpg" alt="講師紹介"></div>
+                                <div class="img-box"><img src="https://images.unsplash.com/photo-1524178232363-1fb28f74b0cd?auto=format&fit=crop&q=80&w=800" alt="講師紹介"></div>
                                 <span class="label">講師紹介</span>
                             </a>
                         </li>
@@ -269,25 +265,25 @@
                     <ul class="menu-grid">
                         <li class="menu-item">
                             <a href="#course-early-elementary-students">
-                                <div class="img-box"><img src="img/course-early-elementary-students.jpg" alt="小学1年生〜小学2年生"></div>
+                                <div class="img-box"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800" alt="小学1年生〜小学2年生"></div>
                                 <span class="label">小学1年生〜小学2年生</span>
                             </a>
                         </li>
                         <li class="menu-item">
                             <a href="course-late-elementary-students">
-                                <div class="img-box"><img src="img/course-late-elementary-students.jpg" alt="小学3年生〜小学6年生"></div>
+                                <div class="img-box"><img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800" alt="小学3年生〜小学6年生"></div>
                                 <span class="label">小学3年生〜小学6年生</span>
                             </a>
                         </li>
                         <li class="menu-item">
                             <a href="course-one-on-one-instruction">
-                                <div class="img-box"><img src="img/course-one-on-one-instruction.jpg" alt="elioの個別指導"></div>
+                                <div class="img-box"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=800" alt="elioの個別指導"></div>
                                 <span class="label">elioの個別指導</span>
                             </a>
                         </li>
                         <li class="menu-item">
                             <a href="course-junior-and-high">
-                                <div class="img-box"><img src="img/course-junior-and-high.jpg" alt="中学生・高校生"></div>
+                                <div class="img-box"><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800" alt="中学生・高校生"></div>
                                 <span class="label">中学生・高校生</span>
                             </a>
                         </li>
@@ -313,6 +309,55 @@
         </a>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const pulldowns = document.querySelectorAll('.l-pulldown');
+        const MIN_OPEN_TIME = 1000; // 最低保持時間（ミリ秒）
+
+        pulldowns.forEach(el => {
+            let openTimestamp = 0;
+            let closeTimer = null;
+            let isMouseOver = false;
+
+            const openMenu = () => {
+                // 他のメニューが開いている場合は即座に閉じる
+                pulldowns.forEach(other => {
+                    if (other !== el) other.classList.remove('is-active');
+                });
+
+                if (closeTimer) clearTimeout(closeTimer);
+                
+                if (!el.classList.contains('is-active')) {
+                    el.classList.add('is-active');
+                    openTimestamp = Date.now();
+                }
+            };
+
+            const closeMenu = () => {
+                const elapsed = Date.now() - openTimestamp;
+                const remaining = Math.max(0, MIN_OPEN_TIME - elapsed);
+
+                // 1秒経過していなければ残りの時間待機、経過していれば即座に（あるいは微小な遊びを持って）閉じる
+                closeTimer = setTimeout(() => {
+                    if (!isMouseOver) {
+                        el.classList.remove('is-active');
+                    }
+                }, remaining);
+            };
+
+            el.addEventListener('mouseenter', () => {
+                isMouseOver = true;
+                openMenu();
+            });
+
+            el.addEventListener('mouseleave', () => {
+                isMouseOver = false;
+                closeMenu();
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
