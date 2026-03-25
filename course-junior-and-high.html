@@ -68,6 +68,13 @@
         .main-list h3 { font-size: 2.4rem; font-weight: 700; margin-bottom: 2rem; color: #111; position: relative; padding-left: 2rem; border-left: 4px solid #9e9779; }
         .main-list .text { font-size: 1.5rem; color: #444; line-height: 2.4; }
 
+        .message-sec { padding: 10rem 0; background: #fafafa; border-top: 1px solid #eee; }
+        .message-sec .flex-box { display: flex; gap: 8rem; align-items: center; }
+        .message-sec img { width: 40%; flex-shrink: 0; border-radius: 50% 50% 0 0; }
+        .message-sec .title-head { font-size: 1.4rem; color: #9e9779; margin-bottom: 1rem; font-weight: 700; display: block; }
+        .message-sec h2 { font-size: 3rem; margin-bottom: 3rem; line-height: 1.4; color: #111; }
+        .message-sec .text { font-size: 1.5rem; line-height: 2.4; color: #444; }
+
         @media screen and (max-width: 768px) {
             .pc-frame-left { display: none; }
             .pc-frame-right { width: 100%; }
@@ -77,6 +84,8 @@
             .head-text-box h2 { font-size: 2.2rem; }
             .main-list li, .main-list li:nth-child(even) { flex-direction: column; gap: 3rem; padding: 5rem 0; }
             .main-list img { width: 100%; }
+            .message-sec .flex-box { flex-direction: column; gap: 4rem; text-align: center; }
+            .message-sec img { width: 80%; }
         }
     </style>
 </head>
@@ -105,18 +114,17 @@
                         </div>
                     </section>
 
-                    <!-- 中学生セクション -->
                     <section class="intro-sec">
                         <div class="wrap">
                             <div class="head-text-box anime bottom-in">
-                                <span class="title-head">中学生</span>
+                                <span class="title-head">中学生・高校生</span>
                                 <h2>
-                                    ハイレベルな授業で<br>
-                                    国立・開成・早慶・難関高校を目指す
+                                    難関校合格へ向けて高い目標に本気で挑む<br>
+                                    そして自ら人生を切り拓く「生きる力」を養う
                                 </h2>
                                 <p class="text noto">
-                                    国立・開成・早慶・都立トップ校などの難関高校合格を目指し、<br>
-                                    入試に向けた教科指導から定期テスト対策・進路指導など、選抜された講師陣が徹底指導します。
+                                    国立・開成・早慶、東大・京大・医学部などの難関校合格を目指し、選抜された講師陣が徹底指導します。<br>
+                                    入試に向けた教科指導だけでなく、自立学習の管理やキャリア教育を通じて、将来を見据えた本質的な学力を育てます。
                                 </p>
                             </div>
 
@@ -125,9 +133,9 @@
                                     <img src="img/senior_img_01.jpg" alt="elioメソッド">
                                     <div class="text-box">
                                         <span class="lora number">01</span>
-                                        <h3>難関高校合格のためのelioメソッド</h3>
+                                        <h3>難関受験合格のためのelioメソッド</h3>
                                         <p class="text noto">
-                                            一人ひとりを丁寧に対応する少人数授業で、生徒と対話しながら学習単元の解説を行っていきます。その中で「つまずき」を指摘し、生徒自らが自己解決できるように指導していきます。自ら考えていく力、解決する力を身につけていくことで、大学入試にも繋がる学力を育てます。合格実績豊富な難関校専門の講師陣によるハイレベルな授業で、elioが志望校合格までフルサポートします。
+                                            一人ひとりを丁寧に対応する少人数授業で、生徒と対話しながら学習単元の解説を行っていきます。その中で「つまずき」を指摘し、生徒自らが自己解決できるように指導していきます。自ら考えていく力、解決する力を身につけていくことで、志望校合格のみならず、その先にも繋がる確かな学力を育てます。
                                         </p>
                                     </div>
                                 </li>
@@ -135,19 +143,29 @@
                                     <img src="img/senior_img_02.jpg" alt="英語4技能">
                                     <div class="text-box">
                                         <span class="lora number">02</span>
-                                        <h3>英語4技能をマスターし<br>受験・検定試験に備える</h3>
+                                        <h3>英語4技能をマスターし受験・検定に備える</h3>
                                         <p class="text noto">
-                                            大学入試制度導入に伴い、英語指導にはオンライン英会話OLECOを導入しています。今までの学習塾の指導では対応できなかった「聞く」力と「話す」力を伸ばしていきます。学習指導要領に準拠したテキストなので、学校で習っている単元と同じ内容で英会話をマスターしていきます。中学卒業時には英検準2級レベルの英語力を身につけることが可能です。
+                                            オンライン英会話OLECOを導入し、「聞く」「話す」力を効率的に伸ばします。学習指導要領に準拠したテキストで、学校の授業や定期テスト対策と並行しながら本格的な英会話を習得。各種検定試験や新制度の大学入試にも自信を持って臨める英語力を養います。
                                         </p>
                                     </div>
                                 </li>
                                 <li class="anime bottom-in">
-                                    <img src="img/senior_img_03.jpg" alt="定期テスト・内部進学">
+                                    <img src="img/senior_img_03.jpg" alt="定期テスト対策">
                                     <div class="text-box">
                                         <span class="lora number">03</span>
                                         <h3>定期テスト対策・内部進学も完全対応</h3>
                                         <p class="text noto">
-                                            高校受験では内申点をあげることも重要です。そのために、毎回の定期テスト対策にもしっかり対応します。学校の教材に対応したワークや、教科書の範囲に対応したプリント教材でそれぞれの学校の範囲に合わせて指導をします。私立・国立の内部進学に向けたテスト対策にも同様に対応します。学習計画の立案からテスト後の解き直しまでお任せください。
+                                            高校受験の鍵となる内申点対策として、各学校の教材に合わせた個別指導を行います。私立・国立の内部進学に向けたハイレベルなテスト対策も実施。学習計画の立案からテスト後の解き直し、そして進学後の先取り学習まで、プロの講師陣が徹底して伴走します。
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="anime bottom-in">
+                                    <img src="img/2402_senior_img_04.png" alt="大学入試プロフェッショナル">
+                                    <div class="text-box">
+                                        <span class="lora number">04</span>
+                                        <h3>変革する大学入試に対応する専門指導</h3>
+                                        <p class="text noto">
+                                            共通テストや英語民間検定など、複雑化する大学入試。一人ひとりに合わせた的確な学習計画と徹底した進捗管理、選抜された講師陣による難関大学対策指導で、志望校合格までを最短距離で結びます。合格をゴールとせず、社会で「突破する力」を持つ人材を育成します。
                                         </p>
                                     </div>
                                 </li>
@@ -155,53 +173,18 @@
                         </div>
                     </section>
 
-                    <!-- 高校生セクション -->
-                    <section class="intro-sec" style="background-color: #fafafa;">
+                    <section class="message-sec">
                         <div class="wrap">
-                            <div class="head-text-box anime bottom-in">
-                                <span class="title-head">高校生</span>
-                                <h2>
-                                    東大・京大・医学部・難関大学合格へ<br>
-                                    高い目標に向け本気で挑む
-                                </h2>
-                                <p class="text noto">
-                                    東大・京大などの難関国立、医学部、難関大学合格を目指し、選抜された講師陣と本気で挑んでいきます。<br>
-                                    受験勉強に留まらない、自ら人生を切り拓く「生きる力」を養います。
-                                </p>
+                            <div class="flex-box anime bottom-in">
+                                <img src="img/senior_message_img.png" alt="講師メッセージ">
+                                <div class="text-box">
+                                    <span class="title-head lora">MESSAGE</span>
+                                    <h2 class="serif">志望校合格を、未来への通過点に。</h2>
+                                    <p class="text noto">
+                                        中学生・高校生の時期の学習は、単なる受験突破のためだけのものではありません。自ら目標を掲げ、困難に立ち向かい、それを乗り越える経験こそが、将来社会で活躍するための「生きる力」の源泉となります。elioでは、選抜された講師陣が学習面だけでなく、精神面やキャリア形成までを見据えて伴走します。自らの意志で歩み始める生徒たちを、私たちは全力で後押しいたします。
+                                    </p>
+                                </div>
                             </div>
-
-                            <ol class="main-list">
-                                <li class="anime bottom-in">
-                                    <img src="img/2402_senior_img_04.png" alt="大学入試改革">
-                                    <div class="text-box">
-                                        <span class="lora number">01</span>
-                                        <h3>変わる大学入試には<br>プロフェッショナルの力が必要</h3>
-                                        <p class="text noto">
-                                            大学入学共通テストの導入、英語試験の民間検定の採用など、大学入試制度が大きく変わっています。志望校によって求められる学力もこれまでとは変わり、大学入試は丸暗記など知識の詰め込みでは攻略できなくなっていきます。一人ひとりに合わせた的確な学習計画と管理、選抜された講師陣の難関大学対策指導で志望校合格を目指します。
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="anime bottom-in">
-                                    <img src="img/senior_img_05.jpg" alt="逆算型学習">
-                                    <div class="text-box">
-                                        <span class="lora number">02</span>
-                                        <h3>入試本番から逆算した学習で合格を目指す</h3>
-                                        <p class="text noto">
-                                            大学受験は、自立学習も大切です。逆を言えば、自立学習を無駄なく、その時々で最善の選択ができれば志望校合格へ大きく近づきます。受験科目の学習をいつまでにどこまで完了させるかをelioの講師陣が徹底的に管理します。志望校とお子さまのレベルを的確に判断し、段階的にスケジュールを立て、合格までの理想の学力を身につけていきます。
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="anime bottom-in">
-                                    <img src="img/senior_img_06.jpg" alt="未来を見据えた指導">
-                                    <div class="text-box">
-                                        <span class="lora number">03</span>
-                                        <h3>大学合格をゴールとしない<br>未来を見据えた指導</h3>
-                                        <p class="text noto">
-                                            elioの教育は年長から小学校、中学校、高校と一貫して、将来を見据えた学びです。社会に出たあと「自ら考え、学び、それを突破する力」が重要になっていきます。自分の将来の姿を、志を持ちながら学習することは、学ぶ意欲を高めるだけでなく、知性や人間力の伸長を図る上でもとても効果が大きいと考えられます。
-                                        </p>
-                                    </div>
-                                </li>
-                            </ol>
                         </div>
                     </section>
 
