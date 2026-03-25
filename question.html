@@ -18,8 +18,9 @@
 
         html { font-size: 62.5%; scroll-behavior: smooth; }
 
-        body {
-            font-family: "Noto Sans JP", sans-serif;
+        /* 全ての要素で明朝体を優先的に使用する設定 */
+        body, button, input, select, textarea {
+            font-family: "Noto Serif JP", "Lora", serif;
             font-size: 1.6rem; line-height: 1.8; color: #111; overflow-x: hidden; background: #fff;
         }
 
@@ -29,7 +30,8 @@
 
         .serif { font-family: "Noto Serif JP", serif; }
         .lora { font-family: Lora, serif; letter-spacing: .05em; }
-        .noto { font-family: "Noto Sans JP", sans-serif; }
+        /* notoクラス指定箇所も明朝体に統一 */
+        .noto { font-family: "Noto Serif JP", serif; }
 
         @media screen and (min-width: 769px) {
             .sp { display: none !important; }
@@ -68,6 +70,7 @@
             font-size: 1.4rem;
             font-weight: 700;
             transition: .3s;
+            font-family: "Noto Serif JP", serif;
         }
         .qa-menu .md-btn:hover { border-color: #9e9779; background: #fdfaf0; color: #9e9779; }
         .qa-menu .icon { margin-left: 1rem; color: #ccc; }
@@ -90,6 +93,7 @@
             font-weight: 600;
             cursor: pointer;
             transition: .3s;
+            font-family: "Noto Serif JP", serif;
         }
         .acc-btn:hover { color: #9e9779; }
         .acc-btn .icon { 
@@ -167,9 +171,9 @@
                     <div class="qa-menu">
                         <div class="wrap">
                             <ul class="list anime bottom-in">
-                                <li><a href="#sec1" class="md-btn noto">エリオについて <span class="icon">▼</span></a></li>
-                                <li><a href="#sec2" class="md-btn noto">入会について <span class="icon">▼</span></a></li>
-                                <li><a href="#sec3" class="md-btn noto">授業について <span class="icon">▼</span></a></li>
+                                <li><a href="#sec1" class="md-btn">エリオについて <span class="icon">▼</span></a></li>
+                                <li><a href="#sec2" class="md-btn">入会について <span class="icon">▼</span></a></li>
+                                <li><a href="#sec3" class="md-btn">授業について <span class="icon">▼</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -183,48 +187,48 @@
                                 <div class="acc-area">
                                     <div class="md-acc">
                                         <input id="acc1" class="acc-check" type="checkbox" />
-                                        <label for="acc1" class="acc-btn noto">
+                                        <label for="acc1" class="acc-btn">
                                             Q　なぜ会員制を導入しているのですか。
                                             <span class="icon"></span>
                                         </label>
                                         <div class="acc-body">
-                                            <div class="box-in noto">
+                                            <div class="box-in">
                                                 お預かりしたお子さま一人ひとりを、責任をもって志望校合格を通過点とした未来へのプランを提示するためです。また、当塾の会員権利はお子さまだけでなくご家庭に付与いたします。
                                             </div>
                                         </div>
                                     </div>
                                     <div class="md-acc">
                                         <input id="acc2" class="acc-check" type="checkbox" />
-                                        <label for="acc2" class="acc-btn noto">
+                                        <label for="acc2" class="acc-btn">
                                             Q　他の塾との違いは何ですか。
                                             <span class="icon"></span>
                                         </label>
                                         <div class="acc-body">
-                                            <div class="box-in noto">
+                                            <div class="box-in">
                                                 エリオは名前の通り「難関受験専門」の学習塾です。選抜された講師、学習に集中できいつでも講師に質問できる環境、実績のある講師陣が創り出すオリジナル教材など難関受験を突破するためのメソッドを用意しております。
                                             </div>
                                         </div>
                                     </div>
                                     <div class="md-acc">
                                         <input id="acc3" class="acc-check" type="checkbox" />
-                                        <label for="acc3" class="acc-btn noto">
+                                        <label for="acc3" class="acc-btn">
                                             Q　どのような授業形式ですか。
                                             <span class="icon"></span>
                                         </label>
                                         <div class="acc-body">
-                                            <div class="box-in noto">
+                                            <div class="box-in">
                                                 1クラス5名〜8名の少人数のグループ指導と、学習する目的に合わせてオーダーメイドできる個別指導がございます。
                                             </div>
                                         </div>
                                     </div>
                                     <div class="md-acc">
                                         <input id="acc4" class="acc-check" type="checkbox" />
-                                        <label for="acc4" class="acc-btn noto">
+                                        <label for="acc4" class="acc-btn">
                                             Q　校舎はどこにありますか。
                                             <span class="icon"></span>
                                         </label>
                                         <div class="acc-body">
-                                            <div class="box-in noto">
+                                            <div class="box-in">
                                                 都内に茗荷谷駅前本校・恵比寿校、京都に出町柳校がございます。詳しくは校舎案内をご覧ください。<br>
                                                 <a href="facilities/" class="link-btn-inline">校舎案内はこちら</a>
                                             </div>
@@ -244,24 +248,24 @@
                                 <div class="acc-area">
                                     <div class="md-acc">
                                         <input id="acc5" class="acc-check" type="checkbox" />
-                                        <label for="acc5" class="acc-btn noto">
+                                        <label for="acc5" class="acc-btn">
                                             Q　入会までの流れを教えてください。
                                             <span class="icon"></span>
                                         </label>
                                         <div class="acc-body">
-                                            <div class="box-in noto">
+                                            <div class="box-in">
                                                 Web・お電話からお問い合わせください。入会説明会または体験授業へご参加いただいた後、保護者面談・学習相談を行います。その後入会審査を通過された方に会員資格を進呈いたしますので、正式に入会のお申し込みを承ります。
                                             </div>
                                         </div>
                                     </div>
                                     <div class="md-acc">
                                         <input id="acc6" class="acc-check" type="checkbox" />
-                                        <label for="acc6" class="acc-btn noto">
+                                        <label for="acc6" class="acc-btn">
                                             Q　体験授業を受けることはできますか。
                                             <span class="icon"></span>
                                         </label>
                                         <div class="acc-body">
-                                            <div class="box-in noto">
+                                            <div class="box-in">
                                                 受けられます。Web・お電話でお問い合わせしていただき、体験授業の日時を担当の講師と調整していただき、ご来塾ください。保護者の方の見学も可能です。教室の雰囲気や授業の様子などをご覧ください。
                                             </div>
                                         </div>
@@ -280,36 +284,36 @@
                                 <div class="acc-area">
                                     <div class="md-acc">
                                         <input id="acc7" class="acc-check" type="checkbox" />
-                                        <label for="acc7" class="acc-btn noto">
+                                        <label for="acc7" class="acc-btn">
                                             Q　授業の始まりは何時からですか。
                                             <span class="icon"></span>
                                         </label>
                                         <div class="acc-body">
-                                            <div class="box-in noto">
+                                            <div class="box-in">
                                                 授業の始まりは各教室、各学年のグループ指導、個別指導によって異なります。閉室まで自習も可能です。詳しくは教室までお問い合わせください。
                                             </div>
                                         </div>
                                     </div>
                                     <div class="md-acc">
                                         <input id="acc8" class="acc-check" type="checkbox" />
-                                        <label for="acc8" class="acc-btn noto">
+                                        <label for="acc8" class="acc-btn">
                                             Q　1週間の通塾日数はどのぐらいですか。
                                             <span class="icon"></span>
                                         </label>
                                         <div class="acc-body">
-                                            <div class="box-in noto">
+                                            <div class="box-in">
                                                 各学年のグループ指導、個別指導によって異なります。通常授業の他にゼミや季節ごとの講習もございます。詳しくは教室までお問い合わせください。
                                             </div>
                                         </div>
                                     </div>
                                     <div class="md-acc">
                                         <input id="acc9" class="acc-check" type="checkbox" />
-                                        <label for="acc9" class="acc-btn noto">
+                                        <label for="acc9" class="acc-btn">
                                             Q　どんな教科を受講できますか。
                                             <span class="icon"></span>
                                         </label>
                                         <div class="acc-body">
-                                            <div class="box-in noto">
+                                            <div class="box-in">
                                                 各学年により異なります。詳しくはコース案内をご覧ください。<br>
                                                 <a href="course/" class="link-btn-inline">コース案内はこちら</a>
                                             </div>
