@@ -1,175 +1,5 @@
 <style>
     /* -----------------------------------------------------
-        CTAセクション設定
-    ----------------------------------------------------- */
-    .cta-container {
-        background: #fff;
-        /* 全体を明朝体に統一 */
-        font-family: "Noto Serif JP", serif;
-        font-weight: 600;
-    }
-
-    .cta-upper {
-        padding: 6rem 0 5rem;
-        border-top: 1px solid #eee;
-    }
-
-    .cta-wrap {
-        margin: 0 auto;
-        max-width: 1160px;
-        padding: 0 60px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .cta-main-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 5rem;
-    }
-
-    .cta-title-col {
-        flex: 1;
-    }
-    .cta-title-col .dash {
-        display: block;
-        width: 30px;
-        height: 1.5px;
-        background: #333;
-        margin-bottom: 1.2rem;
-    }
-    .cta-title-col .en {
-        font-size: 3.2rem;
-        color: #9e9779;
-        letter-spacing: 0.15em;
-        font-family: "Lora", serif;
-        line-height: 1;
-        margin-bottom: 0.8rem;
-        font-weight: 400;
-    }
-    .cta-title-col .jp {
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: #333;
-        margin-bottom: 1.5rem;
-        font-family: "Noto Serif JP", serif;
-    }
-    .cta-desc {
-        font-size: 1.15rem;
-        color: #555;
-        line-height: 1.8;
-        font-weight: 600;
-        font-family: "Noto Serif JP", serif;
-    }
-
-    .cta-action-col {
-        width: 38rem;
-        flex-shrink: 0;
-    }
-    .cta-tel-box {
-        border: 1px solid #ddd;
-        padding: 2.2rem 2.5rem;
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-        margin-bottom: 1.2rem;
-    }
-    .cta-tel-box svg {
-        width: 24px;
-        height: 24px;
-        color: #111;
-    }
-    .cta-tel-content {
-        flex-grow: 1;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .cta-tel-content .num {
-        font-size: 2.4rem;
-        font-weight: 700;
-        font-family: "Lora", serif;
-        color: #111;
-        line-height: 1;
-    }
-    .cta-tel-content .info {
-        font-size: 1rem;
-        font-weight: 600;
-        color: #666;
-        font-family: "Noto Serif JP", serif;
-    }
-
-    .cta-btn-red {
-        background: #982020;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 2.5rem 3rem;
-        text-decoration: none;
-        transition: background 0.3s;
-        font-family: "Noto Serif JP", serif;
-    }
-    .cta-btn-red:hover {
-        background: #b12525;
-    }
-    .cta-btn-red span {
-        font-size: 1.5rem;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-    }
-    .cta-btn-red svg {
-        width: 22px;
-        height: 22px;
-    }
-    .cta-btn-red .bar {
-        width: 20px;
-        height: 1.5px;
-        background: #fff;
-        opacity: 0.8;
-    }
-
-    .cta-lower {
-        background: #f0f0f0;
-        padding: 2rem 0;
-    }
-    .cta-nav-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 12px;
-    }
-    .cta-nav-item {
-        background: #333;
-        color: #fff;
-        padding: 2.2rem 1.2rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 1.2rem;
-        text-decoration: none;
-        transition: all 0.3s;
-        font-family: "Noto Serif JP", serif;
-    }
-    .cta-nav-item:hover {
-        background: #000;
-        transform: translateY(-3px);
-    }
-    .cta-nav-item svg {
-        width: 28px;
-        height: 28px;
-        opacity: 0.9;
-    }
-    .cta-nav-item span {
-        font-size: 1.15rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-    }
-
-    /* -----------------------------------------------------
         フッターセクション設定
     ----------------------------------------------------- */
     .l-footer {
@@ -195,6 +25,7 @@
         box-sizing: border-box;
     }
 
+    /* 上部ロゴ・説明エリア */
     .foot-top-area {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -232,9 +63,10 @@
         font-weight: 600;
     }
 
+    /* メインナビゲーション（3カラム） */
     .footer-sitemap {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 4カラムから3カラムに変更 */
+        grid-template-columns: repeat(3, 1fr);
         gap: 40px;
     }
     .sitemap-col .head {
@@ -277,6 +109,7 @@
         background: #fff;
     }
 
+    /* 右端：垂直テキストエリア */
     .foot-side-elements {
         position: absolute;
         right: 4%;
@@ -320,10 +153,8 @@
 
     /* レスポンシブ調整 */
     @media screen and (max-width: 1024px) {
-        .cta-upper { padding: 4rem 0; }
-        .cta-wrap, .l-footer .wrap { padding: 0 40px; }
-        .cta-main-row { flex-direction: column; gap: 3rem; text-align: center; }
-        .footer-sitemap { grid-template-columns: repeat(2, 1fr); gap: 40px 30px; }
+        .l-footer .wrap { padding: 0 40px; }
+        .footer-sitemap { gap: 40px 30px; }
     }
     @media screen and (max-width: 768px) {
         .l-footer { padding: 6rem 0; }
@@ -333,64 +164,6 @@
     }
 </style>
 
-<!-- CTAセクション -->
-<section class="cta-container">
-    <div class="cta-upper">
-        <div class="cta-wrap">
-            <div class="cta-main-row">
-                <div class="cta-title-col">
-                    <span class="dash"></span>
-                    <p class="en">CONTACT</p>
-                    <p class="jp">お問い合わせ</p>
-                    <p class="cta-desc">
-                        ご面談・資料請求等は、お電話もしくはフォームよりお問い合わせください。
-                    </p>
-                </div>
-                <div class="cta-action-col">
-                    <div class="cta-tel-box">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                        <div class="cta-tel-content">
-                            <span class="num">075-231-7711</span>
-                            <span class="info">窓口 [13:00〜20:00]</span>
-                        </div>
-                    </div>
-                    <a href="contact" class="cta-btn-red">
-                        <span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                            お問い合わせ・資料請求
-                        </span>
-                        <div class="bar"></div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="cta-lower">
-        <div class="cta-wrap">
-            <div class="cta-nav-grid">
-                <a href="about" class="cta-nav-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-                    <span>エリオについて</span>
-                </a>
-                <a href="course" class="cta-nav-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-                    <span>コース案内</span>
-                </a>
-                <a href="admission" class="cta-nav-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
-                    <span>入会までの流れ</span>
-                </a>
-                <a href="faq" class="cta-nav-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                    <span>よくある質問</span>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- フッターセクション -->
 <footer id="footer" class="l-footer">
     <div class="wrap">
         <div class="foot-top-area">
