@@ -84,7 +84,6 @@
         .anime.bottom-in { transform: translateY(30px); }
         .anime.blur { filter: blur(10px); }
         
-        /* スライド内のキーアニメーション */
         .anime.key { opacity: 0; filter: blur(10px); transform: translateY(10px); transition: 1.2s all ease; }
         .swiper-slide-active .anime.key.active { opacity: 1; filter: none; transform: translateY(0); }
         
@@ -134,7 +133,6 @@
         .slide-main { font-size: 5rem; line-height: 1.2; margin-bottom: 1rem; }
         .slide-sub { font-size: 2.2rem; margin-bottom: 3.5rem; font-weight: 500; }
         
-        /* ゲージアニメーション：背景の線を透明に変更 */
         .swiper-gauge { width: 60px; height: 2px; background: transparent; margin-bottom: 2rem; position: relative; overflow: hidden; }
         .gauge { position: absolute; top: 0; left: 0; height: 100%; background: #fff; width: 0; }
         .gauge.active { animation: gauge_anim 5s linear forwards; }
@@ -224,7 +222,6 @@
                             <div class="swiper-slide">
                                 <div class="md-lay zoom pc-over">
                                     <div class="lay-bg slide-img" style="background-image:url('https://images.unsplash.com/photo-1523050335456-c66a8a483d31?q=80&w=2070&auto=format&fit=crop')">
-                                        <img class="pc" src="/img/classroom-1.jpg" width="1720" height="960" alt="エリオ学びの志">
                                     </div>
                                     <div class="lay-content">
                                         <div class="in">
@@ -251,7 +248,6 @@
                             <div class="swiper-slide">
                                 <div class="md-lay zoom pc-over">
                                     <div class="lay-bg slide-img" style="background-image:url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop')">
-                                        <img class="pc" src="/img/classroom-2.jpg" width="1720" height="960" alt="STUDY×FUTURE">
                                     </div>
                                     <div class="lay-content">
                                         <div class="in">
@@ -332,7 +328,7 @@
                             <div class="point-list">
                                 <div class="point-item anime bottom-in">
                                     <div class="img-box">
-                                        <img src="/img/three-teachers.jpg" alt="選抜された講師陣">
+                                        <img src="https://images.unsplash.com/photo-1577896851231-70ef1460370e?q=80&w=2070&auto=format&fit=crop" alt="選抜された講師陣">
                                     </div>
                                     <div class="data">
                                         <span class="label lora">EDUCATOR INTRODUCTION</span>
@@ -445,17 +441,41 @@
                         </div>
                     </section>
 
-                    <div id="footer-placeholder"></div>
+                    <!-- CTAプレースホルダーを追加 -->
+                    <div id="cta-placeholder"></div>
 
                 </article>
             </main>
+
+            <!-- フッタープレースホルダーの位置を調整 -->
+            <div id="footer-placeholder"></div>
         </div>
     </div>
 
     <!-- スクリプト -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
+        // 外部パーツ読み込み関数
+        async function loadPart(id, path) {
+            try {
+                const response = await fetch(path);
+                if (response.ok) {
+                    const html = await response.text();
+                    const el = document.getElementById(id);
+                    if (el) el.innerHTML = html;
+                }
+            } catch (e) {
+                console.error('パーツの読み込みに失敗しました:', path, e);
+            }
+        }
+
         window.addEventListener('DOMContentLoaded', () => {
+            // パーツの読み込み実行
+            loadPart('header-placeholder', 'parts/header.html');
+            loadPart('sidebar-placeholder', 'parts/menu.html');
+            loadPart('cta-placeholder', 'parts/CTA.html');
+            loadPart('footer-placeholder', 'parts/footer.html');
+
             let swiper;
 
             function initGauge() {
@@ -485,7 +505,7 @@
             swiper = new Swiper('#top-mv', {
                 loop: true,
                 effect: 'fade',
-                speed: 50,
+                speed: 800,
                 simulateTouch: false,
                 pagination: {
                     el: '.mv-pagination',
