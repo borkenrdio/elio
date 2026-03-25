@@ -1,248 +1,223 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>elio Sidebar Navigation</title>
-    <style>
-        /* 基本スタイル */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
+<style>
+    /* -----------------------------------------------------
+        基本レイアウト
+    ----------------------------------------------------- */
+    .l-side {
+        border-right: 1px solid #dadada;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 18rem;
+        z-index: 1000;
+        font-family: "Noto Serif JP", serif;
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
 
-        /* レイアウト基本設定 */
+    /* -----------------------------------------------------
+        スマホ専用ヘッダーバー
+    ----------------------------------------------------- */
+    .sp-bar {
+        display: none; /* PCでは非表示 */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background: #fff;
+        border-bottom: 1px solid #eee;
+        z-index: 1100;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    .sp-bar .sp-logo img {
+        height: 30px;
+        width: auto;
+    }
+    .menu-trigger {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+    }
+    .menu-trigger span {
+        display: block;
+        position: absolute;
+        left: 5px;
+        width: 20px;
+        height: 1.5px;
+        background: #333;
+        transition: all 0.3s;
+    }
+    .menu-trigger span:nth-child(1) { top: 10px; }
+    .menu-trigger span:nth-child(2) { top: 18px; }
+
+    /* メニュー開閉時のボタンアニメーション */
+    .is-active .menu-trigger span:nth-child(1) { transform: translateY(4px) rotate(45deg); }
+    .is-active .menu-trigger span:nth-child(2) { transform: translateY(-4px) rotate(-45deg); }
+
+    /* -----------------------------------------------------
+        メニュー内コンテンツ
+    ----------------------------------------------------- */
+    .l-side .logo-unit {
+        padding: 1.2rem 1.5rem;
+        text-align: center;
+        line-height: 0;
+        box-sizing: border-box;
+    }
+    .l-side .logo-unit a { display: block; }
+    .l-side .logo-unit img { width: 100%; height: auto; display: block; }
+
+    .l-side .link { border-top: 1px solid #eee; padding: 0; margin: 0; list-style: none; }
+    .l-side .link > li { border-bottom: 1px solid #eee; }
+    .l-side .link .l-pulldown .head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2.2vh 2rem;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-decoration: none;
+        color: #333;
+        transition: .3s;
+        background: #fff;
+    }
+    .l-side .link .l-pulldown .head .icon { font-size: 0.9rem; color: #ccc; transition: .3s; }
+
+    .l-side .link .l-pulldown:hover .head { background: #982020; color: #fff; }
+    .l-side .link .l-pulldown:hover .head .icon { color: #fff; transform: translateX(3px); }
+
+    /* メガメニュー本体 (PC) */
+    .l-side .link .l-pulldown .body {
+        position: fixed;
+        top: 0;
+        left: 18rem;
+        z-index: 1001;
+        padding: 5rem 4rem;
+        width: 48rem;
+        height: 100vh;
+        background: #982020;
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity .3s, transform .3s, visibility .3s;
+        transition-delay: 0.15s; 
+        transform: translateX(-10px);
+        overflow-y: auto;
+        box-sizing: border-box;
+    }
+    .l-side .link .l-pulldown:hover .body { visibility: visible; opacity: 1; transform: translateX(0); transition-delay: 0s; }
+
+    .menu-title { color: #bfa57d; font-size: 2rem; letter-spacing: 0.15em; margin-bottom: 3.5rem; font-weight: 700; }
+    .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3.5rem 2.5rem; list-style: none; padding: 0; }
+    .menu-item .img-box { margin-bottom: 1.2rem; overflow: hidden; background: #000; aspect-ratio: 16 / 9; }
+    .menu-item .img-box img { width: 100%; height: 100%; object-fit: cover; display: block; transition: .6s; }
+    .menu-item:hover .img-box img { transform: scale(1.04); }
+    .menu-item .label { display: flex; align-items: center; font-size: 1.15rem; font-weight: 700; color: #fff; }
+    .menu-item .label::before { content: ""; width: 24px; height: 1.5px; background: #bfa57d; margin-right: 12px; }
+
+    .l-side .side-bottom { border-top: 1px solid #eee; }
+    .l-side .side-tel { padding: 2.5vh 1.5rem; text-align: center; }
+    .l-side .side-tel .label { display: block; font-size: 1rem; color: #666; margin-bottom: 0.5rem; font-weight: 700; }
+    .l-side .side-tel .num { display: block; font-size: 2.1rem; font-weight: 700; font-family: "Lora", serif; color: #111; }
+    .l-side .side-tel .time { display: block; font-size: 1.1rem; color: #999; margin-top: 0.5rem; font-weight: 600; }
+    .l-side .side-contact-btn { background: #982020; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3.5vh 1rem; text-decoration: none; }
+    .l-side .side-contact-btn span { font-size: 1.3rem; font-weight: 700; margin-top: 0.8rem; }
+
+    /* スマホ用オーバレイ背景 */
+    .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    .is-active .menu-overlay { display: block; opacity: 1; }
+
+    /* -----------------------------------------------------
+        レスポンシブ (スマホ・タブレット)
+    ----------------------------------------------------- */
+    @media screen and (max-width: 768px) {
+        .sp-bar { display: flex; }
+        
         .l-side {
-            border-right: 1px solid #dadada;
-            height: 100vh;
-            position: sticky;
+            position: fixed;
+            left: 0;
             top: 0;
-            background: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 18rem;
+            transform: translateX(-100%); /* 画面外に隠す */
+            width: 260px;
+            box-shadow: 10px 0 30px rgba(0,0,0,0.1);
             z-index: 1000;
         }
 
-        /* ロゴエリア：パディングで上下左右に余白を調整 */
-        .l-side .logo-unit {
-            padding: 1.2rem 1.5rem;
-            text-align: center;
-            line-height: 0;
-            box-sizing: border-box;
+        /* メニュー表示時 */
+        .is-active .l-side {
+            transform: translateX(0);
         }
-        .l-side .logo-unit a {
-            display: block;
-        }
-        .l-side .logo-unit img {
+
+        /* スマホではメガメニューを通常のリスト表示にするか、アコーディオンにする等の工夫が必要ですが
+           今回はスライドメニュー内に収める形に調整 */
+        .l-side .link .l-pulldown .body {
+            position: static;
             width: 100%;
             height: auto;
-            max-width: 100%;
-            display: block;
-        }
-
-        /* ナビゲーションリンク：フォントを明朝体の太字に変更 */
-        .l-side .link {
-            border-top: 1px solid #eee;
-            padding: 0;
-            margin: 0;
-            list-style: none;
-        }
-        .l-side .link > li {
-            border-bottom: 1px solid #eee;
-        }
-        .l-side .link .l-pulldown .head {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2.2vh 2rem;
-            font-family: "Shippori Mincho", "Noto Serif JP", serif;
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-decoration: none;
-            color: #333;
-            transition: .3s;
-            background: #fff;
-        }
-        .l-side .link .l-pulldown .head .icon {
-            font-size: 0.9rem;
-            color: #ccc;
-            transition: .3s;
-        }
-
-        /* サイドバーホバー時 */
-        .l-side .link .l-pulldown:hover .head {
-            background: #982020;
-            color: #fff;
-        }
-        .l-side .link .l-pulldown:hover .head .icon {
-            color: #fff;
-            transform: translateX(3px);
-        }
-
-        /* メガメニュー本体 */
-        .l-side .link .l-pulldown .body {
-            position: fixed;
-            top: 0;
-            left: 18rem;
-            z-index: 1001;
-            padding: 5rem 4rem;
-            width: 48rem;
-            height: 100vh;
-            background: #982020;
-            color: #fff;
-            visibility: hidden;
-            opacity: 0;
-            /* 閉じる時のアニメーションにディレイを追加して操作性を向上 */
-            transition: opacity .3s, transform .3s, visibility .3s;
-            transition-delay: 0.15s; 
-            transform: translateX(-10px);
-            overflow-y: auto;
-            box-sizing: border-box;
-        }
-        
-        /* ホバー時は即座に表示させる */
-        .l-side .link .l-pulldown:hover .body {
+            display: none; /* 初期は隠す */
+            padding: 2rem;
+            transform: none;
             visibility: visible;
             opacity: 1;
-            transform: translateX(0);
-            transition-delay: 0s;
         }
-
-        /* タイトルテキスト */
-        .menu-title {
-            color: #bfa57d;
-            font-family: "Shippori Mincho", "Noto Serif JP", serif;
-            font-size: 2rem;
-            letter-spacing: 0.15em;
-            margin-bottom: 3.5rem;
-            text-transform: uppercase;
-            font-weight: 600;
+        /* スマホ時はホバーではなくクリックで見せるのが一般的ですが、
+           簡易的にリンクをクリックできるように調整 */
+        .l-side .link .l-pulldown.is-open .body {
+            display: block;
         }
-
-        /* グリッドレイアウト */
         .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 3.5rem 2.5rem;
-            padding: 0;
-            margin: 0;
-            list-style: none;
+            grid-template-columns: 1fr;
+            gap: 2rem;
         }
+    }
+</style>
 
-        /* メニューアイテム */
-        .menu-item a {
-            text-decoration: none;
-            color: #fff;
-            display: block;
-        }
-        .menu-item .img-box {
-            margin-bottom: 1.2rem;
-            overflow: hidden;
-            background: #000;
-            aspect-ratio: 16 / 9;
-        }
-        .menu-item .img-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform .6s cubic-bezier(0.2, 1, 0.3, 1);
-            opacity: 1;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: auto;
-            backface-visibility: hidden;
-            transform: translateZ(0);
-            will-change: transform;
-        }
-        .menu-item:hover .img-box img {
-            transform: scale(1.04) translateZ(0);
-        }
+<!-- スマホ用バー -->
+<div class="sp-bar">
+    <div class="sp-logo">
+        <a href="index.html"><img src="img/logo.png" alt="elio"></a>
+    </div>
+    <button class="menu-trigger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+    </button>
+</div>
 
-        /* ラベル：フォントを明朝体の太字に変更 */
-        .menu-item .label {
-            display: flex;
-            align-items: center;
-            font-family: "Shippori Mincho", "Noto Serif JP", serif;
-            font-size: 1.15rem;
-            font-weight: 700;
-            letter-spacing: 0.02em;
-        }
-        .menu-item .label::before {
-            content: "";
-            display: inline-block;
-            width: 24px;
-            height: 1.5px;
-            background: #bfa57d;
-            margin-right: 12px;
-        }
+<!-- 背景オーバーレイ -->
+<div class="menu-overlay" onclick="toggleMenu()"></div>
 
-        /* サイドバー下部 */
-        .l-side .side-bottom {
-            border-top: 1px solid #eee;
-        }
-        .l-side .side-tel {
-            padding: 2.5vh 1.5rem;
-            text-align: center;
-        }
-        .l-side .side-tel .label {
-            display: block;
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-        .l-side .side-tel .num {
-            display: block;
-            font-size: 2.1rem; /* 1.8remから2.1remへ修正反映 */
-            font-weight: 700;
-            font-family: "Lora", serif;
-            color: #111;
-        }
-        .l-side .side-tel .time {
-            display: block;
-            font-size: 1.1rem; /* 0.85remから1.1remへ修正反映 */
-            color: #999;
-            margin-top: 0.5rem;
-        }
-        .l-side .side-contact-btn {
-            background: #982020;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 3.5vh 1rem;
-            text-decoration: none;
-            transition: .3s;
-        }
-        .l-side .side-contact-btn:hover {
-            background: #b12525;
-        }
-        .l-side .side-contact-btn span {
-            font-size: 1.3rem; /* 1.1remから1.3remへ修正反映 */
-            font-weight: 700;
-            margin-top: 0.8rem;
-        }
-    </style>
-</head>
-<body>
-
-<div class="l-side">
+<!-- サイドバー本体 -->
+<div class="l-side" id="sidebar">
     <div class="side-top">
-        <!-- ロゴエリア -->
-        <div class="logo-unit">
+        <div class="logo-unit pc">
             <a href="index.html"><img src="img/logo.png" alt="elio"></a>
         </div>
 
-        <!-- ナビゲーションリンク -->
         <ul class="link">
             <li class="l-pulldown">
-                <a href="about" class="head"><span>エリオについて</span> <i class="icon">❯</i></a>
+                <a href="javascript:void(0)" class="head" onclick="toggleSubMenu(this)">
+                    <span>エリオについて</span> <i class="icon">❯</i>
+                </a>
                 <div class="body">
                     <p class="menu-title">ABOUT US</p>
                     <ul class="menu-grid">
@@ -263,25 +238,27 @@
             </li>
 
             <li class="l-pulldown">
-                <a href="course" class="head"><span>コース案内</span> <i class="icon">❯</i></a>
+                <a href="javascript:void(0)" class="head" onclick="toggleSubMenu(this)">
+                    <span>コース案内</span> <i class="icon">❯</i>
+                </a>
                 <div class="body">
                     <p class="menu-title">COURSE</p>
                     <ul class="menu-grid">
                         <li class="menu-item">
                             <a href="course-early-elementary-students">
-                                <div class="img-box"><img src="img/course-early-elementary-students.jpg" alt="小学1年生〜小学2年生"></div>
+                                <div class="img-box"><img src="img/course-early-elementary-students.jpg" alt="低学年能力開発"></div>
                                 <span class="label">低学年能力開発</span>
                             </a>
                         </li>
                         <li class="menu-item">
                             <a href="course-late-elementary-students">
-                                <div class="img-box"><img src="img/course-late-elementary-students.jpg" alt="小学3年生〜小学6年生"></div>
+                                <div class="img-box"><img src="img/course-late-elementary-students.jpg" alt="中学受験"></div>
                                 <span class="label">中学受験</span>
                             </a>
                         </li>
                         <li class="menu-item">
                             <a href="course-one-on-one-instruction">
-                                <div class="img-box"><img src="img/course-one-on-one-instruction.jpg" alt="elioの個別指導"></div>
+                                <div class="img-box"><img src="img/course-one-on-one-instruction.jpg" alt="個別指導"></div>
                                 <span class="label">個別指導</span>
                             </a>
                         </li>
@@ -295,8 +272,8 @@
                 </div>
             </li>
 
-            <li class="l-pulldown"><a href="apply" class="head"><span>入会までの流れ</span> <i class="icon">❯</i></a></li>
-            <li class="l-pulldown"><a href="question" class="head"><span>よくある質問</span> <i class="icon">❯</i></a></li>
+            <li><a href="apply" class="head"><span>入会までの流れ</span> <i class="icon">❯</i></a></li>
+            <li><a href="question" class="head"><span>よくある質問</span> <i class="icon">❯</i></a></li>
         </ul>
     </div>
     
@@ -313,5 +290,21 @@
     </div>
 </div>
 
-</body>
-</html>
+<script>
+    // メインメニューの開閉（スマホ用）
+    function toggleMenu() {
+        document.body.classList.toggle('is-active');
+    }
+
+    // サブメニューの開閉（スマホ用アコーディオン）
+    function toggleSubMenu(element) {
+        if (window.innerWidth <= 768) {
+            const parent = element.parentElement;
+            parent.classList.toggle('is-open');
+        } else {
+            // PCの場合は通常のリンク動作
+            const href = element.getAttribute('data-href');
+            if(href) window.location.href = href;
+        }
+    }
+</script>
