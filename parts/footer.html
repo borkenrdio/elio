@@ -1,34 +1,206 @@
 <style>
-    /* フッター全体設定 */
-    .l-footer {
-        background: #1a1a1a;
-        color: #fff;
-        padding: 6vh 0; /* 上下の余白を少し縮小 */
-        min-height: 33vh; /* 画面の1/3程度の高さを確保 */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        position: relative;
-        font-family: "Noto Sans JP", sans-serif;
-        overflow: hidden; /* はみ出し防止 */
+    /* -----------------------------------------------------
+        CTAセクション設定
+    ----------------------------------------------------- */
+    .cta-container {
+        background: #fff;
+        /* 全体を明朝体に統一 */
+        font-family: "Noto Serif JP", serif;
+        font-weight: 600;
     }
 
-    /* 左右の余白設定 */
-    .l-footer .wrap {
+    .cta-upper {
+        padding: 6rem 0 5rem;
+        border-top: 1px solid #eee;
+    }
+
+    .cta-wrap {
         margin: 0 auto;
-        max-width: 1400px;
-        padding: 0 8% 0 8%;
+        max-width: 1160px;
+        padding: 0 60px;
         width: 100%;
         box-sizing: border-box;
     }
 
-    /* 上部ロゴ・説明エリア */
+    .cta-main-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5rem;
+    }
+
+    .cta-title-col {
+        flex: 1;
+    }
+    .cta-title-col .dash {
+        display: block;
+        width: 30px;
+        height: 1.5px;
+        background: #333;
+        margin-bottom: 1.2rem;
+    }
+    .cta-title-col .en {
+        font-size: 3.2rem;
+        color: #9e9779;
+        letter-spacing: 0.15em;
+        font-family: "Lora", serif;
+        line-height: 1;
+        margin-bottom: 0.8rem;
+        font-weight: 400;
+    }
+    .cta-title-col .jp {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 1.5rem;
+        font-family: "Noto Serif JP", serif;
+    }
+    .cta-desc {
+        font-size: 1.15rem;
+        color: #555;
+        line-height: 1.8;
+        font-weight: 600;
+        font-family: "Noto Serif JP", serif;
+    }
+
+    .cta-action-col {
+        width: 38rem;
+        flex-shrink: 0;
+    }
+    .cta-tel-box {
+        border: 1px solid #ddd;
+        padding: 2.2rem 2.5rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 1.2rem;
+    }
+    .cta-tel-box svg {
+        width: 24px;
+        height: 24px;
+        color: #111;
+    }
+    .cta-tel-content {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .cta-tel-content .num {
+        font-size: 2.4rem;
+        font-weight: 700;
+        font-family: "Lora", serif;
+        color: #111;
+        line-height: 1;
+    }
+    .cta-tel-content .info {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #666;
+        font-family: "Noto Serif JP", serif;
+    }
+
+    .cta-btn-red {
+        background: #982020;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2.5rem 3rem;
+        text-decoration: none;
+        transition: background 0.3s;
+        font-family: "Noto Serif JP", serif;
+    }
+    .cta-btn-red:hover {
+        background: #b12525;
+    }
+    .cta-btn-red span {
+        font-size: 1.5rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .cta-btn-red svg {
+        width: 22px;
+        height: 22px;
+    }
+    .cta-btn-red .bar {
+        width: 20px;
+        height: 1.5px;
+        background: #fff;
+        opacity: 0.8;
+    }
+
+    .cta-lower {
+        background: #f0f0f0;
+        padding: 2rem 0;
+    }
+    .cta-nav-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+    }
+    .cta-nav-item {
+        background: #333;
+        color: #fff;
+        padding: 2.2rem 1.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.2rem;
+        text-decoration: none;
+        transition: all 0.3s;
+        font-family: "Noto Serif JP", serif;
+    }
+    .cta-nav-item:hover {
+        background: #000;
+        transform: translateY(-3px);
+    }
+    .cta-nav-item svg {
+        width: 28px;
+        height: 28px;
+        opacity: 0.9;
+    }
+    .cta-nav-item span {
+        font-size: 1.15rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+    }
+
+    /* -----------------------------------------------------
+        フッターセクション設定
+    ----------------------------------------------------- */
+    .l-footer {
+        background: #1a1a1a;
+        color: #fff;
+        padding: 8rem 0;
+        min-height: 33vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        /* 明朝体に統一 */
+        font-family: "Noto Serif JP", serif;
+        font-weight: 600;
+        overflow: hidden;
+    }
+
+    .l-footer .wrap {
+        margin: 0 auto;
+        max-width: 1400px;
+        padding: 0 8%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
     .foot-top-area {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 30px;
         align-items: center;
-        margin-bottom: 5vh; /* メニューとの間隔を縮小 */
+        margin-bottom: 5rem;
     }
     .foot-top-area .logo-box {
         grid-column: 1 / 2;
@@ -38,16 +210,17 @@
         gap: 2.5rem;
     }
     .foot-top-area .logo-box img {
-        height: 80px; /* 全体サイズに合わせてロゴを少し調整 */
+        height: 80px;
         width: auto;
     }
     .foot-top-area .logo-box .logo-text {
         font-size: 1.1rem;
         line-height: 1.6;
         color: #999;
-        font-weight: 500;
+        font-weight: 600;
         text-align: center;
         white-space: nowrap;
+        font-family: "Noto Serif JP", serif;
     }
     .foot-top-area .desc-text {
         grid-column: 2 / 5;
@@ -55,24 +228,26 @@
         line-height: 2.2;
         color: #888;
         text-align: left;
+        font-family: "Noto Serif JP", serif;
+        font-weight: 600;
     }
 
-    /* メインナビゲーション */
     .footer-sitemap {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr); /* 4カラムから3カラムに変更 */
         gap: 40px;
     }
     .sitemap-col .head {
         color: #999;
-        font-weight: 500;
-        margin-bottom: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
         font-size: 1.7rem;
         letter-spacing: 0.1em;
         white-space: nowrap;
+        font-family: "Noto Serif JP", serif;
     }
     .sitemap-col .link-item {
-        margin-bottom: 0.4rem;
+        margin-bottom: 0.6rem;
     }
     .sitemap-col .link-item a {
         color: #999;
@@ -83,6 +258,8 @@
         padding: 0.2rem 0;
         transition: color 0.3s, transform 0.3s;
         text-decoration: none;
+        font-family: "Noto Serif JP", serif;
+        font-weight: 600;
     }
     .sitemap-col .link-item a::before {
         content: "";
@@ -100,7 +277,6 @@
         background: #fff;
     }
 
-    /* 右端：垂直テキストエリア */
     .foot-side-elements {
         position: absolute;
         right: 4%;
@@ -122,6 +298,7 @@
         gap: 2rem;
         text-decoration: none;
         transition: color 0.3s;
+        font-family: "Lora", serif;
     }
     .foot-top-link:hover {
         color: #fff;
@@ -134,43 +311,86 @@
     }
     .foot-copy-vertical {
         writing-mode: vertical-rl;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         color: #444;
         letter-spacing: 0.15em;
         white-space: nowrap;
+        font-family: "Lora", serif;
     }
 
-    /* SPレスポンシブ */
+    /* レスポンシブ調整 */
     @media screen and (max-width: 1024px) {
-        .footer-sitemap {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px 30px;
-        }
-        .l-footer .wrap {
-            padding: 0 12% 0 8%;
-        }
+        .cta-upper { padding: 4rem 0; }
+        .cta-wrap, .l-footer .wrap { padding: 0 40px; }
+        .cta-main-row { flex-direction: column; gap: 3rem; text-align: center; }
+        .footer-sitemap { grid-template-columns: repeat(2, 1fr); gap: 40px 30px; }
     }
     @media screen and (max-width: 768px) {
-        .l-footer { padding: 6rem 0; min-height: auto; }
-        .l-footer .wrap { padding: 0 25px; }
-        .foot-top-area { 
-            display: flex;
-            flex-direction: column; 
-            align-items: center;
-            text-align: center;
-            gap: 3rem; 
-            margin-bottom: 3rem; 
-        }
-        .foot-top-area .logo-box {
-            flex-direction: column;
-        }
-        .foot-top-area .logo-box .logo-text { text-align: center; }
-        .foot-top-area .desc-text { text-align: center; }
+        .l-footer { padding: 6rem 0; }
+        .foot-top-area { display: flex; flex-direction: column; gap: 3rem; margin-bottom: 4rem; }
         .footer-sitemap { grid-template-columns: 1fr 1fr; }
         .foot-side-elements { display: none; }
     }
 </style>
 
+<!-- CTAセクション -->
+<section class="cta-container">
+    <div class="cta-upper">
+        <div class="cta-wrap">
+            <div class="cta-main-row">
+                <div class="cta-title-col">
+                    <span class="dash"></span>
+                    <p class="en">CONTACT</p>
+                    <p class="jp">お問い合わせ</p>
+                    <p class="cta-desc">
+                        ご面談・資料請求等は、お電話もしくはフォームよりお問い合わせください。
+                    </p>
+                </div>
+                <div class="cta-action-col">
+                    <div class="cta-tel-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <div class="cta-tel-content">
+                            <span class="num">075-231-7711</span>
+                            <span class="info">窓口 [13:00〜20:00]</span>
+                        </div>
+                    </div>
+                    <a href="contact" class="cta-btn-red">
+                        <span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                            お問い合わせ・資料請求
+                        </span>
+                        <div class="bar"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-lower">
+        <div class="cta-wrap">
+            <div class="cta-nav-grid">
+                <a href="about" class="cta-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    <span>エリオについて</span>
+                </a>
+                <a href="course" class="cta-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    <span>コース案内</span>
+                </a>
+                <a href="admission" class="cta-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                    <span>入会までの流れ</span>
+                </a>
+                <a href="faq" class="cta-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    <span>よくある質問</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- フッターセクション -->
 <footer id="footer" class="l-footer">
     <div class="wrap">
         <div class="foot-top-area">
@@ -178,7 +398,7 @@
                 <img src="img/logo-white.png" alt="elio">
                 <div class="logo-text">会員制難関受験専門塾<br>ー エリオ ー</div>
             </div>
-            <div class="desc-text noto">
+            <div class="desc-text">
                 会員制難関受験専門塾エリオ（elio）は優れたリーダーシップを育む、新しい塾教育を提供する学習塾です。
             </div>
         </div>
@@ -197,13 +417,6 @@
                 <div class="link-item"><a href="course-junior-and-high">中学生・高校生</a></div>
             </div>
             <div class="sitemap-col">
-                <p class="head">学習メソッド</p>
-                <div class="link-item"><a href="#">エリオオリジナル教材</a></div>
-                <div class="link-item"><a href="#">四谷大塚</a></div>
-                <div class="link-item"><a href="#">学校別特化指導 Premium Campus</a></div>
-                <div class="link-item"><a href="#">オンライン英会話OLECO ジュニア</a></div>
-            </div>
-            <div class="sitemap-col">
                 <p class="head">お問い合わせ</p>
                 <div class="link-item"><a href="contact">各種お問い合せ</a></div>
                 <div class="link-item"><a href="apply">入会までの流れ</a></div>
@@ -214,7 +427,7 @@
     </div>
 
     <div class="foot-side-elements">
-        <a href="#" class="foot-top-link lora">TOP</a>
-        <p class="foot-copy-vertical lora">Copyright @ idea spot.</p>
+        <a href="#" class="foot-top-link">TOP</a>
+        <p class="foot-copy-vertical">Copyright @ idea spot.</p>
     </div>
 </footer>
