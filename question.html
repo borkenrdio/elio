@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>よくある質問｜会員制難関受験専門塾エリオ（elio）</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
+    
+    <style>
+        html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, main, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+            margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; box-sizing: border-box;
+        }
+
+        html { font-size: 62.5%; scroll-behavior: smooth; }
+
+        body {
+            font-family: "Noto Sans JP", sans-serif;
+            font-size: 1.6rem; line-height: 1.8; color: #111; overflow-x: hidden; background: #fff;
+        }
+
+        ul, ol { list-style: none; }
+        a { transition-duration: .5s; text-decoration: none; color: inherit; }
+        img { max-width: 100%; height: auto; vertical-align: middle; }
+
+        .serif { font-family: "Noto Serif JP", serif; }
+        .lora { font-family: Lora, serif; letter-spacing: .05em; }
+        .noto { font-family: "Noto Sans JP", sans-serif; }
+
+        @media screen and (min-width: 769px) {
+            .sp { display: none !important; }
+            .pc-frame { display: flex; min-width: 1200px; }
+            .pc-frame-left { width: 16rem; position: relative; z-index: 1000; }
+            .pc-frame-right { width: calc(100% - 16rem); flex-grow: 1; }
+            .wrap { margin: 0 auto; max-width: 1060px; padding: 0 60px; }
+        }
+
+        @media screen and (max-width: 768px) {
+            .pc { display: none !important; }
+            .wrap { padding: 0 20px; }
+        }
+
+        .anime { opacity: 0; transition: all 1s ease; }
+        .anime.bottom-in { transform: translateY(30px); }
+        .active { opacity: 1 !important; transform: none !important; }
+
+        /* タイトルエリア */
+        .mv-md { padding: 8rem 0; border-top: 1px solid #eee; background: #fff; }
+        .mv-md .title-box .title-head { position: relative; padding-top: 2rem; font-size: 1.8rem; font-weight: 500; margin-bottom: 1rem; color: #666; }
+        .mv-md .title-box .title-head:after { content: ""; position: absolute; top: 0; left: 0; width: 16px; height: 1px; background: #333; }
+        .mv-md .title { font-size: 4.2rem; color: #9e9779; letter-spacing: .2em; font-weight: 300; }
+
+        /* セクションナビメニュー */
+        .qa-menu { padding: 4rem 0; background: #f9f9f9; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+        .qa-menu .list { display: flex; gap: 2rem; justify-content: center; }
+        .qa-menu .md-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 28rem;
+            padding: 1.5rem 2rem;
+            background: #fff;
+            border: 1px solid #ddd;
+            font-size: 1.4rem;
+            font-weight: 700;
+            transition: .3s;
+        }
+        .qa-menu .md-btn:hover { border-color: #9e9779; background: #fdfaf0; color: #9e9779; }
+        .qa-menu .icon { margin-left: 1rem; color: #ccc; }
+
+        /* アコーディオンセクション */
+        .qa-sec { padding: 8rem 0; }
+        .qa-sec .bar { width: 4rem; height: 1px; background: #9e9779; margin-bottom: 2rem; }
+        .qa-sec .head { font-size: 2.8rem; font-weight: 600; margin-bottom: 4rem; color: #111; }
+
+        .acc-area { border-top: 1px solid #eee; }
+        .md-acc { border-bottom: 1px solid #eee; }
+        .acc-check { display: none; }
+        
+        .acc-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 3rem 0;
+            font-size: 1.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: .3s;
+        }
+        .acc-btn:hover { color: #9e9779; }
+        .acc-btn .icon { 
+            width: 2rem; height: 2rem; position: relative; 
+            transition: .4s transform; 
+        }
+        .acc-btn .icon:before, .acc-btn .icon:after {
+            content: ""; position: absolute; background: currentColor;
+            top: 50%; left: 50%; transform: translate(-50%, -50%);
+        }
+        .acc-btn .icon:before { width: 1.4rem; height: 1px; }
+        .acc-btn .icon:after { width: 1px; height: 1.4rem; }
+
+        .acc-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: .4s all cubic-bezier(0, 1, 0, 1);
+            background: #fafafa;
+        }
+        .acc-body .box-in { padding: 3rem; font-size: 1.5rem; line-height: 2.2; color: #444; }
+
+        .acc-check:checked ~ .acc-btn { color: #9e9779; }
+        .acc-check:checked ~ .acc-btn .icon { transform: rotate(45deg); }
+        .acc-check:checked ~ .acc-body { max-height: 1000px; transition: .4s all cubic-bezier(1, 0, 1, 0); }
+
+        .link-btn-inline {
+            display: inline-flex;
+            align-items: center;
+            background: #982020;
+            color: #fff;
+            padding: 1rem 2.5rem;
+            margin-top: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        .link-btn-inline:hover { opacity: 0.8; }
+
+        @media screen and (max-width: 768px) {
+            .pc-frame-left { display: none; }
+            .pc-frame-right { width: 100%; }
+            .mv-md { padding: 5rem 0; }
+            .qa-menu .list { flex-direction: column; align-items: center; }
+            .qa-menu .md-btn { width: 100%; }
+            .qa-sec .head { font-size: 2.2rem; }
+            .acc-btn { font-size: 1.5rem; padding: 2rem 0; }
+        }
+    </style>
+</head>
+
+<body class="l-page l-qa">
+
+    <div id="header-placeholder"></div>
+
+    <div class="pc-frame">
+        <aside id="sidebar-placeholder" class="pc pc-frame-left"></aside>
+
+        <div class="pc-frame-right">
+            <div class="bread pc">
+                <div class="wrap" style="padding:15px 0; font-size:1.1rem; color:#888;">HOME > よくある質問</div>
+            </div>
+
+            <main id="contents">
+                <article class="l-main">
+                    
+                    <section class="mv-md">
+                        <div class="wrap">
+                            <div class="title-box anime bottom-in">
+                                <p class="title-head">よくある質問</p>
+                                <h1 class="title lora">Q&A</h1>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- カテゴリーメニュー -->
+                    <div class="qa-menu">
+                        <div class="wrap">
+                            <ul class="list anime bottom-in">
+                                <li><a href="#sec1" class="md-btn noto">エリオについて <span class="icon">▼</span></a></li>
+                                <li><a href="#sec2" class="md-btn noto">入会について <span class="icon">▼</span></a></li>
+                                <li><a href="#sec3" class="md-btn noto">授業について <span class="icon">▼</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- エリオについて -->
+                    <section id="sec1" class="qa-sec">
+                        <div class="wrap">
+                            <div class="anime bottom-in">
+                                <div class="bar"></div>
+                                <h2 class="head serif">会員制難関受験専門塾エリオについて</h2>
+                                <div class="acc-area">
+                                    <div class="md-acc">
+                                        <input id="acc1" class="acc-check" type="checkbox" />
+                                        <label for="acc1" class="acc-btn noto">
+                                            Q　なぜ会員制を導入しているのですか。
+                                            <span class="icon"></span>
+                                        </label>
+                                        <div class="acc-body">
+                                            <div class="box-in noto">
+                                                お預かりしたお子さま一人ひとりを、責任をもって志望校合格を通過点とした未来へのプランを提示するためです。また、当塾の会員権利はお子さまだけでなくご家庭に付与いたします。
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="md-acc">
+                                        <input id="acc2" class="acc-check" type="checkbox" />
+                                        <label for="acc2" class="acc-btn noto">
+                                            Q　他の塾との違いは何ですか。
+                                            <span class="icon"></span>
+                                        </label>
+                                        <div class="acc-body">
+                                            <div class="box-in noto">
+                                                エリオは名前の通り「難関受験専門」の学習塾です。選抜された講師、学習に集中できいつでも講師に質問できる環境、実績のある講師陣が創り出すオリジナル教材など難関受験を突破するためのメソッドを用意しております。
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="md-acc">
+                                        <input id="acc3" class="acc-check" type="checkbox" />
+                                        <label for="acc3" class="acc-btn noto">
+                                            Q　どのような授業形式ですか。
+                                            <span class="icon"></span>
+                                        </label>
+                                        <div class="acc-body">
+                                            <div class="box-in noto">
+                                                1クラス5名〜8名の少人数のグループ指導と、学習する目的に合わせてオーダーメイドできる個別指導がございます。
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="md-acc">
+                                        <input id="acc4" class="acc-check" type="checkbox" />
+                                        <label for="acc4" class="acc-btn noto">
+                                            Q　校舎はどこにありますか。
+                                            <span class="icon"></span>
+                                        </label>
+                                        <div class="acc-body">
+                                            <div class="box-in noto">
+                                                都内に茗荷谷駅前本校・恵比寿校、京都に出町柳校がございます。詳しくは校舎案内をご覧ください。<br>
+                                                <a href="facilities/" class="link-btn-inline">校舎案内はこちら</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 入会について -->
+                    <section id="sec2" class="qa-sec" style="background-color: #fafafa;">
+                        <div class="wrap">
+                            <div class="anime bottom-in">
+                                <div class="bar"></div>
+                                <h2 class="head serif">入会について</h2>
+                                <div class="acc-area">
+                                    <div class="md-acc">
+                                        <input id="acc5" class="acc-check" type="checkbox" />
+                                        <label for="acc5" class="acc-btn noto">
+                                            Q　入会までの流れを教えてください。
+                                            <span class="icon"></span>
+                                        </label>
+                                        <div class="acc-body">
+                                            <div class="box-in noto">
+                                                Web・お電話からお問い合わせください。入会説明会または体験授業へご参加いただいた後、保護者面談・学習相談を行います。その後入会審査を通過された方に会員資格を進呈いたしますので、正式に入会のお申し込みを承ります。
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="md-acc">
+                                        <input id="acc6" class="acc-check" type="checkbox" />
+                                        <label for="acc6" class="acc-btn noto">
+                                            Q　体験授業を受けることはできますか。
+                                            <span class="icon"></span>
+                                        </label>
+                                        <div class="acc-body">
+                                            <div class="box-in noto">
+                                                受けられます。Web・お電話でお問い合わせしていただき、体験授業の日時を担当の講師と調整していただき、ご来塾ください。保護者の方の見学も可能です。教室の雰囲気や授業の様子などをご覧ください。
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 授業について -->
+                    <section id="sec3" class="qa-sec">
+                        <div class="wrap">
+                            <div class="anime bottom-in">
+                                <div class="bar"></div>
+                                <h2 class="head serif">授業について</h2>
+                                <div class="acc-area">
+                                    <div class="md-acc">
+                                        <input id="acc7" class="acc-check" type="checkbox" />
+                                        <label for="acc7" class="acc-btn noto">
+                                            Q　授業の始まりは何時からですか。
+                                            <span class="icon"></span>
+                                        </label>
+                                        <div class="acc-body">
+                                            <div class="box-in noto">
+                                                授業の始まりは各教室、各学年のグループ指導、個別指導によって異なります。閉室まで自習も可能です。詳しくは教室までお問い合わせください。
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="md-acc">
+                                        <input id="acc8" class="acc-check" type="checkbox" />
+                                        <label for="acc8" class="acc-btn noto">
+                                            Q　1週間の通塾日数はどのぐらいですか。
+                                            <span class="icon"></span>
+                                        </label>
+                                        <div class="acc-body">
+                                            <div class="box-in noto">
+                                                各学年のグループ指導、個別指導によって異なります。通常授業の他にゼミや季節ごとの講習もございます。詳しくは教室までお問い合わせください。
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="md-acc">
+                                        <input id="acc9" class="acc-check" type="checkbox" />
+                                        <label for="acc9" class="acc-btn noto">
+                                            Q　どんな教科を受講できますか。
+                                            <span class="icon"></span>
+                                        </label>
+                                        <div class="acc-body">
+                                            <div class="box-in noto">
+                                                各学年により異なります。詳しくはコース案内をご覧ください。<br>
+                                                <a href="course/" class="link-btn-inline">コース案内はこちら</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div id="cta-placeholder"></div>
+
+                </article>
+            </main>
+
+            <div id="footer-placeholder"></div>
+        </div>
+    </div>
+
+    <script>
+        async function loadPart(id, path) {
+            try {
+                const response = await fetch(path);
+                if (response.ok) {
+                    const html = await response.text();
+                    const el = document.getElementById(id);
+                    if (el) el.innerHTML = html;
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadPart('header-placeholder', 'parts/header.html');
+            loadPart('sidebar-placeholder', 'parts/menu.html');
+            loadPart('cta-placeholder', 'parts/CTA.html');
+            loadPart('footer-placeholder', 'parts/footer.html');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.anime').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
