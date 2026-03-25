@@ -85,9 +85,9 @@
             left: 18rem;
             z-index: 1001;
             padding: 5rem 4rem;
-            width: 48rem; /* 2列に合わせて幅を拡大 */
+            width: 48rem;
             height: 100vh;
-            background: #982020; /* 深みのある赤 */
+            background: #982020;
             color: #fff;
             visibility: hidden;
             opacity: 0;
@@ -104,7 +104,7 @@
 
         /* タイトルテキスト（COURSE / ABOUT US等） */
         .menu-title {
-            color: #bfa57d; /* ゴールド */
+            color: #bfa57d;
             font-family: "Shippori Mincho", "Noto Serif JP", serif;
             font-size: 2rem;
             letter-spacing: 0.15em;
@@ -141,11 +141,11 @@
             object-fit: cover;
             display: block;
             transition: transform .6s ease;
-            opacity: 0.9;
+            opacity: 1;
+            backface-visibility: hidden;
         }
         .menu-item:hover .img-box img {
-            transform: scale(1.08);
-            opacity: 1;
+            transform: scale(1.05);
         }
 
         /* ラベル（ゴールドの線付き） */
@@ -161,7 +161,7 @@
             display: inline-block;
             width: 24px;
             height: 1.5px;
-            background: #bfa57d; /* ゴールドのライン */
+            background: #bfa57d;
             margin-right: 12px;
         }
 
