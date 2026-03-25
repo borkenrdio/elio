@@ -128,13 +128,31 @@
             }
         }
 
+        /* パンくずリスト */
+        .bread { font-family: "Noto Serif JP", serif; }
+
         /* ページ固有スタイル（ABOUT US） */
         .l-page .mv-md { padding: 8rem 0; border-top: 1px solid #eee; background: #fff; }
         .mv-md .title-box { width: 45%; }
-        .mv-md .title-box .title-head { position: relative; padding-top: 2rem; font-size: 1.8rem; font-weight: 500; margin-bottom: 1rem; color: #666; }
+        .mv-md .title-box .title-head { 
+            position: relative; 
+            padding-top: 2rem; 
+            font-size: 1.8rem; 
+            font-weight: 500; 
+            margin-bottom: 1rem; 
+            color: #666; 
+            font-family: "Noto Serif JP", serif; /* 明朝体を指定 */
+        }
         .mv-md .title-box .title-head:after { content: ""; position: absolute; top: 0; left: 0; width: 16px; height: 1px; background: #333; }
         .mv-md .title { font-size: 4.2rem; color: #9e9779; letter-spacing: .2em; font-weight: 300; }
-        .mv-md .lead-text { width: 45%; font-size: 1.4rem; font-weight: 500; color: #333; line-height: 2; }
+        .mv-md .lead-text { 
+            width: 45%; 
+            font-size: 1.4rem; 
+            font-weight: 400; 
+            color: #333; 
+            line-height: 2; 
+            font-family: "Noto Serif JP", serif; /* 明朝体を指定 */
+        }
 
         /* -----------------------------------------------------
             本文のリスト項目
@@ -146,11 +164,11 @@
         .philosophy-list .text-box .section-label { color: #9e9779; font-size: 1.3rem; margin-bottom: 1rem; font-family: Lora, serif; letter-spacing: 0.1em; }
         .philosophy-list .text-box h2 { font-size: 2.8rem; font-weight: 600; margin-bottom: 3rem; color: #111; }
         
-        /* 該当箇所：テキスト説明文を確実に明朝体にする設定 */
+        /* テキスト説明文の設定 */
         .philosophy-list .text-box .text { 
-            font-family: "Noto Serif JP", serif; /* 明示的に明朝体を指定 */
+            font-family: "Noto Serif JP", serif; 
             font-size: 1.5rem; 
-            font-weight: 400; /* 太さを400に調整して可読性と美しさを両立 */
+            font-weight: 400; 
             margin-bottom: 5rem; 
             color: #333; 
         }
@@ -183,7 +201,7 @@
 
         <div class="pc-frame-right">
             <div class="bread pc">
-                <div class="wrap" style="padding:15px 0; font-size:1.1rem; color:#888;">HOME > エリオについて > ABOUT US</div>
+                <div class="wrap serif" style="padding:15px 0; font-size:1.1rem; color:#888;">HOME > エリオについて > ABOUT US</div>
             </div>
 
             <main id="contents">
@@ -191,10 +209,10 @@
                     <section class="mv-md">
                         <div class="wrap flex bet vcenter">
                             <div class="title-box">
-                                <p class="title-head">エリオについて</p>
+                                <p class="title-head serif">エリオについて</p>
                                 <h1 class="title lora">ABOUT US</h1>
                             </div>
-                            <div class="lead-text">
+                            <div class="lead-text serif">
                                 会員制難関受験専門塾エリオ（elio）は、優れたリーダーシップを育む、新しい塾教育を提供する学習塾です。
                             </div>
                         </div>
@@ -208,7 +226,6 @@
                                         <div class="text-box bottom-in wave1">
                                             <p class="section-label">PHILOSOPHY</p>
                                             <h2 class="serif">エリオの信念</h2>
-                                            <!-- 明朝体指定を強化 -->
                                             <p class="text serif">未来を生きる子供たちのために、エリオが取り組んでいる教育の信念についてお伝えします。</p>
                                             <a href="about-belief" class="md-btn red">詳細を見る<div class="bar"></div></a>
                                         </div>
@@ -222,7 +239,6 @@
                                         <div class="text-box bottom-in wave1">
                                             <p class="section-label">EDUCATOR INTRODUCTION</p>
                                             <h2 class="serif">講師紹介</h2>
-                                            <!-- 明朝体指定を強化 -->
                                             <p class="text serif">難関指導実績が豊富な選抜されたエリオの講師陣を紹介します。</p>
                                             <a href="about-teacher" class="md-btn red">詳細を見る<div class="bar"></div></a>
                                         </div>
