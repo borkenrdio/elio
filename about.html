@@ -52,8 +52,9 @@
             vertical-align: middle;
         }
         
-        body {
-            font-family: "Noto Sans JP", -apple-system, sans-serif;
+        body, button, input, select, textarea {
+            /* 全体を明朝体に設定 */
+            font-family: "Noto Serif JP", serif;
             font-size: 1.6rem;
             line-height: 1.8;
             color: #111;
@@ -70,6 +71,7 @@
         .flex.vert { flex-direction: column; }
         .flex.break { flex-wrap: wrap; }
         .flex.str { align-items: stretch; }
+        
         .serif { font-family: "Noto Serif JP", serif; }
         .lora { font-family: Lora, serif; letter-spacing: .05em; }
 
@@ -93,6 +95,7 @@
             overflow: hidden;
             transition: .5s;
             cursor: pointer;
+            font-family: "Noto Serif JP", serif;
         }
         .md-btn.red { background-color: #982020; color: #fff; border: 1px solid #982020; height: 50px; min-width: 220px; }
         .md-btn.red:hover { background-color: #c22929; }
@@ -134,7 +137,7 @@
         .mv-md .lead-text { width: 45%; font-size: 1.4rem; font-weight: 500; color: #333; line-height: 2; }
 
         /* -----------------------------------------------------
-           本文のリスト項目（メニューと衝突しないようセレクタを限定）
+           本文のリスト項目
         ----------------------------------------------------- */
         .philosophy-list > li { padding: 8rem 0; border-top: 1px solid #e6e6e6; }
         
@@ -183,7 +186,7 @@
                                 <p class="title-head">エリオについて</p>
                                 <h1 class="title lora">ABOUT US</h1>
                             </div>
-                            <div class="lead-text serif">
+                            <div class="lead-text">
                                 会員制難関受験専門塾エリオ（elio）は、優れたリーダーシップを育む、新しい塾教育を提供する学習塾です。
                             </div>
                         </div>
