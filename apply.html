@@ -18,9 +18,9 @@
 
         html { font-size: 62.5%; scroll-behavior: smooth; }
 
-        /* 全体を明朝体に設定 */
-        body, button, input, select, textarea {
-            font-family: "Noto Serif JP", "Lora", serif;
+        /* 全てのテキスト要素を明朝体で強制的に統一 */
+        body, button, input, select, textarea, p, div, span, a, h1, h2, h3, h4, h5, h6 {
+            font-family: "Noto Serif JP", serif;
             font-size: 1.6rem; line-height: 1.8; color: #111; overflow-x: hidden; background: #fff;
         }
 
@@ -30,7 +30,7 @@
 
         .serif { font-family: "Noto Serif JP", serif; }
         .lora { font-family: Lora, serif; letter-spacing: .05em; }
-        /* noto指定箇所も明朝体に統一 */
+        /* 以前のゴシック体クラスも明朝体に変更 */
         .noto { font-family: "Noto Serif JP", serif; }
 
         @media screen and (min-width: 769px) {
@@ -58,6 +58,7 @@
         .flow-sec { padding: 10rem 0; border-top: 1px solid #eee; position: relative; }
         .flow-sec:nth-of-type(even) { background-color: #fafafa; }
         
+        /* テキスト左、画像右で統一 */
         .flow-inner { display: flex; gap: 6rem; align-items: center; justify-content: space-between; }
         
         .flow-text { width: 52%; }
@@ -108,7 +109,6 @@
             flex: 1;
             min-width: 220px;
             text-align: center;
-            font-family: "Noto Serif JP", serif;
         }
         .md-btn.web {
             background: #982020;
@@ -123,6 +123,16 @@
         .md-btn.contact-btn:hover { opacity: 0.8; transform: translateY(-3px); }
         .md-btn.tel:hover { background: #111; color: #fff; }
 
+        /* メッセージセクション */
+        .message-sec { padding: 10rem 0; background: #fafafa; border-top: 1px solid #eee; }
+        .message-sec .flex-box { display: flex; gap: 8rem; align-items: center; }
+        .message-sec .img-box { width: 40%; flex-shrink: 0; }
+        .message-sec img { width: 100%; border-radius: 50% 50% 0 0; } /* アーチ型 */
+        .message-sec .text-box { flex-grow: 1; }
+        .message-sec .title-head { font-size: 1.4rem; color: #9e9779; margin-bottom: 1.5rem; font-weight: 700; display: block; letter-spacing: 0.1em; }
+        .message-sec h2 { font-size: 3rem; margin-bottom: 3.5rem; line-height: 1.4; color: #111; }
+        .message-sec .text { font-size: 1.5rem; line-height: 2.4; color: #444; }
+
         @media screen and (max-width: 768px) {
             .pc-frame-left { display: none; }
             .pc-frame-right { width: 100%; }
@@ -132,6 +142,8 @@
             .flow-text, .flow-img { width: 100%; }
             .flow-title { font-size: 2.2rem; }
             .md-btn.contact-btn { width: 100%; flex: none; }
+            .message-sec .flex-box { flex-direction: column; gap: 4rem; text-align: left; }
+            .message-sec .img-box { width: 80%; margin: 0 auto; }
         }
     </style>
 </head>
@@ -263,6 +275,24 @@
                                 </div>
                                 <div class="flow-img">
                                     <img src="img/apply_06.jpg" alt="ご入塾">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- メッセージセクション (アーチ型画像) -->
+                    <section class="message-sec">
+                        <div class="wrap">
+                            <div class="flex-box anime bottom-in">
+                                <div class="img-box">
+                                    <img src="img/apply-message_img.png" alt="講師メッセージ">
+                                </div>
+                                <div class="text-box">
+                                    <span class="title-head lora">MESSAGE</span>
+                                    <h2 class="serif">合格、その先の未来へ向けて。</h2>
+                                    <p class="text">
+                                        エリオへの入塾は、単なる通塾の始まりではなく、お子さまの可能性を大きく広げる旅の始まりです。私たちは、志望校合格を一つの通過点として捉え、その先の人生で輝き続けるための「思考の種」を蒔き続けます。一人ひとりの歩幅に合わせながらも、決して妥協しない最高峰の指導を。新しい仲間との出会いを、心よりお待ちしております。
+                                    </p>
                                 </div>
                             </div>
                         </div>
