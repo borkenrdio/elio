@@ -137,7 +137,7 @@
         .mv-md .lead-text { width: 45%; font-size: 1.4rem; font-weight: 500; color: #333; line-height: 2; }
 
         /* -----------------------------------------------------
-           本文のリスト項目
+            本文のリスト項目
         ----------------------------------------------------- */
         .philosophy-list > li { padding: 8rem 0; border-top: 1px solid #e6e6e6; }
         
@@ -145,7 +145,15 @@
         .philosophy-list .text-box { width: 45%; }
         .philosophy-list .text-box .section-label { color: #9e9779; font-size: 1.3rem; margin-bottom: 1rem; font-family: Lora, serif; letter-spacing: 0.1em; }
         .philosophy-list .text-box h2 { font-size: 2.8rem; font-weight: 600; margin-bottom: 3rem; color: #111; }
-        .philosophy-list .text-box .text { font-size: 1.5rem; font-weight: 500; margin-bottom: 5rem; color: #333; }
+        
+        /* 該当箇所：テキスト説明文を確実に明朝体にする設定 */
+        .philosophy-list .text-box .text { 
+            font-family: "Noto Serif JP", serif; /* 明示的に明朝体を指定 */
+            font-size: 1.5rem; 
+            font-weight: 400; /* 太さを400に調整して可読性と美しさを両立 */
+            margin-bottom: 5rem; 
+            color: #333; 
+        }
         
         /* 本文の画像ボックス */
         .philosophy-list .img-box { width: 50%; overflow: hidden; }
@@ -200,7 +208,8 @@
                                         <div class="text-box bottom-in wave1">
                                             <p class="section-label">PHILOSOPHY</p>
                                             <h2 class="serif">エリオの信念</h2>
-                                            <p class="text">未来を生きる子供たちのために、エリオが取り組んでいる教育の信念についてお伝えします。</p>
+                                            <!-- 明朝体指定を強化 -->
+                                            <p class="text serif">未来を生きる子供たちのために、エリオが取り組んでいる教育の信念についてお伝えします。</p>
                                             <a href="about-belief" class="md-btn red">詳細を見る<div class="bar"></div></a>
                                         </div>
                                         <div class="img-box bottom-in wave2">
@@ -213,7 +222,8 @@
                                         <div class="text-box bottom-in wave1">
                                             <p class="section-label">EDUCATOR INTRODUCTION</p>
                                             <h2 class="serif">講師紹介</h2>
-                                            <p class="text">難関指導実績が豊富な選抜されたエリオの講師陣を紹介します。</p>
+                                            <!-- 明朝体指定を強化 -->
+                                            <p class="text serif">難関指導実績が豊富な選抜されたエリオの講師陣を紹介します。</p>
                                             <a href="about-teacher" class="md-btn red">詳細を見る<div class="bar"></div></a>
                                         </div>
                                         <div class="img-box bottom-in wave2">
