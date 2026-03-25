@@ -67,7 +67,7 @@
         .main-list .text { font-size: 1.5rem; color: #444; line-height: 2.4; }
 
         .point-sec { padding: 10rem 0; background: #fcfcfc; border-top: 1px solid #eee; }
-        .point-sec .title-head { font-size: 1.4rem; color: #9e9779; margin-bottom: 1rem; font-weight: 700; display: block; }
+        .point-sec .title-head { font-size: 1.4rem; color: #9e9779; margin-bottom: 1rem; font-weight: 700; display: block; text-align: center; }
         .point-sec h2 { font-size: 3rem; margin-bottom: 6rem; text-align: center; }
         
         .point-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4rem; }
@@ -88,6 +88,16 @@
         }
         .point-list .md-btn.b-line:hover { background: #111; color: #fff; }
 
+        /* メッセージセクション (アップロード画像のデザインを再現) */
+        .message-sec { padding: 10rem 0; background: #fafafa; border-top: 1px solid #eee; }
+        .message-sec .flex-box { display: flex; gap: 8rem; align-items: center; }
+        .message-sec .img-box { width: 40%; flex-shrink: 0; }
+        .message-sec img { width: 100%; border-radius: 50% 50% 0 0; } /* アーチ型 */
+        .message-sec .text-box { flex-grow: 1; }
+        .message-sec .title-head { font-size: 1.4rem; color: #9e9779; margin-bottom: 1.5rem; font-weight: 700; display: block; letter-spacing: 0.1em; }
+        .message-sec h2 { font-size: 3rem; margin-bottom: 3.5rem; line-height: 1.4; color: #111; }
+        .message-sec .text { font-size: 1.5rem; line-height: 2.4; color: #444; }
+
         @media screen and (max-width: 768px) {
             .pc-frame-left { display: none; }
             .pc-frame-right { width: 100%; }
@@ -98,6 +108,8 @@
             .main-list img { width: 100%; }
             .point-list { grid-template-columns: 1fr; gap: 3rem; }
             .point-list li { padding: 3rem; }
+            .message-sec .flex-box { flex-direction: column; gap: 4rem; text-align: left; }
+            .message-sec .img-box { width: 80%; margin: 0 auto; }
         }
     </style>
 </head>
@@ -117,15 +129,17 @@
             <main id="contents">
                 <article class="l-main">
                     
+                    <!-- タイトルエリア -->
                     <section class="mv-md">
                         <div class="wrap">
                             <div class="title-box anime bottom-in">
-                                <p class="title-head">コース案内 - 個別指導</p>
+                                <p class="title-head">コース案内 - elioの個別指導</p>
                                 <h1 class="title lora">COURSE</h1>
                             </div>
                         </div>
                     </section>
 
+                    <!-- 導入セクション -->
                     <section class="intro-sec">
                         <div class="wrap">
                             <div class="head-text-box anime bottom-in">
@@ -136,7 +150,7 @@
                                 </h2>
                                 <p class="text noto">
                                     個別指導にこそ、選抜講師による専門指導が欠かせません。<br>
-                                    講師による対面指導の本質はグループ指導も個別指導も変わらず、むしろ生徒の個性と目的を trenches 的確に見抜き本質的な能力を開花させるためには、多くの合格指導の経験値が必要なのです。<br>
+                                    講師による対面指導の本質はグループ指導も個別指導も変わらず、むしろ生徒の個性と目的を的確に見抜き、本質的な能力を開花させるためには、多くの合格指導の経験値が必要なのです。<br>
                                     elioの個別指導は、選抜された講師が一人ひとりと向き合い、生徒の可能性を最大限に伸ばす少人数対面指導です。
                                 </p>
                             </div>
@@ -149,7 +163,7 @@
                                             学ぶフルオーダー講座
                                         </h3>
                                         <p class="text noto">
-                                            生徒の目的に応じて指導内容を構成する１名からのフルオーダー講座です。特定の単元・分野の指導や私国立校のカリキュラムに応じた指導、記述問題に特化した指導など、細かいニーズに対応します。elioでは教わることよりも自分で考えることを重視します。個別指導においても決して教えすぎない―知力を伸ばすための指導を実践します。
+                                            生徒の目的に応じて指導内容を構成する1名からのフルオーダー講座です。特定の単元・分野の指導や私国立校のカリキュラムに応じた指導、記述問題に特化した指導など、細かいニーズに対応します。elioでは教わることよりも自分で考えることを重視します。個別指導においても決して教えすぎない、知力を伸ばすための指導を実践します。
                                         </p>
                                     </div>
                                     <img src="img/personal-coaching_img_01.jpg" alt="フルオーダー講座">
@@ -162,7 +176,7 @@
                                         </h3>
                                         <p class="text noto">
                                             グループ指導と個別指導を連携させて受講することができます。弱点分野の強化はもちろん、小論文対策講座や英検対策講座など教科単元に特化した講座設定も可能です。<br>
-                                            弱点克服にとどまらず未来への道を灯すオーダーメイドという選択肢―それがelioの個別指導です。
+                                            弱点克服にとどまらず未来への道を灯すオーダーメイドという選択肢。それがelioの個別指導です。
                                         </p>
                                     </div>
                                     <img src="img/personal-coaching_img_02.jpg" alt="グループ指導との連携">
@@ -171,17 +185,18 @@
                         </div>
                     </section>
 
+                    <!-- 特徴セクション (01-04項目) -->
                     <section class="point-sec">
                         <div class="wrap">
                             <div class="anime bottom-in">
-                                <p class="title-head ta-center lora">POINT</p>
+                                <span class="title-head lora">POINT</span>
                                 <h2 class="serif">elioの個別指導の特徴</h2>
                                 
                                 <ul class="point-list">
                                     <li>
                                         <div class="title-box">
                                             <h3 class="serif">学校別内部進学対策</h3>
-                                            <p class="bottom-text lora">POINT 1</p>
+                                            <p class="bottom-text lora">POINT 01</p>
                                         </div>
                                         <div class="text-box noto">
                                             <p class="text">国・私立小や、大学附属校、中高一貫校では、学校ごとにカリキュラム・進度・レベルが異なります。elioでは各学校の指導方針を的確に把握し、通われている学校にぴったりの教科指導、そして生徒一人ひとりに合わせた進級・進学指導を徹底します。</p>
@@ -193,7 +208,7 @@
                                     <li>
                                         <div class="title-box">
                                             <h3 class="serif">難関受験対応</h3>
-                                            <p class="bottom-text lora">POINT 2</p>
+                                            <p class="bottom-text lora">POINT 02</p>
                                         </div>
                                         <div class="text-box noto">
                                             <p class="text">志望校ごとの独自性に合わせ、近年の入試を分析プロファイルし、一人ひとりに合わせた学習カリキュラムを作成します。目標とする志望校合格に向け、今何を学ぶべきかを逆算し、的確に指導していきます。</p>
@@ -201,8 +216,8 @@
                                     </li>
                                     <li>
                                         <div class="title-box">
-                                            <h3 class="serif">ご家庭との緻密な<br>コミュニケーション</h3>
-                                            <p class="bottom-text lora">POINT 3</p>
+                                            <h3 class="serif">ご家庭との緻密なコミュニケーション</h3>
+                                            <p class="bottom-text lora">POINT 03</p>
                                         </div>
                                         <div class="text-box noto">
                                             <p class="text">定期的な面談はもちろん、各授業ごとに担当講師が感じたお子さまの変化や授業の進捗状況など、細かいところまでご家庭と共有いたします。密な連携を重ねることで、目標へ向けた学力を最大限に引き出します。</p>
@@ -210,14 +225,33 @@
                                     </li>
                                     <li>
                                         <div class="title-box">
-                                            <h3 class="serif">医学部対策 / 国際併願対策<br>特殊カリキュラムにも対応</h3>
-                                            <p class="bottom-text lora">POINT 4</p>
+                                            <h3 class="serif">医学部対策 / 国際併願対策などに対応</h3>
+                                            <p class="bottom-text lora">POINT 04</p>
                                         </div>
                                         <div class="text-box noto">
                                             <p class="text">専門的教育機関と提携し、様々な特殊カリキュラムに対応することが可能です。お子さま、ご家庭の望む将来の進路へ向け、フルオーダーの独自カリキュラムを提案させていただきます。</p>
                                         </div>
                                     </li>
                                 </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- メッセージセクション (画像デザイン再現) -->
+                    <section class="message-sec">
+                        <div class="wrap">
+                            <div class="flex-box anime bottom-in">
+                                <div class="img-box">
+                                    <!-- アーチ型写真 -->
+                                    <img src="img/personal-message_img.png" alt="講師メッセージ">
+                                </div>
+                                <div class="text-box">
+                                    <span class="title-head lora">MESSAGE</span>
+                                    <h2 class="serif">一人ひとりの個性を、確かな才能へ。</h2>
+                                    <p class="text noto">
+                                        個別指導の本質は、単にわからない場所を教えることではありません。生徒一人ひとりの学びの癖や、まだ眠っている可能性をいち早く見抜き、最適な刺激を与えることにあります。elioの個別指導では、選抜された講師が対等な目線で生徒と向き合い、「自ら考える楽しさ」を共有します。個々の歩みに寄り添いながら、志望校合格のその先へ向けた強い意志を育んでいきます。
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </section>
