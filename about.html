@@ -61,6 +61,14 @@
             background: #fff;
         }
 
+        /* --- メガメニュー・共通パーツ用修正 --- */
+        #header-placeholder img,
+        #sidebar-placeholder img {
+            max-width: none; /* グローバルなmax-width制限を解除 */
+            width: auto;     /* 本来のサイズを優先 */
+        }
+        /* ---------------------------------- */
+
         .flex { display: flex; }
         .flex.bet { justify-content: space-between; }
         .flex.vcenter { align-items: center; }
@@ -178,7 +186,7 @@
                     <section class="philosophy">
                         <div class="wrap">
                             <ul class="philosophy-list">
-                                <li class="anime active">
+                                <li class="anime">
                                     <div class="flex bet vcenter">
                                         <div class="text-box bottom-in wave1">
                                             <p class="section-label">PHILOSOPHY</p>
@@ -191,7 +199,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="anime active">
+                                <li class="anime">
                                     <div class="flex bet vcenter">
                                         <div class="text-box bottom-in wave1">
                                             <p class="section-label">EDUCATOR INTRODUCTION</p>
