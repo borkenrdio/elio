@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>コース案内｜会員制難関受験専門塾エリオ（elio）</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
+    
+    <style>
+        html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, main, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+            margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; box-sizing: border-box;
+        }
+
+        html { font-size: 62.5%; scroll-behavior: smooth; }
+
+        body {
+            font-family: "Noto Sans JP", sans-serif;
+            font-size: 1.6rem; line-height: 1.8; color: #111; overflow-x: hidden; background: #fff;
+        }
+
+        ul { list-style: none; }
+        a { transition-duration: .5s; text-decoration: none; color: inherit; }
+        img { max-width: 100%; height: auto; vertical-align: middle; }
+
+        .serif { font-family: "Noto Serif JP", serif; }
+        .lora { font-family: Lora, serif; letter-spacing: .05em; }
+        .noto { font-family: "Noto Sans JP", sans-serif; }
+
+        /* PCレイアウト枠 */
+        @media screen and (min-width: 769px) {
+            .sp { display: none !important; }
+            .pc-frame { display: flex; min-width: 1200px; }
+            .pc-frame-left { width: 16rem; position: relative; z-index: 1000; }
+            .pc-frame-right { width: calc(100% - 16rem); flex-grow: 1; }
+            .wrap { margin: 0 auto; max-width: 1060px; padding: 0 60px; }
+        }
+
+        @media screen and (max-width: 768px) {
+            .pc { display: none !important; }
+            .wrap { padding: 0 20px; }
+        }
+
+        /* アニメーション */
+        .anime { opacity: 0; transition: all 1s ease; }
+        .anime.bottom-in { transform: translateY(30px); }
+        .active { opacity: 1 !important; transform: none !important; }
+
+        /* ページヘッダーデザイン (講師紹介ページ準拠) */
+        .mv-md { padding: 8rem 0; border-top: 1px solid #eee; background: #fff; }
+        .mv-md .title-box .title-head { position: relative; padding-top: 2rem; font-size: 1.8rem; font-weight: 500; margin-bottom: 1rem; color: #666; }
+        .mv-md .title-box .title-head:after { content: ""; position: absolute; top: 0; left: 0; width: 16px; height: 1px; background: #333; }
+        .mv-md .title { font-size: 4.2rem; color: #9e9779; letter-spacing: .2em; font-weight: 300; }
+
+        /* 導入テキストボックス */
+        .intro-sec { padding: 8rem 0; border-top: 1px solid #e6e6e6; }
+        .head-text-box { margin-bottom: 0; }
+        .head-text-box h2 { font-size: 2.8rem; font-weight: 600; margin-bottom: 3rem; color: #111; }
+        .head-text-box .text { font-size: 1.5rem; font-weight: 500; color: #333; line-height: 2; }
+
+        /* コース案内セクション (背景黒デザイン維持) */
+        section.sec-course { 
+            background: #161616; 
+            color: #fff; 
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        section.sec-course::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(158, 151, 121, 0.05) 0%, transparent 80%);
+            pointer-events: none;
+        }
+
+        .course-list { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 40px; 
+            margin-top: 0; 
+        }
+        .course-item { 
+            background: #ffffff; 
+            transition: .4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+            display: flex; 
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: none;
+        }
+        .course-item:hover { 
+            border-color: rgba(158, 151, 121, 0.8); 
+            transform: translateY(-8px);
+        }
+        .course-item .img-box {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            position: relative;
+        }
+        .course-item .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 1.2s;
+        }
+        .course-item:hover .img-box img {
+            transform: scale(1.08);
+        }
+        .course-item .data { 
+            width: 100%; 
+            padding: 30px 40px 45px; 
+            position: relative;
+            text-align: left;
+        }
+        .course-item .head { 
+            font-size: 2.2rem; 
+            color: #1a1a1a;
+            margin-bottom: 12px; 
+            letter-spacing: 0.05em;
+        }
+        .course-item .sub { 
+            color: #9e9779; 
+            font-size: 1.1rem; 
+            font-weight: 700;
+            margin-bottom: 15px; 
+            display: block; 
+            letter-spacing: 0.1em;
+        }
+        .course-item .text { 
+            font-size: 1.45rem; 
+            line-height: 1.9;
+            color: #444;
+        }
+
+        @media screen and (max-width: 768px) {
+            .pc-frame-left { display: none; }
+            .pc-frame-right { width: 100%; }
+            .mv-md { padding: 5rem 0; }
+            .mv-md .title { font-size: 3.2rem; }
+            .intro-sec { padding: 5rem 0; }
+            .head-text-box h2 { font-size: 2.2rem; }
+            .course-list { grid-template-columns: 1fr; gap: 30px; }
+        }
+    </style>
+</head>
+
+<body class="l-page l-course">
+
+    <div id="header-placeholder"></div>
+
+    <div class="pc-frame">
+        <aside id="sidebar-placeholder" class="pc pc-frame-left"></aside>
+
+        <div class="pc-frame-right">
+            <div class="bread pc">
+                <div class="wrap" style="padding:15px 0; font-size:1.1rem; color:#888;">HOME > コース案内</div>
+            </div>
+
+            <main id="contents">
+                <article class="l-main serif">
+                    
+                    <!-- メインビジュアル (講師紹介スタイル) -->
+                    <section class="mv-md">
+                        <div class="wrap">
+                            <div class="title-box anime bottom-in">
+                                <p class="title-head">コース案内</p>
+                                <h1 class="title lora">COURSE</h1>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 導入テキスト -->
+                    <section class="intro-sec">
+                        <div class="wrap">
+                            <div class="head-text-box anime bottom-in">
+                                <h2>学年別コースのご案内</h2>
+                                <p class="text noto">
+                                    茗荷谷・恵比寿・出町柳(京都)に校舎を置く会員制難関受験専門塾エリオ (elio) の、学年別のコースについて紹介します。
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- コース一覧セクション -->
+                    <section id="course" class="sec-course">
+                        <div class="wrap w1220">
+                            <div class="course-list">
+                                <a href="course-early-elementary-students" class="course-item anime bottom-in">
+                                    <div class="img-box">
+                                        <img src="img/course-early-elementary-students.jpg" alt="低学年能力開発">
+                                    </div>
+                                    <div class="data">
+                                        <span class="sub lora">First to Second Grade</span>
+                                        <h3 class="head serif">低学年能力開発</h3>
+                                        <p class="text noto">難関中学受験へ向けて、自ら考える力と「脳力」を低学年のうちに楽しみながら育むコースです。</p>
+                                    </div>
+                                </a>
+                                <a href="course-late-elementary-students" class="course-item anime bottom-in">
+                                    <div class="img-box">
+                                        <img src="img/course-late-elementary-students.jpg" alt="中学受験">
+                                    </div>
+                                    <div class="data">
+                                        <span class="sub lora">Third to Sixth Grade</span>
+                                        <h3 class="head serif">中学受験</h3>
+                                        <p class="text noto">洛星・同志社女子など、難関中学合格へ向けた本質的な思考力と突破力を養います。</p>
+                                    </div>
+                                </a>
+                                <a href="course-one-on-one-instruction" class="course-item anime bottom-in">
+                                    <div class="img-box">
+                                        <img src="img/course-one-on-one-instruction.jpg" alt="個別指導">
+                                    </div>
+                                    <div class="data">
+                                        <span class="sub lora">Individual Instruction</span>
+                                        <h3 class="head serif">個別指導</h3>
+                                        <p class="text noto">同志社・立命館の内部進学対策や弱点補強など、個々のニーズに合わせた完全個別カリキュラムです。</p>
+                                    </div>
+                                </a>
+                                <a href="course-junior-and-high" class="course-item anime bottom-in">
+                                    <div class="img-box">
+                                        <img src="img/course-junior-and-high.jpg" alt="中学生・高校生">
+                                    </div>
+                                    <div class="data">
+                                        <span class="sub lora">Junior / High School</span>
+                                        <h3 class="head serif">中学生・高校生</h3>
+                                        <p class="text noto">東大・京大・医学部など、国内最難関校合格へ本気で挑む学生を、最高峰の講師陣が支えます。</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div id="cta-placeholder"></div>
+
+                </article>
+            </main>
+
+            <div id="footer-placeholder"></div>
+        </div>
+    </div>
+
+    <script>
+        async function loadPart(id, path) {
+            try {
+                const response = await fetch(path);
+                if (response.ok) {
+                    const html = await response.text();
+                    const el = document.getElementById(id);
+                    if (el) el.innerHTML = html;
+                }
+            } catch (e) {
+                console.error('パーツの読み込みに失敗しました:', path, e);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadPart('header-placeholder', 'parts/header.html');
+            loadPart('sidebar-placeholder', 'parts/menu.html');
+            loadPart('cta-placeholder', 'parts/CTA.html');
+            loadPart('footer-placeholder', 'parts/footer.html');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.anime').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
