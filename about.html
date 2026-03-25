@@ -26,6 +26,7 @@
         html {
             line-height: 1;
             font-size: 62.5%;
+            scroll-behavior: smooth;
         }
 
         ol, ul {
@@ -61,14 +62,7 @@
             background: #fff;
         }
 
-        /* --- メガメニュー・共通パーツ用修正 --- */
-        #header-placeholder img,
-        #sidebar-placeholder img {
-            max-width: none; /* グローバルなmax-width制限を解除 */
-            width: auto;     /* 本来のサイズを優先 */
-        }
-        /* ---------------------------------- */
-
+        /* 共通のFlex・ユーティリティ */
         .flex { display: flex; }
         .flex.bet { justify-content: space-between; }
         .flex.vcenter { align-items: center; }
@@ -79,6 +73,7 @@
         .serif { font-family: "Noto Serif JP", serif; }
         .lora { font-family: Lora, serif; letter-spacing: .05em; }
 
+        /* アニメーション */
         .anime { opacity: 0; }
         .anime.active { opacity: 1; }
         .bottom-in { transform: translateY(20px); transition: transform 1s, opacity 1s; }
@@ -87,6 +82,7 @@
         .wave1 { transition-delay: .2s; }
         .wave2 { transition-delay: .4s; }
 
+        /* ボタン */
         .md-btn {
             display: inline-flex;
             align-items: center;
@@ -115,6 +111,7 @@
         }
         .md-btn:hover .bar { right: 1rem; }
 
+        /* レイアウト */
         @media screen and (min-width: 769px) {
             .sp { display: none !important; }
             .pc-frame { display: flex; min-width: 1200px; }
@@ -128,6 +125,7 @@
             }
         }
 
+        /* ページ固有スタイル（ABOUT US） */
         .l-page .mv-md { padding: 8rem 0; border-top: 1px solid #eee; background: #fff; }
         .mv-md .title-box { width: 45%; }
         .mv-md .title-box .title-head { position: relative; padding-top: 2rem; font-size: 1.8rem; font-weight: 500; margin-bottom: 1rem; color: #666; }
@@ -135,14 +133,21 @@
         .mv-md .title { font-size: 4.2rem; color: #9e9779; letter-spacing: .2em; font-weight: 300; }
         .mv-md .lead-text { width: 45%; font-size: 1.4rem; font-weight: 500; color: #333; line-height: 2; }
 
+        /* -----------------------------------------------------
+           本文のリスト項目（メニューと衝突しないようセレクタを限定）
+        ----------------------------------------------------- */
         .philosophy-list > li { padding: 8rem 0; border-top: 1px solid #e6e6e6; }
-        .text-box { width: 45%; }
-        .text-box .section-label { color: #9e9779; font-size: 1.3rem; margin-bottom: 1rem; font-family: Lora, serif; letter-spacing: 0.1em; }
-        .text-box h2 { font-size: 2.8rem; font-weight: 600; margin-bottom: 3rem; color: #111; }
-        .text-box .text { font-size: 1.5rem; font-weight: 500; margin-bottom: 5rem; color: #333; }
-        .img-box { width: 50%; overflow: hidden; }
-        .img-box img { width: 100%; transition: .8s; }
-        .img-box:hover img { transform: scale(1.05); }
+        
+        /* 本文のテキストボックス */
+        .philosophy-list .text-box { width: 45%; }
+        .philosophy-list .text-box .section-label { color: #9e9779; font-size: 1.3rem; margin-bottom: 1rem; font-family: Lora, serif; letter-spacing: 0.1em; }
+        .philosophy-list .text-box h2 { font-size: 2.8rem; font-weight: 600; margin-bottom: 3rem; color: #111; }
+        .philosophy-list .text-box .text { font-size: 1.5rem; font-weight: 500; margin-bottom: 5rem; color: #333; }
+        
+        /* 本文の画像ボックス */
+        .philosophy-list .img-box { width: 50%; overflow: hidden; }
+        .philosophy-list .img-box img { width: 100%; transition: .8s; }
+        .philosophy-list .img-box:hover img { transform: scale(1.05); }
 
         @media screen and (max-width: 768px) {
             .pc { display: none !important; }
@@ -151,8 +156,9 @@
             .mv-md .flex { flex-direction: column; }
             .mv-md .lead-text { width: 100%; margin-top: 3rem; }
             .philosophy-list li .flex { flex-direction: column-reverse; }
-            .text-box, .img-box { width: 100%; }
-            .text-box .text { width: 100%; margin-bottom: 3rem; }
+            .philosophy-list .text-box, 
+            .philosophy-list .img-box { width: 100%; }
+            .philosophy-list .text-box .text { width: 100%; margin-bottom: 3rem; }
         }
     </style>
 </head>
