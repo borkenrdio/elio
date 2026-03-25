@@ -10,6 +10,8 @@
             margin: 0;
             padding: 0;
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         /* レイアウト基本設定 */
@@ -140,12 +142,18 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            transition: transform .6s ease;
+            transition: transform .6s cubic-bezier(0.2, 1, 0.3, 1);
             opacity: 1;
+            /* 高解像度ディスプレイ向けの描画最適化 */
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: auto;
+            /* 拡大時のぼやけ防止 */
             backface-visibility: hidden;
+            transform: translateZ(0);
+            will-change: transform;
         }
         .menu-item:hover .img-box img {
-            transform: scale(1.05);
+            transform: scale(1.04) translateZ(0);
         }
 
         /* ラベル（ゴールドの線付き） */
