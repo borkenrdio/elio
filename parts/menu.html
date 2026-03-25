@@ -28,10 +28,11 @@
             z-index: 1000;
         }
 
-        /* ロゴエリア */
+        /* ロゴエリア：上下余白を排除 */
         .l-side .logo-unit {
-            padding: 2.5rem 0;
+            padding: 0; 
             text-align: center;
+            line-height: 0; /* 画像下の微細な隙間をなくす */
         }
         .l-side .logo-unit a {
             display: block;
@@ -39,7 +40,8 @@
         .l-side .logo-unit img {
             width: 100%;
             height: auto;
-            max-width: 12rem;
+            max-width: 100%; /* サイドバー幅いっぱいに拡大 */
+            display: block; /* 隙間防止 */
         }
 
         /* ナビゲーションリンク */
@@ -104,7 +106,7 @@
             transform: translateX(0);
         }
 
-        /* タイトルテキスト（COURSE / ABOUT US等） */
+        /* タイトルテキスト */
         .menu-title {
             color: #bfa57d;
             font-family: "Shippori Mincho", "Noto Serif JP", serif;
@@ -115,7 +117,7 @@
             font-weight: 500;
         }
 
-        /* グリッドレイアウト（最大2項目） */
+        /* グリッドレイアウト */
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -125,7 +127,7 @@
             list-style: none;
         }
 
-        /* 各メニューアイテム */
+        /* メニューアイテム */
         .menu-item a {
             text-decoration: none;
             color: #fff;
@@ -144,10 +146,8 @@
             display: block;
             transition: transform .6s cubic-bezier(0.2, 1, 0.3, 1);
             opacity: 1;
-            /* 高解像度ディスプレイ向けの描画最適化 */
             image-rendering: -webkit-optimize-contrast;
             image-rendering: auto;
-            /* 拡大時のぼやけ防止 */
             backface-visibility: hidden;
             transform: translateZ(0);
             will-change: transform;
@@ -156,7 +156,7 @@
             transform: scale(1.04) translateZ(0);
         }
 
-        /* ラベル（ゴールドの線付き） */
+        /* ラベル */
         .menu-item .label {
             display: flex;
             align-items: center;
