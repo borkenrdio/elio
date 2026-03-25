@@ -78,7 +78,8 @@
 
     .l-side .link { border-top: 1px solid #eee; padding: 0; margin: 0; list-style: none; }
     .l-side .link > li { border-bottom: 1px solid #eee; }
-    .l-side .link .l-pulldown .head {
+    
+    .l-side .link .head {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -89,11 +90,12 @@
         color: #333;
         transition: .3s;
         background: #fff;
+        box-sizing: border-box;
     }
-    .l-side .link .l-pulldown .head .icon { font-size: 0.9rem; color: #ccc; transition: .3s; }
+    .l-side .link .head .icon { font-size: 0.9rem; color: #ccc; transition: .3s; }
 
-    .l-side .link .l-pulldown:hover .head { background: #982020; color: #fff; }
-    .l-side .link .l-pulldown:hover .head .icon { color: #fff; transform: translateX(3px); }
+    .l-side .link li:hover > .head { background: #982020; color: #fff; }
+    .l-side .link li:hover > .head .icon { color: #fff; transform: translateX(3px); }
 
     /* メガメニュー本体 (PC) */
     .l-side .link .l-pulldown .body {
@@ -127,7 +129,16 @@
     .l-side .side-bottom { border-top: 1px solid #eee; }
     .l-side .side-tel { padding: 2.5vh 1.5rem; text-align: center; }
     .l-side .side-tel .label { display: block; font-size: 1rem; color: #666; margin-bottom: 0.5rem; font-weight: 700; }
-    .l-side .side-tel .num { display: block; font-size: 2.1rem; font-weight: 700; font-family: "Lora", serif; color: #111; }
+    
+    /* 修正点：電話番号リンクのスタイルを調整 */
+    .l-side .side-tel .num {
+        display: block;
+        font-size: 2.1rem;
+        font-weight: 700;
+        font-family: "Lora", serif;
+        color: #111;
+        text-decoration: none;
+    }
     .l-side .side-tel .time { display: block; font-size: 1.1rem; color: #999; margin-top: 0.5rem; font-weight: 600; }
     .l-side .side-contact-btn { background: #982020; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3.5vh 1rem; text-decoration: none; }
     .l-side .side-contact-btn span { font-size: 1.3rem; font-weight: 700; margin-top: 0.8rem; }
@@ -148,7 +159,7 @@
     .is-active .menu-overlay { display: block; opacity: 1; }
 
     /* -----------------------------------------------------
-        レスポンシブ (スマホ・タブレット)
+        レスポンス (スマホ・タブレット)
     ----------------------------------------------------- */
     @media screen and (max-width: 768px) {
         .sp-bar { display: flex; }
@@ -157,31 +168,28 @@
             position: fixed;
             left: 0;
             top: 0;
-            transform: translateX(-100%); /* 画面外に隠す */
+            transform: translateX(-100%); 
             width: 260px;
             box-shadow: 10px 0 30px rgba(0,0,0,0.1);
             z-index: 1000;
         }
 
-        /* メニュー表示時 */
         .is-active .l-side {
             transform: translateX(0);
         }
 
-        /* スマホではメガメニューを通常のリスト表示にするか、アコーディオンにする等の工夫が必要ですが
-           今回はスライドメニュー内に収める形に調整 */
         .l-side .link .l-pulldown .body {
             position: static;
             width: 100%;
             height: auto;
-            display: none; /* 初期は隠す */
+            display: none;
             padding: 2rem;
             transform: none;
             visibility: visible;
             opacity: 1;
+            background: #801a1a; 
         }
-        /* スマホ時はホバーではなくクリックで見せるのが一般的ですが、
-           簡易的にリンクをクリックできるように調整 */
+        
         .l-side .link .l-pulldown.is-open .body {
             display: block;
         }
@@ -272,15 +280,20 @@
                 </div>
             </li>
 
-            <li><a href="apply" class="head"><span>入会までの流れ</span> <i class="icon">❯</i></a></li>
-            <li><a href="question" class="head"><span>よくある質問</span> <i class="icon">❯</i></a></li>
+            <li class="l-pulldown">
+                <a href="apply" class="head"><span>入会までの流れ</span> <i class="icon">❯</i></a>
+            </li>
+            <li class="l-pulldown">
+                <a href="question" class="head"><span>よくある質問</span> <i class="icon">❯</i></a>
+            </li>
         </ul>
     </div>
     
     <div class="side-bottom">
         <div class="side-tel">
             <span class="label">総合電話窓口</span>
-            <span class="num">075-231-7711</span>
+            <!-- 修正箇所：href="tel:..." を追加 -->
+            <a href="tel:0752317711" class="num">075-231-7711</a>
             <span class="time">対応時間 13:00〜20:00</span>
         </div>
         <a href="contact" class="side-contact-btn">
@@ -291,20 +304,16 @@
 </div>
 
 <script>
-    // メインメニューの開閉（スマホ用）
     function toggleMenu() {
         document.body.classList.toggle('is-active');
     }
 
-    // サブメニューの開閉（スマホ用アコーディオン）
     function toggleSubMenu(element) {
         if (window.innerWidth <= 768) {
             const parent = element.parentElement;
-            parent.classList.toggle('is-open');
-        } else {
-            // PCの場合は通常のリンク動作
-            const href = element.getAttribute('data-href');
-            if(href) window.location.href = href;
+            if (parent.querySelector('.body')) {
+                parent.classList.toggle('is-open');
+            }
         }
     }
 </script>
