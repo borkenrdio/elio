@@ -18,10 +18,20 @@
 
         html { font-size: 62.5%; scroll-behavior: smooth; }
 
-        /* 全てのテキスト要素を明朝体で強制的に統一 */
-        body, button, input, select, textarea, p, div, span, a, h1, h2, h3, h4, h5, h6 {
+        /* 基本フォントを明朝体に設定（メインコンテンツ用） */
+        body {
             font-family: "Noto Serif JP", serif;
             font-size: 1.6rem; line-height: 1.8; color: #111; overflow-x: hidden; background: #fff;
+        }
+
+        /* フォーム要素やテキスト要素を明朝体で上書き */
+        button, input, select, textarea, p, div, span, a, h1, h2, h3, h4, h5, h6 {
+            font-family: "Noto Serif JP", serif;
+        }
+
+        /* メニュー（サイドバー）のデザインとフォントを維持 */
+        #sidebar-placeholder, .pc-frame-left, .pc-frame-left * {
+            font-family: "Noto Sans JP", sans-serif !important;
         }
 
         ul, ol { list-style: none; }
@@ -30,8 +40,6 @@
 
         .serif { font-family: "Noto Serif JP", serif; }
         .lora { font-family: Lora, serif; letter-spacing: .05em; }
-        /* 以前のゴシック体クラスも明朝体に変更 */
-        .noto { font-family: "Noto Serif JP", serif; }
 
         @media screen and (min-width: 769px) {
             .sp { display: none !important; }
@@ -58,7 +66,6 @@
         .flow-sec { padding: 10rem 0; border-top: 1px solid #eee; position: relative; }
         .flow-sec:nth-of-type(even) { background-color: #fafafa; }
         
-        /* テキスト左、画像右で統一 */
         .flow-inner { display: flex; gap: 6rem; align-items: center; justify-content: space-between; }
         
         .flow-text { width: 52%; }
@@ -78,11 +85,19 @@
             border-radius: 50%; 
             margin-right: 2rem;
             flex-shrink: 0;
-            font-family: Lora, serif;
+            font-family: Lora, serif !important; /* 数字はLoraを維持 */
         }
         .flow-title { font-size: 2.8rem; font-weight: 700; color: #111; letter-spacing: 0.05em; }
         
-        .flow-desc { font-size: 1.5rem; line-height: 2.2; color: #444; margin-bottom: 3rem; }
+        /* 画像image_8a3a3a.pngで指摘された箇所のスタイル強化 */
+        .flow-desc { 
+            font-family: "Noto Serif JP", serif !important;
+            font-size: 1.5rem; 
+            line-height: 2.4; 
+            color: #444; 
+            margin-bottom: 3.5rem; 
+            letter-spacing: 0.03em;
+        }
 
         .flow-arrow { 
             position: absolute; 
@@ -118,7 +133,7 @@
             background: #fff;
             color: #111;
             border: 1px solid #111;
-            font-family: Lora, serif;
+            font-family: Lora, serif !important;
         }
         .md-btn.contact-btn:hover { opacity: 0.8; transform: translateY(-3px); }
         .md-btn.tel:hover { background: #111; color: #fff; }
@@ -127,7 +142,7 @@
         .message-sec { padding: 10rem 0; background: #fafafa; border-top: 1px solid #eee; }
         .message-sec .flex-box { display: flex; gap: 8rem; align-items: center; }
         .message-sec .img-box { width: 40%; flex-shrink: 0; }
-        .message-sec img { width: 100%; border-radius: 50% 50% 0 0; } /* アーチ型 */
+        .message-sec img { width: 100%; border-radius: 50% 50% 0 0; }
         .message-sec .text-box { flex-grow: 1; }
         .message-sec .title-head { font-size: 1.4rem; color: #9e9779; margin-bottom: 1.5rem; font-weight: 700; display: block; letter-spacing: 0.1em; }
         .message-sec h2 { font-size: 3rem; margin-bottom: 3.5rem; line-height: 1.4; color: #111; }
@@ -185,8 +200,8 @@
                                         各校舎のお電話にてお気軽にお問い合わせください。また、Webサイトの専用フォームからも24時間お問い合わせを受け付けております。ご不明な点やご不安なことがございましたら、まずは一度ご連絡ください。
                                     </p>
                                     <div class="flow-btns">
-                                        <a href="contact-us/" class="md-btn contact-btn web">Webからのお問い合わせ</a>
-                                        <a href="tel:000-0000-0000" class="md-btn contact-btn tel">TEL: 000-0000-0000</a>
+                                        <a href="contact-us/" class="md-btn contact-btn web serif">Webからのお問い合わせ</a>
+                                        <a href="tel:075-231-7711" class="md-btn contact-btn tel lora">TEL: 075-231-7711</a>
                                     </div>
                                 </div>
                                 <div class="flow-img">
