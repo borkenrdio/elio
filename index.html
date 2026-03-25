@@ -6,16 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>会員制難関受験専門塾エリオ（elio）</title>
     
-    <!-- 外部フォント -->
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:400,500,600,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
     
-    <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     
     <style>
-        /* 基本リセット設定 */
         html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, main, menu, nav, output, ruby, section, summary, time, mark, audio, video {
             margin: 0;
             padding: 0;
@@ -58,7 +55,6 @@
             background: #fff;
         }
 
-        /* 共通ユーティリティ */
         .flex { display: flex; }
         .flex.bet { justify-content: space-between; }
         .flex.vcenter { align-items: center; }
@@ -74,12 +70,10 @@
         .ta-center { text-align: center; }
         .white { color: #fff; }
 
-        /* コンテナ */
         .wrap { margin: 0 auto; width: 100%; max-width: 1060px; padding: 0 20px; }
         .w1420 { max-width: 1420px; }
         .w1220 { max-width: 1220px; }
 
-        /* アニメーション */
         .anime { opacity: 0; transition: all 1s ease; }
         .anime.bottom-in { transform: translateY(30px); }
         .anime.blur { filter: blur(10px); }
@@ -92,7 +86,6 @@
         .wave2 { transition-delay: 0.5s; }
         .wave3 { transition-delay: 0.8s; }
 
-        /* ボタン */
         .md-btn {
             display: inline-flex;
             align-items: center;
@@ -111,17 +104,14 @@
         .md-btn .bar { position: absolute; top: 50%; right: 2rem; width: 2rem; height: 1px; background: currentColor; transform: translateY(-50%); transition: .5s; }
         .md-btn:hover .bar { right: 1rem; }
 
-        /* レイアウト構造 */
         .pc-frame { display: flex; width: 100%; align-items: flex-start; }
         .pc-frame-left { width: 18rem; position: sticky; top: 0; height: 100vh; z-index: 1000; background: #fff; }
         .pc-frame-right { width: calc(100% - 18rem); flex-grow: 1; min-height: 100vh; }
 
-        /* ヒーローセクション */
         #top-mv { height: 100vh; width: 100%; background-color: #000; position: relative; }
         .md-lay { width: 100%; height: 100%; position: relative; overflow: hidden; }
         .lay-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
         
-        /* 画像の上の暗いフィルター */
         .lay-bg::after { 
             content: ""; 
             position: absolute; 
@@ -133,7 +123,6 @@
             z-index: 2;
         }
         
-        /* スライド画像自体の設定 */
         .lay-bg img { 
             width: 100%; 
             height: 100%; 
@@ -142,7 +131,6 @@
             position: relative;
         }
         
-        /* ズームアニメーション */
         .zoom .lay-bg { transform: scale(1.1); transition: 6s transform linear; }
         .swiper-slide-active .zoom .lay-bg { transform: scale(1); }
 
@@ -165,24 +153,112 @@
         .swiper-pagination-bullet { width: 10px; height: 10px; background: #fff; opacity: 0.4; border-radius: 50%; transition: .3s; cursor: pointer; border: none; }
         .swiper-pagination-bullet-active { opacity: 1; transform: scale(1.3); }
 
-        /* セクション共通 */
+        .sec-news { background: #f9f9f9; padding: 40px 0; border-bottom: 1px solid #eee; }
+        .news-inner { display: flex; align-items: center; }
+        .news-head { border-right: 1px solid #ddd; padding-right: 40px; margin-right: 40px; flex-shrink: 0; }
+        .news-head .en { display: block; font-size: 1.1rem; color: #9e9779; font-weight: 700; margin-bottom: 5px; }
+        .news-head .jp { font-size: 1.8rem; font-weight: 600; color: #111; letter-spacing: 0.05em; }
+        .news-list { flex-grow: 1; }
+        .news-item { border-bottom: 1px solid #e0e0e0; padding: 12px 0; }
+        .news-item:last-child { border-bottom: none; }
+        .news-item a { display: flex; align-items: center; transition: .3s; }
+        .news-item .date { width: 100px; font-size: 1.3rem; color: #888; flex-shrink: 0; }
+        .news-item .cat { background: #9e9779; color: #fff; font-size: 1rem; padding: 2px 10px; margin-right: 20px; flex-shrink: 0; }
+        .news-item .txt { font-size: 1.4rem; color: #333; transition: .3s; }
+        .news-item a:hover .txt { color: #9e9779; transform: translateX(5px); }
+
         section.sec { padding: 100px 0; }
         .sec-head { margin-bottom: 60px; }
         .sec-head .sub { color: #9e9779; font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; display: block; }
         .sec-head .main { font-size: 3.6rem; }
         .sec-head .desc { font-size: 1.5rem; color: #555; margin-top: 25px; line-height: 2; }
 
-        /* コース案内 */
-        section.sec-course { background: #0a0a0a; color: #fff; }
-        .course-list { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
-        .course-item { border: 1px solid #333; transition: .3s; display: flex; background: #111; }
-        .course-item:hover { border-color: #9e9779; }
-        .course-item .data { width: 100%; padding: 40px; }
-        .course-item .head { font-size: 2.2rem; margin-bottom: 10px; }
-        .course-item .sub { color: #9e9779; font-size: 1.2rem; margin-bottom: 15px; display: block; }
-        .course-item .text { font-size: 1.3rem; opacity: 0.7; }
+        /* コース案内 背景黒 × ボックス白デザイン */
+        section.sec-course { 
+            background: #161616; 
+            color: #fff; 
+            position: relative;
+            overflow: hidden;
+        }
+        section.sec-course::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(158, 151, 121, 0.05) 0%, transparent 80%);
+            pointer-events: none;
+        }
+        /* セクション見出しを白に */
+        section.sec-course .sec-head .main {
+            color: #fff;
+        }
 
-        /* 特徴・ポリシー */
+        .course-list { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 40px; 
+            margin-top: 40px; 
+        }
+        .course-item { 
+            background: #ffffff; 
+            border: 1px solid transparent;
+            transition: .4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+            display: flex; 
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .course-item:hover { 
+            border-color: rgba(158, 151, 121, 0.5); 
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+        .course-item .img-box {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            position: relative;
+        }
+        .course-item .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 1.2s;
+        }
+        .course-item:hover .img-box img {
+            transform: scale(1.08);
+        }
+        .course-item .img-box::after {
+            content: "";
+            position: absolute;
+            bottom: 0; left: 0; width: 100%; height: 30%;
+            background: linear-gradient(to top, #ffffff, transparent);
+        }
+
+        .course-item .data { 
+            width: 100%; 
+            padding: 30px 40px 45px; 
+            position: relative;
+        }
+        .course-item .head { 
+            font-size: 2.2rem; 
+            color: #1a1a1a;
+            margin-bottom: 12px; 
+            letter-spacing: 0.05em;
+        }
+        .course-item .sub { 
+            color: #9e9779; 
+            font-size: 1.1rem; 
+            font-weight: 700;
+            margin-bottom: 15px; 
+            display: block; 
+            letter-spacing: 0.1em;
+        }
+        .course-item .text { 
+            font-size: 1.45rem; 
+            line-height: 1.9;
+            color: #444;
+        }
+
         .point-list { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
         .point-item .img-box { aspect-ratio: 16 / 9; background: #f4f4f4; margin-bottom: 25px; position: relative; overflow: hidden; }
         .point-item .img-box img { width: 100%; height: 100%; object-fit: cover; }
@@ -196,18 +272,6 @@
         .policy-item .head { font-size: 1.8rem; margin-bottom: 15px; border-top: 1px solid #eee; padding-top: 15px; }
         .policy-item .no { color: #9e9779; margin-right: 10px; font-weight: 700; }
 
-        /* 学習メソッド */
-        .method-section { background: #fdfaf0; padding: 100px 0; }
-        .method-container { background: #fff; padding: 60px 50px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
-        .method-group { margin-bottom: 50px; }
-        .method-group:last-child { margin-bottom: 0; }
-        .method-group-title { display: flex; align-items: baseline; margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
-        .method-group-title .main { font-size: 2rem; font-weight: 700; margin-right: 20px; }
-        .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-        .method-btn-link { display: flex; align-items: center; justify-content: space-between; border: 1px solid #ddd; padding: 18px 20px; font-size: 1.4rem; background: #fff; transition: .3s; }
-        .method-btn-link:hover { border-color: #9e9779; background: #fdfaf0; }
-
-        /* モバイル対応 */
         @media screen and (max-width: 768px) {
             .pc { display: none !important; }
             .pc-frame { display: block; }
@@ -216,9 +280,19 @@
             section.sec { padding: 60px 0; }
             .slide-main { font-size: 2.8rem; }
             .slide-sub { font-size: 1.6rem; }
-            .course-list, .point-list, .policy-list, .method-grid { grid-template-columns: 1fr; }
+            .course-list, .point-list, .policy-list { grid-template-columns: 1fr; }
             .sec-head .main { font-size: 2.6rem; }
-            .method-container { padding: 40px 20px; }
+
+            .sec-news { padding: 30px 0; }
+            .news-inner { flex-direction: column; align-items: flex-start; }
+            .news-head { border-right: none; border-bottom: 1px solid #ddd; padding: 0 0 15px 0; margin: 0 0 15px 0; width: 100%; }
+            .news-item .date { width: 80px; }
+            .news-item .cat { margin-right: 10px; }
+            .news-item a { align-items: flex-start; flex-wrap: wrap; }
+            .news-item .txt { width: 100%; margin-top: 5px; }
+
+            .course-list { gap: 30px; }
+            .course-item .data { padding: 25px 25px 35px; }
         }
     </style>
 </head>
@@ -234,15 +308,12 @@
             <main id="contents">
                 <article class="l-main">
                     
-                    <!-- ヒーローセクション -->
                     <div id="top-mv" class="swiper">
                         <div class="swiper-wrapper">
                             
-                            <!-- スライド 01 -->
                             <div class="swiper-slide">
                                 <div class="md-lay zoom pc-over">
                                     <div class="lay-bg slide-img">
-                                        <!-- ↓ここから画像を挿入・変更できます -->
                                         <img src="img/facility-classroom-1f.jpg" alt="エリオ学びの志">
                                     </div>
                                     <div class="lay-content">
@@ -266,11 +337,9 @@
                                 </div>
                             </div>
 
-                            <!-- スライド 02 -->
                             <div class="swiper-slide">
                                 <div class="md-lay zoom pc-over">
                                     <div class="lay-bg slide-img">
-                                        <!-- ↓ここから画像を挿入・変更できます -->
                                         <img src="img/facility-classroom-3f.jpg" alt="STUDY×FUTURE">
                                     </div>
                                     <div class="lay-content">
@@ -297,56 +366,85 @@
                         </div>
                     </div>
 
-                    <!-- 導入テキスト -->
-                    <section class="mv-intro" style="padding: 60px 0; background: #f4f4f4;">
+                    <section class="sec-news">
                         <div class="wrap">
-                            <h1 class="noto" style="font-size: 1.8rem; line-height: 2; color: #333; font-weight: 500; text-align: center;">
-                                会員制難関受験専門塾エリオ（elio）は、茗荷谷・恵比寿・京都に展開する、<br>優れたリーダーシップを育む、新しい塾教育を提供する学習塾です。
-                            </h1>
+                            <div class="news-inner anime bottom-in">
+                                <div class="news-head">
+                                    <span class="en lora">NEWS</span>
+                                    <h2 class="jp serif">最新情報</h2>
+                                </div>
+                                <ul class="news-list">
+                                    <li class="news-item">
+                                        <a href="#">
+                                            <span class="date lora">2024.03.25</span>
+                                            <span class="cat noto">重要</span>
+                                            <span class="txt">2024年度 中学入試・高校入試 合格実績を更新いたしました。</span>
+                                        </a>
+                                    </li>
+                                    <li class="news-item">
+                                        <a href="#">
+                                            <span class="date lora">2024.03.10</span>
+                                            <span class="cat noto">お知らせ</span>
+                                            <span class="txt">【茗荷谷・恵比寿・京都】春期講習会の最終受付を承っております。</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </section>
 
-                    <!-- コース案内 -->
+                    <!-- コース案内 背景黒×ボックス白 -->
                     <section id="course" class="sec sec-course">
                         <div class="wrap w1220">
                             <div class="sec-head ta-center">
                                 <span class="lora sub anime bottom-in">COURSE</span>
-                                <h2 class="serif main white anime bottom-in wave2">コース案内</h2>
+                                <h2 class="serif main anime bottom-in wave2">コース案内</h2>
                             </div>
                             <div class="course-list">
                                 <div class="course-item anime bottom-in">
+                                    <div class="img-box">
+                                        <img src="img/course-low-grade.jpg" alt="低学年能力開発">
+                                    </div>
                                     <div class="data">
                                         <span class="sub lora">First to Second Grade</span>
                                         <h3 class="head serif">低学年能力開発</h3>
-                                        <p class="text serif">難関中学受験へ向けて「脳力」を低学年のうちに育てるコースです。</p>
+                                        <p class="text serif">難関中学受験へ向けて、自ら考える力と「脳力」を低学年のうちに楽しみながら育むコースです。</p>
                                     </div>
                                 </div>
                                 <div class="course-item anime bottom-in wave2">
+                                    <div class="img-box">
+                                        <img src="img/course-elementary.jpg" alt="中学受験">
+                                    </div>
                                     <div class="data">
                                         <span class="sub lora">Third to Sixth Grade</span>
                                         <h3 class="head serif">中学受験</h3>
-                                        <p class="text serif">洛星・同志社女子など、難関中学合格へ向けた本質的な学力を養います。</p>
+                                        <p class="text serif">洛星・同志社女子など、難関中学合格へ向けた本質的な思考力と突破力を養います。</p>
                                     </div>
                                 </div>
                                 <div class="course-item anime bottom-in">
+                                    <div class="img-box">
+                                        <img src="img/course-individual.jpg" alt="個別指導">
+                                    </div>
                                     <div class="data">
-                                        <span class="sub lora">Internal Promotion</span>
+                                        <span class="sub lora">Individual Instruction</span>
                                         <h3 class="head serif">個別指導</h3>
-                                        <p class="text serif">同志社・立命館の内部進学や、個々のニーズに合わせた個別指導です。</p>
+                                        <p class="text serif">同志社・立命館の内部進学対策や弱点補強など、個々のニーズに合わせた完全個別カリキュラムです。</p>
                                     </div>
                                 </div>
                                 <div class="course-item anime bottom-in wave2">
+                                    <div class="img-box">
+                                        <img src="img/course-high-school.jpg" alt="中学生・高校生">
+                                    </div>
                                     <div class="data">
                                         <span class="sub lora">Junior / High School</span>
                                         <h3 class="head serif">中学生・高校生</h3>
-                                        <p class="text serif">東大・京大・医学部など、国内最難関校合格へ本気で挑む学生を支えます。</p>
+                                        <p class="text serif">東大・京大・医学部など、国内最難関校合格へ本気で挑む学生を、最高峰の講師陣が支えます。</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
 
-                    <!-- 特徴セクション -->
                     <section class="sec bg-white">
                         <div class="wrap w1060">
                             <div class="point-list">
@@ -374,7 +472,6 @@
                         </div>
                     </section>
 
-                    <!-- ポリシー -->
                     <section class="sec pol bg-white">
                         <div class="wrap w1060">
                             <div class="sec-head ta-center">
@@ -405,78 +502,15 @@
                         </div>
                     </section>
 
-                    <!-- 学習メソッド一覧 -->
-                    <section class="method-section">
-                        <div class="wrap">
-                            <div class="method-head ta-center" style="margin-bottom: 50px;">
-                                <span class="lora sub" style="color: #9e9779; font-weight: 700;">CONTENTS</span>
-                                <h2 class="serif" style="font-size: 3rem; margin-top: 10px;">学習コンテンツ & 学習メソッド</h2>
-                            </div>
-                            
-                            <div class="method-container">
-                                <div class="method-group">
-                                    <div class="method-group-title">
-                                        <span class="main serif">低学年（小1～小2）</span>
-                                        <span class="sub noto" style="color: #9e9779;">脳力開発</span>
-                                    </div>
-                                    <div class="method-grid">
-                                        <a href="#" class="method-btn-link noto">オンライン英会話 OLECO</a>
-                                        <a href="#" class="method-btn-link noto">みんなの速読</a>
-                                        <a href="#" class="method-btn-link noto">HALLO プログラミング</a>
-                                    </div>
-                                </div>
-                                
-                                <div class="method-group">
-                                    <div class="method-group-title">
-                                        <span class="main serif">高学年（小3～小6）</span>
-                                        <span class="sub noto" style="color: #9e9779;">難関受験進学</span>
-                                    </div>
-                                    <div class="method-grid">
-                                        <a href="#" class="method-btn-link noto">エリオオリジナル教材</a>
-                                        <a href="#" class="method-btn-link noto">四谷大塚教材</a>
-                                        <a href="#" class="method-btn-link noto">学校別特化指導</a>
-                                    </div>
-                                </div>
-
-                                <div class="method-group">
-                                    <div class="method-group-title">
-                                        <span class="main serif">個別指導</span>
-                                        <span class="sub noto" style="color: #9e9779;">内部進学・弱点補強</span>
-                                    </div>
-                                    <div class="method-grid">
-                                        <a href="#" class="method-btn-link noto">内部進学対策指導</a>
-                                        <a href="#" class="method-btn-link noto">弱点補強・集中指導</a>
-                                        <a href="#" class="method-btn-link noto">完全1対1個別指導</a>
-                                    </div>
-                                </div>
-
-                                <div class="method-group">
-                                    <div class="method-group-title">
-                                        <span class="main serif">中学生・高校生</span>
-                                        <span class="sub noto" style="color: #9e9779;">大学受験・定期テスト</span>
-                                    </div>
-                                    <div class="method-grid">
-                                        <a href="#" class="method-btn-link noto">東大・京大・医学部指導</a>
-                                        <a href="#" class="method-btn-link noto">定期テスト・内部進学</a>
-                                        <a href="#" class="method-btn-link noto">映像授業・eラーニング</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- CTAプレースホルダー -->
                     <div id="cta-placeholder"></div>
 
                 </article>
             </main>
 
-            <!-- フッタープレースホルダー -->
             <div id="footer-placeholder"></div>
         </div>
     </div>
 
-    <!-- スクリプト -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         async function loadPart(id, path) {
