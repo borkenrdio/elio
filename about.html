@@ -4,7 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO設定 -->
     <title>エリオについて | 会員制難関受験専門塾エリオ（elio）</title>
+    <meta name="description" content="会員制難関受験専門塾エリオ（elio）について。私たちは最難関校合格を通過点とし、医師、科学者、起業家を目指す子供たちのために本質的な知性を育む新しい塾教育を提供しています。">
+    <meta name="keywords" content="難関受験,塾,エリオ,elio,中学受験,大学受験,個別指導,会員制,教育理念">
+    <link rel="canonical" href="https://elio-edu.com/about">
+    
+    <!-- OGP設定 -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="エリオについて | 会員制難関受験専門塾エリオ（elio）">
+    <meta property="og:description" content="最難関のその先へ。エリオ（elio）が提供する新しい塾教育と、私たちが目指す教育の姿についてご紹介します。">
+    <meta property="og:url" content="https://elio-edu.com/about">
+    <meta property="og:image" content="https://elio-edu.com/img/ogp-about.jpg">
+    <meta property="og:site_name" content="エリオ（elio）">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- ファビコン設定 -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- 構造化データ（JSON-LD） -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "HOME",
+        "item": "https://elio-edu.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "エリオについて",
+        "item": "https://elio-edu.com/about"
+      }]
+    }
+    </script>
     
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:400,500,600,700&display=swap" rel="stylesheet">
@@ -14,46 +50,15 @@
         @charset "UTF-8";
         
         html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, main, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            font: inherit;
-            font-size: 100%;
-            vertical-align: baseline;
-            box-sizing: border-box;
+            margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; box-sizing: border-box;
         }
 
-        html {
-            line-height: 1;
-            font-size: 62.5%;
-            scroll-behavior: smooth;
-        }
-
-        ol, ul {
-            list-style: none;
-        }
-
-        table {
-            border-spacing: 0;
-            border-collapse: collapse;
-            width: 100%;
-            max-width: 100%;
-        }
-
-        a {
-            transition-duration: .5s;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            vertical-align: middle;
-        }
+        html { line-height: 1; font-size: 62.5%; scroll-behavior: smooth; }
+        ol, ul { list-style: none; }
+        a { transition-duration: .5s; text-decoration: none; color: inherit; }
+        img { max-width: 100%; height: auto; vertical-align: middle; }
         
-        body, button, input, select, textarea {
-            /* 全体を明朝体に設定 */
+        body {
             font-family: "Noto Serif JP", serif;
             font-size: 1.6rem;
             line-height: 1.8;
@@ -63,149 +68,118 @@
             background: #fff;
         }
 
-        /* 共通のFlex・ユーティリティ */
+        /* モバイル版のヘッダー被り防止用余白 */
+        @media screen and (max-width: 768px) {
+            body { padding-top: 74px !important; }
+        }
+
         .flex { display: flex; }
         .flex.bet { justify-content: space-between; }
         .flex.vcenter { align-items: center; }
-        .flex.hcenter { justify-content: center; }
-        .flex.vert { flex-direction: column; }
-        .flex.break { flex-wrap: wrap; }
-        .flex.str { align-items: stretch; }
-        
         .serif { font-family: "Noto Serif JP", serif; }
         .lora { font-family: Lora, serif; letter-spacing: .05em; }
 
         /* アニメーション */
-        .anime { opacity: 0; }
-        .anime.active { opacity: 1; }
-        .bottom-in { transform: translateY(20px); transition: transform 1s, opacity 1s; }
-        .active .bottom-in { transform: translateY(0); opacity: 1; }
+        .anime { opacity: 0; transition: transform 1s, opacity 1s; }
+        .anime.active { opacity: 1; transform: none; }
+        .bottom-in { transform: translateY(20px); }
         
         .wave1 { transition-delay: .2s; }
         .wave2 { transition-delay: .4s; }
 
         /* ボタン */
         .md-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            z-index: 1;
-            padding: 1em;
-            overflow: hidden;
-            transition: .5s;
-            cursor: pointer;
-            font-family: "Noto Serif JP", serif;
+            display: inline-flex; align-items: center; justify-content: center; position: relative;
+            z-index: 1; padding: 1em; overflow: hidden; transition: .5s; cursor: pointer;
+            font-family: "Noto Serif JP", serif; text-align: center;
         }
         .md-btn.red { background-color: #982020; color: #fff; border: 1px solid #982020; height: 50px; min-width: 220px; }
         .md-btn.red:hover { background-color: #c22929; }
-        .md-btn.black { background-color: #333; color: #fff; border: 1px solid #333; height: 70px; width: 100%; }
-        .md-btn.black:hover { background-color: #111; }
-
-        .md-btn .bar {
-            position: absolute;
-            top: 50%;
-            right: 2rem;
-            width: 1.7rem;
-            height: 1px;
-            background: rgba(255, 255, 255, .5);
-            transform: translateY(-50%);
-            transition: .5s;
-        }
+        .md-btn .bar { position: absolute; top: 50%; right: 2rem; width: 1.7rem; height: 1px; background: rgba(255, 255, 255, .5); transform: translateY(-50%); transition: .5s; }
         .md-btn:hover .bar { right: 1rem; }
 
-        /* レイアウト */
+        /* PCレイアウト */
         @media screen and (min-width: 769px) {
             .sp { display: none !important; }
-            .pc-frame { display: flex; min-width: 1200px; }
-            .pc-frame-left { width: 16rem; position: relative; z-index: 1000; }
-            .pc-frame-right { width: calc(100% - 16rem); flex-grow: 1; }
-            
-            .wrap {
-                margin: 0 auto;
-                max-width: 1060px;
-                padding: 0 60px;
-            }
+            .pc-frame { display: flex; }
+            .pc-frame-left { width: 18rem; position: sticky; top: 0; height: 100vh; z-index: 1000; background: #fff; }
+            .pc-frame-right { width: calc(100% - 18rem); flex-grow: 1; min-height: 100vh; }
+            .wrap { margin: 0 auto; max-width: 1060px; padding: 0 60px; }
         }
 
-        /* パンくずリスト */
-        .bread { font-family: "Noto Serif JP", serif; }
-
-        /* ページ固有スタイル（ABOUT US） */
-        .l-page .mv-md { padding: 8rem 0; border-top: 1px solid #eee; background: #fff; }
+        /* ABOUT US メインセクション */
+        .l-page .mv-md { padding: 8rem 0; border-top: 1px solid #eee; background: #fff; display: flex; align-items: center; }
         .mv-md .title-box { width: 45%; }
-        .mv-md .title-box .title-head { 
-            position: relative; 
-            padding-top: 2rem; 
-            font-size: 1.8rem; 
-            font-weight: 500; 
-            margin-bottom: 1rem; 
-            color: #666; 
-            font-family: "Noto Serif JP", serif; /* 明朝体を指定 */
-        }
+        .mv-md .title-box .title-head { position: relative; padding-top: 2rem; font-size: 1.8rem; font-weight: 600; margin-bottom: 1rem; color: #666; }
         .mv-md .title-box .title-head:after { content: ""; position: absolute; top: 0; left: 0; width: 16px; height: 1px; background: #333; }
         .mv-md .title { font-size: 4.2rem; color: #9e9779; letter-spacing: .2em; font-weight: 300; }
-        .mv-md .lead-text { 
-            width: 45%; 
-            font-size: 1.4rem; 
-            font-weight: 400; 
-            color: #333; 
-            line-height: 2; 
-            font-family: "Noto Serif JP", serif; /* 明朝体を指定 */
-        }
+        .mv-md .lead-text { width: 45%; font-size: 1.5rem; font-weight: 500; color: #333; line-height: 2; }
 
-        /* -----------------------------------------------------
-            本文のリスト項目
-        ----------------------------------------------------- */
+        /* コンテンツリスト */
         .philosophy-list > li { padding: 8rem 0; border-top: 1px solid #e6e6e6; }
-        
-        /* 本文のテキストボックス */
         .philosophy-list .text-box { width: 45%; }
         .philosophy-list .text-box .section-label { color: #9e9779; font-size: 1.3rem; margin-bottom: 1rem; font-family: Lora, serif; letter-spacing: 0.1em; }
         .philosophy-list .text-box h2 { font-size: 2.8rem; font-weight: 600; margin-bottom: 3rem; color: #111; }
-        
-        /* テキスト説明文の設定 */
-        .philosophy-list .text-box .text { 
-            font-family: "Noto Serif JP", serif; 
-            font-size: 1.5rem; 
-            font-weight: 400; 
-            margin-bottom: 5rem; 
-            color: #333; 
-        }
-        
-        /* 本文の画像ボックス */
+        .philosophy-list .text-box .text { font-size: 1.5rem; margin-bottom: 5rem; color: #333; line-height: 2.4; }
         .philosophy-list .img-box { width: 50%; overflow: hidden; }
         .philosophy-list .img-box img { width: 100%; transition: .8s; }
-        .philosophy-list .img-box:hover img { transform: scale(1.05); }
 
+        /* モバイル版調整 */
         @media screen and (max-width: 768px) {
             .pc { display: none !important; }
+            .pc-frame { display: block; }
             .pc-frame-right { width: 100%; }
-            .wrap { padding: 0 20px; }
-            .mv-md .flex { flex-direction: column; }
-            .mv-md .lead-text { width: 100%; margin-top: 3rem; }
-            .philosophy-list li .flex { flex-direction: column-reverse; }
-            .philosophy-list .text-box, 
-            .philosophy-list .img-box { width: 100%; }
-            .philosophy-list .text-box .text { width: 100%; margin-bottom: 3rem; }
+            .pc-frame-left { width: 0; height: 0; display: block; overflow: visible; position: absolute; top: 0; left: 0; }
+            .wrap { padding: 0 25px; }
+
+            /* タイトルエリアを信念ページと統一 */
+            .l-page .mv-md { 
+                height: 180px; 
+                padding: 0 2.5rem; 
+                background-color: #333;
+                background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/facility-classroom-1f.jpg');
+                background-size: cover;
+                background-position: center;
+                border-top: none;
+            }
+            .mv-md .wrap { flex-direction: column; }
+            .mv-md .title-box { width: 100%; color: #fff; }
+            .mv-md .title-box .title-head { font-size: 1.4rem; color: #fff; padding-top: 0; margin-bottom: 0.5rem; }
+            .mv-md .title-box .title-head:after { display: none; }
+            .mv-md .title { font-size: 2.8rem; color: #9e9779; }
+            .mv-md .lead-text { display: none; } /* モバイルでは見出しのみに絞る */
+
+            /* リード文を別途表示 */
+            .mobile-lead { padding: 5rem 2.5rem; text-align: center; border-bottom: 1px solid #eee; }
+            .mobile-lead p { font-size: 1.5rem; line-height: 1.8; font-weight: 600; text-align: justify; }
+
+            .philosophy-list > li { padding: 6rem 0; }
+            .philosophy-list li .flex { flex-direction: column-reverse; gap: 3rem; }
+            .philosophy-list .text-box, .philosophy-list .img-box { width: 100%; }
+            .philosophy-list .text-box h2 { font-size: 2.4rem; margin-bottom: 2rem; }
+            .philosophy-list .text-box .text { font-size: 1.45rem; margin-bottom: 3rem; line-height: 1.9; text-align: justify; }
+            .philosophy-list .img-box { border-radius: 4px; }
         }
     </style>
 </head>
 
 <body class="l-page l-about">
 
-    <div id="header-placeholder"></div>
+    <!-- ナビゲーションのプレースホルダー -->
+    <div id="menu-placeholder"></div>
 
     <div class="pc-frame">
-        <aside id="sidebar-placeholder" class="pc pc-frame-left"></aside>
+        <aside id="sidebar-placeholder" class="pc-frame-left"></aside>
 
         <div class="pc-frame-right">
             <div class="bread pc">
-                <div class="wrap serif" style="padding:15px 0; font-size:1.1rem; color:#888;">HOME > エリオについて > ABOUT US</div>
+                <div class="wrap serif" style="padding:15px 0; font-size:1.1rem; color:#888;">HOME &gt; エリオについて &gt; ABOUT US</div>
             </div>
 
             <main id="contents">
                 <article class="l-main">
+                    
+                    <!-- メインビジュアル -->
                     <section class="mv-md">
                         <div class="wrap flex bet vcenter">
                             <div class="title-box">
@@ -218,31 +192,37 @@
                         </div>
                     </section>
 
+                    <!-- モバイル専用リード文 -->
+                    <section class="mobile-lead sp">
+                        <p class="serif">会員制難関受験専門塾エリオ（elio）は、優れたリーダーシップを育む、新しい塾教育を提供する学習塾です。</p>
+                    </section>
+
+                    <!-- 各セクションリスト -->
                     <section class="philosophy">
                         <div class="wrap">
                             <ul class="philosophy-list">
                                 <li class="anime">
                                     <div class="flex bet vcenter">
-                                        <div class="text-box bottom-in wave1">
+                                        <div class="text-box anime bottom-in wave1">
                                             <p class="section-label">PHILOSOPHY</p>
                                             <h2 class="serif">エリオの信念</h2>
-                                            <p class="text serif">未来を生きる子供たちのために、エリオが取り組んでいる教育の信念についてお伝えします。</p>
+                                            <p class="text serif">最難関突破、そして燃え尽きない頭脳の育成を。未来を生きる子供たちのために、エリオが取り組んでいる教育の信念についてお伝えします。</p>
                                             <a href="about-belief" class="md-btn red">詳細を見る<div class="bar"></div></a>
                                         </div>
-                                        <div class="img-box bottom-in wave2">
-                                            <img src="img/facility-door.jpg" alt="信念">
+                                        <div class="img-box anime bottom-in wave2">
+                                            <img src="img/facility-door.jpg" alt="エリオの信念">
                                         </div>
                                     </div>
                                 </li>
                                 <li class="anime">
                                     <div class="flex bet vcenter">
-                                        <div class="text-box bottom-in wave1">
+                                        <div class="text-box anime bottom-in wave1">
                                             <p class="section-label">EDUCATOR INTRODUCTION</p>
                                             <h2 class="serif">講師紹介</h2>
-                                            <p class="text serif">難関指導実績が豊富な選抜されたエリオの講師陣を紹介します。</p>
+                                            <p class="text serif">最難関合格は偏差値とにらめっこしていても生まれません。難関指導実績が豊富な選抜されたエリオの講師陣を紹介します。</p>
                                             <a href="about-teacher" class="md-btn red">詳細を見る<div class="bar"></div></a>
                                         </div>
-                                        <div class="img-box bottom-in wave2">
+                                        <div class="img-box anime bottom-in wave2">
                                             <img src="img/teacher-three.jpg" alt="講師紹介">
                                         </div>
                                     </div>
@@ -265,16 +245,17 @@
                 const response = await fetch(path);
                 if (response.ok) {
                     const html = await response.text();
-                    document.getElementById(id).innerHTML = html;
+                    const el = document.getElementById(id);
+                    if (el) el.innerHTML = html;
                 }
             } catch (e) {
-                console.error(e);
+                console.error('読み込み失敗:', path);
             }
         }
 
         window.addEventListener('DOMContentLoaded', () => {
-            loadPart('header-placeholder', 'parts/header.html');
-            loadPart('sidebar-placeholder', 'parts/menu.html');
+            // menu.htmlに一本化して読み込み
+            loadPart('menu-placeholder', 'parts/menu.html');
             loadPart('cta-placeholder', 'parts/CTA.html');
             loadPart('footer-placeholder', 'parts/footer.html');
 
@@ -288,6 +269,17 @@
                 document.querySelectorAll('.anime').forEach(el => observer.observe(el));
             }, 1000);
         });
+
+        // モバイルメニュー制御用
+        function toggleMenu() {
+            document.body.classList.toggle('is-active');
+        }
+        function toggleSubMenu(element) {
+            if (window.innerWidth <= 768) {
+                const parent = element.closest('.l-pulldown');
+                if (parent) parent.classList.toggle('is-open');
+            }
+        }
     </script>
 </body>
 </html>
