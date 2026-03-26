@@ -84,15 +84,23 @@
         /* PCレイアウト枠 */
         @media screen and (min-width: 769px) {
             .sp { display: none !important; }
-            .pc-frame { display: flex; }
-            .pc-frame-left { width: 18rem; position: sticky; top: 0; height: 100vh; z-index: 1000; background: #fff; }
+            .pc-frame { display: flex; align-items: flex-start; } /* flex-startでstickyを有効化 */
+            .pc-frame-left { 
+                width: 18rem; 
+                position: sticky; 
+                top: 0; 
+                height: 100vh; 
+                z-index: 1000; 
+                background: #fff; 
+                flex-shrink: 0;
+            }
             .pc-frame-right { width: calc(100% - 18rem); flex-grow: 1; min-height: 100vh; }
-            .wrap { margin: 0 auto; max-width: 1060px; padding: 0 60px; }
+            .wrap { margin: 0 auto; width: 100%; max-width: 1060px; padding: 0 60px; }
         }
 
         .w1080 { max-width: 1080px; }
 
-        /* メインビジュアル（PC版左揃え対応） */
+        /* メインビジュアル（PC版：余白エラーの修正） */
         .mv-md { 
             height: 400px;
             background-color: #333;
@@ -101,12 +109,21 @@
             background-position: center;
             display: flex;
             align-items: center;
+            border-top: 1px solid #eee;
         }
         .mv-md .wrap { width: 100%; }
 
         .mv-md .title-box { color: #fff; text-align: left; }
         .mv-md .title-box .title-line { width: 20px; height: 1px; background: #fff; margin-bottom: 2rem; }
-        .mv-md .title-box .title-head { font-size: 1.8rem; margin-bottom: 1rem; letter-spacing: 0.2em; font-weight: 500; }
+        .mv-md .title-box .title-head { 
+            font-size: 1.8rem; 
+            margin-bottom: 1rem; 
+            letter-spacing: 0.2em; 
+            font-weight: 500; 
+            /* 上部の余白を削除 */
+            position: relative;
+            padding-top: 0; 
+        }
         .mv-md .title { font-size: 3.8rem; color: #9e9779; letter-spacing: .2em; font-weight: 500; }
 
         /* 会社情報テーブル */
