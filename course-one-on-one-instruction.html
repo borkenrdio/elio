@@ -7,45 +7,11 @@
     
     <!-- SEO設定 -->
     <title>個別指導 | 会員制難関受験専門塾エリオ（elio）</title>
-    <meta name="description" content="選抜講師による完全オーダーメイドの個別指導。1対1または1対2の対面指導で、生徒一人ひとりの個性と目的を的確に見抜き、本質的な能力を開花させます。内部進学対策から難関受験、医学部対策まで対応。">
-    <meta name="keywords" content="個別指導,塾,エリオ,elio,マンツーマン,内部進学対策,難関受験,医学部受験,茗荷谷,恵比寿,京都">
+    <meta name="description" content="選抜講師による完全オーダーメイドの個別指導。1対1または1対2の対面指導で能力を開花させます。">
+    <meta name="keywords" content="個別指導,塾,エリオ,elio,マンツーマン,内部進学対策,難関受験">
     <link rel="canonical" href="https://elio-edu.com/course-one-on-one-instruction">
     
-    <!-- OGP設定 -->
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="個別指導 | 会員制難関受験専門塾エリオ（elio）">
-    <meta property="og:description" content="一人ひとりの個性を、確かな才能へ。選抜講師による完全オーダーメイドの個別指導で本質的な知性を育みます。">
-    <meta property="og:url" content="https://elio-edu.com/course-one-on-one-instruction">
-    <meta property="og:image" content="https://elio-edu.com/img/ogp-course-one.jpg">
-    <meta property="og:site_name" content="エリオ（elio）">
-    <meta name="twitter:card" content="summary_large_image">
-    
-    <!-- ファビコン設定 -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    
-    <!-- 構造化データ（JSON-LD） -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "HOME",
-        "item": "https://elio-edu.com/"
-      },{
-        "@type": "ListItem",
-        "position": 2,
-        "name": "コース案内",
-        "item": "https://elio-edu.com/course"
-      },{
-        "@type": "ListItem",
-        "position": 3,
-        "name": "個別指導",
-        "item": "https://elio-edu.com/course-one-on-one-instruction"
-      }]
-    }
-    </script>
     
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:400,500,600,700&display=swap" rel="stylesheet">
@@ -53,178 +19,102 @@
     
     <style>
         @charset "UTF-8";
-
-        html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, main, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-            margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; box-sizing: border-box;
-        }
-
-        html { line-height: 1; font-size: 62.5%; scroll-behavior: smooth; }
-        ol, ul { list-style: none; }
-        a { transition-duration: .5s; text-decoration: none; color: inherit; }
-        img { max-width: 100%; height: auto; vertical-align: middle; }
-        
-        body {
-            font-family: "Noto Serif JP", serif;
-            font-size: 1.6rem;
-            line-height: 1.8;
-            color: #111;
-            width: 100%;
-            overflow-x: hidden;
-            background: #fff;
-        }
-
-        /* モバイル版のヘッダー被り防止用余白 */
-        @media screen and (max-width: 768px) {
-            body { padding-top: 74px !important; }
-        }
-
+        html, body, div, h1, h2, h3, p, a, aside, nav, article, main, header, footer, ul, li { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 62.5%; scroll-behavior: smooth; }
+        body { font-family: "Noto Serif JP", serif; font-size: 1.6rem; line-height: 1.8; color: #111; background: #fff; overflow-x: hidden; }
+        @media screen and (max-width: 768px) { body { padding-top: 74px !important; } }
         .serif { font-family: "Noto Serif JP", serif; }
         .lora { font-family: Lora, serif; letter-spacing: .05em; }
+        .anime { opacity: 0; transition: all 1s ease; }
+        .active { opacity: 1 !important; transform: none !important; }
 
-        /* アニメーション */
-        .anime { opacity: 0; transition: transform 1s, opacity 1s; }
-        .anime.active { opacity: 1; transform: none; }
-        .bottom-in { transform: translateY(20px); }
-
-        /* PCレイアウト */
         @media screen and (min-width: 769px) {
-            .sp { display: none !important; }
-            .pc-frame { display: flex; }
-            .pc-frame-left { width: 18rem; position: sticky; top: 0; height: 100vh; z-index: 1000; background: #fff; }
-            .pc-frame-right { width: calc(100% - 18rem); flex-grow: 1; min-height: 100vh; }
-            .wrap { margin: 0 auto; max-width: 1060px; padding: 0 60px; }
+            .pc-frame { display: flex; align-items: flex-start; min-height: 100vh; }
+            .pc-frame-left { width: 18rem; position: sticky; top: 0; height: 100vh; z-index: 1000; background: #fff; flex-shrink: 0; }
+            .pc-frame-right { width: calc(100% - 18rem); flex-grow: 1; }
+            .wrap { margin: 0 auto; width: 100%; max-width: 1060px; padding: 0 60px; }
         }
 
-        /* メインビジュアル（PC版左揃え調整） */
         .mv-md { 
-            height: 400px;
+            height: 320px;
             background-color: #333;
             background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/course-one-on-one-instruction.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
             align-items: center;
+            padding: 0;
         }
         .mv-md .wrap { width: 100%; }
-
         .mv-md .title-box { color: #fff; text-align: left; }
         .mv-md .title-box .title-line { width: 20px; height: 1px; background: #fff; margin-bottom: 2rem; }
-        .mv-md .title-box .title-head { font-size: 1.8rem; margin-bottom: 1rem; letter-spacing: 0.2em; font-weight: 500; }
-        .mv-md .title { font-size: 3.8rem; color: #9e9779; letter-spacing: 0.2em; font-weight: 500; }
+        .mv-md .title-head { font-size: 1.8rem; margin-bottom: 1rem; letter-spacing: 0.2em; }
+        .mv-md .title { font-size: 3.8rem; color: #9e9779; letter-spacing: .2em; font-weight: 500; }
 
-        /* 導入セクション */
         .intro-sec { padding: 10rem 0 8rem; border-top: 1px solid #eee; }
-        .head-text-box { margin-bottom: 6rem; }
-        .head-text-box .section-label { color: #9e9779; font-size: 1.4rem; font-weight: 700; margin-bottom: 1.5rem; display: block; letter-spacing: 0.1em; }
-        .head-text-box h2 { font-size: 3rem; font-weight: 600; margin-bottom: 3rem; color: #111; line-height: 1.5; }
-        .head-text-box .text { font-size: 1.5rem; font-weight: 500; color: #333; line-height: 2.2; }
+        .head-text-box h2 { font-size: 3rem; font-weight: 600; line-height: 1.5; margin-bottom: 3rem; }
 
-        /* メインリスト（画像とテキストの交互配置） */
         .main-list li { display: flex; gap: 6rem; padding: 8rem 0; border-top: 1px solid #eee; align-items: center; }
         .main-list li:nth-child(even) { flex-direction: row-reverse; }
-        .main-list .img-box { width: 45%; flex-shrink: 0; box-shadow: 0 20px 40px rgba(0,0,0,0.05); overflow: hidden; border-radius: 4px; }
+        .main-list .img-box { width: 45%; border-radius: 4px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
         .main-list img { width: 100%; transition: 1s; }
-        .main-list li:hover img { transform: scale(1.05); }
         .main-list .text-box { flex-grow: 1; }
         .main-list h3 { font-size: 2.4rem; font-weight: 700; margin-bottom: 2rem; color: #111; line-height: 1.4; position: relative; padding-left: 2rem; border-left: 4px solid #9e9779; }
-        .main-list .text { font-size: 1.5rem; color: #444; line-height: 2.4; }
 
-        /* 特徴セクション */
         .point-sec { padding: 10rem 0; background: #fafafa; border-top: 1px solid #eee; }
-        .point-sec .title-head { font-size: 1.4rem; color: #9e9779; margin-bottom: 1.5rem; font-weight: 700; display: block; text-align: center; letter-spacing: 0.1em; }
         .point-sec h2 { font-size: 3rem; margin-bottom: 6rem; text-align: center; }
-        
         .point-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4rem; }
-        .point-list li { background: #fff; border: 1px solid #eee; padding: 5rem 4rem; display: flex; flex-direction: column; transition: 0.3s; }
+        .point-list li { background: #fff; border: 1px solid #eee; padding: 5rem 4rem; display: flex; flex-direction: column; transition: 0.3s; border-radius: 4px; }
         .point-list li:hover { box-shadow: 0 15px 30px rgba(0,0,0,0.05); transform: translateY(-5px); }
         .point-list .title-box { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid #9e9779; }
-        .point-list h3 { font-size: 2.2rem; font-weight: 700; color: #111; margin-bottom: 1rem; line-height: 1.3; }
+        .point-list h3 { font-size: 2.2rem; font-weight: 700; margin-bottom: 1rem; }
         .point-list .bottom-text { font-size: 1.2rem; color: #9e9779; font-weight: 700; letter-spacing: 0.1em; }
         .point-list .text { font-size: 1.45rem; color: #555; line-height: 2; }
         
-        .md-btn.b-line { 
-            display: inline-flex; 
-            align-items: center; 
-            border: 1px solid #111; 
-            padding: 1.5rem 3rem; 
-            font-size: 1.4rem; 
-            font-weight: 700; 
-            transition: .3s;
-            margin-top: 3rem;
-            width: fit-content;
-        }
+        .md-btn.b-line { display: inline-flex; border: 1px solid #111; padding: 1.5rem 3rem; font-size: 1.4rem; font-weight: 700; transition: .3s; margin-top: 3rem; width: fit-content; text-decoration: none; color: #111; }
         .md-btn.b-line:hover { background: #111; color: #fff; }
 
-        /* メッセージセクション */
         .message-sec { padding: 10rem 0; background: #fff; border-top: 1px solid #eee; }
         .message-sec .flex-box { display: flex; gap: 8rem; align-items: center; }
         .message-sec .img-box { width: 40%; flex-shrink: 0; }
         .message-sec img { width: 100%; border-radius: 50% 50% 0 0; }
-        .message-sec .title-head { font-size: 1.4rem; color: #9e9779; margin-bottom: 1.5rem; font-weight: 700; display: block; letter-spacing: 0.1em; }
-        .message-sec h2 { font-size: 3rem; margin-bottom: 3.5rem; line-height: 1.4; color: #111; }
-        .message-sec .text { font-size: 1.5rem; line-height: 2.4; color: #444; }
 
-        /* モバイル版調整 */
         @media screen and (max-width: 768px) {
             .pc { display: none !important; }
             .pc-frame { display: block; }
             .pc-frame-right { width: 100%; }
-            .pc-frame-left { width: 0; height: 0; display: block; overflow: visible; position: absolute; top: 0; left: 0; }
+            .pc-frame-left { width: 0; height: 0; display: block; position: absolute; }
             .wrap { padding: 0 25px; }
-
-            /* ヒーローエリアデザイン統一（180px） */
-            .mv-md { 
-                height: 180px; 
-                padding: 0 2.5rem; 
-                background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/course-one-on-one-instruction.jpg');
-                border-top: none;
-            }
-            .mv-md .title-box .title-head { font-size: 1.4rem; color: #fff; margin-bottom: 0.5rem; padding-top: 0; }
-            .mv-md .title-box .title-head:after { display: none; }
+            .mv-md { height: 180px; }
             .mv-md .title { font-size: 2.8rem; }
-
             .intro-sec { padding: 6rem 0; }
-            .head-text-box h2 { font-size: 2.2rem; margin-bottom: 2.5rem; line-height: 1.4; }
-            .head-text-box .text { font-size: 1.45rem; line-height: 1.8; text-align: justify; }
-
-            .main-list li, .main-list li:nth-child(even) { flex-direction: column; gap: 3rem; padding: 6rem 0; }
+            .head-text-box h2 { font-size: 2.2rem; line-height: 1.4; }
+            .main-list li { flex-direction: column; gap: 3rem; padding: 6rem 0; }
             .main-list .img-box { width: 100%; }
-            .main-list h3 { font-size: 2rem; padding-left: 1.5rem; margin-bottom: 1.5rem; }
-            .main-list .text { font-size: 1.45rem; line-height: 1.9; text-align: justify; }
-
-            .point-sec { padding: 8rem 0; }
+            .main-list h3 { font-size: 2rem; }
             .point-list { grid-template-columns: 1fr; gap: 2.5rem; }
             .point-list li { padding: 4rem 2.5rem; }
             .point-list h3 { font-size: 1.9rem; }
-            .point-list .text { font-size: 1.45rem; text-align: justify; }
             .md-btn.b-line { width: 100%; justify-content: center; }
-
-            .message-sec { padding: 8rem 0; }
             .message-sec .flex-box { flex-direction: column; gap: 4rem; }
             .message-sec .img-box { width: 85%; margin: 0 auto; }
-            .message-sec h2 { font-size: 2.2rem; margin-bottom: 2.5rem; line-height: 1.4; text-align: center; }
-            .message-sec .text { font-size: 1.45rem; line-height: 1.9; text-align: justify; }
+            .message-sec h2 { font-size: 2.2rem; text-align: center; }
         }
     </style>
 </head>
-
-<body class="l-page l-course-child">
-
-    <!-- ナビゲーションの読み込み -->
-    <div id="menu-placeholder"></div>
+<body>
 
     <div class="pc-frame">
-        <aside id="sidebar-placeholder" class="pc-frame-left"></aside>
+        <aside id="menu-placeholder" class="pc-frame-left"></aside>
 
         <div class="pc-frame-right">
             <div class="bread pc">
-                <div class="wrap serif" style="padding:15px 0; font-size:1.1rem; color:#888;">HOME &gt; コース案内 &gt; 個別指導</div>
+                <div class="wrap serif">HOME &gt; コース案内 &gt; 個別指導</div>
             </div>
 
             <main id="contents">
                 <article class="l-main">
                     
-                    <!-- ヒーローセクション（PC版左揃え対応） -->
                     <section class="mv-md">
                         <div class="wrap">
                             <div class="title-box anime active">
@@ -235,109 +125,71 @@
                         </div>
                     </section>
 
-                    <!-- 導入セクション -->
                     <section class="intro-sec">
                         <div class="wrap">
-                            <div class="head-text-box anime bottom-in active">
+                            <div class="head-text-box anime active">
                                 <span class="section-label">INDIVIDUAL INSTRUCTION</span>
-                                <h2 class="serif">
-                                    生徒の個性を前向きに見抜き<br class="pc">一人ひとりの可能性を最大限に伸ばす個別指導
-                                </h2>
-                                <p class="text serif">
-                                    個別指導にこそ、選抜講師による専門指導が欠かせません。生徒の個性と目的を的確に見抜き、本質的な能力を開花させるためには、豊富な合格指導の経験値が必要なのです。elioの個別指導は、選抜された講師が一人ひとりと向き合い、可能性を最大限に伸ばす少人数対面指導です。
-                                </p>
+                                <h2 class="serif">生徒の個性を前向きに見抜き<br class="pc">一人ひとりの可能性を最大限に伸ばす個別指導</h2>
+                                <p class="serif">生徒の個性と目的を的確に見抜き、本質的な能力を開花させるためには、豊富な合格指導の経験値が必要です。elioの個別指導は選抜された講師が一人ひとりと向き合う少人数対面指導です。</p>
                             </div>
 
                             <ul class="main-list">
-                                <li class="anime bottom-in active">
+                                <li class="anime active">
                                     <div class="text-box">
                                         <h3 class="serif">1対1または1対2で<br class="pc">学ぶフルオーダー講座</h3>
-                                        <p class="text serif">
-                                            生徒の目的に応じて指導内容を構成する1名からのフルオーダー講座です。特定の単元・分野の指導や私国立校のカリキュラムに応じた指導、記述問題に特化した指導など、細かいニーズに対応します。elioでは教わることよりも自分で考えることを重視。知力を伸ばすための「教えすぎない」指導を実践します。
-                                        </p>
+                                        <p class="serif">特定の単元・分野の指導や私国立校のカリキュラムに応じた指導、記述問題に特化した指導など、細かいニーズに対応。教わることよりも自分で考えることを重視した指導を実践します。</p>
                                     </div>
-                                    <div class="img-box">
-                                        <img src="img/course-one-on-one-instruction.jpg" alt="個別指導の風景" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/600x400.png?text=Individual+Lesson'">
-                                    </div>
+                                    <div class="img-box"><img src="img/course-one-on-one-instruction.jpg" alt="個別指導"></div>
                                 </li>
-                                <li class="anime bottom-in active">
+                                <li class="anime active">
                                     <div class="text-box">
                                         <h3 class="serif">グループ指導との<br class="pc">相乗効果で学力向上</h3>
-                                        <p class="text serif">
-                                            グループ指導と個別指導を連携させて受講することができます。弱点分野の強化はもちろん、小論文対策講座や英検対策講座など、教科単元に特化した講座設定も可能です。弱点克服にとどまらず未来への道を灯すオーダーメイドという選択肢、それがelioの個別指導です。
-                                        </p>
+                                        <p class="serif">グループ指導と個別指導を連携させて受講可能です。弱点克服にとどまらず未来への道を灯すオーダーメイドという選択肢、それがelioの個別指導です。</p>
                                     </div>
-                                    <div class="img-box">
-                                        <img src="img/student-3.jpg" alt="学習相談の様子" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/600x400.png?text=Synergy+Learning'">
-                                    </div>
+                                    <div class="img-box"><img src="img/student-3.jpg" alt="学習風景"></div>
                                 </li>
                             </ul>
                         </div>
                     </section>
 
-                    <!-- 特徴セクション -->
                     <section class="point-sec">
                         <div class="wrap">
-                            <div class="anime bottom-in active">
+                            <div class="anime active">
                                 <span class="title-head lora">POINT</span>
                                 <h2 class="serif">個別指導の特徴</h2>
-                                
                                 <ul class="point-list">
                                     <li>
-                                        <div class="title-box">
-                                            <h3 class="serif">学校別内部進学対策</h3>
-                                            <p class="bottom-text lora">POINT 01</p>
-                                        </div>
+                                        <div class="title-box"><h3 class="serif">学校別内部進学対策</h3><p class="bottom-text lora">POINT 01</p></div>
                                         <div class="text-box">
-                                            <p class="text serif">国・私立小や、大学附属校、中高一貫校では学校ごとにカリキュラム・進度が異なります。elioでは各学校の指導方針を的確に把握し、ぴったりの教科指導と進級・進学指導を徹底します。</p>
+                                            <p class="text serif">国・私立小や、大学附属校、中高一貫校では学校ごとにカリキュラム・進度が異なります。ぴったりの教科指導と進級・進学指導を徹底します。</p>
                                             <a href="method/premium-campus/" class="md-btn b-line serif">PREMIUM CAMPUSの詳細</a>
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="title-box">
-                                            <h3 class="serif">難関受験対応</h3>
-                                            <p class="bottom-text lora">POINT 02</p>
-                                        </div>
-                                        <div class="text-box">
-                                            <p class="text serif">志望校ごとの独自性に合わせ、近年の入試を分析プロファイルし、一人ひとりに合わせた学習カリキュラムを作成。目標から逆算し、今何を学ぶべきかを実直に指導していきます。</p>
-                                        </div>
+                                        <div class="title-box"><h3 class="serif">難関受験対応</h3><p class="bottom-text lora">POINT 02</p></div>
+                                        <div class="text-box"><p class="text serif">志望校ごとの独自性に合わせ、近年の入試を分析。目標から逆算し、今何を学ぶべきかを実直に指導していきます。</p></div>
                                     </li>
                                     <li>
-                                        <div class="title-box">
-                                            <h3 class="serif">ご家庭との緻密な連携</h3>
-                                            <p class="bottom-text lora">POINT 03</p>
-                                        </div>
-                                        <div class="text-box">
-                                            <p class="text serif">定期的な面談はもちろん、毎回の授業ごとに担当講師が感じた変化や進捗状況を細かく共有。密な連携を重ねることで、お子さまの学力を最大限に引き出します。</p>
-                                        </div>
+                                        <div class="title-box"><h3 class="serif">ご家庭との緻密な連携</h3><p class="bottom-text lora">POINT 03</p></div>
+                                        <div class="text-box"><p class="text serif">定期的な面談はもちろん、毎回の授業ごとに担当講師が感じた変化や進捗状況を細かく共有し、学力を最大限に引き出します。</p></div>
                                     </li>
                                     <li>
-                                        <div class="title-box">
-                                            <h3 class="serif">医学部・国際併願対策</h3>
-                                            <p class="bottom-text lora">POINT 04</p>
-                                        </div>
-                                        <div class="text-box">
-                                            <p class="text serif">専門的教育機関と提携し、様々な特殊カリキュラムに対応。医学部受験や海外大学との併願など、お子さまとご家庭の望む将来の進路へ向け、最適なプランを提案します。</p>
-                                        </div>
+                                        <div class="title-box"><h3 class="serif">医学部・国際併願対策</h3><p class="bottom-text lora">POINT 04</p></div>
+                                        <div class="text-box"><p class="text serif">専門的教育機関と提携し、様々な特殊カリキュラムに対応。医学部受験や海外大学との併願など、最適なプランを提案します。</p></div>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </section>
 
-                    <!-- メッセージセクション -->
                     <section class="message-sec">
                         <div class="wrap">
-                            <div class="flex-box anime bottom-in active">
-                                <div class="img-box">
-                                    <img src="img/teacher-takeyama.jpg" alt="代表講師メッセージ" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/400x500.png?text=Message'">
-                                </div>
+                            <div class="flex-box anime active">
+                                <div class="img-box"><img src="img/teacher-takeyama.jpg" alt="代表講師メッセージ"></div>
                                 <div class="text-box">
                                     <span class="title-head lora">MESSAGE</span>
                                     <h2 class="serif">一人ひとりの個性を、確かな才能へ。</h2>
-                                    <p class="text serif">
-                                        個別指導の本質は、単にわからない場所を教えることではありません。生徒一人ひとりの学びの癖や、まだ眠っている可能性をいち早く見抜き、最適な刺激を与えることにあります。個々の歩みに寄り添いながら、志望校合格のその先へ向けた強い意志を育んでいきます。
-                                    </p>
+                                    <p class="serif">単にわからない場所を教えることではありません。生徒一人ひとりの学びの癖や、まだ眠っている可能性をいち早く見抜き、最適な刺激を与えることにあります。</p>
                                 </div>
                             </div>
                         </div>
@@ -346,7 +198,6 @@
                     <div id="cta-placeholder"></div>
                 </article>
             </main>
-
             <div id="footer-placeholder"></div>
         </div>
     </div>
@@ -360,32 +211,20 @@
                     const el = document.getElementById(id);
                     if (el) el.innerHTML = html;
                 }
-            } catch (e) {
-                console.error('読み込み失敗:', path);
-            }
+            } catch (e) { console.error('読み込み失敗:', path); }
         }
-
         window.addEventListener('DOMContentLoaded', () => {
-            // パーツ読み込み
             loadPart('menu-placeholder', 'parts/menu.html');
             loadPart('cta-placeholder', 'parts/CTA.html');
             loadPart('footer-placeholder', 'parts/footer.html');
-
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) entry.target.classList.add('active');
                 });
             }, { threshold: 0.1 });
-            
-            setTimeout(() => {
-                document.querySelectorAll('.anime').forEach(el => observer.observe(el));
-            }, 1000);
+            document.querySelectorAll('.anime').forEach(el => observer.observe(el));
         });
-
-        // モバイルメニュー制御用
-        function toggleMenu() {
-            document.body.classList.toggle('is-active');
-        }
+        function toggleMenu() { document.body.classList.toggle('is-active'); }
         function toggleSubMenu(element) {
             if (window.innerWidth <= 768) {
                 const parent = element.closest('.l-pulldown');
