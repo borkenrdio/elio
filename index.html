@@ -66,7 +66,7 @@
             background: #fff;
         }
 
-        /* モバイル版のヘッダー被り防止 */
+        /* モバイル版のヘッダー被り防止用余白 */
         @media screen and (max-width: 768px) {
             body { padding-top: 74px !important; }
         }
@@ -182,7 +182,8 @@
             .pc { display: none !important; }
             .pc-frame { display: block; }
             .pc-frame-right { width: 100%; }
-            .pc-frame-left { display: none; }
+            /* モバイル時に枠を消さない（幅だけ0にする） */
+            .pc-frame-left { width: 0; height: 0; display: block; overflow: visible; position: absolute; top: 0; left: 0; }
             section.sec { padding: 60px 0; }
             .slide-main { font-size: 2.8rem; }
             .slide-sub { font-size: 1.6rem; }
@@ -471,7 +472,7 @@
             document.querySelectorAll('.anime:not(.key)').forEach(el => observer.observe(el));
         });
 
-        /* モバイルメニュー制御用関数（外部ファイル読み込み後でも動作するように本体に配置） */
+        /* モバイルメニュー制御用関数 */
         function toggleMenu() {
             document.body.classList.toggle('is-active');
         }
