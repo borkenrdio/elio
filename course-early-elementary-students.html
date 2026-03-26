@@ -7,7 +7,7 @@
     
     <!-- SEO設定 -->
     <title>低学年能力開発（小1・小2） | 会員制難関受験専門塾エリオ（elio）</title>
-    <meta name="description" content="エリオの低学年能力開発コース（小1・小2）のご案内。数理パズルやオンライン英会話を通じて知的好奇心を最大化し、難関中学受験へ向けた自ら学ぶ姿勢と本質的な「脳力」を楽しみながら育みます。">
+    <meta name="description" content="低学年の今だからできること。エリオの低学年能力開発コースでは、数理パズルや英語を通じて知的好奇心を最大化し、難関中学受験へ向けた自ら学ぶ姿勢と本質的な脳力を楽しみながら育みます。">
     <meta name="keywords" content="低学年,中学受験,能力開発,小1,小2,数理パズル,知的好奇心,エリオ,elio">
     <link rel="canonical" href="https://elio-edu.com/course-early-elementary-students">
     
@@ -23,7 +23,7 @@
     <!-- ファビコン設定 -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     
-    <!-- 構造化データ（JSON-LD） -->
+    <!-- 構造化データ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -73,7 +73,6 @@
             background: #fff;
         }
 
-        /* モバイル版のヘッダー被り防止用余白 */
         @media screen and (max-width: 768px) {
             body { padding-top: 74px !important; }
         }
@@ -81,38 +80,49 @@
         .serif { font-family: "Noto Serif JP", serif; }
         .lora { font-family: Lora, serif; letter-spacing: .05em; }
 
-        /* アニメーション */
         .anime { opacity: 0; transition: transform 1s, opacity 1s; }
         .anime.active { opacity: 1; transform: none; }
         .bottom-in { transform: translateY(20px); }
 
-        /* PCレイアウト */
         @media screen and (min-width: 769px) {
             .sp { display: none !important; }
-            .pc-frame { display: flex; }
-            .pc-frame-left { width: 18rem; position: sticky; top: 0; height: 100vh; z-index: 1000; background: #fff; }
-            .pc-frame-right { width: calc(100% - 18rem); flex-grow: 1; min-height: 100vh; }
-            .wrap { margin: 0 auto; max-width: 1060px; padding: 0 60px; }
+            .pc-frame { 
+                display: flex; 
+                align-items: flex-start;
+                min-height: 100vh;
+            }
+            .pc-frame-left { 
+                width: 18rem; 
+                position: sticky; 
+                top: 0; 
+                height: 100vh; 
+                z-index: 1000; 
+                background: #fff; 
+                flex-shrink: 0;
+            }
+            .pc-frame-right { 
+                width: calc(100% - 18rem); 
+                flex-grow: 1; 
+            }
+            .wrap { margin: 0 auto; width: 100%; max-width: 1060px; padding: 0 60px; }
         }
 
-        /* メインビジュアル（PC版左揃え調整） */
         .mv-md { 
-            height: 400px;
+            height: 320px;
             background-color: #333;
             background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/facility-classroom-1f.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
             align-items: center;
+            padding: 0;
         }
         .mv-md .wrap { width: 100%; }
-
         .mv-md .title-box { color: #fff; text-align: left; }
         .mv-md .title-box .title-line { width: 20px; height: 1px; background: #fff; margin-bottom: 2rem; }
         .mv-md .title-box .title-head { font-size: 1.8rem; margin-bottom: 1rem; letter-spacing: 0.2em; font-weight: 500; }
         .mv-md .title { font-size: 3.8rem; color: #9e9779; letter-spacing: 0.2em; font-weight: 500; }
 
-        /* セクション共通設定 */
         .intro-sec { padding: 10rem 0 8rem; border-top: 1px solid #eee; }
         .head-text-box { margin-bottom: 6rem; }
         .head-text-box .section-label { color: #9e9779; font-size: 1.4rem; font-weight: 700; margin-bottom: 1.5rem; display: block; letter-spacing: 0.1em; }
@@ -130,21 +140,12 @@
         .main-list .text { font-size: 1.5rem; color: #444; line-height: 2.4; }
 
         .md-btn.plain {
-            display: inline-flex;
-            align-items: center;
-            background: #f9f9f9;
-            border: 1px solid #ddd;
-            padding: 2rem 3rem;
-            margin-top: 3rem;
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #333;
-            transition: .3s;
+            display: inline-flex; align-items: center; background: #f9f9f9; border: 1px solid #ddd;
+            padding: 2rem 3rem; margin-top: 3rem; font-size: 1.4rem; font-weight: 700; color: #333; transition: .3s;
         }
         .md-btn.plain:hover { background: #9e9779; color: #fff; border-color: #9e9779; }
         .md-btn.plain .btn-logo { width: 80px; margin-right: 2rem; }
 
-        /* メッセージセクション */
         .message-sec { padding: 10rem 0; background: #fafafa; border-top: 1px solid #eee; }
         .message-sec .flex-box { display: flex; gap: 8rem; align-items: center; }
         .message-sec .img-box { width: 40%; flex-shrink: 0; }
@@ -153,61 +154,37 @@
         .message-sec h2 { font-size: 3rem; margin-bottom: 3.5rem; line-height: 1.4; color: #111; }
         .message-sec .text { font-size: 1.5rem; line-height: 2.4; color: #444; }
 
-        /* モバイル版調整 */
         @media screen and (max-width: 768px) {
             .pc { display: none !important; }
             .pc-frame { display: block; }
             .pc-frame-right { width: 100%; }
-            .pc-frame-left { width: 0; height: 0; display: block; overflow: visible; position: absolute; top: 0; left: 0; }
+            .pc-frame-left { width: 0; height: 0; display: block; position: absolute; }
             .wrap { padding: 0 25px; }
-
-            /* ヒーローエリア統一 */
-            .mv-md { 
-                height: 180px; 
-                padding: 0 2.5rem; 
-                background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/facility-classroom-1f.jpg');
-                border-top: none;
-            }
-            .mv-md .title-box .title-head { font-size: 1.4rem; color: #fff; margin-bottom: 0.5rem; padding-top: 0; }
-            .mv-md .title-box .title-head:after { display: none; }
+            .mv-md { height: 180px; padding: 0 2.5rem; }
             .mv-md .title { font-size: 2.8rem; }
-
             .intro-sec { padding: 6rem 0; }
-            .head-text-box h2 { font-size: 2.2rem; margin-bottom: 2.5rem; line-height: 1.4; }
-            .head-text-box .text { font-size: 1.45rem; line-height: 1.8; text-align: justify; }
-
+            .head-text-box h2 { font-size: 2.2rem; line-height: 1.4; }
             .main-list li, .main-list li:nth-child(even) { flex-direction: column; gap: 3rem; padding: 6rem 0; }
             .main-list .img-box { width: 100%; }
-            .main-list h3 { font-size: 2rem; padding-left: 1.5rem; margin-bottom: 1.5rem; }
-            .main-list .text { font-size: 1.45rem; line-height: 1.9; text-align: justify; }
-            .md-btn.plain { width: 100%; justify-content: center; padding: 2rem 1.5rem; font-size: 1.3rem; }
-
-            .message-sec { padding: 8rem 0; }
             .message-sec .flex-box { flex-direction: column; gap: 4rem; }
             .message-sec .img-box { width: 85%; margin: 0 auto; }
-            .message-sec h2 { font-size: 2.2rem; margin-bottom: 2.5rem; line-height: 1.4; text-align: center; }
-            .message-sec .text { font-size: 1.45rem; line-height: 1.9; text-align: justify; }
         }
     </style>
 </head>
 
 <body class="l-page l-course-child">
 
-    <!-- ナビゲーション -->
-    <div id="menu-placeholder"></div>
-
     <div class="pc-frame">
-        <aside id="sidebar-placeholder" class="pc-frame-left"></aside>
+        <aside id="menu-placeholder" class="pc-frame-left"></aside>
 
         <div class="pc-frame-right">
             <div class="bread pc">
-                <div class="wrap serif" style="padding:15px 0; font-size:1.1rem; color:#888;">HOME &gt; コース案内 &gt; 低学年能力開発</div>
+                <div class="wrap serif" style="padding:2.5rem 0 1.5rem; font-size:1.1rem; color:#888;">HOME &gt; コース案内 &gt; 低学年能力開発</div>
             </div>
 
             <main id="contents">
                 <article class="l-main">
                     
-                    <!-- ヒーローセクション（PC版左揃え対応） -->
                     <section class="mv-md">
                         <div class="wrap">
                             <div class="title-box anime active">
@@ -218,80 +195,55 @@
                         </div>
                     </section>
 
-                    <!-- 導入セクション -->
                     <section class="intro-sec">
                         <div class="wrap">
                             <div class="head-text-box anime bottom-in active">
                                 <span class="section-label">EARLY ELEMENTARY</span>
-                                <h2 class="serif">
-                                    低学年の今だからできること<br class="pc">難関中学受験へ向けた「脳力」を育てる
-                                </h2>
-                                <p class="text serif">
-                                    低学年での先取り学習には十分な注意が必要です。どんなに計算力や知識力を鍛えても難関受験合格の必要十分条件とはなりません。大切にしたいのは、知的好奇心を最大化し、自ら学ぶ姿勢をつくることです。
-                                </p>
+                                <h2 class="serif">低学年の今だからできること<br class="pc">難関中学受験へ向けた「脳力」を育てる</h2>
+                                <p class="text serif">低学年での先取り学習には注意が必要です。どんなに計算力を鍛えても難関受験合格の必要十分条件とはなりません。大切にしたいのは、知的好奇心を最大化し、自ら学ぶ姿勢をつくることです。</p>
                             </div>
 
                             <ol class="main-list">
                                 <li class="anime bottom-in active">
-                                    <div class="img-box">
-                                        <img src="img/student-puzzle-1.jpg" alt="学びの原点である好奇心の最大化" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/600x400.png?text=Curiosity'">
-                                    </div>
+                                    <div class="img-box"><img src="img/student-puzzle-1.jpg" alt="好奇心の最大化" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/600x400.png?text=Curiosity'"></div>
                                     <div class="text-box">
                                         <span class="lora number">01</span>
                                         <h3 class="serif">学びの原点である好奇心の最大化</h3>
-                                        <p class="text serif">
-                                            子どもたちが本来もっている好奇心は、すべての学びへの原動力となります。elioの低学年指導では「数理パズル」で数的論理性・空間把握能力や共に学ぶ楽しさを習得します。さらに低学年から英語の授業を取り入れこれからのグローバル社会へ向けたカリキュラムを提供します。
-                                        </p>
+                                        <p class="text serif">子どもたちが本来もっている好奇心は、すべての学びへの原動力となります。elioの低学年指導では「数理パズル」で数的論理性・空間把握能力や共に学ぶ楽しさを習得。さらに低学年から英語の授業を取り入れ、子どもたちの自ら学ぶ姿勢へと作用させます。</p>
                                     </div>
                                 </li>
                                 <li class="anime bottom-in active">
-                                    <div class="img-box">
-                                        <img src="img/student-2.jpg" alt="学習を習慣づけるカリキュラム" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/600x400.png?text=Curriculum'">
-                                    </div>
+                                    <div class="img-box"><img src="img/student-2.jpg" alt="学習習慣" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/600x400.png?text=Habit'"></div>
                                     <div class="text-box">
                                         <span class="lora number">02</span>
                                         <h3 class="serif">学習を習慣づけるカリキュラムを採用</h3>
-                                        <p class="text serif">
-                                            子どもたちが絶えず自ら学ぶ姿勢を習慣づけるため、多面的な学習によるカリキュラムを採用し、好奇心を刺激します。学習習慣が身につけば、受験だけにとどまらず、将来に向け大きな力となります。
-                                        </p>
+                                        <p class="text serif">絶えず自ら学ぶ姿勢を習慣づけるため、多面的な学習によるカリキュラムを採用し、好奇心を刺激します。学習習慣が身につけば、受験だけにとどまらず、将来に向け大きな力となります。</p>
                                     </div>
                                 </li>
                                 <li class="anime bottom-in active">
-                                    <div class="img-box">
-                                        <img src="img/student-robotics.jpg" alt="自ら楽しく学ぶ姿勢の獲得" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/600x400.png?text=Learning+Joy'">
-                                    </div>
+                                    <div class="img-box"><img src="img/student-robotics.jpg" alt="自ら楽しく学ぶ" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/600x400.png?text=Joy'"></div>
                                     <div class="text-box">
                                         <span class="lora number">03</span>
                                         <h3 class="serif">「自ら楽しく学ぶ」を実現</h3>
-                                        <p class="text serif">
-                                            学ぶことを素直に「楽しい」と思えるこの時期だからこそ、大きく育つ「脳力」を最大限に使って「自ら楽しく学ぶ」を実現していきます。難関受験の成否はこの獲得にかかっているといっても過言ではありません。
-                                        </p>
+                                        <p class="text serif">学ぶことを素直に楽しいと思えるこの時期だからこそ、大きく育つ脳力を最大限に使って「自ら楽しく学ぶ」を実現していきます。難関受験の成否はこの獲得にかかっているといっても過言ではありません。</p>
                                     </div>
                                 </li>
                                 <li class="anime bottom-in active">
-                                    <div class="img-box">
-                                        <img src="img/course-early-elementary-students.jpg" alt="確固たる基礎作りと成長" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/600x400.png?text=Foundation'">
-                                    </div>
+                                    <div class="img-box"><img src="img/course-early-elementary-students.jpg" alt="基礎作り" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/600x400.png?text=Foundation'"></div>
                                     <div class="text-box">
                                         <span class="lora number">04</span>
                                         <h3 class="serif">確固たる基礎作りと日々の成長</h3>
-                                        <p class="text serif">
-                                            低学年のうちから、難関中学受験のための「基礎」にも取り組みます。小４からはじまる本格的な教科指導カリキュラムへ向け土台を固めていきます。小1・小２では着実に学習する習慣を身につけます。
-                                        </p>
+                                        <p class="text serif">低学年のうちから難関中学受験のための基礎にも取り組みます。小4からはじまる本格的な教科指導へ向け土台を固めます。予習・授業・復習の流れをマスターすることで、高学年での飛躍を確実なものにします。</p>
                                     </div>
                                 </li>
                                 <li class="anime bottom-in active">
-                                    <div class="img-box">
-                                        <img src="img/teach-english-1.jpg" alt="オンライン英会話OLECOジュニア" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/600x400.png?text=English'">
-                                    </div>
+                                    <div class="img-box"><img src="img/teach-english-1.jpg" alt="英語教育" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/600x400.png?text=English'"></div>
                                     <div class="text-box">
                                         <span class="lora number">05</span>
                                         <h3 class="serif">オンライン英会話で英語教育改革に対応</h3>
-                                        <p class="text serif">
-                                            小１から「オンライン英会話OLECOジュニア」で外国の講師とマンツーマンで英語を学びます。社会のグローバル化に伴い推し進められている英語教育改革に対応するためにも、この時期から本格的な英語を体験していく必要があります。
-                                        </p>
+                                        <p class="text serif">小1から「オンライン英会話OLECOジュニア」で外国の講師とマンツーマンで学びます。グローバル化に伴う英語教育改革に対応するため、この時期から本格的な英語を体験していく必要があります。</p>
                                         <a href="method/oleco/" class="md-btn plain serif">
-                                            <img src="img/teach-english-1.jpg" alt="OLECOジュニア" class="btn-logo" onerror="this.src='https://placehold.jp/24/982020/ffffff/80x40.png?text=OLECO'">
+                                            <img src="img/teach-english-1.jpg" alt="OLECO" class="btn-logo" onerror="this.src='https://placehold.jp/24/982020/ffffff/80x40.png?text=OLECO'">
                                             オンライン英会話の詳細はこちら
                                         </a>
                                     </div>
@@ -300,19 +252,14 @@
                         </div>
                     </section>
 
-                    <!-- メッセージセクション -->
                     <section class="message-sec">
                         <div class="wrap">
                             <div class="flex-box anime bottom-in active">
-                                <div class="img-box">
-                                    <img src="img/teacher-daido.jpg" alt="講師メッセージ" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/400x500.png?text=Message'">
-                                </div>
+                                <div class="img-box"><img src="img/teacher-daido.jpg" alt="講師メッセージ" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/400x500.png?text=Message'"></div>
                                 <div class="text-box">
                                     <span class="title-head lora">MESSAGE</span>
                                     <h2 class="serif">学ぶことの楽しさを「学び」ます。</h2>
-                                    <p class="text serif">
-                                        中学受験を目指すご家庭では、多くの場合保護者の方からの動機づけで学習が始まります。elioの低学年指導では、自ら楽しく学ぶ姿勢づくりや知的好奇心を刺激して「脳力」を育てることを重視しています。そして子どもが学ぶことを自身のこととしてとらえ、中学受験に向かって進み出せるように、講師がはたらきかけます。
-                                    </p>
+                                    <p class="text serif">中学受験を目指す多くのご家庭では、保護者の方からの動機づけで学習が始まります。elioの低学年指導では、自ら楽しく学ぶ姿勢づくりや知的好奇心を刺激して脳力を育てることを重視しています。子どもが学ぶことを自身のこととしてとらえ、中学受験に向かって進み出せるよう、講師がはたらきかけます。</p>
                                 </div>
                             </div>
                         </div>
@@ -321,7 +268,6 @@
                     <div id="cta-placeholder"></div>
                 </article>
             </main>
-
             <div id="footer-placeholder"></div>
         </div>
     </div>
@@ -335,13 +281,10 @@
                     const el = document.getElementById(id);
                     if (el) el.innerHTML = html;
                 }
-            } catch (e) {
-                console.error('読み込み失敗:', path);
-            }
+            } catch (e) { console.error('Error:', path); }
         }
 
         window.addEventListener('DOMContentLoaded', () => {
-            // menu.htmlに一本化
             loadPart('menu-placeholder', 'parts/menu.html');
             loadPart('cta-placeholder', 'parts/CTA.html');
             loadPart('footer-placeholder', 'parts/footer.html');
@@ -352,15 +295,10 @@
                 });
             }, { threshold: 0.1 });
             
-            setTimeout(() => {
-                document.querySelectorAll('.anime').forEach(el => observer.observe(el));
-            }, 1000);
+            document.querySelectorAll('.anime').forEach(el => observer.observe(el));
         });
 
-        // モバイルメニュー制御用
-        function toggleMenu() {
-            document.body.classList.toggle('is-active');
-        }
+        function toggleMenu() { document.body.classList.toggle('is-active'); }
         function toggleSubMenu(element) {
             if (window.innerWidth <= 768) {
                 const parent = element.closest('.l-pulldown');
