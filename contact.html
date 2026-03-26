@@ -6,16 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <!-- SEO設定 -->
-    <title>お問い合わせ｜会員制難関受験専門塾エリオ（elio）</title>
-    <meta name="description" content="会員制難関受験専門塾エリオ（elio）へのお問い合わせ・ご面談予約フォームです。入塾のご相談や転塾のご検討など、お気軽にお問い合わせください。">
-    <meta name="keywords" content="お問い合わせ,面談予約,入塾相談,塾,エリオ,elio,茗荷谷,恵比寿,京都">
+    <title>お問い合わせ | 会員制難関受験専門塾エリオ（elio）</title>
+    <meta name="description" content="会員制難関受験専門塾エリオ（elio）へのお問い合わせ・ご面談予約フォームです。入塾のご相談や学習カウンセリングなど、お気軽にお問い合わせください。">
+    <meta name="keywords" content="お問い合わせ,面談予約,入塾相談,塾,エリオ,elio,東京,京都,中学受験,大学受験">
+    <link rel="canonical" href="https://elio-edu.com/contact">
     
+    <!-- OGP設定 -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="お問い合わせ | 会員制難関受験専門塾エリオ（elio）">
+    <meta property="og:description" content="エリオ（elio）へのお問い合わせはこちらから。ご面談や体験授業のご予約も受け付けております。">
+    <meta property="og:url" content="https://elio-edu.com/contact">
+    <meta property="og:image" content="https://elio-edu.com/img/ogp-contact.jpg">
+    <meta property="og:site_name" content="エリオ（elio）">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- ファビコン設定 -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     
-    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:500,600,700&display=swap" rel="stylesheet">
+    <!-- 構造化データ（JSON-LD） -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "HOME",
+        "item": "https://elio-edu.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "お問い合わせ",
+        "item": "https://elio-edu.com/contact"
+      }]
+    }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:400,500,600,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:500,700&display=swap" rel="stylesheet">
     
     <style>
+        @charset "UTF-8";
+        
         html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, main, menu, nav, output, ruby, section, summary, time, mark, audio, video {
             margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; box-sizing: border-box;
         }
@@ -28,34 +61,44 @@
             font-size: 1.6rem; line-height: 1.8; color: #111; overflow-x: hidden; background: #fff;
         }
 
+        /* モバイル版のヘッダー被り防止用余白 */
+        @media screen and (max-width: 768px) {
+            body { padding-top: 74px !important; }
+        }
+
         ul, ol { list-style: none; }
         a { transition-duration: .5s; text-decoration: none; color: inherit; }
         img { max-width: 100%; height: auto; vertical-align: middle; }
 
-        .serif { font-family: "Noto Serif JP", serif; font-weight: 500; }
-        .lora { font-family: Lora, serif; font-weight: 500; letter-spacing: .05em; }
+        .serif { font-family: "Noto Serif JP", serif; }
+        .lora { font-family: Lora, serif; letter-spacing: .05em; }
 
-        .wrap { margin: 0 auto; width: 100%; max-width: 1060px; padding: 0 20px; }
-        .w800 { max-width: 800px; }
+        /* PCレイアウト */
+        @media screen and (min-width: 769px) {
+            .sp { display: none !important; }
+            .pc-frame { display: flex; }
+            .pc-frame-left { width: 18rem; position: sticky; top: 0; height: 100vh; z-index: 1000; background: #fff; }
+            .pc-frame-right { width: calc(100% - 18rem); flex-grow: 1; min-height: 100vh; }
+            .wrap { margin: 0 auto; max-width: 1060px; padding: 0 60px; }
+        }
+        
+        .w800 { max-width: 800px; margin: 0 auto; }
 
-        .pc-frame { display: flex; width: 100%; align-items: flex-start; }
-        .pc-frame-left { width: 18rem; position: sticky; top: 0; height: 100vh; z-index: 1000; background: #fff; }
-        .pc-frame-right { width: calc(100% - 18rem); flex-grow: 1; min-height: 100vh; }
-
-        .bread { padding: 2rem 0; font-size: 1.1rem; color: #888; }
-
-        .mv-md { padding: 8rem 0; background: #fff; }
-        .mv-md .title-box .title-head { position: relative; padding-top: 2rem; font-size: 1.8rem; font-weight: 500; margin-bottom: 1rem; color: #666; }
+        /* メインビジュアル（PC版デザイン維持） */
+        .mv-md { padding: 8rem 0; background: #fff; border-bottom: 1px solid #eee; display: flex; align-items: center; }
+        .mv-md .title-box { color: #111; text-align: left; }
+        .mv-md .title-box .title-line { width: 20px; height: 1px; background: #333; margin-bottom: 2rem; }
+        .mv-md .title-box .title-head { position: relative; padding-top: 0; font-size: 1.8rem; font-weight: 500; margin-bottom: 1rem; color: #666; }
         .mv-md .title { font-size: 4.2rem; color: #9e9779; letter-spacing: .2em; font-weight: 500; }
 
-        .form-sec { padding: 8rem 0 12rem; border-top: 1px solid #eee; }
+        /* フォームセクション */
+        .form-sec { padding: 8rem 0 12rem; }
         .form-group { margin-bottom: 4rem; }
         .form-label { display: block; font-size: 1.6rem; font-weight: 600; margin-bottom: 1.5rem; color: #111; }
-        .form-label .req { background: #9e9779; color: #fff; font-size: 1rem; padding: 0.2rem 0.8rem; margin-left: 1rem; vertical-align: middle; border-radius: 2px; }
+        .form-label .req { background: #982020; color: #fff; font-size: 1rem; padding: 0.2rem 0.8rem; margin-left: 1rem; vertical-align: middle; border-radius: 2px; }
         
         .input-text, .select-box { 
             width: 100%; 
-            min-width: 0; 
             height: 5.6rem;
             padding: 0 1.5rem; 
             border: 1px solid #ddd; 
@@ -67,26 +110,23 @@
             outline: none;
             box-sizing: border-box;
         }
-        .input-text:focus { border-color: #9e9779; background: #fff; }
+        .input-text:focus, .select-box:focus { border-color: #9e9779; background: #fff; }
         
         .select-box { appearance: none; cursor: pointer; }
-        .select-container { position: relative; width: 100%; box-sizing: border-box; }
+        .select-container { position: relative; width: 100%; }
         .select-container::after { content: ""; position: absolute; right: 2rem; top: 50%; transform: translateY(-50%); border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid #888; pointer-events: none; }
 
         .date-grid { display: flex; flex-direction: column; gap: 2rem; width: 100%; }
-        .date-item-group { background: #fafafa; border: 1px solid #eee; padding: 2.5rem; border-radius: 4px; display: flex; flex-direction: column; gap: 1.5rem; width: 100%; box-sizing: border-box; position: relative; }
+        .date-item-group { background: #fafafa; border: 1px solid #eee; padding: 2.5rem; border-radius: 4px; display: flex; flex-direction: column; gap: 1.5rem; width: 100%; }
         .date-item-group span { font-size: 1.4rem; color: #111; font-weight: 700; display: block; }
         
         .date-error-msg { color: #d32f2f; font-size: 1.2rem; display: none; margin-top: -0.5rem; }
 
         .info-text-box { background: #fdfaf0; border: 1px solid #e9e4d1; padding: 2.5rem; margin-top: 3rem; border-radius: 4px; }
         .info-text-box p { font-size: 1.4rem; color: #5a5648; line-height: 1.8; margin-bottom: 0.8rem; }
-        .info-text-box p:last-child { margin-bottom: 0; }
 
         .policy-box { height: 200px; overflow-y: scroll; border: 1px solid #ddd; padding: 2rem; background: #fdfdfd; font-size: 1.3rem; line-height: 1.8; color: #555; margin-bottom: 2rem; }
         .policy-box h4 { font-weight: 700; margin-bottom: 1.5rem; color: #111; text-align: center; }
-        .policy-box p { margin-bottom: 1.5rem; }
-        .policy-box .section-title { font-weight: 700; margin-top: 2rem; display: block; color: #333; }
 
         .policy-agree { text-align: center; margin-top: 3rem; }
         .policy-agree label { display: inline-flex; align-items: center; font-weight: 700; cursor: pointer; }
@@ -96,43 +136,66 @@
         .submit-btn {
             background: #111; color: #fff; padding: 2rem 8rem; border: none; font-size: 1.6rem; font-weight: 700; cursor: pointer; transition: .3s; font-family: inherit;
         }
-        .submit-btn:hover { background: #9e9779; }
+        .submit-btn:hover { background: #982020; }
         .submit-btn:disabled { background: #ccc; cursor: not-allowed; }
 
         .anime { opacity: 0; transition: all 1s ease; }
         .anime.bottom-in { transform: translateY(30px); }
         .active { opacity: 1 !important; transform: none !important; }
 
+        /* モバイル版調整 */
         @media screen and (max-width: 768px) {
-            .pc-frame-left { display: none; }
+            .pc { display: none !important; }
+            .pc-frame { display: block; }
             .pc-frame-right { width: 100%; }
-            .mv-md { padding: 5rem 0; }
-            .mv-md .title { font-size: 3.2rem; }
+            .pc-frame-left { width: 0; height: 0; display: block; overflow: visible; position: absolute; top: 0; left: 0; }
+            .wrap { padding: 0 25px; }
+
+            /* ヒーローエリアデザイン統一 */
+            .mv-md { 
+                height: 180px; 
+                padding: 0 2.5rem; 
+                background-color: #333;
+                background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/facility-classroom-3f.jpg');
+                background-size: cover;
+                background-position: center;
+                border-bottom: none;
+            }
+            .mv-md .wrap { width: 100%; }
+            .mv-md .title-box { color: #fff; }
+            .mv-md .title-box .title-line { display: none; }
+            .mv-md .title-box .title-head { font-size: 1.4rem; color: #fff; margin-bottom: 0.5rem; }
+            .mv-md .title { font-size: 2.8rem; color: #9e9779; }
+
             .form-sec { padding: 5rem 0 8rem; }
             .date-item-group { padding: 2rem; }
+            .submit-btn { width: 100%; padding: 2rem 0; }
         }
     </style>
 </head>
 
 <body class="l-page l-contact">
 
-    <div id="header-placeholder"></div>
+    <!-- ナビゲーションのプレースホルダー -->
+    <div id="menu-placeholder"></div>
 
     <div class="pc-frame">
         <aside id="sidebar-placeholder" class="pc pc-frame-left"></aside>
 
         <div class="pc-frame-right">
             <div class="bread pc">
-                <div class="wrap">HOME > お問い合わせ</div>
+                <div class="wrap serif" style="padding:15px 0; font-size:1.1rem; color:#888;">HOME &gt; お問い合わせ</div>
             </div>
 
             <main id="contents">
                 <article class="l-main">
                     
+                    <!-- メインビジュアル -->
                     <section class="mv-md">
                         <div class="wrap">
-                            <div class="title-box anime bottom-in">
-                                <p class="title-head">お問い合わせ・ご面談予約</p>
+                            <div class="title-box anime active">
+                                <div class="title-line pc"></div>
+                                <p class="title-head serif">お問い合わせ・ご面談予約</p>
                                 <h1 class="title lora">CONTACT</h1>
                             </div>
                         </div>
@@ -142,22 +205,22 @@
                         <div class="wrap w800">
                             <form id="contact-form" action="#" method="post">
                                 
-                                <div class="form-group anime bottom-in">
+                                <div class="form-group anime bottom-in active">
                                     <label class="form-label">お子様のお名前 <span class="req">必須</span></label>
                                     <input type="text" name="child_name" class="input-text" placeholder="例：山田 太郎" required>
                                 </div>
 
-                                <div class="form-group anime bottom-in">
+                                <div class="form-group anime bottom-in active">
                                     <label class="form-label">フリガナ <span class="req">必須</span></label>
                                     <input type="text" name="child_kana" class="input-text" placeholder="例：ヤマダ タロウ" required>
                                 </div>
 
-                                <div class="form-group anime bottom-in">
+                                <div class="form-group anime bottom-in active">
                                     <label class="form-label">学校名 <span class="req">必須</span></label>
                                     <input type="text" name="school" class="input-text" placeholder="例：〇〇小学校" required>
                                 </div>
 
-                                <div class="form-group anime bottom-in">
+                                <div class="form-group anime bottom-in active">
                                     <label class="form-label">学年 <span class="req">必須</span></label>
                                     <div class="select-container">
                                         <select name="grade" class="select-box" required>
@@ -179,12 +242,12 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group anime bottom-in">
+                                <div class="form-group anime bottom-in active">
                                     <label class="form-label">電話番号 <span class="req">必須</span></label>
                                     <input type="tel" name="tel" class="input-text" placeholder="例：09012345678" required>
                                 </div>
 
-                                <div class="form-group anime bottom-in">
+                                <div class="form-group anime bottom-in active">
                                     <label class="form-label">お問い合わせ内容 <span class="req">必須</span></label>
                                     <div class="select-container">
                                         <select name="reason" class="select-box" required>
@@ -198,27 +261,10 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group anime bottom-in">
-                                    <label class="form-label">エリオを知ったきっかけ <span class="req">必須</span></label>
-                                    <div class="select-container">
-                                        <select name="trigger" class="select-box" required>
-                                            <option value="">きっかけを選択してください</option>
-                                            <option value="知人・ご家族からのご紹介">知人・ご家族からのご紹介</option>
-                                            <option value="口コミや評判をきっかけに">口コミや評判をきっかけに</option>
-                                            <option value="イデアスポットのイベント・体験会">イデアスポット（idea spot）のイベント・体験会</option>
-                                            <option value="公式ウェブサイト・検索エンジン">公式ウェブサイト・検索エンジン</option>
-                                            <option value="SNS（Instagram・Facebook等）">SNS（Instagram・Facebook等）</option>
-                                            <option value="校舎の看板・所在地を見て">校舎の看板・所在地を見て</option>
-                                            <option value="その他">その他</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group anime bottom-in">
+                                <div class="form-group anime bottom-in active">
                                     <label class="form-label">ご面談希望日時（第3希望まで選択） <span class="req">必須</span></label>
                                     
                                     <div class="date-grid">
-                                        <!-- 第1希望 -->
                                         <div class="date-item-group">
                                             <span>第1希望</span>
                                             <input type="date" name="date1" class="input-text date-input" required>
@@ -233,7 +279,6 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <!-- 第2希望 -->
                                         <div class="date-item-group">
                                             <span>第2希望</span>
                                             <input type="date" name="date2" class="input-text date-input" required>
@@ -248,7 +293,6 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <!-- 第3希望 -->
                                         <div class="date-item-group">
                                             <span>第3希望</span>
                                             <input type="date" name="date3" class="input-text date-input" required>
@@ -267,54 +311,39 @@
 
                                     <div class="info-text-box">
                                         <p>・ご面談当日、お子様のご同席は不要です。保護者様のみでお越しください。</p>
-                                        <p>・ご面談は、約１時間を予定しております。</p>
+                                        <p>・ご面談は、約1時間を予定しております。</p>
                                         <p>・特にご持参いただく資料等もございませんので、どうぞリラックスしてお越しください。</p>
                                     </div>
                                 </div>
 
-                                <div class="form-group anime bottom-in">
+                                <div class="form-group anime bottom-in active">
                                     <label class="form-label">ご相談したいこと（自由記載）</label>
                                     <textarea name="message" class="input-text" style="height:200px; padding-top:1.5rem;" placeholder="現在の学習状況や志望校、ご相談内容などをご記入ください。"></textarea>
                                 </div>
 
-                                <div class="form-group anime bottom-in">
+                                <div class="form-group anime bottom-in active">
                                     <label class="form-label">個人情報の取り扱いへの同意 <span class="req">必須</span></label>
                                     <div class="policy-box">
                                         <h4>個人情報保護方針について</h4>
                                         <p>会員制難関受験専門塾エリオは、当塾の教育サービスを提供するにあたって、生徒・ご家族から開示いただいた個人情報を適切に利用し、また保護することを最重要事項としてとらえ、当塾全体で個人情報保護方針の徹底を図ります。</p>
                                         
-                                        <span class="section-title">１　個人情報とは</span>
+                                        <span style="font-weight:700; margin-top:20px; display:block;">１　個人情報とは</span>
                                         <p>当塾では、特定の個人を識別できる情報を個人情報としてとらえており、生徒氏名、性別、ご家族氏名、住所、電話番号、メールアドレス、各種成績、学習指導記録、金融機関口座番号などを使用させていただきます。</p>
                                         
-                                        <span class="section-title">２　利用目的</span>
+                                        <span style="font-weight:700; margin-top:20px; display:block;">２　利用目的</span>
                                         <p>当塾では、ご提示いただいた個人情報を下記の目的に使用させていただきます。<br>
                                         (1) 学習指導、指導記録、学習状況の報告、進路相談、集計・管理、請求に関する事務処理などのサービス提供のため。<br>
                                         (2) 上記(1)の利用目的の達成に必要な範囲での業務委託先やテスト会社・教材会社などへの提供のため。<br>
                                         (3) 会員制難関受験専門塾エリオを柱とする学習支援に関する商品・講座などの情報、サービスのご案内のため。<br>
-                                        (4) 上の(1)、(3)に関するマーケティング(アンケートのお願い等)活動、顧客動向分析、調査分析などのため。<br>
+                                        (4) 上の(1)、(3)に関するマーケティング活動、顧客動向分析、調査分析などのため。<br>
                                         (5) ご質問に返答するため。</p>
-                                        
-                                        <span class="section-title">３　第三者提供について</span>
-                                        <p>当塾では、法令によって許されたものを除き、本人の事前の同意なく業務委託先を除く第三者に開示・提供することはありません。また、個人情報を業務委託先に提供する場合は、守秘契約等によって業務委託先に個人情報保護を義務付けるとともに、業務委託先が適切に個人情報を取り扱うように管理いたします。</p>
-                                        
-                                        <span class="section-title">４　委託について</span>
-                                        <p>当塾では、より良いサービスを提供するため、皆様からご提示いただいた個人情報を業務委託先に委託する場合があります。委託にあたっては、個人情報を適切に取り扱っている委託先を選定し、委託先で適切な管理が実施できるよう必要な事項を取り決め、お客様の個人情報保護に努めます。</p>
-                                        
-                                        <span class="section-title">５　個人情報の取り扱いについて</span>
-                                        <p>当塾では、皆様の個人情報を不正アクセス・損失・破損・漏洩などのリスクから保護するため、組織上・技術上の合理的な防止策・是正策を講じます。</p>
-                                        
-                                        <span class="section-title">６　法令遵守について</span>
-                                        <p>当塾では、個人情報保護に関する法規を遵守するとともに、環境の変化に合わせた個人情報保護の体制を継続的に見直し・改善いたします。</p>
-                                        
-                                        <span class="section-title">７　開示請求</span>
-                                        <p>当塾では、個人情報に関するお問い合わせについて対応いたします。当塾が保有しているお客様の個人情報について開示・訂正・利用停止等をご希望になる場合は、下記窓口までご連絡ください。なお、請求対象の個人情報に係るお客様本人であることを確認するため、必要な書類等の提示を求めることができるものとします。</p>
                                     </div>
                                     <div class="policy-agree">
                                         <label><input type="checkbox" id="agree-chk" required> 個人情報保護方針に同意する</label>
                                     </div>
                                 </div>
 
-                                <div class="submit-area anime bottom-in">
+                                <div class="submit-area anime bottom-in active">
                                     <button type="submit" id="submit-btn" class="submit-btn" disabled>上記の内容で送信する</button>
                                 </div>
 
@@ -322,6 +351,7 @@
                         </div>
                     </section>
 
+                    <div id="cta-placeholder"></div>
                 </article>
             </main>
 
@@ -339,13 +369,14 @@
                     if (el) el.innerHTML = html;
                 }
             } catch (e) {
-                console.error('パーツ読み込みエラー:', path);
+                console.error('読み込み失敗:', path);
             }
         }
 
         window.addEventListener('DOMContentLoaded', () => {
-            loadPart('header-placeholder', 'parts/header.html');
-            loadPart('sidebar-placeholder', 'parts/menu.html');
+            // 外部パーツ読み込み
+            loadPart('menu-placeholder', 'parts/menu.html');
+            loadPart('cta-placeholder', 'parts/CTA.html');
             loadPart('footer-placeholder', 'parts/footer.html');
 
             // 同意チェックボックスの連動
@@ -360,13 +391,11 @@
             // 日程選択の制限設定
             const dateInputs = document.querySelectorAll('.date-input');
             const now = new Date();
-            // 入力日の2日後を最小値に設定（今日と明日を無効化）
             const minDate = new Date(now.setDate(now.getDate() + 2));
             const minDateStr = minDate.toISOString().split('T')[0];
 
             dateInputs.forEach(input => {
                 input.setAttribute('min', minDateStr);
-                
                 input.addEventListener('change', (e) => {
                     const selectedDate = new Date(e.target.value);
                     const day = selectedDate.getDay(); // 0:日, 6:土
@@ -381,16 +410,26 @@
                 });
             });
 
+            // アニメーション監視
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
+                    if (entry.isIntersecting) entry.target.classList.add('active');
                 });
             }, { threshold: 0.1 });
 
             document.querySelectorAll('.anime').forEach(el => observer.observe(el));
         });
+
+        // モバイルメニュー制御用
+        function toggleMenu() {
+            document.body.classList.toggle('is-active');
+        }
+        function toggleSubMenu(element) {
+            if (window.innerWidth <= 768) {
+                const parent = element.closest('.l-pulldown');
+                if (parent) parent.classList.toggle('is-open');
+            }
+        }
     </script>
 </body>
 </html>
