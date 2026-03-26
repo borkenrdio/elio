@@ -187,8 +187,22 @@
             section.sec { padding: 60px 0; }
             .slide-main { font-size: 2.8rem; }
             .slide-sub { font-size: 1.6rem; }
-            .course-list, .point-list, .policy-list { grid-template-columns: 1fr; }
-            .sec-head .main { font-size: 2.6rem; }
+            .course-list, .point-list { grid-template-columns: 1fr; }
+            .sec-head .main { font-size: 2.4rem; }
+
+            /* 最新情報のモバイル調整 */
+            .news-inner { flex-direction: column; align-items: flex-start; }
+            .news-head { border-right: none; border-bottom: 1px solid #ddd; padding: 0 0 15px; margin: 0 0 15px; width: 100%; }
+            .news-item a { flex-direction: row; flex-wrap: wrap; align-items: center; }
+            .news-item .date { width: auto; margin-right: 10px; font-size: 1.2rem; }
+            .news-item .cat { margin-right: 10px; padding: 1px 8px; }
+            .news-item .txt { width: 100%; margin-top: 8px; font-size: 1.4rem; line-height: 1.5; }
+
+            /* 教育方針のモバイル調整（画像1/3サイズ化） */
+            .policy-list { grid-template-columns: 1fr; gap: 25px; }
+            .policy-item { display: flex; align-items: center; gap: 15px; text-align: left; }
+            .policy-item .img-box { width: 30%; aspect-ratio: 1 / 1; margin-bottom: 0; flex-shrink: 0; border-radius: 4px; }
+            .policy-item .head { width: 70%; border-top: none; padding-top: 0; margin-bottom: 0; font-size: 1.5rem; line-height: 1.4; border-bottom: 1px solid #eee; padding-bottom: 10px; }
         }
     </style>
 </head>
