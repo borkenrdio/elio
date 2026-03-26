@@ -4,7 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO設定 -->
     <title>中学生・高校生｜会員制難関受験専門塾エリオ（elio）</title>
+    <meta name="description" content="国立・開成・早慶、東大・京大・医学部などの難関校合格を目指す中高生のための専門指導。選抜講師陣による徹底した教科指導と自立学習管理、キャリア教育を通じて、将来を見据えた本質的な学力を育てます。">
+    <meta name="keywords" content="高校受験,大学受験,中学生,高校生,難関校対策,医学部受験,塾,エリオ,elio,茗荷谷,恵比寿,京都">
+    
+    <!-- OGP設定 -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="中学生・高校生｜会員制難関受験専門塾エリオ（elio）">
+    <meta property="og:description" content="志望校合格を、未来への通過点に。選抜講師陣が中高生の高い目標への挑戦を全力で後押しします。">
+    <meta property="og:url" content="https://elio-edu.com/course/senior/">
+    <meta property="og:site_name" content="エリオ（elio）">
+    
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:500,600,700&display=swap" rel="stylesheet">
@@ -62,7 +74,9 @@
         .main-list { margin-bottom: 10rem; }
         .main-list li { display: flex; gap: 6rem; padding: 8rem 0; border-top: 1px solid #eee; align-items: center; }
         .main-list li:nth-child(even) { flex-direction: row-reverse; }
-        .main-list img { width: 45%; flex-shrink: 0; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .main-list .img-box { width: 45%; flex-shrink: 0; box-shadow: 0 20px 40px rgba(0,0,0,0.05); overflow: hidden; }
+        .main-list img { width: 100%; transition: 1s; }
+        .main-list li:hover img { transform: scale(1.05); }
         .main-list .text-box { flex-grow: 1; }
         .main-list .number { display: block; font-size: 3rem; color: #e0e0e0; margin-bottom: 1rem; font-weight: 500; }
         .main-list h3 { font-size: 2.4rem; font-weight: 700; margin-bottom: 2rem; color: #111; position: relative; padding-left: 2rem; border-left: 4px solid #9e9779; }
@@ -84,8 +98,8 @@
             .intro-sec { padding: 5rem 0; }
             .head-text-box h2 { font-size: 2.2rem; }
             .main-list li, .main-list li:nth-child(even) { flex-direction: column; gap: 3rem; padding: 5rem 0; }
-            .main-list img { width: 100%; }
-            .message-sec .flex-box { flex-direction: column; gap: 4rem; text-align: center; }
+            .main-list .img-box { width: 100%; }
+            .message-sec .flex-box { flex-direction: column; gap: 4rem; text-align: left; }
             .message-sec .img-box { width: 80%; }
         }
     </style>
@@ -106,6 +120,7 @@
             <main id="contents">
                 <article class="l-main">
                     
+                    <!-- ヒーローセクション -->
                     <section class="mv-md">
                         <div class="wrap">
                             <div class="title-box anime bottom-in">
@@ -115,6 +130,7 @@
                         </div>
                     </section>
 
+                    <!-- 導入セクション -->
                     <section class="intro-sec">
                         <div class="wrap">
                             <div class="head-text-box anime bottom-in">
@@ -130,9 +146,10 @@
                             </div>
 
                             <ol class="main-list">
+                                <!-- 項目 01 -->
                                 <li class="anime bottom-in">
                                     <div class="img-box">
-                                        
+                                        <img src="img/facility-door.jpg" alt="少人数対話形式で自ら考える力を養うelioメソッドの授業風景">
                                     </div>
                                     <div class="text-box">
                                         <span class="lora number">01</span>
@@ -142,9 +159,10 @@
                                         </p>
                                     </div>
                                 </li>
+                                <!-- 項目 02 -->
                                 <li class="anime bottom-in">
                                     <div class="img-box">
-                                        
+                                        <img src="img/teach-english-1.jpg" alt="オンライン英会話を導入した英語4技能マスタープログラム">
                                     </div>
                                     <div class="text-box">
                                         <span class="lora number">02</span>
@@ -154,9 +172,10 @@
                                         </p>
                                     </div>
                                 </li>
+                                <!-- 項目 03 -->
                                 <li class="anime bottom-in">
                                     <div class="img-box">
-                                        
+                                        <img src="img/facility-classroom-1f.jpg" alt="各学校のカリキュラムに合わせた定期テスト・内部進学対策">
                                     </div>
                                     <div class="text-box">
                                         <span class="lora number">03</span>
@@ -166,9 +185,10 @@
                                         </p>
                                     </div>
                                 </li>
+                                <!-- 項目 04 -->
                                 <li class="anime bottom-in">
                                     <div class="img-box">
-                                        
+                                        <img src="img/teach-online.jpg" alt="共通テストや難関大対策を行う大学入試プロフェッショナル指導">
                                     </div>
                                     <div class="text-box">
                                         <span class="lora number">04</span>
@@ -182,11 +202,12 @@
                         </div>
                     </section>
 
+                    <!-- メッセージセクション -->
                     <section class="message-sec">
                         <div class="wrap">
                             <div class="flex-box anime bottom-in">
                                 <div class="img-box">
-                                    
+                                    <img src="img/teacher-endo.jpg" alt="講師エンドー氏。中高生の未来への挑戦を支える決意を語る。">
                                 </div>
                                 <div class="text-box">
                                     <span class="title-head lora">MESSAGE</span>
@@ -218,7 +239,7 @@
                     if (el) el.innerHTML = html;
                 }
             } catch (e) {
-                console.error(e);
+                console.error('パーツ読み込みエラー:', path);
             }
         }
 
