@@ -6,157 +6,230 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <!-- SEO設定 -->
-    <title>個別指導｜会員制難関受験専門塾エリオ（elio）</title>
+    <title>個別指導 | 会員制難関受験専門塾エリオ（elio）</title>
     <meta name="description" content="選抜講師による完全オーダーメイドの個別指導。1対1または1対2の対面指導で、生徒一人ひとりの個性と目的を的確に見抜き、本質的な能力を開花させます。内部進学対策から難関受験、医学部対策まで対応。">
     <meta name="keywords" content="個別指導,塾,エリオ,elio,マンツーマン,内部進学対策,難関受験,医学部受験,茗荷谷,恵比寿,京都">
+    <link rel="canonical" href="https://elio-edu.com/course-one-on-one-instruction">
     
     <!-- OGP設定 -->
     <meta property="og:type" content="article">
-    <meta property="og:title" content="個別指導｜会員制難関受験専門塾エリオ（elio）">
-    <meta property="og:description" content="一人ひとりの個性を、確かな才能へ。選抜講師による完全オーダーメイドの個別指導。">
-    <meta property="og:url" content="https://elio-edu.com/course/personal-coaching/">
+    <meta property="og:title" content="個別指導 | 会員制難関受験専門塾エリオ（elio）">
+    <meta property="og:description" content="一人ひとりの個性を、確かな才能へ。選抜講師による完全オーダーメイドの個別指導で本質的な知性を育みます。">
+    <meta property="og:url" content="https://elio-edu.com/course-one-on-one-instruction">
+    <meta property="og:image" content="https://elio-edu.com/img/ogp-course-one.jpg">
     <meta property="og:site_name" content="エリオ（elio）">
+    <meta name="twitter:card" content="summary_large_image">
     
+    <!-- ファビコン設定 -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     
-    <!-- 構造化データ -->
+    <!-- 構造化データ（JSON-LD） -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "EducationalOrganization",
-      "name": "会員制難関受験専門塾エリオ",
-      "url": "https://elio-edu.com/",
-      "logo": "https://elio-edu.com/img/logo.png",
-      "description": "一人ひとりの可能性を最大限に伸ばす個別指導。"
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "HOME",
+        "item": "https://elio-edu.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "コース案内",
+        "item": "https://elio-edu.com/course"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "個別指導",
+        "item": "https://elio-edu.com/course-one-on-one-instruction"
+      }]
     }
     </script>
     
-    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:500,600,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lora:500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
     
     <style>
+        @charset "UTF-8";
+
         html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, main, menu, nav, output, ruby, section, summary, time, mark, audio, video {
             margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; box-sizing: border-box;
         }
 
-        html { font-size: 62.5%; scroll-behavior: smooth; }
-
-        body {
-            font-family: "Noto Serif JP", serif;
-            font-weight: 500;
-            font-size: 1.6rem; line-height: 1.8; color: #111; overflow-x: hidden; background: #fff;
-        }
-
-        ul, ol { list-style: none; }
+        html { line-height: 1; font-size: 62.5%; scroll-behavior: smooth; }
+        ol, ul { list-style: none; }
         a { transition-duration: .5s; text-decoration: none; color: inherit; }
         img { max-width: 100%; height: auto; vertical-align: middle; }
+        
+        body {
+            font-family: "Noto Serif JP", serif;
+            font-size: 1.6rem;
+            line-height: 1.8;
+            color: #111;
+            width: 100%;
+            overflow-x: hidden;
+            background: #fff;
+        }
 
-        .serif { font-family: "Noto Serif JP", serif; font-weight: 500; }
-        .lora { font-family: Lora, serif; font-weight: 500; letter-spacing: .05em; }
-        .noto { font-family: "Noto Serif JP", serif; font-weight: 500; }
+        /* モバイル版のヘッダー被り防止用余白 */
+        @media screen and (max-width: 768px) {
+            body { padding-top: 74px !important; }
+        }
 
+        .serif { font-family: "Noto Serif JP", serif; }
+        .lora { font-family: Lora, serif; letter-spacing: .05em; }
+
+        /* アニメーション */
+        .anime { opacity: 0; transition: transform 1s, opacity 1s; }
+        .anime.active { opacity: 1; transform: none; }
+        .bottom-in { transform: translateY(20px); }
+
+        /* PCレイアウト */
         @media screen and (min-width: 769px) {
             .sp { display: none !important; }
-            .pc-frame { display: flex; min-width: 1200px; }
-            .pc-frame-left { width: 16rem; position: relative; z-index: 1000; }
-            .pc-frame-right { width: calc(100% - 16rem); flex-grow: 1; }
+            .pc-frame { display: flex; }
+            .pc-frame-left { width: 18rem; position: sticky; top: 0; height: 100vh; z-index: 1000; background: #fff; }
+            .pc-frame-right { width: calc(100% - 18rem); flex-grow: 1; min-height: 100vh; }
             .wrap { margin: 0 auto; max-width: 1060px; padding: 0 60px; }
         }
 
-        @media screen and (max-width: 768px) {
-            .pc { display: none !important; }
-            .wrap { padding: 0 20px; }
+        /* メインビジュアル（PC版左揃え調整） */
+        .mv-md { 
+            height: 400px;
+            background-color: #333;
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/course-one-on-one-instruction.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
         }
+        .mv-md .wrap { width: 100%; }
 
-        .anime { opacity: 0; transition: all 1s ease; }
-        .anime.bottom-in { transform: translateY(30px); }
-        .active { opacity: 1 !important; transform: none !important; }
+        .mv-md .title-box { color: #fff; text-align: left; }
+        .mv-md .title-box .title-line { width: 20px; height: 1px; background: #fff; margin-bottom: 2rem; }
+        .mv-md .title-box .title-head { font-size: 1.8rem; margin-bottom: 1rem; letter-spacing: 0.2em; font-weight: 500; }
+        .mv-md .title { font-size: 3.8rem; color: #9e9779; letter-spacing: 0.2em; font-weight: 500; }
 
-        .mv-md { padding: 8rem 0; border-top: 1px solid #eee; background: #fff; }
-        .mv-md .title-box .title-head { position: relative; padding-top: 2rem; font-size: 1.8rem; font-weight: 500; margin-bottom: 1rem; color: #666; }
-        .mv-md .title-box .title-head:after { content: ""; position: absolute; top: 0; left: 0; width: 16px; height: 1px; background: #333; }
-        .mv-md .title { font-size: 4.2rem; color: #9e9779; letter-spacing: .2em; font-weight: 500; }
-
-        .intro-sec { padding: 8rem 0; border-top: 1px solid #e6e6e6; }
+        /* 導入セクション */
+        .intro-sec { padding: 10rem 0 8rem; border-top: 1px solid #eee; }
         .head-text-box { margin-bottom: 6rem; }
-        .head-text-box .title-head { color: #9e9779; font-size: 1.4rem; font-weight: 700; margin-bottom: 1.5rem; display: block; }
+        .head-text-box .section-label { color: #9e9779; font-size: 1.4rem; font-weight: 700; margin-bottom: 1.5rem; display: block; letter-spacing: 0.1em; }
         .head-text-box h2 { font-size: 3rem; font-weight: 600; margin-bottom: 3rem; color: #111; line-height: 1.5; }
         .head-text-box .text { font-size: 1.5rem; font-weight: 500; color: #333; line-height: 2.2; }
 
+        /* メインリスト（画像とテキストの交互配置） */
         .main-list li { display: flex; gap: 6rem; padding: 8rem 0; border-top: 1px solid #eee; align-items: center; }
         .main-list li:nth-child(even) { flex-direction: row-reverse; }
-        .main-list .img-box { width: 45%; flex-shrink: 0; box-shadow: 0 20px 40px rgba(0,0,0,0.05); overflow: hidden; }
+        .main-list .img-box { width: 45%; flex-shrink: 0; box-shadow: 0 20px 40px rgba(0,0,0,0.05); overflow: hidden; border-radius: 4px; }
         .main-list img { width: 100%; transition: 1s; }
         .main-list li:hover img { transform: scale(1.05); }
         .main-list .text-box { flex-grow: 1; }
-        .main-list h3 { font-size: 2.6rem; font-weight: 700; margin-bottom: 2rem; color: #111; line-height: 1.4; }
+        .main-list h3 { font-size: 2.4rem; font-weight: 700; margin-bottom: 2rem; color: #111; line-height: 1.4; position: relative; padding-left: 2rem; border-left: 4px solid #9e9779; }
         .main-list .text { font-size: 1.5rem; color: #444; line-height: 2.4; }
 
-        .point-sec { padding: 10rem 0; background: #fcfcfc; border-top: 1px solid #eee; }
-        .point-sec .title-head { font-size: 1.4rem; color: #9e9779; margin-bottom: 1rem; font-weight: 700; display: block; text-align: center; }
+        /* 特徴セクション */
+        .point-sec { padding: 10rem 0; background: #fafafa; border-top: 1px solid #eee; }
+        .point-sec .title-head { font-size: 1.4rem; color: #9e9779; margin-bottom: 1.5rem; font-weight: 700; display: block; text-align: center; letter-spacing: 0.1em; }
         .point-sec h2 { font-size: 3rem; margin-bottom: 6rem; text-align: center; }
         
         .point-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4rem; }
-        .point-list li { background: #fff; border: 1px solid #eee; padding: 4rem; display: flex; flex-direction: column; }
+        .point-list li { background: #fff; border: 1px solid #eee; padding: 5rem 4rem; display: flex; flex-direction: column; transition: 0.3s; }
+        .point-list li:hover { box-shadow: 0 15px 30px rgba(0,0,0,0.05); transform: translateY(-5px); }
         .point-list .title-box { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid #9e9779; }
-        .point-list h3 { font-size: 2rem; font-weight: 700; color: #111; margin-bottom: 1rem; }
+        .point-list h3 { font-size: 2.2rem; font-weight: 700; color: #111; margin-bottom: 1rem; line-height: 1.3; }
         .point-list .bottom-text { font-size: 1.2rem; color: #9e9779; font-weight: 700; letter-spacing: 0.1em; }
-        .point-list .text { font-size: 1.45rem; color: #555; line-height: 1.8; }
-        .point-list .link { margin-top: 3rem; }
-        .point-list .md-btn.b-line { 
+        .point-list .text { font-size: 1.45rem; color: #555; line-height: 2; }
+        
+        .md-btn.b-line { 
             display: inline-flex; 
             align-items: center; 
             border: 1px solid #111; 
-            padding: 1.2rem 2.5rem; 
-            font-size: 1.3rem; 
+            padding: 1.5rem 3rem; 
+            font-size: 1.4rem; 
             font-weight: 700; 
             transition: .3s;
+            margin-top: 3rem;
+            width: fit-content;
         }
-        .point-list .md-btn.b-line:hover { background: #111; color: #fff; }
+        .md-btn.b-line:hover { background: #111; color: #fff; }
 
-        .message-sec { padding: 10rem 0; background: #fafafa; border-top: 1px solid #eee; }
+        /* メッセージセクション */
+        .message-sec { padding: 10rem 0; background: #fff; border-top: 1px solid #eee; }
         .message-sec .flex-box { display: flex; gap: 8rem; align-items: center; }
         .message-sec .img-box { width: 40%; flex-shrink: 0; }
         .message-sec img { width: 100%; border-radius: 50% 50% 0 0; }
-        .message-sec .text-box { flex-grow: 1; }
         .message-sec .title-head { font-size: 1.4rem; color: #9e9779; margin-bottom: 1.5rem; font-weight: 700; display: block; letter-spacing: 0.1em; }
         .message-sec h2 { font-size: 3rem; margin-bottom: 3.5rem; line-height: 1.4; color: #111; }
         .message-sec .text { font-size: 1.5rem; line-height: 2.4; color: #444; }
 
+        /* モバイル版調整 */
         @media screen and (max-width: 768px) {
-            .pc-frame-left { display: none; }
+            .pc { display: none !important; }
+            .pc-frame { display: block; }
             .pc-frame-right { width: 100%; }
-            .mv-md { padding: 5rem 0; }
-            .intro-sec { padding: 5rem 0; }
-            .head-text-box h2 { font-size: 2.2rem; }
-            .main-list li, .main-list li:nth-child(even) { flex-direction: column; gap: 3rem; padding: 5rem 0; }
+            .pc-frame-left { width: 0; height: 0; display: block; overflow: visible; position: absolute; top: 0; left: 0; }
+            .wrap { padding: 0 25px; }
+
+            /* ヒーローエリアデザイン統一（180px） */
+            .mv-md { 
+                height: 180px; 
+                padding: 0 2.5rem; 
+                background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/course-one-on-one-instruction.jpg');
+                border-top: none;
+            }
+            .mv-md .title-box .title-head { font-size: 1.4rem; color: #fff; margin-bottom: 0.5rem; padding-top: 0; }
+            .mv-md .title-box .title-head:after { display: none; }
+            .mv-md .title { font-size: 2.8rem; }
+
+            .intro-sec { padding: 6rem 0; }
+            .head-text-box h2 { font-size: 2.2rem; margin-bottom: 2.5rem; line-height: 1.4; }
+            .head-text-box .text { font-size: 1.45rem; line-height: 1.8; text-align: justify; }
+
+            .main-list li, .main-list li:nth-child(even) { flex-direction: column; gap: 3rem; padding: 6rem 0; }
             .main-list .img-box { width: 100%; }
-            .message-sec .flex-box { flex-direction: column; gap: 4rem; text-align: left; }
-            .message-sec .img-box { width: 80%; margin: 0 auto; }
+            .main-list h3 { font-size: 2rem; padding-left: 1.5rem; margin-bottom: 1.5rem; }
+            .main-list .text { font-size: 1.45rem; line-height: 1.9; text-align: justify; }
+
+            .point-sec { padding: 8rem 0; }
+            .point-list { grid-template-columns: 1fr; gap: 2.5rem; }
+            .point-list li { padding: 4rem 2.5rem; }
+            .point-list h3 { font-size: 1.9rem; }
+            .point-list .text { font-size: 1.45rem; text-align: justify; }
+            .md-btn.b-line { width: 100%; justify-content: center; }
+
+            .message-sec { padding: 8rem 0; }
+            .message-sec .flex-box { flex-direction: column; gap: 4rem; }
+            .message-sec .img-box { width: 85%; margin: 0 auto; }
+            .message-sec h2 { font-size: 2.2rem; margin-bottom: 2.5rem; line-height: 1.4; text-align: center; }
+            .message-sec .text { font-size: 1.45rem; line-height: 1.9; text-align: justify; }
         }
     </style>
 </head>
 
 <body class="l-page l-course-child">
 
-    <div id="header-placeholder"></div>
+    <!-- ナビゲーションの読み込み -->
+    <div id="menu-placeholder"></div>
 
     <div class="pc-frame">
-        <aside id="sidebar-placeholder" class="pc pc-frame-left"></aside>
+        <aside id="sidebar-placeholder" class="pc-frame-left"></aside>
 
         <div class="pc-frame-right">
             <div class="bread pc">
-                <div class="wrap" style="padding:15px 0; font-size:1.1rem; color:#888;">HOME > コース案内 > 個別指導</div>
+                <div class="wrap serif" style="padding:15px 0; font-size:1.1rem; color:#888;">HOME &gt; コース案内 &gt; 個別指導</div>
             </div>
 
             <main id="contents">
                 <article class="l-main">
                     
-                    <!-- タイトルエリア -->
+                    <!-- ヒーローセクション（PC版左揃え対応） -->
                     <section class="mv-md">
                         <div class="wrap">
-                            <div class="title-box anime bottom-in">
-                                <p class="title-head">コース案内 - elioの個別指導</p>
+                            <div class="title-box anime active">
+                                <div class="title-line pc"></div>
+                                <p class="title-head serif">コース案内 - elioの個別指導</p>
                                 <h1 class="title lora">COURSE</h1>
                             </div>
                         </div>
@@ -165,49 +238,37 @@
                     <!-- 導入セクション -->
                     <section class="intro-sec">
                         <div class="wrap">
-                            <div class="head-text-box anime bottom-in">
-                                <span class="title-head">elioの個別指導</span>
+                            <div class="head-text-box anime bottom-in active">
+                                <span class="section-label">INDIVIDUAL INSTRUCTION</span>
                                 <h2 class="serif">
-                                    生徒の個性を前向きに見抜き<br>
-                                    一人ひとりの可能性を最大限に伸ばす個別指導
+                                    生徒の個性を前向きに見抜き<br class="pc">一人ひとりの可能性を最大限に伸ばす個別指導
                                 </h2>
-                                <p class="text noto">
-                                    個別指導にこそ、選抜講師による専門指導が欠かせません。<br>
-                                    講師による対面指導の本質はグループ指導も個別指導も変わらず、むしろ生徒の個性と目的を前向きに見抜き、本質的な能力を開花させるためには、多くの合格指導の経験値が必要なのです。<br>
-                                    elioの個別指導は、選抜された講師が一人ひとりと向き合い、生徒の可能性を最大限に伸ばす少人数対面指導です。
+                                <p class="text serif">
+                                    個別指導にこそ、選抜講師による専門指導が欠かせません。生徒の個性と目的を的確に見抜き、本質的な能力を開花させるためには、豊富な合格指導の経験値が必要なのです。elioの個別指導は、選抜された講師が一人ひとりと向き合い、可能性を最大限に伸ばす少人数対面指導です。
                                 </p>
                             </div>
 
                             <ul class="main-list">
-                                <!-- 画像挿入箇所 1 -->
-                                <li class="anime bottom-in">
+                                <li class="anime bottom-in active">
                                     <div class="text-box">
-                                        <h3 class="serif">
-                                            1対1または1対2で<br>
-                                            学ぶフルオーダー講座
-                                        </h3>
-                                        <p class="text noto">
-                                            生徒の目的に応じて指導内容を構成する1名からのフルオーダー講座です。特定の単元・分野の指導や私国立校のカリキュラムに応じた指導、記述問題に特化した指導など、細かいニーズに対応します。elioでは教わることよりも自分で考えることを重視します。個別指導においても決して教えすぎない、知力を伸ばすための指導を実践します。
+                                        <h3 class="serif">1対1または1対2で<br class="pc">学ぶフルオーダー講座</h3>
+                                        <p class="text serif">
+                                            生徒の目的に応じて指導内容を構成する1名からのフルオーダー講座です。特定の単元・分野の指導や私国立校のカリキュラムに応じた指導、記述問題に特化した指導など、細かいニーズに対応します。elioでは教わることよりも自分で考えることを重視。知力を伸ばすための「教えすぎない」指導を実践します。
                                         </p>
                                     </div>
                                     <div class="img-box">
-                                        <img src="img/course-one-on-one-instruction.jpg" alt="1対1または1対2で学ぶフルオーダー講座の様子">
+                                        <img src="img/course-one-on-one-instruction.jpg" alt="個別指導の風景" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/600x400.png?text=Individual+Lesson'">
                                     </div>
                                 </li>
-                                <!-- 画像挿入箇所 2 -->
-                                <li class="anime bottom-in">
+                                <li class="anime bottom-in active">
                                     <div class="text-box">
-                                        <h3 class="serif">
-                                            グループ指導との<br>
-                                            相乗効果で学力向上
-                                        </h3>
-                                        <p class="text noto">
-                                            グループ指導と個別指導を連携させて受講することができます。弱点分野の強化はもちろん、小論文対策講座や英検対策講座など教科単元に特化した講座設定も可能です。<br>
-                                            弱点克服にとどまらず未来への道を灯すオーダーメイドという選択肢。それがelioの個別指導です。
+                                        <h3 class="serif">グループ指導との<br class="pc">相乗効果で学力向上</h3>
+                                        <p class="text serif">
+                                            グループ指導と個別指導を連携させて受講することができます。弱点分野の強化はもちろん、小論文対策講座や英検対策講座など、教科単元に特化した講座設定も可能です。弱点克服にとどまらず未来への道を灯すオーダーメイドという選択肢、それがelioの個別指導です。
                                         </p>
                                     </div>
                                     <div class="img-box">
-                                        <img src="img/student-3.jpg" alt="グループ指導との相乗効果による学習風景">
+                                        <img src="img/student-3.jpg" alt="学習相談の様子" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/600x400.png?text=Synergy+Learning'">
                                     </div>
                                 </li>
                             </ul>
@@ -217,7 +278,7 @@
                     <!-- 特徴セクション -->
                     <section class="point-sec">
                         <div class="wrap">
-                            <div class="anime bottom-in">
+                            <div class="anime bottom-in active">
                                 <span class="title-head lora">POINT</span>
                                 <h2 class="serif">個別指導の特徴</h2>
                                 
@@ -227,11 +288,9 @@
                                             <h3 class="serif">学校別内部進学対策</h3>
                                             <p class="bottom-text lora">POINT 01</p>
                                         </div>
-                                        <div class="text-box noto">
-                                            <p class="text">国・私立小や、大学附属校、中高一貫校では、学校ごとにカリキュラム・進度・レベルが異なります。elioでは各学校の指導方針を的確に把握し、通われている学校にぴったりの教科指導、そして生徒一人ひとりに合わせた進級・進学指導を徹底します。</p>
-                                            <div class="link">
-                                                <a href="#" class="md-btn b-line">PREMIUM CAMPUSの詳細はこちら</a>
-                                            </div>
+                                        <div class="text-box">
+                                            <p class="text serif">国・私立小や、大学附属校、中高一貫校では学校ごとにカリキュラム・進度が異なります。elioでは各学校の指導方針を的確に把握し、ぴったりの教科指導と進級・進学指導を徹底します。</p>
+                                            <a href="method/premium-campus/" class="md-btn b-line serif">PREMIUM CAMPUSの詳細</a>
                                         </div>
                                     </li>
                                     <li>
@@ -239,26 +298,26 @@
                                             <h3 class="serif">難関受験対応</h3>
                                             <p class="bottom-text lora">POINT 02</p>
                                         </div>
-                                        <div class="text-box noto">
-                                            <p class="text">志望校ごとの独自性に合わせ、近年の入試を分析プロファイルし、一人ひとりに合わせた学習カリキュラムを作成します。目標とする志望校合格に向け、今何を学ぶべきかを逆算し、実直に指導していきます。</p>
+                                        <div class="text-box">
+                                            <p class="text serif">志望校ごとの独自性に合わせ、近年の入試を分析プロファイルし、一人ひとりに合わせた学習カリキュラムを作成。目標から逆算し、今何を学ぶべきかを実直に指導していきます。</p>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="title-box">
-                                            <h3 class="serif">ご家庭との緻密なコミュニケーション</h3>
+                                            <h3 class="serif">ご家庭との緻密な連携</h3>
                                             <p class="bottom-text lora">POINT 03</p>
                                         </div>
-                                        <div class="text-box noto">
-                                            <p class="text">定期的な面談はもちろん、各授業ごとに担当講師が感じたお子さまの変化や授業の進捗状況など、細かいところまでご家庭と共有いたします。密な連携を重ねることで、目標へ向けた学力を最大限に引き出します。</p>
+                                        <div class="text-box">
+                                            <p class="text serif">定期的な面談はもちろん、毎回の授業ごとに担当講師が感じた変化や進捗状況を細かく共有。密な連携を重ねることで、お子さまの学力を最大限に引き出します。</p>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="title-box">
-                                            <h3 class="serif">医学部対策 / 国際併願対策などに対応</h3>
+                                            <h3 class="serif">医学部・国際併願対策</h3>
                                             <p class="bottom-text lora">POINT 04</p>
                                         </div>
-                                        <div class="text-box noto">
-                                            <p class="text">専門的教育機関と提携し、様々な特殊カリキュラムに対応することが可能です。お子さま、ご家庭の望む将来の進路へ向け、フルオーダーの独自カリキュラムを提案させていただきます。</p>
+                                        <div class="text-box">
+                                            <p class="text serif">専門的教育機関と提携し、様々な特殊カリキュラムに対応。医学部受験や海外大学との併願など、お子さまとご家庭の望む将来の進路へ向け、最適なプランを提案します。</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -269,16 +328,15 @@
                     <!-- メッセージセクション -->
                     <section class="message-sec">
                         <div class="wrap">
-                            <div class="flex-box anime bottom-in">
-                                <!-- 画像挿入箇所 3 -->
+                            <div class="flex-box anime bottom-in active">
                                 <div class="img-box">
-                                    <img src="img/teacher-takeyama.jpg" alt="代表講師の竹山隼矢氏。生徒の個性を才能へと育てる決意を語る。">
+                                    <img src="img/teacher-takeyama.jpg" alt="代表講師メッセージ" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/400x500.png?text=Message'">
                                 </div>
                                 <div class="text-box">
                                     <span class="title-head lora">MESSAGE</span>
                                     <h2 class="serif">一人ひとりの個性を、確かな才能へ。</h2>
-                                    <p class="text noto">
-                                        個別指導の本質は、単にわからない場所を教えることではありません。生徒一人ひとりの学びの癖や、まだ眠っている可能性をいち早く見抜き、最適な刺激を与えることにあります。elioの個別指導では、選抜された講師が対等な目線で生徒と向き合い、「自ら考える楽しさ」を共有します。個々の歩みに寄り添いながら、志望校合格のその先へ向けた強い意志を育んでいきます。
+                                    <p class="text serif">
+                                        個別指導の本質は、単にわからない場所を教えることではありません。生徒一人ひとりの学びの癖や、まだ眠っている可能性をいち早く見抜き、最適な刺激を与えることにあります。個々の歩みに寄り添いながら、志望校合格のその先へ向けた強い意志を育んでいきます。
                                     </p>
                                 </div>
                             </div>
@@ -286,7 +344,6 @@
                     </section>
 
                     <div id="cta-placeholder"></div>
-
                 </article>
             </main>
 
@@ -304,26 +361,37 @@
                     if (el) el.innerHTML = html;
                 }
             } catch (e) {
-                console.error('パーツ読み込みエラー:', path);
+                console.error('読み込み失敗:', path);
             }
         }
 
         window.addEventListener('DOMContentLoaded', () => {
-            loadPart('header-placeholder', 'parts/header.html');
-            loadPart('sidebar-placeholder', 'parts/menu.html');
+            // パーツ読み込み
+            loadPart('menu-placeholder', 'parts/menu.html');
             loadPart('cta-placeholder', 'parts/CTA.html');
             loadPart('footer-placeholder', 'parts/footer.html');
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
+                    if (entry.isIntersecting) entry.target.classList.add('active');
                 });
             }, { threshold: 0.1 });
-
-            document.querySelectorAll('.anime').forEach(el => observer.observe(el));
+            
+            setTimeout(() => {
+                document.querySelectorAll('.anime').forEach(el => observer.observe(el));
+            }, 1000);
         });
+
+        // モバイルメニュー制御用
+        function toggleMenu() {
+            document.body.classList.toggle('is-active');
+        }
+        function toggleSubMenu(element) {
+            if (window.innerWidth <= 768) {
+                const parent = element.closest('.l-pulldown');
+                if (parent) parent.classList.toggle('is-open');
+            }
+        }
     </script>
 </body>
 </html>
