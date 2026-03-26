@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO設定 -->
     <title>個別指導｜会員制難関受験専門塾エリオ（elio）</title>
+    <meta name="description" content="選抜講師による完全オーダーメイドの個別指導。1対1または1対2の対面指導で、生徒一人ひとりの個性と目的を的確に見抜き、本質的な能力を開花させます。内部進学対策から難関受験、医学部対策まで対応。">
+    <meta name="keywords" content="個別指導,塾,エリオ,elio,マンツーマン,内部進学対策,難関受験,医学部受験,茗荷谷,恵比寿,京都">
+    
+    <!-- OGP設定 -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="個別指導｜会員制難関受験専門塾エリオ（elio）">
+    <meta property="og:description" content="一人ひとりの個性を、確かな才能へ。選抜講師による完全オーダーメイドの個別指導。">
+    <meta property="og:url" content="https://elio-edu.com/course/personal-coaching/">
+    <meta property="og:site_name" content="エリオ（elio）">
+    
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- 構造化データ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "会員制難関受験専門塾エリオ",
+      "url": "https://elio-edu.com/",
+      "logo": "https://elio-edu.com/img/logo.png",
+      "description": "一人ひとりの可能性を最大限に伸ばす個別指導。"
+    }
+    </script>
     
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:500,600,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:500,700&display=swap" rel="stylesheet">
@@ -61,7 +85,9 @@
 
         .main-list li { display: flex; gap: 6rem; padding: 8rem 0; border-top: 1px solid #eee; align-items: center; }
         .main-list li:nth-child(even) { flex-direction: row-reverse; }
-        .main-list img { width: 45%; flex-shrink: 0; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .main-list .img-box { width: 45%; flex-shrink: 0; box-shadow: 0 20px 40px rgba(0,0,0,0.05); overflow: hidden; }
+        .main-list img { width: 100%; transition: 1s; }
+        .main-list li:hover img { transform: scale(1.05); }
         .main-list .text-box { flex-grow: 1; }
         .main-list h3 { font-size: 2.6rem; font-weight: 700; margin-bottom: 2rem; color: #111; line-height: 1.4; }
         .main-list .text { font-size: 1.5rem; color: #444; line-height: 2.4; }
@@ -104,9 +130,7 @@
             .intro-sec { padding: 5rem 0; }
             .head-text-box h2 { font-size: 2.2rem; }
             .main-list li, .main-list li:nth-child(even) { flex-direction: column; gap: 3rem; padding: 5rem 0; }
-            .main-list img { width: 100%; }
-            .point-list { grid-template-columns: 1fr; gap: 3rem; }
-            .point-list li { padding: 3rem; }
+            .main-list .img-box { width: 100%; }
             .message-sec .flex-box { flex-direction: column; gap: 4rem; text-align: left; }
             .message-sec .img-box { width: 80%; margin: 0 auto; }
         }
@@ -128,21 +152,23 @@
             <main id="contents">
                 <article class="l-main">
                     
+                    <!-- タイトルエリア -->
                     <section class="mv-md">
                         <div class="wrap">
                             <div class="title-box anime bottom-in">
-                                <p class="title-head">コース案内 - 個別指導</p>
+                                <p class="title-head">コース案内 - elioの個別指導</p>
                                 <h1 class="title lora">COURSE</h1>
                             </div>
                         </div>
                     </section>
 
+                    <!-- 導入セクション -->
                     <section class="intro-sec">
                         <div class="wrap">
                             <div class="head-text-box anime bottom-in">
                                 <span class="title-head">elioの個別指導</span>
                                 <h2 class="serif">
-                                    生徒の個性を的確に見抜き<br>
+                                    生徒の個性を前向きに見抜き<br>
                                     一人ひとりの可能性を最大限に伸ばす個別指導
                                 </h2>
                                 <p class="text noto">
@@ -153,6 +179,7 @@
                             </div>
 
                             <ul class="main-list">
+                                <!-- 画像挿入箇所 1 -->
                                 <li class="anime bottom-in">
                                     <div class="text-box">
                                         <h3 class="serif">
@@ -164,9 +191,10 @@
                                         </p>
                                     </div>
                                     <div class="img-box">
-                                        
+                                        <img src="img/course-one-on-one-instruction.jpg" alt="1対1または1対2で学ぶフルオーダー講座の様子">
                                     </div>
                                 </li>
+                                <!-- 画像挿入箇所 2 -->
                                 <li class="anime bottom-in">
                                     <div class="text-box">
                                         <h3 class="serif">
@@ -179,13 +207,14 @@
                                         </p>
                                     </div>
                                     <div class="img-box">
-                                        
+                                        <img src="img/student-3.jpg" alt="グループ指導との相乗効果による学習風景">
                                     </div>
                                 </li>
                             </ul>
                         </div>
                     </section>
 
+                    <!-- 特徴セクション -->
                     <section class="point-sec">
                         <div class="wrap">
                             <div class="anime bottom-in">
@@ -211,7 +240,7 @@
                                             <p class="bottom-text lora">POINT 02</p>
                                         </div>
                                         <div class="text-box noto">
-                                            <p class="text">志望校ごとの独自性に合わせ、近年の入試を分析プロファイルし、一人ひとりに合わせた学習カリキュラムを作成します。目標とする志望校合格に向け、今何を学ぶべきかを逆算し、的確に指導していきます。</p>
+                                            <p class="text">志望校ごとの独自性に合わせ、近年の入試を分析プロファイルし、一人ひとりに合わせた学習カリキュラムを作成します。目標とする志望校合格に向け、今何を学ぶべきかを逆算し、実直に指導していきます。</p>
                                         </div>
                                     </li>
                                     <li>
@@ -237,11 +266,13 @@
                         </div>
                     </section>
 
+                    <!-- メッセージセクション -->
                     <section class="message-sec">
                         <div class="wrap">
                             <div class="flex-box anime bottom-in">
+                                <!-- 画像挿入箇所 3 -->
                                 <div class="img-box">
-                                    
+                                    <img src="img/teacher-takeyama.jpg" alt="代表講師の竹山隼矢氏。生徒の個性を才能へと育てる決意を語る。">
                                 </div>
                                 <div class="text-box">
                                     <span class="title-head lora">MESSAGE</span>
@@ -273,7 +304,7 @@
                     if (el) el.innerHTML = html;
                 }
             } catch (e) {
-                console.error(e);
+                console.error('パーツ読み込みエラー:', path);
             }
         }
 
