@@ -1,9 +1,5 @@
-<!-- 
-  このファイルは「parts/header.html」などとして保存し、
-  index.htmlの <div id="header-placeholder"></div> に読み込ませることを想定しています。
--->
 <style>
-    /* 基本設定（PC版のデザインは維持） */
+    /* サイドバーの基本設定 */
     .l-side {
         border-right: 1px solid #dadada;
         height: 100vh;
@@ -72,8 +68,6 @@
     .menu-title { color: #bfa57d; font-size: 2rem; letter-spacing: 0.15em; margin-bottom: 3.5rem; font-weight: 700; }
     .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3.5rem 2.5rem; list-style: none; padding: 0; }
     .menu-item a { text-decoration: none; display: block; }
-    .menu-item .img-box { margin-bottom: 1.2rem; overflow: hidden; background: #000; aspect-ratio: 16 / 9; }
-    .menu-item .img-box img { width: 100%; height: 100%; object-fit: cover; display: block; transition: .6s; }
     .menu-item .label { display: flex; align-items: center; font-size: 1.15rem; font-weight: 700; color: #fff; }
     .menu-item .label::before { content: ""; width: 24px; height: 1.5px; background: #bfa57d; margin-right: 12px; }
 
@@ -83,107 +77,10 @@
     .l-side .side-tel .num { display: block; font-size: 1.8rem; font-weight: 700; font-family: "Lora", serif; color: #111; text-decoration: none; }
     .l-side .side-tel .time { display: block; font-size: 0.9rem; color: #999; margin-top: 0.3rem; font-weight: 600; }
     .l-side .side-contact-btn { background: #982020; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3.5vh 1rem; text-decoration: none; transition: .3s; }
-    .l-side .side-contact-btn:hover { background: #7a1a1a; }
     .l-side .side-contact-btn span { font-size: 1.1rem; font-weight: 700; margin-top: 0.8rem; }
 
-    /* スマホ専用バー */
-    .sp-bar {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 74px;
-        background: #fff;
-        z-index: 1100;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0;
-        box-sizing: border-box;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-
-    .sp-logo-area {
-        display: flex;
-        align-items: center;
-        padding-left: 15px;
-        height: 100%;
-        text-decoration: none;
-    }
-
-    .sp-logo-img {
-        height: 44px;
-        width: auto;
-    }
-
-    .sp-action-area {
-        display: flex;
-        height: 100%;
-        align-items: stretch;
-    }
-
-    .sp-contact-link {
-        background: #982020;
-        color: #fff;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0 20px;
-        font-size: 14px;
-        font-weight: 700;
-        text-align: center;
-        line-height: 1.4;
-    }
-
-    .menu-trigger {
-        width: 68px;
-        height: 100%;
-        position: relative;
-        background: #fff;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .menu-trigger span {
-        display: block;
-        width: 32px;
-        height: 2.5px;
-        background: #333;
-        margin: 3.5px 0;
-        transition: all 0.3s;
-    }
-
-    /* メニュー開閉時のアニメーション設定をbody直下に適用 */
-    body.is-active .menu-trigger span:nth-child(1) { transform: translateY(9.5px) rotate(45deg); }
-    body.is-active .menu-trigger span:nth-child(2) { opacity: 0; }
-    body.is-active .menu-trigger span:nth-child(3) { transform: translateY(-9.5px) rotate(-45deg); }
-
-    .menu-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.6);
-        z-index: 999;
-        opacity: 0;
-        transition: opacity 0.4s;
-        pointer-events: none;
-    }
-    body.is-active .menu-overlay { display: block; opacity: 1; pointer-events: auto; }
-
-    /* モバイル表示 */
+    /* モバイル表示時のスタイル調整 */
     @media screen and (max-width: 768px) {
-        .sp-bar { display: flex; }
-        
-        /* PC用サイドバーをモバイル用ドロワーに変更 */
         .l-side {
             position: fixed;
             left: 0;
@@ -192,13 +89,14 @@
             transform: translateX(-100%); 
             width: 85%;
             max-width: 320px;
-            box-shadow: none;
             z-index: 1000;
             overflow-y: auto;
             visibility: visible;
-            display: flex; /* 非表示にならないよう指定 */
+            display: flex;
+            background: #fff;
         }
 
+        /* bodyにis-activeクラスがある時に表示 */
         body.is-active .l-side {
             transform: translateX(0);
             box-shadow: 5px 0 20px rgba(0,0,0,0.15);
@@ -240,13 +138,12 @@
         .menu-grid { grid-template-columns: 1fr; gap: 1.2rem; }
         .menu-item .label { color: #333; font-size: 1rem; }
         .menu-item .label::before { background: #982020; width: 16px; }
-        .menu-item .img-box { display: none; }
 
         .l-side .side-tel .num { font-size: 1.5rem; }
         .l-side .side-contact-btn { padding: 2.5vh 1rem; }
     }
 
-    /* PC版ではドロワー形式を解除 */
+    /* PC版の強制表示 */
     @media screen and (min-width: 769px) {
         .l-side {
             transform: none !important;
@@ -255,24 +152,6 @@
     }
 </style>
 
-<!-- スマホ用ヘッダー -->
-<header class="sp-bar">
-    <a href="index.html" class="sp-logo-area">
-        <img src="img/logo.png" alt="elio" class="sp-logo-img" onerror="this.src='https://placehold.jp/24/982020/ffffff/120x44.png?text=elio+LOGO'">
-    </a>
-    <div class="sp-action-area">
-        <a href="contact" class="sp-contact-link">お問合せ</a>
-        <button class="menu-trigger" aria-label="メニューを開く" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </div>
-</header>
-
-<div class="menu-overlay" onclick="toggleMenu()"></div>
-
-<!-- ナビゲーション本体 -->
 <nav class="l-side" id="sidebar">
     <div class="side-top">
         <div class="logo-unit pc">
