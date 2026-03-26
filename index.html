@@ -467,6 +467,34 @@
 
             document.querySelectorAll('.anime:not(.key)').forEach(el => observer.observe(el));
         });
+        function toggleMenu() {
+    document.body.classList.toggle('is-active');
+}
+function toggleSubMenu(element) {
+    if (window.innerWidth <= 768) {
+        const parent = element.closest('.l-pulldown');
+        if (parent) parent.classList.toggle('is-open');
+    }
+}
+
+2. **asideタグから「pc」クラスを削除**
+PC版サイドバーを表示している以下の行から「pc」を消します。
+```html
+<!-- 修正前 -->
+<aside id="sidebar-placeholder" class="pc pc-frame-left"></aside>
+
+<!-- 修正後 -->
+<aside id="sidebar-placeholder" class="pc-frame-left"></aside>
+これで、モバイル版でもサイドバーの領域が維持され、メニューが表示されるようになります。
+
+3. **モバイル版の余白設定（任意）**
+index.htmlのCSSに以下を追加して、モバイルヘッダーがコンテンツに被らないようにします。
+```css
+@media screen and (max-width: 768px) {
+    body { padding-top: 74px !important; }
+}
+
+これらの修正により、モバイル版でも期待通りのメニューが表示されるはずです。
     </script>
 </body>
 </html>
