@@ -17,7 +17,6 @@
         }
         html { font-size: 62.5%; scroll-behavior: smooth; }
         body {
-            /* 全体を明朝体に統一し、基本の太さを600に設定 */
             font-family: "Noto Serif JP", serif;
             font-weight: 600;
             font-size: 1.6rem; line-height: 1.8; color: #111; overflow-x: hidden; background: #fff;
@@ -28,85 +27,116 @@
 
         .serif { font-family: "Noto Serif JP", serif; font-weight: 600; }
         .lora { font-family: Lora, serif; letter-spacing: .05em; }
-        /* notoクラスも明朝体かつ太字に書き換え */
-        .noto { font-family: "Noto Serif JP", serif; font-weight: 600; }
+
+        /* モバイル版のヘッダー被り防止用余白 */
+        @media screen and (max-width: 768px) {
+            body { padding-top: 74px !important; }
+        }
 
         /* PCレイアウト枠 */
         @media screen and (min-width: 769px) {
             .sp { display: none !important; }
-            .pc-frame { display: flex; min-width: 1200px; }
-            .pc-frame-left { width: 16rem; position: relative; z-index: 1000; }
-            .pc-frame-right { width: calc(100% - 16rem); flex-grow: 1; }
+            .pc-frame { display: flex; }
+            .pc-frame-left { width: 18rem; position: sticky; top: 0; height: 100vh; z-index: 1000; background: #fff; }
+            .pc-frame-right { width: calc(100% - 18rem); flex-grow: 1; min-height: 100vh; }
             .wrap { margin: 0 auto; max-width: 1060px; padding: 0 60px; }
         }
 
-        @media screen and (max-width: 768px) {
-            .pc { display: none !important; }
-            .wrap { padding: 0 20px; }
-        }
-
         /* 講師紹介ページ固有スタイル */
-        .mv-md { padding: 8rem 0; border-top: 1px solid #eee; background: #fff; }
+        .mv-md { 
+            height: 400px;
+            background-color: #333;
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/teacher-three.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+        }
+        .mv-md .wrap { width: 100%; } /* 左端を揃えるために幅を確保 */
+        
+        .mv-md .title-box { color: #fff; }
+        .mv-md .title-box .title-line { width: 20px; height: 1px; background: #fff; margin-bottom: 2rem; }
         .mv-md .title-box .title-head { 
-            position: relative; 
-            padding-top: 2rem; 
             font-size: 1.8rem; 
             font-weight: 600; 
             margin-bottom: 1rem; 
-            color: #666; 
-            font-family: "Noto Serif JP", serif;
+            letter-spacing: 0.2em;
         }
-        .mv-md .title-box .title-head:after { content: ""; position: absolute; top: 0; left: 0; width: 16px; height: 1px; background: #333; }
-        .mv-md .title { font-size: 4.2rem; color: #9e9779; letter-spacing: .2em; font-weight: 300; }
+        .mv-md .title { font-size: 3.8rem; color: #9e9779; letter-spacing: .2em; font-weight: 300; }
 
-        .teachers { padding: 8rem 0; border-top: 1px solid #e6e6e6; }
+        .teachers { padding: 8rem 0; }
         .head-text-box { margin-bottom: 6rem; }
-        .head-text-box h2 { font-size: 2.8rem; font-weight: 700; margin-bottom: 3rem; color: #111; font-family: "Noto Serif JP", serif; }
-        .head-text-box .text { font-size: 1.5rem; font-weight: 600; color: #333; line-height: 2; font-family: "Noto Serif JP", serif; }
+        .head-text-box h2 { font-size: 2.8rem; font-weight: 700; margin-bottom: 3rem; color: #111; }
+        .head-text-box .text { font-size: 1.5rem; font-weight: 600; color: #333; line-height: 2; }
 
         /* 講師名リンク */
         .teacher-name-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px 40px; margin-bottom: 10rem; }
         .teacher-name-list li { border-bottom: 1px solid #eee; }
         .teacher-link { display: flex; flex-direction: column; align-items: flex-start; padding: 3rem 2rem; position: relative; transition: .3s; }
         .teacher-link:hover { background: #982020; color: #fff; }
-        .teacher-link .title { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: #888; display: block; transition: .3s; font-family: "Noto Serif JP", serif; }
-        .teacher-link .name { font-size: 2.2rem; font-weight: 700; color: #333; display: block; transition: .3s; font-family: "Noto Serif JP", serif; }
+        .teacher-link .title { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: #888; display: block; transition: .3s; }
+        .teacher-link .name { font-size: 2.2rem; font-weight: 700; color: #333; display: block; transition: .3s; }
         .teacher-link:after { content: ""; position: absolute; right: 2.5rem; top: 50%; width: 1px; height: 3.5rem; background: #e0e0e0; transform: translateY(-50%) rotate(25deg); transition: .3s; }
         .teacher-link:hover .title, .teacher-link:hover .name { color: #fff; }
         .teacher-link:hover:after { background: rgba(255, 255, 255, 0.4); }
 
-        /* 講師詳細カード */
-        .teacher-details-list > li { display: flex; gap: 5rem; padding: 8rem 0; border-top: 1px solid #eee; align-items: flex-start; scroll-margin-top: 4rem; }
+        /* 講師詳細リスト */
+        .teacher-details-list > li { display: flex; gap: 5rem; padding: 8rem 0; border-top: 1px solid #eee; align-items: flex-start; scroll-margin-top: 8rem; }
         .teacher-details-list > li img { width: 320px; flex-shrink: 0; background: #f9f9f9; }
         .teacher-details-list .text-box { flex-grow: 1; }
         .teacher-details-list .info-box { margin-bottom: 1.5rem; display: flex; flex-direction: column; }
-        .teacher-details-list .info-box .jpn { font-size: 1.4rem; color: #9e9779; font-weight: 700; font-family: "Noto Serif JP", serif; }
+        .teacher-details-list .info-box .jpn { font-size: 1.4rem; color: #9e9779; font-weight: 700; }
         .teacher-details-list .info-box .en { font-size: 1.2rem; color: #999; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.1em; }
-        .teacher-details-list h2 { font-size: 3.4rem; font-weight: 700; margin-bottom: 2.5rem; color: #111; letter-spacing: 0.1em; font-family: "Noto Serif JP", serif; }
-        .teacher-details-list .desc { font-size: 1.5rem; color: #444; line-height: 2.4; font-weight: 600; font-family: "Noto Serif JP", serif; }
+        .teacher-details-list h2 { font-size: 3.4rem; font-weight: 700; margin-bottom: 2.5rem; color: #111; letter-spacing: 0.1em; }
+        .teacher-details-list .desc { font-size: 1.5rem; color: #444; line-height: 2.4; font-weight: 600; }
 
         @media screen and (max-width: 1024px) {
             .teacher-name-list { grid-template-columns: repeat(2, 1fr); }
         }
+
+        /* モバイル版調整 */
         @media screen and (max-width: 768px) {
-            .teacher-name-list { grid-template-columns: 1fr; gap: 0; }
+            .pc { display: none !important; }
+            .pc-frame { display: block; }
+            .pc-frame-right { width: 100%; }
+            .pc-frame-left { width: 0; height: 0; display: block; overflow: visible; position: absolute; top: 0; left: 0; }
+            .wrap { padding: 0 25px; }
+
+            .mv-md { 
+                height: 180px; 
+                padding: 0 2.5rem; 
+                background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/teacher-three.jpg');
+            }
+            .mv-md .title-box .title-head { font-size: 1.4rem; margin-bottom: 0.5rem; }
+            .mv-md .title { font-size: 2.8rem; }
+
+            .teachers { padding: 5rem 0; }
+            .head-text-box h2 { font-size: 2.2rem; margin-bottom: 2rem; line-height: 1.4; }
+            .head-text-box .text { font-size: 1.45rem; line-height: 1.8; text-align: justify; }
+
+            /* モバイル版では講師名リストを非表示 */
+            .teacher-name-list { display: none; }
+
             .teacher-details-list > li { flex-direction: column; gap: 3rem; padding: 5rem 0; }
             .teacher-details-list > li img { width: 100%; }
-            .teacher-details-list h2 { font-size: 2.8rem; }
+            .teacher-details-list .info-box .jpn { font-size: 1.3rem; }
+            .teacher-details-list h2 { font-size: 2.4rem; margin-bottom: 1.5rem; }
+            .teacher-details-list .desc { font-size: 1.45rem; line-height: 1.9; text-align: justify; }
         }
     </style>
 </head>
 
 <body class="l-page l-lecturer">
 
-    <div id="header-placeholder"></div>
+    <!-- ナビゲーションのプレースホルダー -->
+    <div id="menu-placeholder"></div>
 
     <div class="pc-frame">
-        <aside id="sidebar-placeholder" class="pc pc-frame-left"></aside>
+        <aside id="sidebar-placeholder" class="pc-frame-left"></aside>
 
         <div class="pc-frame-right">
             <div class="bread pc">
-                <div class="wrap serif" style="padding:15px 0; font-size:1.1rem; color:#888;">HOME > エリオについて > 講師紹介</div>
+                <div class="wrap serif" style="padding:15px 0; font-size:1.1rem; color:#888;">HOME &gt; エリオについて &gt; 講師紹介</div>
             </div>
 
             <main id="contents">
@@ -115,6 +145,7 @@
                     <section class="mv-md">
                         <div class="wrap">
                             <div class="title-box">
+                                <div class="title-line"></div>
                                 <p class="title-head serif">講師紹介</p>
                                 <h1 class="title lora">LECTURER</h1>
                             </div>
@@ -124,15 +155,15 @@
                     <section class="teachers">
                         <div class="wrap">
                             <div class="head-text-box">
-                                <h2 class="serif">難関指導実績が豊富な選抜された講師陣</h2>
+                                <h2 class="serif">難関指導実績が豊富な<br class="sp">選抜された講師陣</h2>
                                 <p class="text serif">
-                                    elioの講師は、最難関合格実績をもつ選抜された講師です。難関合格は偏差値とにらめっこしていても生まれません。<br>生徒の可能性を引き出す力は合格指導の経験で培われます。お子さま一人ひとりの能力や性格を見極め、合格へ向かう力を最大限に引き出します。
+                                    elioの講師は、最難関合格実績をもつ選抜された講師です。難関合格は偏差値とにらめっこしていても生まれません。<br class="pc">生徒の可能性を引き出す力は合格指導の経験で培われます。お子さま一人ひとりの能力や性格を見極め、合格へ向かう力を最大限に引き出します。
                                 </p>
                             </div>
 
-                            <!-- 講師名リスト -->
+                            <!-- 講師名リスト（モバイル版では非表示） -->
                             <ul class="teacher-name-list">
-                                <li><a class="teacher-link" href="#teacher-takeyama"><span class="title serif">エリオ代表／小学５・６年生学年主任／算数</span><span class="name serif">竹山 隼矢</span></a></li>
+                                <li><a class="teacher-link" href="#teacher-takeyama"><span class="title serif">エリオ代表／算数</span><span class="name serif">竹山 隼矢</span></a></li>
                                 <li><a class="teacher-link" href="#teacher-yoshimoto"><span class="title serif">エリオ京都校 教室長／理科</span><span class="name serif">吉本 格</span></a></li>
                                 <li><a class="teacher-link" href="#teacher-endo"><span class="title serif">算数</span><span class="name serif">遠藤 幸治</span></a></li>
                                 <li><a class="teacher-link" href="#teacher-daido"><span class="title serif">算数</span><span class="name serif">大同 翔音</span></a></li>
@@ -145,7 +176,7 @@
                             <!-- 講師詳細リスト -->
                             <ul class="teacher-details-list">
                                 <li id="teacher-takeyama">
-                                    <img src="img/teacher-takeyama.jpg" alt="竹山 隼矢">
+                                    <img src="img/teacher-takeyama.jpg" alt="竹山 隼矢" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/400x500.png?text=Educator'">
                                     <div class="text-box">
                                         <p class="info-box">
                                             <span class="jpn serif">エリオ代表／算数</span>
@@ -156,7 +187,7 @@
                                     </div>
                                 </li>
                                 <li id="teacher-yoshimoto">
-                                    <img src="img/teacher-yoshimoto.jpg" alt="吉本 格">
+                                    <img src="img/teacher-yoshimoto.jpg" alt="吉本 格" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/400x500.png?text=Educator'">
                                     <div class="text-box">
                                         <p class="info-box">
                                             <span class="jpn serif">エリオ京都校 教室長／理科</span>
@@ -167,7 +198,7 @@
                                     </div>
                                 </li>
                                 <li id="teacher-endo">
-                                    <img src="img/teacher-endo.jpg" alt="遠藤 幸治">
+                                    <img src="img/teacher-endo.jpg" alt="遠藤 幸治" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/400x500.png?text=Educator'">
                                     <div class="text-box">
                                         <p class="info-box">
                                             <span class="jpn serif">算数</span>
@@ -178,7 +209,7 @@
                                     </div>
                                 </li>
                                 <li id="teacher-daido">
-                                    <img src="img/teacher-daido.jpg" alt="大同 翔音">
+                                    <img src="img/teacher-daido.jpg" alt="大同 翔音" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/400x500.png?text=Educator'">
                                     <div class="text-box">
                                         <p class="info-box">
                                             <span class="jpn serif">算数</span>
@@ -188,8 +219,8 @@
                                         <p class="desc serif">難関中受験の指導歴は15年を超え、近年では大手模試の作問にも従事。正解だけを求めた知識の詰め込みではなく、理解に基づくインプットと、自ら考え説明できるアウトプットまでを重視した授業を展開。</p>
                                     </div>
                                 </li>
-                                <li id="teacher-senni">
-                                    <img src="img/teacher-yamaguchi.jpg" alt="山口 雄大">
+                                <li id="teacher-yamaguchi">
+                                    <img src="img/teacher-yamaguchi.jpg" alt="山口 雄大" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/400x500.png?text=Educator'">
                                     <div class="text-box">
                                         <p class="info-box">
                                             <span class="jpn serif">国語</span>
@@ -200,7 +231,7 @@
                                     </div>
                                 </li>
                                 <li id="teacher-yamada">
-                                    <img src="img/teacher-yamada.jpg" alt="山田 将生">
+                                    <img src="img/teacher-yamada.jpg" alt="山田 将生" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/400x500.png?text=Educator'">
                                     <div class="text-box">
                                         <p class="info-box">
                                             <span class="jpn serif">社会</span>
@@ -211,7 +242,7 @@
                                     </div>
                                 </li>
                                 <li id="teacher-yamazaki">
-                                    <img src="img/teacher-yamazaki.jpg" alt="山﨑 謙介">
+                                    <img src="img/teacher-yamazaki.jpg" alt="山﨑 謙介" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/400x500.png?text=Educator'">
                                     <div class="text-box">
                                         <p class="info-box">
                                             <span class="jpn serif">英語</span>
@@ -239,19 +270,30 @@
                 const response = await fetch(path);
                 if (response.ok) {
                     const html = await response.text();
-                    document.getElementById(id).innerHTML = html;
+                    const el = document.getElementById(id);
+                    if (el) el.innerHTML = html;
                 }
             } catch (e) {
-                console.error(e);
+                console.error('読み込み失敗:', path);
             }
         }
 
         window.addEventListener('DOMContentLoaded', () => {
-            loadPart('header-placeholder', 'parts/header.html');
-            loadPart('sidebar-placeholder', 'parts/menu.html');
+            loadPart('menu-placeholder', 'parts/menu.html');
             loadPart('cta-placeholder', 'parts/CTA.html');
             loadPart('footer-placeholder', 'parts/footer.html');
         });
+
+        // モバイルメニュー用
+        function toggleMenu() {
+            document.body.classList.toggle('is-active');
+        }
+        function toggleSubMenu(element) {
+            if (window.innerWidth <= 768) {
+                const parent = element.closest('.l-pulldown');
+                if (parent) parent.classList.toggle('is-open');
+            }
+        }
     </script>
 </body>
 </html>
