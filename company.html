@@ -23,7 +23,7 @@
     <!-- ファビコン設定 -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     
-    <!-- 構造化データ（JSON-LD） -->
+    <!-- 構造化データ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -76,17 +76,16 @@
         .serif { font-family: "Noto Serif JP", serif; }
         .lora { font-family: Lora, serif; letter-spacing: .05em; }
 
-        /* アニメーション */
         .anime { opacity: 0; transition: all 1s ease; }
         .anime.bottom-in { transform: translateY(30px); }
         .active { opacity: 1 !important; transform: none !important; }
 
-        /* PCレイアウト枠（サイドバー固定の修正） */
+        /* PCレイアウト設定（不具合修正版） */
         @media screen and (min-width: 769px) {
             .sp { display: none !important; }
             .pc-frame { 
                 display: flex; 
-                align-items: stretch; /* 子要素の高さを揃える */
+                align-items: flex-start; /* これにより左側のstickyが正しく機能します */
                 min-height: 100vh;
             }
             .pc-frame-left { 
@@ -101,23 +100,32 @@
             .pc-frame-right { 
                 width: calc(100% - 18rem); 
                 flex-grow: 1; 
+                display: flex;
+                flex-direction: column;
             }
             .wrap { margin: 0 auto; width: 100%; max-width: 1060px; padding: 0 60px; }
         }
 
         .w1080 { max-width: 1080px; }
 
-        /* メインビジュアル（PC版：余白エラーの修正） */
+        /* PC版パンくずリスト */
+        .bread.pc {
+            padding: 2.5rem 0 1.5rem;
+            font-size: 1.1rem;
+            color: #888;
+        }
+
+        /* メインビジュアル：余白エラーの解消 */
         .mv-md { 
-            height: 400px;
+            height: 320px;
             background-color: #333;
             background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/facility-door.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
             align-items: center;
-            padding: 0; /* 余白をゼロにして高さのみで制御 */
-            border-top: 1px solid #eee;
+            padding: 0;
+            border-top: none;
         }
         .mv-md .wrap { width: 100%; }
 
@@ -128,7 +136,7 @@
             margin-bottom: 1rem; 
             letter-spacing: 0.2em; 
             font-weight: 500; 
-            padding-top: 0; /* 上部の余白を削除 */
+            padding-top: 0; 
         }
         .mv-md .title { font-size: 3.8rem; color: #9e9779; letter-spacing: .2em; font-weight: 500; }
 
@@ -154,7 +162,6 @@
             .pc-frame-left { width: 0; height: 0; display: block; overflow: visible; position: absolute; top: 0; left: 0; }
             .wrap { padding: 0 25px; }
 
-            /* ヒーローエリアデザイン統一（180px） */
             .mv-md { 
                 height: 180px; 
                 padding: 0 2.5rem; 
@@ -175,21 +182,19 @@
 
 <body class="l-page l-company">
 
-    <!-- ナビゲーションのプレースホルダー -->
-    <div id="menu-placeholder"></div>
-
+    <!-- メニューのプレースホルダーは1箇所のみにします -->
     <div class="pc-frame">
-        <aside id="sidebar-placeholder" class="pc-frame-left"></aside>
+        <!-- menu.html はここに一度だけ読み込ませます（PC時はサイドバー、SP時は非表示ですが中身の固定バーが機能します） -->
+        <aside id="menu-placeholder" class="pc-frame-left"></aside>
 
         <div class="pc-frame-right">
             <div class="bread pc">
-                <div class="wrap serif" style="padding:15px 0; font-size:1.1rem; color:#888;">HOME &gt; 会社概要</div>
+                <div class="wrap serif">HOME &gt; 会社概要</div>
             </div>
 
             <main id="contents">
                 <article class="l-main">
                     
-                    <!-- メインビジュアル（PC版左揃え・余白修正済み） -->
                     <section class="mv-md">
                         <div class="wrap">
                             <div class="title-box anime active">
@@ -200,7 +205,6 @@
                         </div>
                     </section>
 
-                    <!-- 会社情報エリア -->
                     <section class="data-area">
                         <div class="wrap w1080">
                             <div class="box anime bottom-in active">
@@ -272,7 +276,7 @@
         }
 
         window.addEventListener('DOMContentLoaded', () => {
-            // パーツ読み込み
+            // menu.htmlを読み込む場所を1箇所に限定することで、余白と固定の問題を同時に解決します。
             loadPart('menu-placeholder', 'parts/menu.html');
             loadPart('cta-placeholder', 'parts/CTA.html');
             loadPart('footer-placeholder', 'parts/footer.html');
@@ -286,7 +290,6 @@
             document.querySelectorAll('.anime').forEach(el => observer.observe(el));
         });
 
-        // モバイルメニュー制御用
         function toggleMenu() {
             document.body.classList.toggle('is-active');
         }
