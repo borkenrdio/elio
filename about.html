@@ -23,7 +23,7 @@
     <!-- ファビコン設定 -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     
-    <!-- 構造化データ（JSON-LD） -->
+    <!-- 構造化データ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -101,19 +101,42 @@
         /* PCレイアウト */
         @media screen and (min-width: 769px) {
             .sp { display: none !important; }
-            .pc-frame { display: flex; }
-            .pc-frame-left { width: 18rem; position: sticky; top: 0; height: 100vh; z-index: 1000; background: #fff; }
-            .pc-frame-right { width: calc(100% - 18rem); flex-grow: 1; min-height: 100vh; }
+            .pc-frame { 
+                display: flex; 
+                align-items: flex-start;
+                min-height: 100vh;
+            }
+            .pc-frame-left { 
+                width: 18rem; 
+                position: sticky; 
+                top: 0; 
+                height: 100vh; 
+                z-index: 1000; 
+                background: #fff; 
+                flex-shrink: 0;
+            }
+            .pc-frame-right { width: calc(100% - 18rem); flex-grow: 1; }
             .wrap { margin: 0 auto; max-width: 1060px; padding: 0 60px; }
         }
 
         /* ABOUT US メインセクション */
-        .l-page .mv-md { padding: 8rem 0; border-top: 1px solid #eee; background: #fff; display: flex; align-items: center; }
-        .mv-md .title-box { width: 45%; }
-        .mv-md .title-box .title-head { position: relative; padding-top: 2rem; font-size: 1.8rem; font-weight: 600; margin-bottom: 1rem; color: #666; }
-        .mv-md .title-box .title-head:after { content: ""; position: absolute; top: 0; left: 0; width: 16px; height: 1px; background: #333; }
-        .mv-md .title { font-size: 4.2rem; color: #9e9779; letter-spacing: .2em; font-weight: 300; }
-        .mv-md .lead-text { width: 45%; font-size: 1.5rem; font-weight: 500; color: #333; line-height: 2; }
+        .l-page .mv-md { 
+            height: 320px;
+            background-color: #333;
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/facility-classroom-1f.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 0;
+            border-top: none;
+        }
+        .mv-md .wrap { width: 100%; }
+        .mv-md .title-box { width: 45%; color: #fff; text-align: left; }
+        .mv-md .title-box .title-line { width: 20px; height: 1px; background: #fff; margin-bottom: 2rem; }
+        .mv-md .title-box .title-head { font-size: 1.8rem; font-weight: 600; margin-bottom: 1rem; color: #fff; }
+        .mv-md .title { font-size: 3.8rem; color: #9e9779; letter-spacing: .2em; font-weight: 300; }
+        .mv-md .lead-text { width: 45%; font-size: 1.5rem; font-weight: 500; color: #fff; line-height: 2; }
 
         /* コンテンツリスト */
         .philosophy-list > li { padding: 8rem 0; border-top: 1px solid #e6e6e6; }
@@ -121,35 +144,29 @@
         .philosophy-list .text-box .section-label { color: #9e9779; font-size: 1.3rem; margin-bottom: 1rem; font-family: Lora, serif; letter-spacing: 0.1em; }
         .philosophy-list .text-box h2 { font-size: 2.8rem; font-weight: 600; margin-bottom: 3rem; color: #111; }
         .philosophy-list .text-box .text { font-size: 1.5rem; margin-bottom: 5rem; color: #333; line-height: 2.4; }
-        .philosophy-list .img-box { width: 50%; overflow: hidden; }
+        .philosophy-list .img-box { width: 50%; overflow: hidden; border-radius: 4px; }
         .philosophy-list .img-box img { width: 100%; transition: .8s; }
+        .philosophy-list .img-box:hover img { transform: scale(1.05); }
 
         /* モバイル版調整 */
         @media screen and (max-width: 768px) {
             .pc { display: none !important; }
             .pc-frame { display: block; }
             .pc-frame-right { width: 100%; }
-            .pc-frame-left { width: 0; height: 0; display: block; overflow: visible; position: absolute; top: 0; left: 0; }
+            .pc-frame-left { width: 0; height: 0; display: block; position: absolute; }
             .wrap { padding: 0 25px; }
 
-            /* タイトルエリアを信念ページと統一 */
             .l-page .mv-md { 
                 height: 180px; 
                 padding: 0 2.5rem; 
-                background-color: #333;
-                background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/facility-classroom-1f.jpg');
-                background-size: cover;
-                background-position: center;
-                border-top: none;
+                background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/facility-classroom-1f.jpg');
             }
-            .mv-md .wrap { flex-direction: column; }
-            .mv-md .title-box { width: 100%; color: #fff; }
-            .mv-md .title-box .title-head { font-size: 1.4rem; color: #fff; padding-top: 0; margin-bottom: 0.5rem; }
-            .mv-md .title-box .title-head:after { display: none; }
-            .mv-md .title { font-size: 2.8rem; color: #9e9779; }
-            .mv-md .lead-text { display: none; } /* モバイルでは見出しのみに絞る */
+            .mv-md .title-box { width: 100%; }
+            .mv-md .title-box .title-head { font-size: 1.4rem; margin-bottom: 0.5rem; }
+            .mv-md .title-box .title-line { display: none; }
+            .mv-md .title { font-size: 2.8rem; }
+            .mv-md .lead-text { display: none; }
 
-            /* リード文を別途表示 */
             .mobile-lead { padding: 5rem 2.5rem; text-align: center; border-bottom: 1px solid #eee; }
             .mobile-lead p { font-size: 1.5rem; line-height: 1.8; font-weight: 600; text-align: justify; }
 
@@ -158,31 +175,27 @@
             .philosophy-list .text-box, .philosophy-list .img-box { width: 100%; }
             .philosophy-list .text-box h2 { font-size: 2.4rem; margin-bottom: 2rem; }
             .philosophy-list .text-box .text { font-size: 1.45rem; margin-bottom: 3rem; line-height: 1.9; text-align: justify; }
-            .philosophy-list .img-box { border-radius: 4px; }
         }
     </style>
 </head>
 
 <body class="l-page l-about">
 
-    <!-- ナビゲーションのプレースホルダー -->
-    <div id="menu-placeholder"></div>
-
     <div class="pc-frame">
-        <aside id="sidebar-placeholder" class="pc-frame-left"></aside>
+        <aside id="menu-placeholder" class="pc-frame-left"></aside>
 
         <div class="pc-frame-right">
             <div class="bread pc">
-                <div class="wrap serif" style="padding:15px 0; font-size:1.1rem; color:#888;">HOME &gt; エリオについて &gt; ABOUT US</div>
+                <div class="wrap serif" style="padding:2.5rem 0 1.5rem; font-size:1.1rem; color:#888;">HOME &gt; エリオについて &gt; ABOUT US</div>
             </div>
 
             <main id="contents">
                 <article class="l-main">
                     
-                    <!-- メインビジュアル -->
                     <section class="mv-md">
                         <div class="wrap flex bet vcenter">
                             <div class="title-box">
+                                <div class="title-line pc"></div>
                                 <p class="title-head serif">エリオについて</p>
                                 <h1 class="title lora">ABOUT US</h1>
                             </div>
@@ -192,38 +205,36 @@
                         </div>
                     </section>
 
-                    <!-- モバイル専用リード文 -->
                     <section class="mobile-lead sp">
                         <p class="serif">会員制難関受験専門塾エリオ（elio）は、優れたリーダーシップを育む、新しい塾教育を提供する学習塾です。</p>
                     </section>
 
-                    <!-- 各セクションリスト -->
                     <section class="philosophy">
                         <div class="wrap">
                             <ul class="philosophy-list">
-                                <li class="anime">
+                                <li class="anime active">
                                     <div class="flex bet vcenter">
-                                        <div class="text-box anime bottom-in wave1">
+                                        <div class="text-box anime bottom-in wave1 active">
                                             <p class="section-label">PHILOSOPHY</p>
                                             <h2 class="serif">エリオの信念</h2>
-                                            <p class="text serif">最難関突破、そして燃え尽きない頭脳の育成を。未来を生きる子供たちのために、エリオが取り組んでいる教育の信念についてお伝えします。</p>
+                                            <p class="text serif">最難関突破、そして燃え尽きない頭脳の育成を。未来を生きる子供たちのために、エリオが取り組んでいる教育の信念についてお伝えします。2030年を見据え、東大等難関大学合格をゴールとしない、その先の未来へ目を向けた志を育てます。</p>
                                             <a href="about-belief" class="md-btn red">詳細を見る<div class="bar"></div></a>
                                         </div>
-                                        <div class="img-box anime bottom-in wave2">
-                                            <img src="img/facility-door.jpg" alt="エリオの信念">
+                                        <div class="img-box anime bottom-in wave2 active">
+                                            <img src="img/facility-door.jpg" alt="エリオの信念" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/600x400.png?text=Belief'">
                                         </div>
                                     </div>
                                 </li>
-                                <li class="anime">
+                                <li class="anime active">
                                     <div class="flex bet vcenter">
-                                        <div class="text-box anime bottom-in wave1">
+                                        <div class="text-box anime bottom-in wave1 active">
                                             <p class="section-label">EDUCATOR INTRODUCTION</p>
                                             <h2 class="serif">講師紹介</h2>
-                                            <p class="text serif">最難関合格は偏差値とにらめっこしていても生まれません。難関指導実績が豊富な選抜されたエリオの講師陣を紹介します。</p>
+                                            <p class="text serif">最難関合格は偏差値とにらめっこしていても生まれません。生徒の可能性を引き出す力は合格指導の経験で培われます。難関指導実績が豊富な選抜されたエリオの講師陣がお子さまの能力や性格を見極め、合格へ向かう力を最大限に引き出します。</p>
                                             <a href="about-teacher" class="md-btn red">詳細を見る<div class="bar"></div></a>
                                         </div>
-                                        <div class="img-box anime bottom-in wave2">
-                                            <img src="img/teacher-three.jpg" alt="講師紹介">
+                                        <div class="img-box anime bottom-in wave2 active">
+                                            <img src="img/teacher-three.jpg" alt="講師紹介" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/600x400.png?text=Lecturer'">
                                         </div>
                                     </div>
                                 </li>
@@ -248,13 +259,10 @@
                     const el = document.getElementById(id);
                     if (el) el.innerHTML = html;
                 }
-            } catch (e) {
-                console.error('読み込み失敗:', path);
-            }
+            } catch (e) { console.error('読み込み失敗:', path); }
         }
 
         window.addEventListener('DOMContentLoaded', () => {
-            // menu.htmlに一本化して読み込み
             loadPart('menu-placeholder', 'parts/menu.html');
             loadPart('cta-placeholder', 'parts/CTA.html');
             loadPart('footer-placeholder', 'parts/footer.html');
@@ -265,15 +273,10 @@
                 });
             }, { threshold: 0.1 });
             
-            setTimeout(() => {
-                document.querySelectorAll('.anime').forEach(el => observer.observe(el));
-            }, 1000);
+            document.querySelectorAll('.anime').forEach(el => observer.observe(el));
         });
 
-        // モバイルメニュー制御用
-        function toggleMenu() {
-            document.body.classList.toggle('is-active');
-        }
+        function toggleMenu() { document.body.classList.toggle('is-active'); }
         function toggleSubMenu(element) {
             if (window.innerWidth <= 768) {
                 const parent = element.closest('.l-pulldown');
