@@ -1,220 +1,296 @@
-<style>
-    .l-side {
-        border-right: 1px solid #dadada;
-        height: 100vh;
-        position: sticky;
-        top: 0;
-        background: #fff;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 18rem;
-        z-index: 1000;
-        font-family: "Noto Serif JP", serif;
-        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    }
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>elio Navigation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        /* 基本設定（PC版のデザインは維持） */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Noto Serif JP", serif;
+        }
 
-    .sp-bar {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 60px;
-        background: #fff;
-        border-bottom: 1px solid #eee;
-        z-index: 1100;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-        box-sizing: border-box;
-    }
-    .sp-bar .sp-logo img {
-        height: 30px;
-        width: auto;
-    }
-    .menu-trigger {
-        width: 40px;
-        height: 40px;
-        position: relative;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-    }
-    .menu-trigger span {
-        display: block;
-        position: absolute;
-        left: 10px;
-        width: 20px;
-        height: 1.5px;
-        background: #333;
-        transition: all 0.3s;
-    }
-    
-    .menu-trigger span:nth-child(1) { top: 13px; }
-    .menu-trigger span:nth-child(2) { top: 19px; }
-    .menu-trigger span:nth-child(3) { top: 25px; }
-
-    .is-active .menu-trigger span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-    .is-active .menu-trigger span:nth-child(2) { opacity: 0; }
-    .is-active .menu-trigger span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-
-    .l-side .logo-unit {
-        padding: 1.2rem 1.5rem;
-        text-align: center;
-        line-height: 0;
-        box-sizing: border-box;
-    }
-    .l-side .logo-unit a { display: block; }
-    .l-side .logo-unit img { width: 100%; height: auto; display: block; }
-
-    .l-side .link { border-top: 1px solid #eee; padding: 0; margin: 0; list-style: none; }
-    .l-side .link > li { border-bottom: 1px solid #eee; }
-    
-    .l-side .link .head {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 2.2vh 2rem;
-        font-size: 1.1rem;
-        font-weight: 700;
-        text-decoration: none;
-        color: #333;
-        transition: .3s;
-        background: #fff;
-        box-sizing: border-box;
-    }
-    .l-side .link .head .icon { font-size: 0.9rem; color: #ccc; transition: .3s; }
-
-    .l-side .link li:hover > .head { background: #982020; color: #fff; }
-    .l-side .link li:hover > .head .icon { color: #fff; transform: translateX(3px); }
-
-    .l-side .link .l-pulldown .body {
-        position: fixed;
-        top: 0;
-        left: 18rem;
-        z-index: 1001;
-        padding: 5rem 4rem;
-        width: 48rem;
-        height: 100vh;
-        background: #982020;
-        color: #fff;
-        visibility: hidden;
-        opacity: 0;
-        transition: opacity .3s, transform .3s, visibility .3s;
-        transition-delay: 0.15s; 
-        transform: translateX(-10px);
-        overflow-y: auto;
-        box-sizing: border-box;
-    }
-    .l-side .link .l-pulldown:hover .body { visibility: visible; opacity: 1; transform: translateX(0); transition-delay: 0s; }
-
-    .menu-title { color: #bfa57d; font-size: 2rem; letter-spacing: 0.15em; margin-bottom: 3.5rem; font-weight: 700; }
-    .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3.5rem 2.5rem; list-style: none; padding: 0; }
-    .menu-item .img-box { margin-bottom: 1.2rem; overflow: hidden; background: #000; aspect-ratio: 16 / 9; }
-    .menu-item .img-box img { width: 100%; height: 100%; object-fit: cover; display: block; transition: .6s; }
-    .menu-item:hover .img-box img { transform: scale(1.04); }
-    .menu-item .label { display: flex; align-items: center; font-size: 1.15rem; font-weight: 700; color: #fff; }
-    .menu-item .label::before { content: ""; width: 24px; height: 1.5px; background: #bfa57d; margin-right: 12px; }
-
-    .l-side .side-bottom { border-top: 1px solid #eee; }
-    .l-side .side-tel { padding: 2.5vh 1.5rem; text-align: center; }
-    .l-side .side-tel .label { display: block; font-size: 1rem; color: #666; margin-bottom: 0.5rem; font-weight: 700; }
-    .l-side .side-tel .num { display: block; font-size: 2.1rem; font-weight: 700; font-family: "Lora", serif; color: #111; text-decoration: none; }
-    .l-side .side-tel .time { display: block; font-size: 1.1rem; color: #999; margin-top: 0.5rem; font-weight: 600; }
-    .l-side .side-contact-btn { background: #982020; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3.5vh 1rem; text-decoration: none; }
-    .l-side .side-contact-btn span { font-size: 1.3rem; font-weight: 700; margin-top: 0.8rem; }
-
-    .menu-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.5);
-        z-index: 999;
-        opacity: 0;
-        transition: opacity 0.3s;
-    }
-    .is-active .menu-overlay { display: block; opacity: 1; }
-
-    @media screen and (max-width: 768px) {
-        .sp-bar { display: flex; }
-        
         .l-side {
-            position: fixed;
-            left: 0;
+            border-right: 1px solid #dadada;
+            height: 100vh;
+            position: sticky;
             top: 0;
-            transform: translateX(-100%); 
-            width: 260px;
-            box-shadow: 10px 0 30px rgba(0,0,0,0.1);
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 18rem;
             z-index: 1000;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        .is-active .l-side {
-            transform: translateX(0);
+        .l-side .logo-unit {
+            padding: 1.2rem 1.5rem;
+            text-align: center;
+            box-sizing: border-box;
         }
+        .l-side .logo-unit img { width: 100%; height: auto; display: block; }
+
+        .l-side .link { border-top: 1px solid #eee; padding: 0; margin: 0; list-style: none; }
+        .l-side .link > li { border-bottom: 1px solid #eee; position: relative; }
+        
+        .l-side .link .head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2.2vh 2rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #333;
+            transition: .3s;
+            background: #fff;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+        .l-side .link .head .icon { font-size: 0.8rem; color: #ccc; transition: .3s; font-style: normal; }
+
+        .l-side .link li:hover > .head { background: #982020; color: #fff; }
+        .l-side .link li:hover > .head .icon { color: #fff; transform: translateX(3px); }
 
         .l-side .link .l-pulldown .body {
-            position: static;
-            width: 100%;
-            height: auto;
+            position: fixed;
+            top: 0;
+            left: 18rem;
+            z-index: 1001;
+            padding: 5rem 4rem;
+            width: 48rem;
+            height: 100vh;
+            background: #982020;
+            color: #fff;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity .3s, transform .3s, visibility .3s;
+            transform: translateX(-10px);
+            overflow-y: auto;
+            box-sizing: border-box;
+        }
+        .l-side .link .l-pulldown:hover .body { visibility: visible; opacity: 1; transform: translateX(0); }
+
+        .menu-title { color: #bfa57d; font-size: 2rem; letter-spacing: 0.15em; margin-bottom: 3.5rem; font-weight: 700; }
+        .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3.5rem 2.5rem; list-style: none; padding: 0; }
+        .menu-item a { text-decoration: none; display: block; }
+        .menu-item .img-box { margin-bottom: 1.2rem; overflow: hidden; background: #000; aspect-ratio: 16 / 9; }
+        .menu-item .img-box img { width: 100%; height: 100%; object-fit: cover; display: block; transition: .6s; }
+        .menu-item .label { display: flex; align-items: center; font-size: 1.15rem; font-weight: 700; color: #fff; }
+        .menu-item .label::before { content: ""; width: 24px; height: 1.5px; background: #bfa57d; margin-right: 12px; }
+
+        .l-side .side-bottom { border-top: 1px solid #eee; }
+        .l-side .side-tel { padding: 2.5vh 1.5rem; text-align: center; }
+        .l-side .side-tel .label { display: block; font-size: 0.9rem; color: #666; margin-bottom: 0.3rem; font-weight: 700; }
+        .l-side .side-tel .num { display: block; font-size: 1.8rem; font-weight: 700; font-family: "Lora", serif; color: #111; text-decoration: none; }
+        .l-side .side-tel .time { display: block; font-size: 0.9rem; color: #999; margin-top: 0.3rem; font-weight: 600; }
+        .l-side .side-contact-btn { background: #982020; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3.5vh 1rem; text-decoration: none; transition: .3s; }
+        .l-side .side-contact-btn:hover { background: #7a1a1a; }
+        .l-side .side-contact-btn span { font-size: 1.1rem; font-weight: 700; margin-top: 0.8rem; }
+
+        /* スマホ専用バー（更新済みデザイン） */
+        .sp-bar {
             display: none;
-            padding: 2rem;
-            transform: none;
-            visibility: visible;
-            opacity: 1;
-            background: #801a1a; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 74px;
+            background: #fff;
+            z-index: 1100;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0;
+            box-sizing: border-box;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .sp-logo-area {
+            display: flex;
+            align-items: center;
+            padding-left: 15px;
+            height: 100%;
+            text-decoration: none;
+        }
+
+        .sp-logo-img {
+            height: 44px;
+            width: auto;
+        }
+
+        .sp-action-area {
+            display: flex;
+            height: 100%;
+            align-items: stretch;
+        }
+
+        .sp-contact-link {
+            background: #982020;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px;
+            font-size: 14px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .menu-trigger {
+            width: 68px;
+            height: 100%;
+            position: relative;
+            background: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         
-        .l-side .link .l-pulldown.is-open .body {
+        .menu-trigger span {
             display: block;
+            width: 32px;
+            height: 2.5px;
+            background: #333;
+            margin: 3.5px 0;
+            transition: all 0.3s;
         }
-        .menu-grid {
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-    }
-</style>
 
-<div class="sp-bar">
-    <div class="sp-logo">
-        <a href="index.html"><img src="img/logo.png" alt="elio"></a>
+        .is-active .menu-trigger span:nth-child(1) { transform: translateY(9.5px) rotate(45deg); }
+        .is-active .menu-trigger span:nth-child(2) { opacity: 0; }
+        .is-active .menu-trigger span:nth-child(3) { transform: translateY(-9.5px) rotate(-45deg); }
+
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.4s;
+            pointer-events: none;
+        }
+        .is-active .menu-overlay { display: block; opacity: 1; pointer-events: auto; }
+
+        @media screen and (max-width: 768px) {
+            .sp-bar { display: flex; }
+            body { padding-top: 74px; }
+
+            .l-side {
+                position: fixed;
+                left: 0;
+                top: 74px;
+                height: calc(100vh - 74px);
+                transform: translateX(-100%); 
+                width: 85%;
+                max-width: 320px;
+                box-shadow: none;
+                z-index: 1000;
+                overflow-y: auto;
+            }
+
+            .is-active .l-side {
+                transform: translateX(0);
+                box-shadow: 5px 0 20px rgba(0,0,0,0.15);
+            }
+
+            .l-side .logo-unit.pc { display: none; }
+
+            .l-side .link .l-pulldown .body {
+                position: static;
+                width: 100%;
+                height: 0;
+                padding: 0;
+                margin: 0;
+                visibility: visible;
+                opacity: 0;
+                overflow: hidden;
+                background: #f9f9f9;
+                transition: all 0.4s ease;
+                transform: none;
+            }
+
+            .l-side .link .l-pulldown.is-open .body {
+                height: auto;
+                padding: 1.5rem 1rem;
+                opacity: 1;
+            }
+
+            .l-side .link .l-pulldown.is-open .head {
+                background: #982020;
+                color: #fff;
+            }
+
+            .l-side .link .l-pulldown.is-open .head .icon {
+                transform: rotate(90deg);
+                color: #fff;
+            }
+
+            .menu-title { font-size: 1.2rem; margin-bottom: 1.5rem; color: #982020; }
+            .menu-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+            .menu-item .label { color: #333; font-size: 1rem; }
+            .menu-item .label::before { background: #982020; width: 16px; }
+            .menu-item .img-box { display: none; }
+
+            .l-side .side-tel .num { font-size: 1.5rem; }
+            .l-side .side-contact-btn { padding: 2.5vh 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- スマホ用ヘッダー -->
+<header class="sp-bar">
+    <a href="index.html" class="sp-logo-area">
+        <img src="img/logo.png" alt="elio" class="sp-logo-img" onerror="this.src='https://placehold.jp/24/982020/ffffff/120x44.png?text=elio+LOGO'">
+    </a>
+    <div class="sp-action-area">
+        <a href="contact" class="sp-contact-link">お問合せ</a>
+        <button class="menu-trigger" aria-label="メニューを開く" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </div>
-    <button class="menu-trigger" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-</div>
+</header>
 
 <div class="menu-overlay" onclick="toggleMenu()"></div>
 
-<div class="l-side" id="sidebar">
+<nav class="l-side" id="sidebar">
     <div class="side-top">
         <div class="logo-unit pc">
-            <a href="index.html"><img src="img/logo.png" alt="elio"></a>
+            <a href="index.html">
+                <img src="img/logo.png" alt="elio" onerror="this.src='https://placehold.jp/24/982020/ffffff/200x80.png?text=elio+LOGO'">
+            </a>
         </div>
 
         <ul class="link">
             <li class="l-pulldown">
-                <a href="about" class="head" onclick="toggleSubMenu(this)">
+                <div class="head" onclick="toggleSubMenu(this)">
                     <span>エリオについて</span> <i class="icon">❯</i>
-                </a>
+                </div>
                 <div class="body">
                     <p class="menu-title">ABOUT US</p>
                     <ul class="menu-grid">
                         <li class="menu-item">
                             <a href="about-belief">
-                                <div class="img-box"><img src="img/facility-door.jpg" alt="エリオの信念"></div>
                                 <span class="label">エリオの信念</span>
                             </a>
                         </li>
                         <li class="menu-item">
                             <a href="about-teacher">
-                                <div class="img-box"><img src="img/teacher-three.jpg" alt="講師紹介"></div>
                                 <span class="label">講師紹介</span>
                             </a>
                         </li>
@@ -223,33 +299,29 @@
             </li>
 
             <li class="l-pulldown">
-                <a href="course" class="head" onclick="toggleSubMenu(this)">
+                <div class="head" onclick="toggleSubMenu(this)">
                     <span>コース案内</span> <i class="icon">❯</i>
-                </a>
+                </div>
                 <div class="body">
                     <p class="menu-title">COURSE</p>
                     <ul class="menu-grid">
                         <li class="menu-item">
                             <a href="course-early-elementary-students">
-                                <div class="img-box"><img src="img/course-early-elementary-students.jpg" alt="低学年能力開発"></div>
                                 <span class="label">低学年能力開発</span>
                             </a>
                         </li>
                         <li class="menu-item">
                             <a href="course-late-elementary-students">
-                                <div class="img-box"><img src="img/course-late-elementary-students.jpg" alt="中学受験"></div>
                                 <span class="label">中学受験</span>
                             </a>
                         </li>
                         <li class="menu-item">
                             <a href="course-one-on-one-instruction">
-                                <div class="img-box"><img src="img/course-one-on-one-instruction.jpg" alt="個別指導"></div>
                                 <span class="label">個別指導</span>
                             </a>
                         </li>
                         <li class="menu-item">
                             <a href="course-junior-and-high">
-                                <div class="img-box"><img src="img/course-junior-and-high.jpg" alt="中学生・高校生"></div>
                                 <span class="label">中学生・高校生</span>
                             </a>
                         </li>
@@ -257,10 +329,10 @@
                 </div>
             </li>
 
-            <li class="l-pulldown">
+            <li>
                 <a href="apply" class="head"><span>入会までの流れ</span> <i class="icon">❯</i></a>
             </li>
-            <li class="l-pulldown">
+            <li>
                 <a href="question" class="head"><span>よくある質問</span> <i class="icon">❯</i></a>
             </li>
         </ul>
@@ -274,22 +346,29 @@
         </div>
         <a href="contact" class="side-contact-btn">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-            <span>お問い合わせ・資料請求</span>
+            <span>お問い合わせ</span>
         </a>
     </div>
-</div>
+</nav>
 
 <script>
     function toggleMenu() {
         document.body.classList.toggle('is-active');
+        if (!document.body.classList.contains('is-active')) {
+            const openSubMenus = document.querySelectorAll('.l-pulldown.is-open');
+            openSubMenus.forEach(menu => menu.classList.remove('is-open'));
+        }
     }
 
     function toggleSubMenu(element) {
         if (window.innerWidth <= 768) {
-            const parent = element.parentElement;
-            if (parent.querySelector('.body')) {
+            const parent = element.closest('.l-pulldown');
+            if (parent) {
                 parent.classList.toggle('is-open');
             }
         }
     }
 </script>
+
+</body>
+</html>
