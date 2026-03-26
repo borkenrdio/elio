@@ -7,7 +7,7 @@
     
     <!-- SEO設定 -->
     <title>エリオについて | 会員制難関受験専門塾エリオ（elio）</title>
-    <meta name="description" content="会員制難関受験専門塾エリオ（elio）について。私たちは最難関校合格を通過点とし、医師、科学者、起業家を目指す子供たちのために本質的な知性を育む新しい塾教育を提供しています。">
+    <meta name="description" content="会員制難関受験専門塾エリオ（elio）について。最難関校合格を通過点とし、医師、科学者、起業家を目指す子供たちのために本質的な知性を育む新しい塾教育を提供しています。">
     <meta name="keywords" content="難関受験,塾,エリオ,elio,中学受験,大学受験,個別指導,会員制,教育理念">
     <link rel="canonical" href="https://elio-edu.com/about">
     
@@ -23,7 +23,6 @@
     <!-- ファビコン設定 -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     
-    <!-- 構造化データ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -68,7 +67,6 @@
             background: #fff;
         }
 
-        /* モバイル版のヘッダー被り防止用余白 */
         @media screen and (max-width: 768px) {
             body { padding-top: 74px !important; }
         }
@@ -79,7 +77,6 @@
         .serif { font-family: "Noto Serif JP", serif; }
         .lora { font-family: Lora, serif; letter-spacing: .05em; }
 
-        /* アニメーション */
         .anime { opacity: 0; transition: transform 1s, opacity 1s; }
         .anime.active { opacity: 1; transform: none; }
         .bottom-in { transform: translateY(20px); }
@@ -87,7 +84,6 @@
         .wave1 { transition-delay: .2s; }
         .wave2 { transition-delay: .4s; }
 
-        /* ボタン */
         .md-btn {
             display: inline-flex; align-items: center; justify-content: center; position: relative;
             z-index: 1; padding: 1em; overflow: hidden; transition: .5s; cursor: pointer;
@@ -98,7 +94,6 @@
         .md-btn .bar { position: absolute; top: 50%; right: 2rem; width: 1.7rem; height: 1px; background: rgba(255, 255, 255, .5); transform: translateY(-50%); transition: .5s; }
         .md-btn:hover .bar { right: 1rem; }
 
-        /* PCレイアウト */
         @media screen and (min-width: 769px) {
             .sp { display: none !important; }
             .pc-frame { 
@@ -116,11 +111,12 @@
                 flex-shrink: 0;
             }
             .pc-frame-right { width: calc(100% - 18rem); flex-grow: 1; }
-            .wrap { margin: 0 auto; max-width: 1060px; padding: 0 60px; }
+            .wrap { margin: 0 auto; width: 100%; max-width: 1060px; padding: 0 60px; }
         }
 
-        /* ABOUT US メインセクション */
-        .l-page .mv-md { 
+        .bread.pc { padding: 2.5rem 0 1.5rem; font-size: 1.1rem; color: #888; }
+
+        .mv-md { 
             height: 320px;
             background-color: #333;
             background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/facility-classroom-1f.jpg');
@@ -138,7 +134,6 @@
         .mv-md .title { font-size: 3.8rem; color: #9e9779; letter-spacing: .2em; font-weight: 300; }
         .mv-md .lead-text { width: 45%; font-size: 1.5rem; font-weight: 500; color: #fff; line-height: 2; }
 
-        /* コンテンツリスト */
         .philosophy-list > li { padding: 8rem 0; border-top: 1px solid #e6e6e6; }
         .philosophy-list .text-box { width: 45%; }
         .philosophy-list .text-box .section-label { color: #9e9779; font-size: 1.3rem; margin-bottom: 1rem; font-family: Lora, serif; letter-spacing: 0.1em; }
@@ -146,9 +141,7 @@
         .philosophy-list .text-box .text { font-size: 1.5rem; margin-bottom: 5rem; color: #333; line-height: 2.4; }
         .philosophy-list .img-box { width: 50%; overflow: hidden; border-radius: 4px; }
         .philosophy-list .img-box img { width: 100%; transition: .8s; }
-        .philosophy-list .img-box:hover img { transform: scale(1.05); }
 
-        /* モバイル版調整 */
         @media screen and (max-width: 768px) {
             .pc { display: none !important; }
             .pc-frame { display: block; }
@@ -186,7 +179,7 @@
 
         <div class="pc-frame-right">
             <div class="bread pc">
-                <div class="wrap serif" style="padding:2.5rem 0 1.5rem; font-size:1.1rem; color:#888;">HOME &gt; エリオについて &gt; ABOUT US</div>
+                <div class="wrap serif">HOME &gt; エリオについて &gt; ABOUT US</div>
             </div>
 
             <main id="contents">
@@ -214,26 +207,26 @@
                             <ul class="philosophy-list">
                                 <li class="anime active">
                                     <div class="flex bet vcenter">
-                                        <div class="text-box anime bottom-in wave1 active">
+                                        <div class="text-box anime active bottom-in wave1">
                                             <p class="section-label">PHILOSOPHY</p>
                                             <h2 class="serif">エリオの信念</h2>
                                             <p class="text serif">最難関突破、そして燃え尽きない頭脳の育成を。未来を生きる子供たちのために、エリオが取り組んでいる教育の信念についてお伝えします。2030年を見据え、東大等難関大学合格をゴールとしない、その先の未来へ目を向けた志を育てます。</p>
                                             <a href="about-belief" class="md-btn red">詳細を見る<div class="bar"></div></a>
                                         </div>
-                                        <div class="img-box anime bottom-in wave2 active">
+                                        <div class="img-box anime active bottom-in wave2">
                                             <img src="img/facility-door.jpg" alt="エリオの信念" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/600x400.png?text=Belief'">
                                         </div>
                                     </div>
                                 </li>
                                 <li class="anime active">
                                     <div class="flex bet vcenter">
-                                        <div class="text-box anime bottom-in wave1 active">
+                                        <div class="text-box anime active bottom-in wave1">
                                             <p class="section-label">EDUCATOR INTRODUCTION</p>
                                             <h2 class="serif">講師紹介</h2>
                                             <p class="text serif">最難関合格は偏差値とにらめっこしていても生まれません。生徒の可能性を引き出す力は合格指導の経験で培われます。難関指導実績が豊富な選抜されたエリオの講師陣がお子さまの能力や性格を見極め、合格へ向かう力を最大限に引き出します。</p>
                                             <a href="about-teacher" class="md-btn red">詳細を見る<div class="bar"></div></a>
                                         </div>
-                                        <div class="img-box anime bottom-in wave2 active">
+                                        <div class="img-box anime active bottom-in wave2">
                                             <img src="img/teacher-three.jpg" alt="講師紹介" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/600x400.png?text=Lecturer'">
                                         </div>
                                     </div>
