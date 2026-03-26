@@ -81,10 +81,14 @@
         .anime.bottom-in { transform: translateY(30px); }
         .active { opacity: 1 !important; transform: none !important; }
 
-        /* PCレイアウト枠 */
+        /* PCレイアウト枠（サイドバー固定の修正） */
         @media screen and (min-width: 769px) {
             .sp { display: none !important; }
-            .pc-frame { display: flex; align-items: flex-start; } /* flex-startでstickyを有効化 */
+            .pc-frame { 
+                display: flex; 
+                align-items: stretch; /* 子要素の高さを揃える */
+                min-height: 100vh;
+            }
             .pc-frame-left { 
                 width: 18rem; 
                 position: sticky; 
@@ -94,7 +98,10 @@
                 background: #fff; 
                 flex-shrink: 0;
             }
-            .pc-frame-right { width: calc(100% - 18rem); flex-grow: 1; min-height: 100vh; }
+            .pc-frame-right { 
+                width: calc(100% - 18rem); 
+                flex-grow: 1; 
+            }
             .wrap { margin: 0 auto; width: 100%; max-width: 1060px; padding: 0 60px; }
         }
 
@@ -109,6 +116,7 @@
             background-position: center;
             display: flex;
             align-items: center;
+            padding: 0; /* 余白をゼロにして高さのみで制御 */
             border-top: 1px solid #eee;
         }
         .mv-md .wrap { width: 100%; }
@@ -120,9 +128,7 @@
             margin-bottom: 1rem; 
             letter-spacing: 0.2em; 
             font-weight: 500; 
-            /* 上部の余白を削除 */
-            position: relative;
-            padding-top: 0; 
+            padding-top: 0; /* 上部の余白を削除 */
         }
         .mv-md .title { font-size: 3.8rem; color: #9e9779; letter-spacing: .2em; font-weight: 500; }
 
@@ -183,7 +189,7 @@
             <main id="contents">
                 <article class="l-main">
                     
-                    <!-- メインビジュアル（PC版左揃え対応） -->
+                    <!-- メインビジュアル（PC版左揃え・余白修正済み） -->
                     <section class="mv-md">
                         <div class="wrap">
                             <div class="title-box anime active">
