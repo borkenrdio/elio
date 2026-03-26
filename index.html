@@ -66,6 +66,11 @@
             background: #fff;
         }
 
+        /* モバイル版のヘッダー被り防止 */
+        @media screen and (max-width: 768px) {
+            body { padding-top: 74px !important; }
+        }
+
         .serif { font-family: "Noto Serif JP", serif; font-weight: 500; }
         .lora { font-family: Lora, serif; font-weight: 500; letter-spacing: .05em; }
         .ta-center { text-align: center; }
@@ -116,7 +121,6 @@
         .slide-main { font-size: 5rem; line-height: 1.2; margin-bottom: 1.5rem; }
         .slide-sub { font-size: 2.2rem; margin-bottom: 3.5rem; font-weight: 500; }
         
-        /* 余計な下線を消すため背景をtransparentに修正 */
         .swiper-gauge { width: 60px; height: 2px; background: transparent; margin-bottom: 2rem; position: relative; overflow: hidden; }
         .gauge { position: absolute; top: 0; left: 0; height: 100%; background: #fff; width: 0; }
         .gauge.active { animation: gauge_anim 5s linear forwards; }
@@ -178,7 +182,7 @@
             .pc { display: none !important; }
             .pc-frame { display: block; }
             .pc-frame-right { width: 100%; }
-            .pc-frame-left { display: none; }
+            .pc-frame-left { display: none; } /* ここを非表示に */
             section.sec { padding: 60px 0; }
             .slide-main { font-size: 2.8rem; }
             .slide-sub { font-size: 1.6rem; }
@@ -193,7 +197,8 @@
     <div id="header-placeholder"></div>
 
     <div class="pc-frame">
-        <aside id="sidebar-placeholder" class="pc pc-frame-left"></aside>
+        <!-- classからpcを削除 -->
+        <aside id="sidebar-placeholder" class="pc-frame-left"></aside>
 
         <div class="pc-frame-right">
             <main id="contents">
@@ -467,34 +472,17 @@
 
             document.querySelectorAll('.anime:not(.key)').forEach(el => observer.observe(el));
         });
+
+        /* モバイルメニュー制御用関数 */
         function toggleMenu() {
-    document.body.classList.toggle('is-active');
-}
-function toggleSubMenu(element) {
-    if (window.innerWidth <= 768) {
-        const parent = element.closest('.l-pulldown');
-        if (parent) parent.classList.toggle('is-open');
-    }
-}
-
-2. **asideタグから「pc」クラスを削除**
-PC版サイドバーを表示している以下の行から「pc」を消します。
-```html
-<!-- 修正前 -->
-<aside id="sidebar-placeholder" class="pc pc-frame-left"></aside>
-
-<!-- 修正後 -->
-<aside id="sidebar-placeholder" class="pc-frame-left"></aside>
-これで、モバイル版でもサイドバーの領域が維持され、メニューが表示されるようになります。
-
-3. **モバイル版の余白設定（任意）**
-index.htmlのCSSに以下を追加して、モバイルヘッダーがコンテンツに被らないようにします。
-```css
-@media screen and (max-width: 768px) {
-    body { padding-top: 74px !important; }
-}
-
-これらの修正により、モバイル版でも期待通りのメニューが表示されるはずです。
+            document.body.classList.toggle('is-active');
+        }
+        function toggleSubMenu(element) {
+            if (window.innerWidth <= 768) {
+                const parent = element.closest('.l-pulldown');
+                if (parent) parent.classList.toggle('is-open');
+            }
+        }
     </script>
 </body>
 </html>
