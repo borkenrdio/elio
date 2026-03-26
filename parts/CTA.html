@@ -54,14 +54,11 @@
         font-weight: 700;
         color: #333;
         margin-bottom: 1.5rem;
-        font-family: "Noto Serif JP", serif;
     }
     .cta-desc {
         font-size: 1.15rem;
         color: #555;
         line-height: 1.8;
-        font-weight: 600;
-        font-family: "Noto Serif JP", serif;
     }
 
     /* 右側：アクションエリア */
@@ -69,6 +66,8 @@
         width: 38rem;
         flex-shrink: 0;
     }
+    
+    /* 電話番号エリアをリンクとして調整 */
     .cta-tel-box {
         border: 1px solid #ddd;
         padding: 2.2rem 2.5rem;
@@ -76,7 +75,15 @@
         align-items: center;
         gap: 2rem;
         margin-bottom: 1.2rem;
+        text-decoration: none;
+        color: inherit;
+        transition: background 0.3s, border-color 0.3s;
     }
+    .cta-tel-box:hover {
+        background: #f9f9f9;
+        border-color: #bbb;
+    }
+    
     .cta-tel-box svg {
         width: 24px;
         height: 24px;
@@ -99,7 +106,6 @@
         font-size: 1rem;
         font-weight: 600;
         color: #666;
-        font-family: "Noto Serif JP", serif;
     }
 
     .cta-btn-red {
@@ -111,7 +117,6 @@
         padding: 2.5rem 3rem;
         text-decoration: none;
         transition: background 0.3s;
-        font-family: "Noto Serif JP", serif;
     }
     .cta-btn-red:hover {
         background: #b12525;
@@ -134,7 +139,7 @@
         opacity: 0.8;
     }
 
-    /* 下部：4つの黒ボタン（グレー背景の帯） */
+    /* 下部：4つの黒ボタン */
     .cta-lower {
         background: #f0f0f0;
         padding: 2rem 0;
@@ -155,7 +160,6 @@
         gap: 1.2rem;
         text-decoration: none;
         transition: all 0.3s;
-        font-family: "Noto Serif JP", serif;
     }
     .cta-nav-item:hover {
         background: #000;
@@ -181,12 +185,50 @@
         .cta-action-col { width: 100%; max-width: 500px; }
         .cta-nav-grid { grid-template-columns: repeat(2, 1fr); }
     }
+    
+    /* モバイル版拡大設定（スマホ表示） */
     @media screen and (max-width: 640px) {
-        .cta-tel-content { flex-direction: column; gap: 0.8rem; }
-        .cta-tel-content .num { font-size: 2rem; }
-        .cta-nav-grid { grid-template-columns: 1fr; }
-        .cta-btn-red { padding: 2rem; }
-        .cta-btn-red span { font-size: 1.2rem; }
+        .cta-upper { padding: 5rem 0; }
+        .cta-main-row { gap: 3.5rem; }
+        .cta-title-col .jp { font-size: 2.2rem; }
+        .cta-desc { font-size: 1.4rem; line-height: 1.6; }
+
+        /* 電話番号エリアを調整：1行に収まるサイズに微調整し、改行禁止 */
+        .cta-tel-box { 
+            padding: 2.5rem 1rem; 
+            gap: 1.2rem; 
+            flex-direction: row; 
+            justify-content: center;
+        }
+        .cta-tel-content { 
+            flex-direction: column; 
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            width: auto;
+        }
+        .cta-tel-content .num { 
+            font-size: 2.8rem; /* 3.2remから少し縮小して1行に収めやすく */
+            line-height: 1;
+            white-space: nowrap; /* 改行を禁止 */
+        } 
+        .cta-tel-content .info { 
+            font-size: 1.3rem; 
+            margin-top: 0;
+            color: #888;
+            white-space: nowrap; /* 改行を禁止 */
+        }
+        
+        /* お問い合わせボタンを拡大 */
+        .cta-btn-red { padding: 2.5rem 2rem; }
+        .cta-btn-red span { font-size: 1.8rem; } 
+        .cta-btn-red svg { width: 24px; height: 24px; }
+
+        /* 下部ナビゲーションを大きく表示 */
+        .cta-nav-grid { grid-template-columns: 1fr; gap: 10px; }
+        .cta-nav-item { padding: 3rem 1.5rem; }
+        .cta-nav-item span { font-size: 1.6rem; }
+        .cta-nav-item svg { width: 36px; height: 36px; }
     }
 </style>
 
@@ -199,21 +241,23 @@
                     <p class="en">CONTACT</p>
                     <p class="jp">お問い合わせ</p>
                     <p class="cta-desc">
-                        ご面談・資料請求等は、お電話もしくはフォームよりお問い合わせください。
+                        ご面談等は、お電話もしくはフォームよりお問い合わせください。
                     </p>
                 </div>
                 <div class="cta-action-col">
-                    <div class="cta-tel-box">
+                    <!-- 電話番号全体をタップ可能なリンク -->
+                    <a href="tel:0752317711" class="cta-tel-box">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                         <div class="cta-tel-content">
                             <span class="num">075-231-7711</span>
                             <span class="info">窓口 [13:00〜20:00]</span>
                         </div>
-                    </div>
+                    </a>
+                    <!-- お問い合わせボタン -->
                     <a href="contact" class="cta-btn-red">
                         <span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                            お問い合わせ・資料請求
+                            お問い合わせ
                         </span>
                         <div class="bar"></div>
                     </a>
