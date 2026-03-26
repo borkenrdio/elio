@@ -74,12 +74,10 @@
         transition: all 0.3s;
     }
 
-    /* メニュー開閉時のアニメーション */
     body.is-active .menu-trigger span:nth-child(1) { transform: translateY(9.5px) rotate(45deg); }
     body.is-active .menu-trigger span:nth-child(2) { opacity: 0; }
     body.is-active .menu-trigger span:nth-child(3) { transform: translateY(-9.5px) rotate(-45deg); }
 
-    /* 背景オーバーレイ */
     .menu-overlay {
         display: none;
         position: fixed;
@@ -143,7 +141,7 @@
     .l-side .link li:hover > .head { background: #982020; color: #fff; }
     .l-side .link li:hover > .head .icon { color: #fff; transform: translateX(3px); }
 
-    /* PC版プルダウン */
+    /* PC版メガメニュー（プルダウン） */
     .l-side .link .l-pulldown .body {
         position: fixed;
         top: 0;
@@ -160,14 +158,22 @@
         transform: translateX(-10px);
         overflow-y: auto;
         box-sizing: border-box;
+        text-align: left;
     }
     .l-side .link .l-pulldown:hover .body { visibility: visible; opacity: 1; transform: translateX(0); }
 
-    .menu-title { color: #bfa57d; font-size: 2rem; letter-spacing: 0.15em; margin-bottom: 3.5rem; font-weight: 700; }
-    .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3.5rem 2.5rem; list-style: none; padding: 0; }
-    .menu-item a { text-decoration: none; display: block; }
-    .menu-item .label { display: flex; align-items: center; font-size: 1.15rem; font-weight: 700; color: #fff; }
-    .menu-item .label::before { content: ""; width: 24px; height: 1.5px; background: #bfa57d; margin-right: 12px; }
+    .menu-title { color: #bfa57d; font-size: 2.2rem; letter-spacing: 0.15em; margin-bottom: 3.5rem; font-weight: 700; }
+    
+    .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem 2.5rem; list-style: none; padding: 0; }
+    
+    .menu-item a { text-decoration: none; display: block; transition: .3s; }
+    .menu-item .img-box { margin-bottom: 1.2rem; overflow: hidden; background: #000; aspect-ratio: 16 / 9; }
+    .menu-item .img-box img { width: 100%; height: 100%; object-fit: cover; display: block; transition: .6s; opacity: 0.9; }
+    .menu-item a:hover .img-box img { transform: scale(1.05); opacity: 1; }
+    
+    .menu-item .label { display: flex; align-items: center; font-size: 1.15rem; font-weight: 700; color: #fff; letter-spacing: 0.05em; }
+    /* 画像のデザインに合わせたラインの装飾 */
+    .menu-item .label::before { content: ""; width: 22px; height: 1.5px; background: #bfa57d; margin-right: 12px; display: inline-block; }
 
     .l-side .side-bottom { border-top: 1px solid #eee; }
     .l-side .side-tel { padding: 2.5vh 1.5rem; text-align: center; }
@@ -198,13 +204,11 @@
             background: #fff;
         }
 
-        body.is-active .l-side {
-            transform: translateX(0);
-            box-shadow: 5px 0 20px rgba(0,0,0,0.15);
-        }
+        body.is-active .l-side { transform: translateX(0); box-shadow: 5px 0 20px rgba(0,0,0,0.15); }
 
         .l-side .logo-unit.pc { display: none; }
 
+        /* スマホ版アコーディオン内は画像なしのシンプルなリストに調整 */
         .l-side .link .l-pulldown .body {
             position: static;
             width: 100%;
@@ -217,27 +221,18 @@
             background: #f9f9f9;
             transition: all 0.4s ease;
             transform: none;
+            color: #333;
         }
 
-        .l-side .link .l-pulldown.is-open .body {
-            height: auto;
-            padding: 1.5rem 1rem;
-            opacity: 1;
-        }
+        .l-side .link .l-pulldown.is-open .body { height: auto; padding: 1.5rem 1rem; opacity: 1; }
 
-        .l-side .link .l-pulldown.is-open .head {
-            background: #982020;
-            color: #fff;
-        }
-
-        .l-side .link .l-pulldown.is-open .head .icon {
-            transform: rotate(90deg);
-            color: #fff;
-        }
+        .l-side .link .l-pulldown.is-open .head { background: #982020; color: #fff; }
+        .l-side .link .l-pulldown.is-open .head .icon { transform: rotate(90deg); color: #fff; }
 
         .menu-title { font-size: 1.2rem; margin-bottom: 1.5rem; color: #982020; }
         .menu-grid { grid-template-columns: 1fr; gap: 1.2rem; }
-        .menu-item .label { color: #333; font-size: 1rem; }
+        .menu-item .img-box { display: none; } /* スマホでは非表示 */
+        .menu-item .label { color: #333; font-size: 1rem; font-weight: 600; }
         .menu-item .label::before { background: #982020; width: 16px; }
 
         .l-side .side-tel .num { font-size: 1.5rem; }
@@ -245,10 +240,7 @@
     }
 
     @media screen and (min-width: 769px) {
-        .l-side {
-            transform: none !important;
-            visibility: visible !important;
-        }
+        .l-side { transform: none !important; visibility: visible !important; }
     }
 </style>
 
@@ -267,7 +259,6 @@
     </div>
 </header>
 
-<!-- オーバーレイ -->
 <div class="menu-overlay" onclick="toggleMenu()"></div>
 
 <!-- サイドバー本体 -->
@@ -289,11 +280,13 @@
                     <ul class="menu-grid">
                         <li class="menu-item">
                             <a href="about-belief">
+                                <div class="img-box"><img src="img/facility-door.jpg" alt="エリオの信念"></div>
                                 <span class="label">エリオの信念</span>
                             </a>
                         </li>
                         <li class="menu-item">
                             <a href="about-teacher">
+                                <div class="img-box"><img src="img/teacher-three.jpg" alt="講師紹介"></div>
                                 <span class="label">講師紹介</span>
                             </a>
                         </li>
@@ -310,21 +303,25 @@
                     <ul class="menu-grid">
                         <li class="menu-item">
                             <a href="course-early-elementary-students">
+                                <div class="img-box"><img src="img/course-early-elementary-students.jpg" alt="低学年能力開発"></div>
                                 <span class="label">低学年能力開発</span>
                             </a>
                         </li>
                         <li class="menu-item">
                             <a href="course-late-elementary-students">
+                                <div class="img-box"><img src="img/course-late-elementary-students.jpg" alt="中学受験"></div>
                                 <span class="label">中学受験</span>
                             </a>
                         </li>
                         <li class="menu-item">
                             <a href="course-one-on-one-instruction">
+                                <div class="img-box"><img src="img/course-one-on-one-instruction.jpg" alt="個別指導"></div>
                                 <span class="label">個別指導</span>
                             </a>
                         </li>
                         <li class="menu-item">
                             <a href="course-junior-and-high">
+                                <div class="img-box"><img src="img/course-junior-and-high.jpg" alt="中学生・高校生"></div>
                                 <span class="label">中学生・高校生</span>
                             </a>
                         </li>
