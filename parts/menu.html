@@ -1,255 +1,259 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>elio Navigation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Lora:wght@600;700&display=swap" rel="stylesheet">
-    <style>
-        /* 基本設定（PC版のデザインは維持） */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "Noto Serif JP", serif;
-        }
+<!-- 
+  このファイルは「parts/header.html」などとして保存し、
+  index.htmlの <div id="header-placeholder"></div> に読み込ませることを想定しています。
+-->
+<style>
+    /* 基本設定（PC版のデザインは維持） */
+    .l-side {
+        border-right: 1px solid #dadada;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 18rem;
+        z-index: 1000;
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        font-family: "Noto Serif JP", serif;
+    }
 
-        .l-side {
-            border-right: 1px solid #dadada;
-            height: 100vh;
-            position: sticky;
-            top: 0;
-            background: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 18rem;
-            z-index: 1000;
-            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-        }
+    .l-side .logo-unit {
+        padding: 1.2rem 1.5rem;
+        text-align: center;
+        box-sizing: border-box;
+    }
+    .l-side .logo-unit img { width: 100%; height: auto; display: block; }
 
-        .l-side .logo-unit {
-            padding: 1.2rem 1.5rem;
-            text-align: center;
-            box-sizing: border-box;
-        }
-        .l-side .logo-unit img { width: 100%; height: auto; display: block; }
+    .l-side .link { border-top: 1px solid #eee; padding: 0; margin: 0; list-style: none; }
+    .l-side .link > li { border-bottom: 1px solid #eee; position: relative; }
+    
+    .l-side .link .head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2.2vh 2rem;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-decoration: none;
+        color: #333;
+        transition: .3s;
+        background: #fff;
+        box-sizing: border-box;
+        cursor: pointer;
+        line-height: 1.4;
+    }
+    .l-side .link .head .icon { font-size: 0.8rem; color: #ccc; transition: .3s; font-style: normal; }
 
-        .l-side .link { border-top: 1px solid #eee; padding: 0; margin: 0; list-style: none; }
-        .l-side .link > li { border-bottom: 1px solid #eee; position: relative; }
+    .l-side .link li:hover > .head { background: #982020; color: #fff; }
+    .l-side .link li:hover > .head .icon { color: #fff; transform: translateX(3px); }
+
+    /* PC版プルダウン */
+    .l-side .link .l-pulldown .body {
+        position: fixed;
+        top: 0;
+        left: 18rem;
+        z-index: 1001;
+        padding: 5rem 4rem;
+        width: 48rem;
+        height: 100vh;
+        background: #982020;
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity .3s, transform .3s, visibility .3s;
+        transform: translateX(-10px);
+        overflow-y: auto;
+        box-sizing: border-box;
+    }
+    .l-side .link .l-pulldown:hover .body { visibility: visible; opacity: 1; transform: translateX(0); }
+
+    .menu-title { color: #bfa57d; font-size: 2rem; letter-spacing: 0.15em; margin-bottom: 3.5rem; font-weight: 700; }
+    .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3.5rem 2.5rem; list-style: none; padding: 0; }
+    .menu-item a { text-decoration: none; display: block; }
+    .menu-item .img-box { margin-bottom: 1.2rem; overflow: hidden; background: #000; aspect-ratio: 16 / 9; }
+    .menu-item .img-box img { width: 100%; height: 100%; object-fit: cover; display: block; transition: .6s; }
+    .menu-item .label { display: flex; align-items: center; font-size: 1.15rem; font-weight: 700; color: #fff; }
+    .menu-item .label::before { content: ""; width: 24px; height: 1.5px; background: #bfa57d; margin-right: 12px; }
+
+    .l-side .side-bottom { border-top: 1px solid #eee; }
+    .l-side .side-tel { padding: 2.5vh 1.5rem; text-align: center; }
+    .l-side .side-tel .label { display: block; font-size: 0.9rem; color: #666; margin-bottom: 0.3rem; font-weight: 700; }
+    .l-side .side-tel .num { display: block; font-size: 1.8rem; font-weight: 700; font-family: "Lora", serif; color: #111; text-decoration: none; }
+    .l-side .side-tel .time { display: block; font-size: 0.9rem; color: #999; margin-top: 0.3rem; font-weight: 600; }
+    .l-side .side-contact-btn { background: #982020; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3.5vh 1rem; text-decoration: none; transition: .3s; }
+    .l-side .side-contact-btn:hover { background: #7a1a1a; }
+    .l-side .side-contact-btn span { font-size: 1.1rem; font-weight: 700; margin-top: 0.8rem; }
+
+    /* スマホ専用バー */
+    .sp-bar {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 74px;
+        background: #fff;
+        z-index: 1100;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0;
+        box-sizing: border-box;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .sp-logo-area {
+        display: flex;
+        align-items: center;
+        padding-left: 15px;
+        height: 100%;
+        text-decoration: none;
+    }
+
+    .sp-logo-img {
+        height: 44px;
+        width: auto;
+    }
+
+    .sp-action-area {
+        display: flex;
+        height: 100%;
+        align-items: stretch;
+    }
+
+    .sp-contact-link {
+        background: #982020;
+        color: #fff;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+        font-size: 14px;
+        font-weight: 700;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .menu-trigger {
+        width: 68px;
+        height: 100%;
+        position: relative;
+        background: #fff;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .menu-trigger span {
+        display: block;
+        width: 32px;
+        height: 2.5px;
+        background: #333;
+        margin: 3.5px 0;
+        transition: all 0.3s;
+    }
+
+    /* メニュー開閉時のアニメーション設定をbody直下に適用 */
+    body.is-active .menu-trigger span:nth-child(1) { transform: translateY(9.5px) rotate(45deg); }
+    body.is-active .menu-trigger span:nth-child(2) { opacity: 0; }
+    body.is-active .menu-trigger span:nth-child(3) { transform: translateY(-9.5px) rotate(-45deg); }
+
+    .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.6);
+        z-index: 999;
+        opacity: 0;
+        transition: opacity 0.4s;
+        pointer-events: none;
+    }
+    body.is-active .menu-overlay { display: block; opacity: 1; pointer-events: auto; }
+
+    /* モバイル表示 */
+    @media screen and (max-width: 768px) {
+        .sp-bar { display: flex; }
         
-        .l-side .link .head {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2.2vh 2rem;
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-decoration: none;
-            color: #333;
-            transition: .3s;
-            background: #fff;
-            box-sizing: border-box;
-            cursor: pointer;
+        /* PC用サイドバーをモバイル用ドロワーに変更 */
+        .l-side {
+            position: fixed;
+            left: 0;
+            top: 74px;
+            height: calc(100vh - 74px);
+            transform: translateX(-100%); 
+            width: 85%;
+            max-width: 320px;
+            box-shadow: none;
+            z-index: 1000;
+            overflow-y: auto;
+            visibility: visible;
+            display: flex; /* 非表示にならないよう指定 */
         }
-        .l-side .link .head .icon { font-size: 0.8rem; color: #ccc; transition: .3s; font-style: normal; }
 
-        .l-side .link li:hover > .head { background: #982020; color: #fff; }
-        .l-side .link li:hover > .head .icon { color: #fff; transform: translateX(3px); }
+        body.is-active .l-side {
+            transform: translateX(0);
+            box-shadow: 5px 0 20px rgba(0,0,0,0.15);
+        }
+
+        .l-side .logo-unit.pc { display: none; }
 
         .l-side .link .l-pulldown .body {
-            position: fixed;
-            top: 0;
-            left: 18rem;
-            z-index: 1001;
-            padding: 5rem 4rem;
-            width: 48rem;
-            height: 100vh;
+            position: static;
+            width: 100%;
+            height: 0;
+            padding: 0;
+            margin: 0;
+            visibility: visible;
+            opacity: 0;
+            overflow: hidden;
+            background: #f9f9f9;
+            transition: all 0.4s ease;
+            transform: none;
+        }
+
+        .l-side .link .l-pulldown.is-open .body {
+            height: auto;
+            padding: 1.5rem 1rem;
+            opacity: 1;
+        }
+
+        .l-side .link .l-pulldown.is-open .head {
             background: #982020;
             color: #fff;
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity .3s, transform .3s, visibility .3s;
-            transform: translateX(-10px);
-            overflow-y: auto;
-            box-sizing: border-box;
-        }
-        .l-side .link .l-pulldown:hover .body { visibility: visible; opacity: 1; transform: translateX(0); }
-
-        .menu-title { color: #bfa57d; font-size: 2rem; letter-spacing: 0.15em; margin-bottom: 3.5rem; font-weight: 700; }
-        .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3.5rem 2.5rem; list-style: none; padding: 0; }
-        .menu-item a { text-decoration: none; display: block; }
-        .menu-item .img-box { margin-bottom: 1.2rem; overflow: hidden; background: #000; aspect-ratio: 16 / 9; }
-        .menu-item .img-box img { width: 100%; height: 100%; object-fit: cover; display: block; transition: .6s; }
-        .menu-item .label { display: flex; align-items: center; font-size: 1.15rem; font-weight: 700; color: #fff; }
-        .menu-item .label::before { content: ""; width: 24px; height: 1.5px; background: #bfa57d; margin-right: 12px; }
-
-        .l-side .side-bottom { border-top: 1px solid #eee; }
-        .l-side .side-tel { padding: 2.5vh 1.5rem; text-align: center; }
-        .l-side .side-tel .label { display: block; font-size: 0.9rem; color: #666; margin-bottom: 0.3rem; font-weight: 700; }
-        .l-side .side-tel .num { display: block; font-size: 1.8rem; font-weight: 700; font-family: "Lora", serif; color: #111; text-decoration: none; }
-        .l-side .side-tel .time { display: block; font-size: 0.9rem; color: #999; margin-top: 0.3rem; font-weight: 600; }
-        .l-side .side-contact-btn { background: #982020; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3.5vh 1rem; text-decoration: none; transition: .3s; }
-        .l-side .side-contact-btn:hover { background: #7a1a1a; }
-        .l-side .side-contact-btn span { font-size: 1.1rem; font-weight: 700; margin-top: 0.8rem; }
-
-        /* スマホ専用バー（更新済みデザイン） */
-        .sp-bar {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 74px;
-            background: #fff;
-            z-index: 1100;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0;
-            box-sizing: border-box;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
-        .sp-logo-area {
-            display: flex;
-            align-items: center;
-            padding-left: 15px;
-            height: 100%;
-            text-decoration: none;
-        }
-
-        .sp-logo-img {
-            height: 44px;
-            width: auto;
-        }
-
-        .sp-action-area {
-            display: flex;
-            height: 100%;
-            align-items: stretch;
-        }
-
-        .sp-contact-link {
-            background: #982020;
+        .l-side .link .l-pulldown.is-open .head .icon {
+            transform: rotate(90deg);
             color: #fff;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 20px;
-            font-size: 14px;
-            font-weight: 700;
-            text-align: center;
-            line-height: 1.4;
         }
 
-        .menu-trigger {
-            width: 68px;
-            height: 100%;
-            position: relative;
-            background: #fff;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        .menu-title { font-size: 1.2rem; margin-bottom: 1.5rem; color: #982020; }
+        .menu-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+        .menu-item .label { color: #333; font-size: 1rem; }
+        .menu-item .label::before { background: #982020; width: 16px; }
+        .menu-item .img-box { display: none; }
+
+        .l-side .side-tel .num { font-size: 1.5rem; }
+        .l-side .side-contact-btn { padding: 2.5vh 1rem; }
+    }
+
+    /* PC版ではドロワー形式を解除 */
+    @media screen and (min-width: 769px) {
+        .l-side {
+            transform: none !important;
+            visibility: visible !important;
         }
-        
-        .menu-trigger span {
-            display: block;
-            width: 32px;
-            height: 2.5px;
-            background: #333;
-            margin: 3.5px 0;
-            transition: all 0.3s;
-        }
-
-        .is-active .menu-trigger span:nth-child(1) { transform: translateY(9.5px) rotate(45deg); }
-        .is-active .menu-trigger span:nth-child(2) { opacity: 0; }
-        .is-active .menu-trigger span:nth-child(3) { transform: translateY(-9.5px) rotate(-45deg); }
-
-        .menu-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.6);
-            z-index: 999;
-            opacity: 0;
-            transition: opacity 0.4s;
-            pointer-events: none;
-        }
-        .is-active .menu-overlay { display: block; opacity: 1; pointer-events: auto; }
-
-        @media screen and (max-width: 768px) {
-            .sp-bar { display: flex; }
-            body { padding-top: 74px; }
-
-            .l-side {
-                position: fixed;
-                left: 0;
-                top: 74px;
-                height: calc(100vh - 74px);
-                transform: translateX(-100%); 
-                width: 85%;
-                max-width: 320px;
-                box-shadow: none;
-                z-index: 1000;
-                overflow-y: auto;
-            }
-
-            .is-active .l-side {
-                transform: translateX(0);
-                box-shadow: 5px 0 20px rgba(0,0,0,0.15);
-            }
-
-            .l-side .logo-unit.pc { display: none; }
-
-            .l-side .link .l-pulldown .body {
-                position: static;
-                width: 100%;
-                height: 0;
-                padding: 0;
-                margin: 0;
-                visibility: visible;
-                opacity: 0;
-                overflow: hidden;
-                background: #f9f9f9;
-                transition: all 0.4s ease;
-                transform: none;
-            }
-
-            .l-side .link .l-pulldown.is-open .body {
-                height: auto;
-                padding: 1.5rem 1rem;
-                opacity: 1;
-            }
-
-            .l-side .link .l-pulldown.is-open .head {
-                background: #982020;
-                color: #fff;
-            }
-
-            .l-side .link .l-pulldown.is-open .head .icon {
-                transform: rotate(90deg);
-                color: #fff;
-            }
-
-            .menu-title { font-size: 1.2rem; margin-bottom: 1.5rem; color: #982020; }
-            .menu-grid { grid-template-columns: 1fr; gap: 1.2rem; }
-            .menu-item .label { color: #333; font-size: 1rem; }
-            .menu-item .label::before { background: #982020; width: 16px; }
-            .menu-item .img-box { display: none; }
-
-            .l-side .side-tel .num { font-size: 1.5rem; }
-            .l-side .side-contact-btn { padding: 2.5vh 1rem; }
-        }
-    </style>
-</head>
-<body>
+    }
+</style>
 
 <!-- スマホ用ヘッダー -->
 <header class="sp-bar">
@@ -268,6 +272,7 @@
 
 <div class="menu-overlay" onclick="toggleMenu()"></div>
 
+<!-- ナビゲーション本体 -->
 <nav class="l-side" id="sidebar">
     <div class="side-top">
         <div class="logo-unit pc">
@@ -350,25 +355,3 @@
         </a>
     </div>
 </nav>
-
-<script>
-    function toggleMenu() {
-        document.body.classList.toggle('is-active');
-        if (!document.body.classList.contains('is-active')) {
-            const openSubMenus = document.querySelectorAll('.l-pulldown.is-open');
-            openSubMenus.forEach(menu => menu.classList.remove('is-open'));
-        }
-    }
-
-    function toggleSubMenu(element) {
-        if (window.innerWidth <= 768) {
-            const parent = element.closest('.l-pulldown');
-            if (parent) {
-                parent.classList.toggle('is-open');
-            }
-        }
-    }
-</script>
-
-</body>
-</html>
