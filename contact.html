@@ -141,15 +141,89 @@
         .submit-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
 
         /* 送信中・完了・エラー表示 */
-        .form-overlay { display: none; position: fixed; inset: 0; background: rgba(255,255,255,0.85); z-index: 9999; align-items: center; justify-content: center; flex-direction: column; gap: 2rem; }
+        .form-overlay {
+            display: none; position: fixed; inset: 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            z-index: 9999; align-items: center; justify-content: center; flex-direction: column;
+        }
         .form-overlay.show { display: flex; }
-        .form-overlay .overlay-icon { font-size: 5rem; }
-        .form-overlay .overlay-title { font-size: 2.4rem; font-weight: 700; color: #111; }
-        .form-overlay .overlay-msg { font-size: 1.5rem; color: #666; text-align: center; line-height: 2; }
-        .form-overlay .overlay-btn { margin-top: 1rem; background: #111; color: #fff; padding: 1.5rem 6rem; border: none; font-size: 1.5rem; font-family: inherit; cursor: pointer; font-weight: 700; }
-        .form-overlay .overlay-btn:hover { background: #982020; }
-        .spinner { width: 50px; height: 50px; border: 4px solid #ddd; border-top-color: #9e9779; border-radius: 50%; animation: spin 0.8s linear infinite; }
+
+        /* 送信中 */
+        #overlay-sending { gap: 3rem; }
+        .spinner-wrap { display: flex; flex-direction: column; align-items: center; gap: 2.5rem; }
+        .spinner { width: 56px; height: 56px; border: 3px solid rgba(158,151,121,0.2); border-top-color: #9e9779; border-radius: 50%; animation: spin 0.9s linear infinite; }
         @keyframes spin { to { transform: rotate(360deg); } }
+        #overlay-sending .overlay-title { font-size: 1.6rem; color: #9e9779; letter-spacing: 0.3em; font-family: Lora, serif; }
+
+        /* 送信完了 */
+        .overlay-card {
+            background: #fff;
+            width: min(560px, 90vw);
+            padding: 7rem 5rem 6rem;
+            text-align: center;
+            position: relative;
+        }
+        .overlay-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #9e9779, #c8bc99, #9e9779);
+        }
+        .overlay-card .lora-label {
+            font-family: Lora, serif;
+            font-size: 1.2rem;
+            color: #9e9779;
+            letter-spacing: 0.4em;
+            margin-bottom: 3.5rem;
+            display: block;
+        }
+        .overlay-card .check-circle {
+            width: 72px; height: 72px;
+            border: 2px solid #9e9779;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 3.5rem;
+        }
+        .overlay-card .check-circle svg { width: 32px; height: 32px; }
+        .overlay-card .overlay-title {
+            font-size: 2.2rem; font-weight: 600; color: #111;
+            letter-spacing: 0.1em; margin-bottom: 2.5rem; line-height: 1.5;
+        }
+        .overlay-card .overlay-divider {
+            width: 40px; height: 1px; background: #9e9779; margin: 0 auto 2.5rem;
+        }
+        .overlay-card .overlay-msg {
+            font-size: 1.4rem; color: #666; line-height: 2.2;
+            margin-bottom: 4.5rem;
+        }
+        .overlay-card .overlay-btn {
+            display: inline-block;
+            background: #111; color: #fff;
+            padding: 1.8rem 7rem;
+            border: none; font-size: 1.4rem;
+            font-family: inherit; cursor: pointer;
+            font-weight: 700; letter-spacing: 0.15em;
+            transition: .3s;
+            text-decoration: none;
+        }
+        .overlay-card .overlay-btn:hover { background: #9e9779; }
+        .overlay-card .overlay-btn-outline {
+            display: inline-block;
+            background: transparent; color: #111;
+            padding: 1.8rem 7rem;
+            border: 1px solid #111; font-size: 1.4rem;
+            font-family: inherit; cursor: pointer;
+            font-weight: 700; letter-spacing: 0.15em;
+            transition: .3s;
+        }
+        .overlay-card .overlay-btn-outline:hover { background: #111; color: #fff; }
+
+        @media screen and (max-width: 768px) {
+            .overlay-card { padding: 5rem 3rem 4rem; }
+            .overlay-card .overlay-btn,
+            .overlay-card .overlay-btn-outline { padding: 1.8rem 4rem; }
+        }
 
         @media screen and (max-width: 768px) {
             .pc { display: none !important; }
@@ -172,24 +246,50 @@
 
     <!-- 送信中オーバーレイ -->
     <div class="form-overlay" id="overlay-sending">
-        <div class="spinner"></div>
-        <p class="overlay-title">送信中...</p>
+        <div class="spinner-wrap">
+            <div class="spinner"></div>
+            <p class="overlay-title lora">SENDING...</p>
+        </div>
     </div>
 
     <!-- 送信完了オーバーレイ -->
     <div class="form-overlay" id="overlay-success">
-        <div class="overlay-icon">✅</div>
-        <p class="overlay-title">送信が完了しました</p>
-        <p class="overlay-msg">お問い合わせいただきありがとうございます。<br>担当者よりご連絡いたしますので、しばらくお待ちください。</p>
-        <button class="overlay-btn" onclick="location.href='index.html'">トップページへ戻る</button>
+        <div class="overlay-card">
+            <span class="lora-label">THANK YOU</span>
+            <div class="check-circle">
+                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <polyline points="6,17 13,24 26,9" stroke="#9e9779" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <p class="overlay-title serif">お問い合わせを<br>受け付けました</p>
+            <div class="overlay-divider"></div>
+            <p class="overlay-msg serif">
+                担当者より３営業日以内に<br>
+                お電話またはメールにてご連絡いたします。<br>
+                しばらくお待ちください。
+            </p>
+            <button class="overlay-btn serif" onclick="location.href='index.html'">トップページへ戻る</button>
+        </div>
     </div>
 
     <!-- 送信失敗オーバーレイ -->
     <div class="form-overlay" id="overlay-error">
-        <div class="overlay-icon">⚠️</div>
-        <p class="overlay-title">送信に失敗しました</p>
-        <p class="overlay-msg">通信エラーが発生しました。<br>しばらくしてから再度お試しください。</p>
-        <button class="overlay-btn" onclick="hideAllOverlays()">フォームに戻る</button>
+        <div class="overlay-card">
+            <span class="lora-label">ERROR</span>
+            <div class="check-circle" style="border-color:#982020;">
+                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="9" y1="9" x2="23" y2="23" stroke="#982020" stroke-width="2.2" stroke-linecap="round"/>
+                    <line x1="23" y1="9" x2="9" y2="23" stroke="#982020" stroke-width="2.2" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <p class="overlay-title serif">送信に失敗しました</p>
+            <div class="overlay-divider" style="background:#982020;"></div>
+            <p class="overlay-msg serif">
+                通信エラーが発生しました。<br>
+                しばらく経ってから再度お試しください。
+            </p>
+            <button class="overlay-btn-outline serif" onclick="hideAllOverlays()">フォームに戻る</button>
+        </div>
     </div>
 
     <div class="pc-frame">
@@ -238,6 +338,7 @@
                                         <div class="select-container">
                                             <select name="grade" class="select-box" required>
                                                 <option value="">学年を選択してください</option>
+                                                <option value="小学1年生">未就学児</option>
                                                 <option value="小学1年生">小学1年生</option>
                                                 <option value="小学2年生">小学2年生</option>
                                                 <option value="小学3年生">小学3年生</option>
@@ -257,6 +358,11 @@
                                     <div class="form-group">
                                         <label class="form-label">電話番号 <span class="req">必須</span></label>
                                         <input type="tel" name="tel" class="input-text" placeholder="例：09012345678" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label">メールアドレス <span class="req">必須</span></label>
+                                        <input type="email" name="email" class="input-text" placeholder="例：info@example.com" required>
                                     </div>
 
                                     <div class="form-group">
@@ -304,11 +410,6 @@
                                                         <option value="12:00 ~ 13:00">12:00 ~ 13:00</option>
                                                         <option value="13:00 ~ 14:00">13:00 ~ 14:00</option>
                                                         <option value="14:00 ~ 15:00">14:00 ~ 15:00</option>
-                                                        <option value="15:00 ~ 16:00">15:00 ~ 16:00</option>
-                                                        <option value="16:00 ~ 17:00">16:00 ~ 17:00</option>
-                                                        <option value="17:00 ~ 18:00">17:00 ~ 18:00</option>
-                                                        <option value="18:00 ~ 19:00">18:00 ~ 19:00</option>
-                                                        <option value="19:00 ~ 20:00">19:00 ~ 20:00</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -323,11 +424,6 @@
                                                         <option value="12:00 ~ 13:00">12:00 ~ 13:00</option>
                                                         <option value="13:00 ~ 14:00">13:00 ~ 14:00</option>
                                                         <option value="14:00 ~ 15:00">14:00 ~ 15:00</option>
-                                                        <option value="15:00 ~ 16:00">15:00 ~ 16:00</option>
-                                                        <option value="16:00 ~ 17:00">16:00 ~ 17:00</option>
-                                                        <option value="17:00 ~ 18:00">17:00 ~ 18:00</option>
-                                                        <option value="18:00 ~ 19:00">18:00 ~ 19:00</option>
-                                                        <option value="19:00 ~ 20:00">19:00 ~ 20:00</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -342,11 +438,6 @@
                                                         <option value="12:00 ~ 13:00">12:00 ~ 13:00</option>
                                                         <option value="13:00 ~ 14:00">13:00 ~ 14:00</option>
                                                         <option value="14:00 ~ 15:00">14:00 ~ 15:00</option>
-                                                        <option value="15:00 ~ 16:00">15:00 ~ 16:00</option>
-                                                        <option value="16:00 ~ 17:00">16:00 ~ 17:00</option>
-                                                        <option value="17:00 ~ 18:00">17:00 ~ 18:00</option>
-                                                        <option value="18:00 ~ 19:00">18:00 ~ 19:00</option>
-                                                        <option value="19:00 ~ 20:00">19:00 ~ 20:00</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -410,7 +501,7 @@
         // ============================================================
         // ★ GASのウェブアプリURLをここに貼り付けてください
         // ============================================================
-        const GAS_URL = 'https://script.google.com/macros/s/AKfycby-pTGdW4UW7LrcXyo1nbU1OJg1X5Yx_cm_ZkAd1NiwHQ_ppTMWR0gA5jZt85WCcHe4dg/exec';
+        const GAS_URL = 'ここにGASのウェブアプリURLを貼り付け';
         // ============================================================
 
         async function loadPart(id, path) {
