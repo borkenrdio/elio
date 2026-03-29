@@ -65,7 +65,6 @@
             background: #fff;
         }
 
-        /* モバイル版のヘッダー被り防止用 */
         @media screen and (max-width: 768px) {
             body { padding-top: 74px !important; }
         }
@@ -77,40 +76,18 @@
         .anime.active { opacity: 1 !important; transform: none !important; }
         .bottom-in { transform: translateY(30px); }
 
-        /* PCレイアウト枠 */
         @media screen and (min-width: 769px) {
             .sp { display: none !important; }
-            .pc-frame { 
-                display: flex; 
-                align-items: flex-start;
-                min-height: 100vh;
-            }
-            .pc-frame-left { 
-                width: 18rem; 
-                position: sticky; 
-                top: 0; 
-                height: 100vh; 
-                z-index: 1000; 
-                background: #fff; 
-                flex-shrink: 0;
-            }
-            .pc-frame-right { 
-                width: calc(100% - 18rem); 
-                flex-grow: 1; 
-            }
+            .pc-frame { display: flex; align-items: flex-start; min-height: 100vh; }
+            .pc-frame-left { width: 18rem; position: sticky; top: 0; height: 100vh; z-index: 1000; background: #fff; flex-shrink: 0; }
+            .pc-frame-right { width: calc(100% - 18rem); flex-grow: 1; }
             .wrap { margin: 0 auto; width: 100%; max-width: 1060px; padding: 0 60px; }
         }
 
         .w800 { max-width: 800px; margin: 0 auto; }
 
-        /* パンくずリスト */
-        .bread.pc {
-            padding: 2.5rem 0 1.5rem;
-            font-size: 1.1rem;
-            color: #888;
-        }
+        .bread.pc { padding: 2.5rem 0 1.5rem; font-size: 1.1rem; color: #888; }
 
-        /* メインビジュアル（PC版余白修正済み） */
         .mv-md { 
             height: 320px;
             background-color: #333;
@@ -120,7 +97,6 @@
             display: flex;
             align-items: center;
             padding: 0;
-            border-top: none;
         }
         .mv-md .wrap { width: 100%; }
         .mv-md .title-box { color: #fff; text-align: left; }
@@ -128,20 +104,12 @@
         .mv-md .title-box .title-head { font-size: 1.8rem; margin-bottom: 1rem; letter-spacing: 0.2em; font-weight: 500; }
         .mv-md .title { font-size: 3.8rem; color: #9e9779; letter-spacing: 0.2em; font-weight: 500; }
 
-        /* フォームセクション */
         .form-sec { padding: 10rem 0 12rem; border-top: 1px solid #eee; }
         .form-group { margin-bottom: 4.5rem; }
         .form-label { display: block; font-size: 1.6rem; font-weight: 700; margin-bottom: 1.8rem; color: #111; }
-        .form-label .req { 
-            background: #982020; color: #fff; font-size: 1rem; padding: 0.2rem 0.8rem; 
-            margin-left: 1.2rem; vertical-align: middle; border-radius: 2px; font-weight: 500;
-        }
+        .form-label .req { background: #982020; color: #fff; font-size: 1rem; padding: 0.2rem 0.8rem; margin-left: 1.2rem; vertical-align: middle; border-radius: 2px; font-weight: 500; }
         
-        .input-text { 
-            width: 100%; height: 5.8rem; padding: 0 1.8rem; border: 1px solid #ddd; 
-            font-family: inherit; font-size: 1.5rem; background: #fafafa; transition: .3s; 
-            outline: none; box-sizing: border-box; border-radius: 0;
-        }
+        .input-text { width: 100%; height: 5.8rem; padding: 0 1.8rem; border: 1px solid #ddd; font-family: inherit; font-size: 1.5rem; background: #fafafa; transition: .3s; outline: none; box-sizing: border-box; border-radius: 0; }
         .input-text:focus { border-color: #9e9779; background: #fff; box-shadow: 0 0 10px rgba(158, 151, 121, 0.1); }
         
         .select-box { appearance: none; cursor: pointer; width: 100%; height: 5.8rem; padding: 0 1.8rem; border: 1px solid #ddd; font-family: inherit; font-size: 1.5rem; background: #fafafa; outline: none; border-radius: 0; }
@@ -168,12 +136,20 @@
         .policy-agree input { width: 2rem; height: 2rem; margin-right: 1.2rem; accent-color: #982020; cursor: pointer; }
 
         .submit-area { text-align: center; margin-top: 6rem; }
-        .submit-btn {
-            background: #111; color: #fff; padding: 2.2rem 10rem; border: none; font-size: 1.6rem; 
-            font-weight: 700; cursor: pointer; transition: .3s; font-family: inherit; letter-spacing: 0.1em;
-        }
+        .submit-btn { background: #111; color: #fff; padding: 2.2rem 10rem; border: none; font-size: 1.6rem; font-weight: 700; cursor: pointer; transition: .3s; font-family: inherit; letter-spacing: 0.1em; }
         .submit-btn:hover { background: #982020; transform: translateY(-2px); }
         .submit-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+
+        /* 送信中・完了・エラー表示 */
+        .form-overlay { display: none; position: fixed; inset: 0; background: rgba(255,255,255,0.85); z-index: 9999; align-items: center; justify-content: center; flex-direction: column; gap: 2rem; }
+        .form-overlay.show { display: flex; }
+        .form-overlay .overlay-icon { font-size: 5rem; }
+        .form-overlay .overlay-title { font-size: 2.4rem; font-weight: 700; color: #111; }
+        .form-overlay .overlay-msg { font-size: 1.5rem; color: #666; text-align: center; line-height: 2; }
+        .form-overlay .overlay-btn { margin-top: 1rem; background: #111; color: #fff; padding: 1.5rem 6rem; border: none; font-size: 1.5rem; font-family: inherit; cursor: pointer; font-weight: 700; }
+        .form-overlay .overlay-btn:hover { background: #982020; }
+        .spinner { width: 50px; height: 50px; border: 4px solid #ddd; border-top-color: #9e9779; border-radius: 50%; animation: spin 0.8s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
 
         @media screen and (max-width: 768px) {
             .pc { display: none !important; }
@@ -181,11 +157,9 @@
             .pc-frame-right { width: 100%; }
             .pc-frame-left { width: 0; height: 0; display: block; overflow: visible; position: absolute; top: 0; left: 0; }
             .wrap { padding: 0 25px; }
-
             .mv-md { height: 180px; padding: 0 2.5rem; }
             .mv-md .title { font-size: 2.8rem; }
             .mv-md .title-box .title-line { display: none; }
-
             .form-sec { padding: 6rem 0 8rem; }
             .form-group { margin-bottom: 3.5rem; }
             .date-item-group { padding: 2rem; }
@@ -196,8 +170,29 @@
 
 <body class="l-page l-contact">
 
+    <!-- 送信中オーバーレイ -->
+    <div class="form-overlay" id="overlay-sending">
+        <div class="spinner"></div>
+        <p class="overlay-title">送信中...</p>
+    </div>
+
+    <!-- 送信完了オーバーレイ -->
+    <div class="form-overlay" id="overlay-success">
+        <div class="overlay-icon">✅</div>
+        <p class="overlay-title">送信が完了しました</p>
+        <p class="overlay-msg">お問い合わせいただきありがとうございます。<br>担当者よりご連絡いたしますので、しばらくお待ちください。</p>
+        <button class="overlay-btn" onclick="location.href='index.html'">トップページへ戻る</button>
+    </div>
+
+    <!-- 送信失敗オーバーレイ -->
+    <div class="form-overlay" id="overlay-error">
+        <div class="overlay-icon">⚠️</div>
+        <p class="overlay-title">送信に失敗しました</p>
+        <p class="overlay-msg">通信エラーが発生しました。<br>しばらくしてから再度お試しください。</p>
+        <button class="overlay-btn" onclick="hideAllOverlays()">フォームに戻る</button>
+    </div>
+
     <div class="pc-frame">
-        <!-- menu.html を左側の aside 内にのみ読み込ませます -->
         <aside id="menu-placeholder" class="pc-frame-left"></aside>
 
         <div class="pc-frame-right">
@@ -221,7 +216,7 @@
                     <section class="form-sec">
                         <div class="wrap w800">
                             <div class="form-inner anime active bottom-in">
-                                <form id="contact-form" action="#" method="post">
+                                <form id="contact-form">
                                     
                                     <div class="form-group">
                                         <label class="form-label">お子様のお名前 <span class="req">必須</span></label>
@@ -412,6 +407,12 @@
     </div>
 
     <script>
+        // ============================================================
+        // ★ GASのウェブアプリURLをここに貼り付けてください
+        // ============================================================
+        const GAS_URL = 'ここにGASのウェブアプリURLを貼り付け';
+        // ============================================================
+
         async function loadPart(id, path) {
             try {
                 const response = await fetch(path);
@@ -425,35 +426,38 @@
             }
         }
 
+        function showOverlay(id) {
+            document.querySelectorAll('.form-overlay').forEach(el => el.classList.remove('show'));
+            document.getElementById(id).classList.add('show');
+        }
+
+        function hideAllOverlays() {
+            document.querySelectorAll('.form-overlay').forEach(el => el.classList.remove('show'));
+        }
+
         window.addEventListener('DOMContentLoaded', () => {
             loadPart('menu-placeholder', 'parts/menu.html');
             loadPart('cta-placeholder', 'parts/CTA.html');
             loadPart('footer-placeholder', 'parts/footer.html');
 
-            // 同意チェックボックスの連動
+            // 同意チェックボックス連動
             const agreeChk = document.getElementById('agree-chk');
             const submitBtn = document.getElementById('submit-btn');
-            if (agreeChk && submitBtn) {
-                agreeChk.addEventListener('change', () => {
-                    submitBtn.disabled = !agreeChk.checked;
-                });
-            }
+            agreeChk.addEventListener('change', () => {
+                submitBtn.disabled = !agreeChk.checked;
+            });
 
-            // 日程選択の制限設定
+            // 日程選択の制限
             const dateInputs = document.querySelectorAll('.date-input');
             const now = new Date();
-            // 入力日の2日後を最小値に設定（今日と明日を無効化）
             const minDate = new Date(now.setDate(now.getDate() + 2));
             const minDateStr = minDate.toISOString().split('T')[0];
-
             dateInputs.forEach(input => {
                 input.setAttribute('min', minDateStr);
-                
                 input.addEventListener('change', (e) => {
                     const selectedDate = new Date(e.target.value);
-                    const day = selectedDate.getDay(); // 0:日, 6:土
+                    const day = selectedDate.getDay();
                     const errorMsg = e.target.nextElementSibling;
-
                     if (day === 0 || day === 6) {
                         e.target.value = '';
                         if (errorMsg) errorMsg.style.display = 'block';
@@ -463,21 +467,43 @@
                 });
             });
 
+            // フォーム送信処理
+            const form = document.getElementById('contact-form');
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                // フォームデータ収集
+                const fd = new FormData(form);
+                const data = {};
+                fd.forEach((val, key) => { data[key] = val; });
+
+                showOverlay('overlay-sending');
+
+                try {
+                    const res = await fetch(GAS_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data),
+                        mode: 'no-cors' // GASはno-corsが必要
+                    });
+                    // no-corsでは成功可否を確認できないため送信完了とみなす
+                    showOverlay('overlay-success');
+                } catch (err) {
+                    console.error(err);
+                    showOverlay('overlay-error');
+                }
+            });
+
+            // アニメーション
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
+                    if (entry.isIntersecting) entry.target.classList.add('active');
                 });
             }, { threshold: 0.1 });
-
             document.querySelectorAll('.anime').forEach(el => observer.observe(el));
         });
 
-        // モバイルメニュー制御用
-        function toggleMenu() {
-            document.body.classList.toggle('is-active');
-        }
+        function toggleMenu() { document.body.classList.toggle('is-active'); }
         function toggleSubMenu(element) {
             if (window.innerWidth <= 768) {
                 const parent = element.closest('.l-pulldown');
