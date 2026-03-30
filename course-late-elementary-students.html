@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <!-- SEO設定 -->
     <title>中学受験（小3〜小6） | 会員制難関受験専門塾エリオ（elio）</title>
     <meta name="description" content="東大寺・洛星・同志社/立命館系列の難関中学合格を目指します。エリオでは大量演習ではなく、少人数対話形式の授業を通じて、知的好奇心を刺激しながら本質的な思考力と実践力を養います。">
     <meta name="keywords" content="中学受験,小3,小4,小5,小6,難関中学,少人数制,プロ講師,塾,エリオ,elio">
     <link rel="canonical" href="https://elio-edu.com/course-late-elementary-students">
     
-    <!-- OGP設定 -->
     <meta property="og:type" content="article">
     <meta property="og:title" content="中学受験 | 会員制難関受験専門塾エリオ（elio）">
     <meta property="og:description" content="合格をゴールとしない、一生ものの知性を。精鋭講師陣による対話型授業で難関突破を目指します。">
@@ -19,7 +17,6 @@
     <meta property="og:image" content="https://elio-edu.com/img/ogp-course-late.jpg">
     <meta property="og:site_name" content="エリオ（elio）">
     
-    <!-- ファビコン設定 -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700&display=swap" rel="stylesheet">
@@ -42,6 +39,135 @@
         .anime { opacity: 0; transition: transform 1s, opacity 1s; }
         .anime.active { opacity: 1; transform: none; }
         .bottom-in { transform: translateY(20px); }
+
+        /* ===== ENROLLMENT NOTICE BAR ===== */
+        .enrollment-bar {
+            width: 100%;
+            background: #2a271f;
+            border: 1px solid #3d3928;
+            margin-bottom: 0;
+        }
+        .enrollment-bar-inner {
+            padding: 1.3rem 2.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .enrollment-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            flex: 1;
+            min-width: 0;
+        }
+        .enrollment-bar-label {
+            font-family: Lora, serif;
+            font-size: 1.0rem;
+            letter-spacing: 0.2em;
+            color: #9e9779;
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+        .enrollment-bar-divider {
+            width: 1px;
+            height: 28px;
+            background: #4a4535;
+            flex-shrink: 0;
+        }
+        .enrollment-grades {
+            display: flex;
+            align-items: center;
+            gap: 1.4rem;
+            flex-wrap: wrap;
+        }
+        .enrollment-grade-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .grade-tag {
+            font-family: "Noto Serif JP", serif;
+            font-size: 1.0rem;
+            letter-spacing: 0.1em;
+            color: #9e9779;
+            border: 1px solid #6b6449;
+            padding: 2px 10px;
+            white-space: nowrap;
+            line-height: 1.6;
+        }
+        .grade-status-full {
+            font-size: 1.05rem;
+            color: #c4a882;
+            letter-spacing: 0.1em;
+            font-weight: 500;
+        }
+        .grade-status-rare {
+            font-size: 1.05rem;
+            color: #c4a882;
+            letter-spacing: 0.1em;
+            font-weight: 500;
+        }
+        .enrollment-bar-text-divider {
+            width: 1px;
+            height: 20px;
+            background: #4a4535;
+            flex-shrink: 0;
+        }
+        .enrollment-bar-note {
+            font-size: 1.1rem;
+            color: #887f6a;
+            letter-spacing: 0.04em;
+            line-height: 1.8;
+            flex: 1;
+            min-width: 200px;
+        }
+        .enrollment-bar-cta {
+            flex-shrink: 0;
+            font-family: "Noto Serif JP", serif;
+            font-size: 1.0rem;
+            letter-spacing: 0.14em;
+            color: #9e9779;
+            border: 1px solid #6b6449;
+            padding: 0.55rem 1.8rem;
+            white-space: nowrap;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s;
+            display: inline-block;
+        }
+        .enrollment-bar-cta:hover {
+            background: #9e9779;
+            color: #1a1810;
+        }
+
+        @media screen and (max-width: 768px) {
+            .enrollment-bar-inner {
+                padding: 1.2rem 2.5rem;
+                gap: 1.2rem;
+            }
+            .enrollment-bar-label {
+                display: none;
+            }
+            .enrollment-bar-divider {
+                display: none;
+            }
+            .enrollment-bar-text-divider {
+                display: none;
+            }
+            .enrollment-bar-note {
+                font-size: 1.05rem;
+                min-width: 0;
+                width: 100%;
+            }
+            .enrollment-bar-cta {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        /* ===== END ENROLLMENT NOTICE BAR ===== */
+
         @media screen and (min-width: 769px) {
             .sp { display: none !important; }
             .pc-frame { display: flex; align-items: flex-start; min-height: 100vh; }
@@ -60,6 +186,8 @@
         .head-text-box .section-label { color: #9e9779; font-size: 1.4rem; font-weight: 700; margin-bottom: 1.5rem; display: block; letter-spacing: 0.1em; }
         .head-text-box h2 { font-size: 3rem; font-weight: 600; margin-bottom: 3rem; color: #111; line-height: 1.5; }
         .head-text-box .text { font-size: 1.5rem; font-weight: 500; color: #333; line-height: 2.2; }
+        .enrollment-bar { margin-bottom: 0; }
+        .main-list { margin-top: 0; }
         .main-list li { display: flex; gap: 6rem; padding: 8rem 0; border-top: 1px solid #eee; align-items: center; }
         .main-list li:nth-child(even) { flex-direction: row-reverse; }
         .main-list .img-box { width: 45%; flex-shrink: 0; box-shadow: 0 20px 40px rgba(0,0,0,0.05); overflow: hidden; border-radius: 4px; }
@@ -96,6 +224,7 @@
     </style>
 </head>
 <body class="l-page l-course-child">
+
     <div class="pc-frame">
         <aside id="menu-placeholder" class="pc-frame-left"></aside>
         <div class="pc-frame-right">
@@ -114,6 +243,38 @@
                                 <h2 class="serif">東大寺・洛星・同志社/立命館系列の難関中学合格への<br class="pc">難関受験特化コース</h2>
                                 <p class="text serif">難関合格は偏差値とにらめっこしていても生まれません。本当の意味での合格指導には、ひとりひとりの学習特性を見抜く力が必要です。その力は、最難関校への合格実績を積み重ねてきたプロ講師だからこそ持てるものです。elioは完全少人数制のクラス形式を採用しています。経験豊富なプロ講師がお子様一人ひとりと向き合い、その特性に合わせた丁寧な指導をご提供します。</p>
                             </div>
+                            <!-- ===== ENROLLMENT NOTICE BAR ===== -->
+                            <div class="enrollment-bar">
+                                <div class="enrollment-bar-inner">
+                                    <div class="enrollment-bar-left">
+                                        <span class="enrollment-bar-label">ENROLLMENT</span>
+                                        <div class="enrollment-bar-divider"></div>
+                                        <div class="enrollment-grades">
+                                            <div class="enrollment-grade-item">
+                                                <span class="grade-tag">小3</span>
+                                                <span class="grade-status-full">満席</span>
+                                            </div>
+                                            <div class="enrollment-grade-item">
+                                                <span class="grade-tag">小4</span>
+                                                <span class="grade-status-rare">空席あり</span>
+                                            </div>
+                                            <div class="enrollment-grade-item">
+                                                <span class="grade-tag">小5</span>
+                                                <span class="grade-status-full">満席</span>
+                                            </div>
+                                            <div class="enrollment-grade-item">
+                                                <span class="grade-tag">小6</span>
+                                                <span class="grade-status-full">満席</span>
+                                            </div>
+                                        </div>
+                                        <div class="enrollment-bar-text-divider"></div>
+                                        <p class="enrollment-bar-note">キャンセル待ちご希望の方はご面談が必須です。海外転向・転居等による空席は、待ち順にご案内します。</p>
+                                    </div>
+                                    <a href="#contact" class="enrollment-bar-cta">お問い合わせ</a>
+                                </div>
+                            </div>
+                            <!-- ===== END ENROLLMENT NOTICE BAR ===== -->
+
                             <ol class="main-list">
                                 <li class="anime active bottom-in">
                                     <div class="img-box"><img src="img/teach-science-2.jpg" alt="少人数対話形式" onerror="this.src='https://placehold.jp/24/f5f5f5/333333/600x400.png?text=Dialogue'"></div>
@@ -160,7 +321,7 @@
                                     <div class="text-box">
                                         <span class="number">06</span>
                                         <h3 class="serif">合格実績</h3>
-                                        <p class="text serif">elioは合格者数を追いません。首都圏・関西圏・東海圏、全国の最難関校から附属校まで、一人ひとりに必要な合格を届けることにこだわります。</br>開成・桜蔭・灘・神戸女学院・東大寺学園・洛星・洛北・東海・海陽(特別給費)・青山学院・同志社女子・立命館etc</p>
+                                        <p class="text serif">elioは合格者数を追いません。首都圏・関西圏・東海圏、全国の最難関校から附属校まで、一人ひとりに必要な合格を届けることにこだわります。<br>開成・桜蔭・灘・神戸女学院・東大寺学園・洛星・洛北・東海・海陽(特別給費)・青山学院・同志社女子・立命館etc</p>
                                     </div>
                                 </li>
                             </ol>
