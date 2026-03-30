@@ -46,107 +46,121 @@
             background: #f7f4ee;
             border-top: 1px solid #ddd9ce;
             border-bottom: 1px solid #ddd9ce;
-        }
-        .enrollment-bar-inner {
-            padding: 1.4rem 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-        .enrollment-bar-left {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            flex: 1;
-            min-width: 0;
-        }
-        .enrollment-bar-label {
-            font-family: Lora, serif;
-            font-size: 1.0rem;
-            letter-spacing: 0.2em;
-            color: #9e9779;
-            flex-shrink: 0;
-            white-space: nowrap;
-        }
-        .enrollment-bar-divider {
-            width: 1px;
-            height: 22px;
-            background: #ccc8bc;
-            flex-shrink: 0;
-        }
-        .enrollment-grades {
-            display: flex;
-            align-items: center;
-            gap: 1.4rem;
-            flex-wrap: wrap;
-        }
-        .enrollment-grade-item {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
-        .grade-tag {
-            font-family: "Noto Serif JP", serif;
-            font-size: 1.0rem;
-            letter-spacing: 0.1em;
-            color: #7a7460;
-            border: 1px solid #bbb8ac;
-            padding: 2px 10px;
-            white-space: nowrap;
-            line-height: 1.6;
-        }
-        .grade-status-full {
-            font-size: 1.05rem;
-            color: #7a7460;
-            letter-spacing: 0.08em;
-            font-weight: 500;
-        }
-        .grade-status-rare {
-            font-size: 1.05rem;
-            color: #9e9779;
-            letter-spacing: 0.08em;
-            font-weight: 600;
-        }
-        .enrollment-bar-text-divider {
-            width: 1px;
-            height: 22px;
-            background: #ccc8bc;
-            flex-shrink: 0;
-        }
-        .enrollment-bar-note {
-            font-size: 1.1rem;
-            color: #9a9282;
-            letter-spacing: 0.04em;
-            line-height: 1.9;
-            flex: 1;
-            min-width: 200px;
-        }
-        .enrollment-bar-cta {
-            flex-shrink: 0;
-            font-family: "Noto Serif JP", serif;
-            font-size: 1.0rem;
-            letter-spacing: 0.14em;
-            color: #7a7460;
-            border: 1px solid #bbb09a;
-            padding: 0.55rem 1.8rem;
-            white-space: nowrap;
-            text-decoration: none;
-            transition: background 0.3s, color 0.3s;
-            display: inline-block;
-        }
-        .enrollment-bar-cta:hover {
-            background: #9e9779;
-            color: #fff;
-            border-color: #9e9779;
+            overflow: hidden;
         }
 
+        /* --- PC layout (769px以上) --- */
+        @media screen and (min-width: 769px) {
+            .enrollment-bar-inner {
+                padding: 2.0rem 0;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                gap: 2.4rem;
+                flex-wrap: wrap;
+            }
+            .enrollment-bar-left {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 2.4rem;
+                flex-wrap: wrap;
+                flex: 1;
+                min-width: 0;
+            }
+            .enrollment-bar-label {
+                display: block;
+                font-family: Lora, serif;
+                font-size: 1.3rem;
+                letter-spacing: 0.2em;
+                color: #9e9779;
+                flex-shrink: 0;
+                white-space: nowrap;
+            }
+            .enrollment-bar-divider {
+                display: block;
+                width: 1px;
+                height: 24px;
+                background: #ccc8bc;
+                flex-shrink: 0;
+            }
+            .enrollment-grades {
+                display: flex;
+                align-items: center;
+                gap: 1.8rem;
+                flex-wrap: wrap;
+            }
+            .enrollment-grade-item {
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+            }
+            .grade-tag {
+                font-family: "Noto Serif JP", serif;
+                font-size: 1.4rem;
+                letter-spacing: 0.1em;
+                color: #7a7460;
+                border: 1px solid #bbb8ac;
+                padding: 4px 14px;
+                white-space: nowrap;
+                line-height: 1.7;
+            }
+            .grade-status-full {
+                font-size: 1.4rem;
+                color: #7a7460;
+                letter-spacing: 0.08em;
+                font-weight: 500;
+            }
+            .grade-status-rare {
+                font-size: 1.4rem;
+                color: #7a7460;
+                letter-spacing: 0.08em;
+                font-weight: 500;
+            }
+            .enrollment-bar-text-divider {
+                display: block;
+                width: 1px;
+                height: 24px;
+                background: #ccc8bc;
+                flex-shrink: 0;
+            }
+            .enrollment-bar-note {
+                font-size: 1.35rem;
+                color: #9a9282;
+                letter-spacing: 0.04em;
+                line-height: 1.9;
+                flex: 1;
+                min-width: 200px;
+            }
+            .enrollment-bar-cta {
+                flex-shrink: 0;
+                font-family: "Noto Serif JP", serif;
+                font-size: 1.3rem;
+                letter-spacing: 0.14em;
+                color: #7a7460;
+                border: 1px solid #bbb09a;
+                padding: 0.8rem 2.4rem;
+                white-space: nowrap;
+                text-decoration: none;
+                transition: background 0.3s, color 0.3s;
+                display: inline-block;
+            }
+            .enrollment-bar-cta:hover {
+                background: #9e9779;
+                color: #fff;
+                border-color: #9e9779;
+            }
+        }
+
+        /* --- SP layout (768px以下) --- */
         @media screen and (max-width: 768px) {
             .enrollment-bar-inner {
-                padding: 1.4rem 0;
-                gap: 1.2rem;
+                padding: 1.8rem 0;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1.4rem;
             }
             .enrollment-bar-label {
                 display: none;
@@ -154,17 +168,77 @@
             .enrollment-bar-divider {
                 display: none;
             }
+            .enrollment-bar-left {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.2rem;
+                width: 100%;
+            }
+            .enrollment-grades {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 1.0rem 1.6rem;
+                width: 100%;
+            }
+            .enrollment-grade-item {
+                display: flex;
+                align-items: center;
+                gap: 0.7rem;
+            }
+            .grade-tag {
+                font-family: "Noto Serif JP", serif;
+                font-size: 1.3rem;
+                letter-spacing: 0.08em;
+                color: #7a7460;
+                border: 1px solid #bbb8ac;
+                padding: 4px 14px;
+                white-space: nowrap;
+                line-height: 1.8;
+            }
+            .grade-status-full {
+                font-size: 1.3rem;
+                color: #7a7460;
+                letter-spacing: 0.06em;
+                font-weight: 500;
+            }
+            .grade-status-rare {
+                font-size: 1.3rem;
+                color: #7a7460;
+                letter-spacing: 0.06em;
+                font-weight: 500;
+            }
             .enrollment-bar-text-divider {
                 display: none;
             }
             .enrollment-bar-note {
-                font-size: 1.05rem;
-                min-width: 0;
+                font-size: 1.15rem;
+                color: #9a9282;
+                letter-spacing: 0.03em;
+                line-height: 1.9;
                 width: 100%;
+                white-space: normal;
+                word-break: break-all;
             }
             .enrollment-bar-cta {
+                display: block;
                 width: 100%;
                 text-align: center;
+                font-family: "Noto Serif JP", serif;
+                font-size: 1.3rem;
+                letter-spacing: 0.14em;
+                color: #7a7460;
+                border: 1px solid #bbb09a;
+                padding: 1.0rem 1.8rem;
+                text-decoration: none;
+                transition: background 0.3s, color 0.3s;
+            }
+            .enrollment-bar-cta:hover {
+                background: #9e9779;
+                color: #fff;
+                border-color: #9e9779;
             }
         }
         /* ===== END ENROLLMENT NOTICE BAR ===== */
@@ -244,34 +318,35 @@
                                 <h2 class="serif">東大寺・洛星・同志社/立命館系列の難関中学合格への<br class="pc">難関受験特化コース</h2>
                                 <p class="text serif">難関合格は偏差値とにらめっこしていても生まれません。本当の意味での合格指導には、ひとりひとりの学習特性を見抜く力が必要です。その力は、最難関校への合格実績を積み重ねてきたプロ講師だからこそ持てるものです。elioは完全少人数制のクラス形式を採用しています。経験豊富なプロ講師がお子様一人ひとりと向き合い、その特性に合わせた丁寧な指導をご提供します。</p>
                             </div>
+
                             <!-- ===== ENROLLMENT NOTICE BAR ===== -->
                             <div class="enrollment-bar">
-                                <div class="enrollment-bar-inner">
-                                    <div class="enrollment-bar-left">
-                                        <span class="enrollment-bar-label">ENROLLMENT</span>
-                                        <div class="enrollment-bar-divider"></div>
-                                        <div class="enrollment-grades">
-                                            <div class="enrollment-grade-item">
-                                                <span class="grade-tag">小3</span>
-                                                <span class="grade-status-full">満席</span>
+                                <div class="wrap">
+                                    <div class="enrollment-bar-inner">
+                                        <div class="enrollment-bar-left">
+                                            <div class="enrollment-grades">
+                                                <div class="enrollment-grade-item">
+                                                    <span class="grade-tag">小3</span>
+                                                    <span class="grade-status-full">満席</span>
+                                                </div>
+                                                <div class="enrollment-grade-item">
+                                                    <span class="grade-tag">小4</span>
+                                                    <span class="grade-status-rare">空席あり</span>
+                                                </div>
+                                                <div class="enrollment-grade-item">
+                                                    <span class="grade-tag">小5</span>
+                                                    <span class="grade-status-full">満席</span>
+                                                </div>
+                                                <div class="enrollment-grade-item">
+                                                    <span class="grade-tag">小6</span>
+                                                    <span class="grade-status-full">満席</span>
+                                                </div>
                                             </div>
-                                            <div class="enrollment-grade-item">
-                                                <span class="grade-tag">小4</span>
-                                                <span class="grade-status-rare">空席あり</span>
-                                            </div>
-                                            <div class="enrollment-grade-item">
-                                                <span class="grade-tag">小5</span>
-                                                <span class="grade-status-full">満席</span>
-                                            </div>
-                                            <div class="enrollment-grade-item">
-                                                <span class="grade-tag">小6</span>
-                                                <span class="grade-status-full">満席</span>
-                                            </div>
+                                            <div class="enrollment-bar-text-divider"></div>
+                                            <p class="enrollment-bar-note">キャンセル待ちご希望の方はご面談が必須です。海外転向・転居等による空席は、待ち順にご案内します。</p>
                                         </div>
-                                        <div class="enrollment-bar-text-divider"></div>
-                                        <p class="enrollment-bar-note">キャンセル待ちご希望の方はご面談が必須です。海外転向・転居等による空席は、待ち順にご案内します。</p>
+                                        <a href="contact" class="enrollment-bar-cta">お問い合わせ</a>
                                     </div>
-                                    <a href="contact" class="enrollment-bar-cta">お問い合わせ</a>
                                 </div>
                             </div>
                             <!-- ===== END ENROLLMENT NOTICE BAR ===== -->
