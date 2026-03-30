@@ -76,7 +76,7 @@
         .anime.bottom-in { transform: translateY(30px); }
         .active { opacity: 1 !important; transform: none !important; }
 
-        /* PCレイアウト枠（不具合修正版） */
+        /* PCレイアウト枠 */
         @media screen and (min-width: 769px) {
             .sp { display: none !important; }
             .pc-frame { 
@@ -107,16 +107,25 @@
             color: #888;
         }
 
-        /* 講師紹介タイトルエリア（PC版余白修正） */
+        /* ===================================================
+           講師紹介ヒーローエリア
+           画像サイズ: 934×623px（縦横比 約3:2）
+           → PC: 高さ500px／background-size: cover で
+             横幅いっぱいに広げると上下がわずかにクロップされるが
+             3人全員の顔〜胸が収まる位置に background-position を調整
+           =================================================== */
         .mv-md { 
-            height: 320px;
-            background-color: #333;
-            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/teacher-three.jpg');
+            /* ---- 高さを増やして3人が収まるようにする ---- */
+            height: 500px;                          /* 320px → 500px */
+            background-color: #222;
+            background-image: linear-gradient(rgba(0,0,0,0.38), rgba(0,0,0,0.38)), url('img/teacher-three.jpg');
             background-size: cover;
-            background-position: center;
+            /* center top で画像の上端（頭部）を基準に表示 */
+            background-position: center top;
+            background-repeat: no-repeat;
             display: flex;
-            align-items: center;
-            padding: 0;
+            align-items: flex-end;                  /* テキストを下寄せにして人物と重ならないように */
+            padding: 0 0 4rem;
             border-top: none;
         }
         .mv-md .wrap { width: 100%; }
@@ -169,10 +178,14 @@
             .wrap { padding: 0 25px; }
 
             .mv-md { 
-                height: 180px; 
-                padding: 0 2.5rem; 
-                background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/teacher-three.jpg');
+                /* ---- モバイルも高さを増やして全員が入るよう調整 ---- */
+                height: 300px;                      /* 180px → 300px */
+                padding: 0 2.5rem 3rem;
+                background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('img/teacher-three.jpg');
+                background-size: cover;
+                background-position: center top;    /* 頭部基準で表示 */
                 border-top: none;
+                align-items: flex-end;
             }
             .mv-md .title-box .title-head { font-size: 1.4rem; color: #fff; margin-bottom: 0.5rem; padding-top: 0; }
             .mv-md .title-box .title-head:after { display: none; }
