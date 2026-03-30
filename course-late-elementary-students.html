@@ -43,12 +43,12 @@
         /* ===== ENROLLMENT NOTICE BAR ===== */
         .enrollment-bar {
             width: 100%;
-            background: #2a271f;
-            border: 1px solid #3d3928;
-            margin-bottom: 0;
+            background: #f7f4ee;
+            border-top: 1px solid #ddd9ce;
+            border-bottom: 1px solid #ddd9ce;
         }
         .enrollment-bar-inner {
-            padding: 1.3rem 2.8rem;
+            padding: 1.4rem 0;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -73,8 +73,8 @@
         }
         .enrollment-bar-divider {
             width: 1px;
-            height: 28px;
-            background: #4a4535;
+            height: 22px;
+            background: #ccc8bc;
             flex-shrink: 0;
         }
         .enrollment-grades {
@@ -92,35 +92,35 @@
             font-family: "Noto Serif JP", serif;
             font-size: 1.0rem;
             letter-spacing: 0.1em;
-            color: #9e9779;
-            border: 1px solid #6b6449;
+            color: #7a7460;
+            border: 1px solid #bbb8ac;
             padding: 2px 10px;
             white-space: nowrap;
             line-height: 1.6;
         }
         .grade-status-full {
             font-size: 1.05rem;
-            color: #c4a882;
-            letter-spacing: 0.1em;
+            color: #7a7460;
+            letter-spacing: 0.08em;
             font-weight: 500;
         }
         .grade-status-rare {
             font-size: 1.05rem;
-            color: #c4a882;
-            letter-spacing: 0.1em;
-            font-weight: 500;
+            color: #9e9779;
+            letter-spacing: 0.08em;
+            font-weight: 600;
         }
         .enrollment-bar-text-divider {
             width: 1px;
-            height: 20px;
-            background: #4a4535;
+            height: 22px;
+            background: #ccc8bc;
             flex-shrink: 0;
         }
         .enrollment-bar-note {
             font-size: 1.1rem;
-            color: #887f6a;
+            color: #9a9282;
             letter-spacing: 0.04em;
-            line-height: 1.8;
+            line-height: 1.9;
             flex: 1;
             min-width: 200px;
         }
@@ -129,8 +129,8 @@
             font-family: "Noto Serif JP", serif;
             font-size: 1.0rem;
             letter-spacing: 0.14em;
-            color: #9e9779;
-            border: 1px solid #6b6449;
+            color: #7a7460;
+            border: 1px solid #bbb09a;
             padding: 0.55rem 1.8rem;
             white-space: nowrap;
             text-decoration: none;
@@ -139,12 +139,13 @@
         }
         .enrollment-bar-cta:hover {
             background: #9e9779;
-            color: #1a1810;
+            color: #fff;
+            border-color: #9e9779;
         }
 
         @media screen and (max-width: 768px) {
             .enrollment-bar-inner {
-                padding: 1.2rem 2.5rem;
+                padding: 1.4rem 0;
                 gap: 1.2rem;
             }
             .enrollment-bar-label {
