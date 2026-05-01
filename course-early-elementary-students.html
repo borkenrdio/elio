@@ -145,7 +145,91 @@
         }
         .md-btn.plain:hover { background: #9e9779; color: #fff; border-color: #9e9779; }
         .md-btn.plain .btn-logo { width: 80px; margin-right: 2rem; }
+        
+/* ===== ENROLLMENT NOTICE BAR ===== */
+        .enrollment-bar {
+            margin: 4rem 0 8rem;
+            background: #fdfcf9;
+            border: 1px solid #e8e2d0;
+            border-radius: 4px;
+            padding: 3rem 0;
+        }
 
+        .enrollment-bar-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .enrollment-bar-body {
+            flex: 1;
+        }
+
+        .enrollment-grades {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .enrollment-grade-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .grade-tag {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #7a7460;
+        }
+
+        .grade-status-full,
+        .grade-status-rare {
+            display: inline-block;
+            padding: 0.2em 1em;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 2px;
+            font-family: "Noto Serif JP", serif;
+        }
+
+        .grade-status-full {
+            background: #b34242;
+            color: #fff;
+            border: 1px solid #b34242;
+        }
+
+        .grade-status-rare {
+            background: #fff;
+            color: #d68600;
+            border: 1px solid #d68600;
+        }
+
+        .enrollment-bar-note {
+            font-size: 1.3rem;
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .enrollment-bar-cta {
+            display: inline-block;
+            background: #7a7460;
+            color: #fff;
+            padding: 1.5rem 4rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            transition: 0.3s;
+        }
+
+        .enrollment-bar-cta:hover {
+            background: #9e9779;
+            opacity: 1;
+        }
+        
         .message-sec { padding: 10rem 0; background: #fafafa; border-top: 1px solid #eee; }
         .message-sec .flex-box { display: flex; gap: 8rem; align-items: center; }
         .message-sec .img-box { width: 40%; flex-shrink: 0; }
