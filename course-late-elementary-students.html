@@ -42,13 +42,96 @@
 
         /* ===== ENROLLMENT NOTICE BAR ===== */
         .enrollment-bar {
-            width: 100%;
-            background: #f7f4ee;
-            border-top: 1px solid #ddd9ce;
-            border-bottom: 1px solid #ddd9ce;
-            overflow: hidden;
-            margin-bottom: 0;
-        }
+    margin: 4rem 0 8rem;
+    background: #fdfcf9;
+    border: 1px solid #e8e2d0;
+    border-radius: 4px;
+    padding: 3rem 0;
+}
+
+.enrollment-bar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+}
+
+.enrollment-bar-body {
+    flex: 1;
+}
+
+.enrollment-grades {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.enrollment-grade-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.grade-tag {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #7a7460;
+}
+
+/* ステータスバッジ共通（ベタ塗り設定） */
+.grade-status-full,
+.grade-status-rare,
+.grade-status-enough {
+    display: inline-block;
+    padding: 0.2em 1em;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 2px;
+    font-family: "Noto Serif JP", serif;
+    color: #fff !important; /* 文字はすべて白 */
+}
+
+/* 満席（赤ベタ） */
+.grade-status-full {
+    background: #b34242;
+    border: 1px solid #b34242;
+}
+
+/* 残席わずか（オレンジベタ） */
+.grade-status-rare {
+    background: #d68600;
+    border: 1px solid #d68600;
+}
+
+/* 残席あり（緑ベタ） */
+.grade-status-enough {
+    background: #2e7d32;
+    border: 1px solid #2e7d32;
+}
+
+.enrollment-bar-note {
+    font-size: 1.3rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.enrollment-bar-cta {
+    display: inline-block;
+    background: #7a7460;
+    color: #fff;
+    padding: 1.5rem 4rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    transition: 0.3s;
+}
+
+.enrollment-bar-cta:hover {
+    background: #9e9779;
+    opacity: 1;
+}
 
         /* PC */
         @media screen and (min-width: 769px) {
@@ -196,6 +279,19 @@
                 color: #fff;
                 border-color: #9e9779;
             }
+            .enrollment-bar {
+        padding: 2.5rem 2rem;
+        margin: 4rem 0;
+    }
+    .enrollment-bar-inner {
+        flex-direction: column;
+        gap: 2.5rem;
+        align-items: flex-start;
+    }
+    .enrollment-bar-cta {
+        width: 100%;
+        text-align: center;
+    }
         }
         /* ===== END ENROLLMENT NOTICE BAR ===== */
 
