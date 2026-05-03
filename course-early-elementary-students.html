@@ -139,6 +139,69 @@
         .main-list h3 { font-size: 2.4rem; font-weight: 700; margin-bottom: 2rem; color: #111; position: relative; padding-left: 2rem; border-left: 4px solid #9e9779; line-height: 1.4; }
         .main-list .text { font-size: 1.5rem; color: #444; line-height: 2.4; }
 
+        .course-cards {
+    display: flex;
+    gap: 4rem;
+    width: 100%;
+    padding-top: 3rem;
+}
+.course-card {
+    flex: 1;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: box-shadow .3s;
+}
+.course-card:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+}
+.course-card-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+.course-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s;
+}
+.course-card:hover .course-card-img img {
+    transform: scale(1.05);
+}
+.course-card-body {
+    padding: 3rem;
+}
+.course-card-body h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #111;
+    padding-left: 1.5rem;
+    border-left: 4px solid #9e9779;
+    line-height: 1.4;
+}
+.course-card-body .text {
+    font-size: 1.45rem;
+    color: #444;
+    line-height: 2.2;
+    margin-bottom: 2rem;
+}
+
+/* SP対応 */
+@media screen and (max-width: 768px) {
+    .course-cards {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .course-card-body {
+        padding: 2rem;
+    }
+    .course-card-body h3 {
+        font-size: 1.9rem;
+    }
+}
+
         .md-btn.plain {
             display: inline-flex; align-items: center; background: #f9f9f9; border: 1px solid #ddd;
             padding: 2rem 3rem; margin-top: 3rem; font-size: 1.4rem; font-weight: 700; color: #333; transition: .3s;
