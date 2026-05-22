@@ -7,7 +7,7 @@
     
     <!-- SEO設定 -->
     <title>会員制難関受験専門塾エリオ（elio）公式サイト|難関突破、そして燃え尽きない頭脳の育成を。</title>
-    <meta name="description" content="会員制難関受験専門塾エリオ（elio）公式サイト。選抜された国内最高峰のプロフェッショナル講師が少人数制クラスで指導。">
+    <meta name="description" content="会員制難関受験専門塾エリオ（elio）公式サイト。選抜された国内最高峰のプロフェッショナル講師が少人数制クラスで直伝します。">
     <meta name="keywords" content="難関受験,塾,エリオ,elio,中学受験,大学受験,個別指導,会員制,京都">
     <link rel="canonical" href="https://elio-edu.com/">
     
@@ -46,7 +46,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     
     <style>
-        html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, main, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+        html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var {
             margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; box-sizing: border-box;
         }
 
@@ -138,7 +138,7 @@
         .news-list { flex-grow: 1; }
         .news-item { border-bottom: 1px solid #e0e0e0; padding: 12px 0; }
         .news-item:last-child { border-bottom: none; }
-        .news-item a { display: flex; align-items: center; transition: .3s; }
+        .news-item a { display: flex; align-items: center; transition: .3s; cursor: pointer; }
         .news-item .date { width: 100px; font-size: 1.3rem; color: #888; flex-shrink: 0; }
         .news-item .cat { background: #9e9779; color: #fff; font-size: 1rem; padding: 2px 10px; margin-right: 20px; flex-shrink: 0; }
         .news-item .txt { font-size: 1.4rem; color: #333; transition: .3s; }
@@ -178,6 +178,89 @@
         .policy-item .head { font-size: 1.8rem; margin-bottom: 15px; border-top: 1px solid #eee; padding-top: 15px; font-weight: 600; }
         .policy-item .no { color: #9e9779; margin-right: 10px; font-weight: 700; }
 
+        /* ポップアップモーダルスタイル */
+        .news-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+        .news-modal.open {
+            display: flex;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .news-modal-content {
+            background: #fff;
+            border-radius: 8px;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            animation: slideUp 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .news-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            width: 32px;
+            height: 32px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+            transition: .3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .news-modal-close:hover {
+            color: #111;
+        }
+        .news-modal-header {
+            margin-bottom: 20px;
+        }
+        .news-modal-date {
+            font-size: 1.2rem;
+            color: #888;
+            margin-bottom: 8px;
+        }
+        .news-modal-title {
+            font-size: 2rem;
+            color: #111;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        .news-modal-body {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            color: #333;
+        }
+        .news-modal-label {
+            display: inline-block;
+            background: #9e9779;
+            color: #fff;
+            font-size: 1rem;
+            padding: 4px 12px;
+            margin-bottom: 15px;
+            border-radius: 3px;
+        }
+
         @media screen and (max-width: 768px) {
             .pc { display: none !important; }
             .pc-frame { display: block; }
@@ -203,6 +286,18 @@
             .policy-item { display: flex; align-items: center; gap: 15px; text-align: left; }
             .policy-item .img-box { width: 30%; aspect-ratio: 1 / 1; margin-bottom: 0; flex-shrink: 0; border-radius: 4px; }
             .policy-item .head { width: 70%; border-top: none; padding-top: 0; margin-bottom: 0; font-size: 1.5rem; line-height: 1.4; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+
+            /* ポップアップのモバイル調整 */
+            .news-modal-content {
+                padding: 30px 20px;
+                max-width: 95%;
+            }
+            .news-modal-title {
+                font-size: 1.6rem;
+            }
+            .news-modal-body {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
@@ -287,7 +382,7 @@
                                 </div>
                                 <ul class="news-list">
                                     <li class="news-item">
-                                        <a href="#">
+                                        <a href="#" class="news-trigger" data-news-id="1">
                                             <span class="date lora">2026.02.01</span>
                                             <span class="cat noto">重要</span>
                                             <span class="txt">elio小学3・5・6年生のキャンセル待ちのご案内について</span>
@@ -313,7 +408,7 @@
                                     <div class="data">
                                         <span class="sub lora">EARLY ELEMENTARY</span>
                                         <h3 class="head serif">低学年コース（小１～小３）</h3>
-                                        <p class="text serif">難関中学受験へ向けて、試行錯誤しながら考え抜く力と50分の集中力、そして適切な学習習慣の確立を目指すコースです。</p>
+                                        <p class="text serif">難関中学受験へ向けて、試行錯誤しながら考え抜く力と50分の集中力、そして適切な学習習慣の確立を目指します。</p>
                                     </div>
                                 </a>
                                 <a href="course-late-elementary-students" class="course-item anime bottom-in wave2">
@@ -333,7 +428,7 @@
                                     <div class="data">
                                         <span class="sub lora">PERSONALIZED LEARNING</span>
                                         <h3 class="head serif">個別指導コース</h3>
-                                        <p class="text serif">プロ講師による個別指導。個々のニーズに合わせ、最難関中学校から公立中高一貫校まで、豊富な合格実績をもとにフルオーダーで指導内容を設計。</p>
+                                        <p class="text serif">プロ講師による個別指導。個々のニーズに合わせ、最難関中学校から公立中高一貫校まで、豊富な合格実績。</p>
                                     </div>
                                 </a>
                                 <a href="course-junior-and-high" class="course-item anime bottom-in wave2">
@@ -371,7 +466,7 @@
                                     <div class="data">
                                         <span class="label lora">CAREER EDUCATION</span>
                                         <h3 class="head serif">志望校合格を通過点とした<br>将来を見据えた教育</h3>
-                                        <p class="text">elioは少人数制にこだわります。一人ひとりの性格や能力を深く正確に把握し、志望校合格にとどまらず、その先の学びや成長まで見据えた指導を行います。</p>
+                                        <p class="text">elioは少人数制にこだわります。一人ひとりの性格や能力を深く正確に把握し、志望校合格にとどまらず、人生全体を支援します。</p>
                                     </div>
                                 </div>
                             </div>
@@ -384,7 +479,7 @@
                             <div class="sec-head ta-center">
                                 <span class="lora sub">EDUCATIONAL POLICY</span>
                                 <h2 class="serif main">難関突破、そして燃え尽きない<br>頭脳の育成を。</h2>
-                                <p class="desc noto anime bottom-in">志望校合格を通過点とした未来へのプランを、責任を持ってご家庭に提示するため、elioは会員制を導入しています。</p>
+                                <p class="desc noto anime bottom-in">志望校合格を通過点とした未来へのプランを、責任を持ってご家庭に提示するため、elioは会員制を採用しております。</p>
                             </div>
                             <div class="policy-list">
                                 <div class="policy-item">
@@ -418,23 +513,68 @@
         </div>
     </div>
 
+    <!-- ニュースモーダル -->
+    <div id="news-modal" class="news-modal">
+        <div class="news-modal-content">
+            <button class="news-modal-close" onclick="closeNewsModal()">&times;</button>
+            <div class="news-modal-header">
+                <div class="news-modal-date" id="modal-date"></div>
+                <span class="news-modal-label" id="modal-label"></span>
+                <h2 class="news-modal-title" id="modal-title"></h2>
+            </div>
+            <div class="news-modal-body" id="modal-body"></div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        async function loadPart(id, path) {
-            try {
-                const response = await fetch(path);
-                if (response.ok) {
-                    const html = await response.text();
-                    const el = document.getElementById(id);
-                    if (el) el.innerHTML = html;
-                }
-            } catch (e) {
-                console.error('パーツ読み込みエラー:', path);
+        // ニュースデータ
+        const newsData = {
+            1: {
+                date: '2026.02.01',
+                label: '重要',
+                title: 'elio小学3・5・6年生のキャンセル待ちのご案内について',
+                body: 'elio小学3・5・6年生のクラスは現在、定員に達しておりキャンセル待ちのご案内となっております。入塾をご希望されている方は、お電話またはお問い合わせフォームよりお気軽にご連絡ください。'
             }
+        };
+
+        // モーダルを開く関数
+        function openNewsModal(newsId) {
+            const news = newsData[newsId];
+            if (!news) return;
+
+            document.getElementById('modal-date').textContent = news.date;
+            document.getElementById('modal-label').textContent = news.label;
+            document.getElementById('modal-title').textContent = news.title;
+            document.getElementById('modal-body').textContent = news.body;
+
+            document.getElementById('news-modal').classList.add('open');
         }
 
-        window.addEventListener('DOMContentLoaded', () => {
-            // menu.htmlに一本化して読み込み
+        // モーダルを閉じる関数
+        function closeNewsModal() {
+            document.getElementById('news-modal').classList.remove('open');
+        }
+
+        // モーダルの背景クリックで閉じる
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('news-modal');
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeNewsModal();
+                }
+            });
+
+            // ニュース項目のクリックイベント
+            document.querySelectorAll('.news-trigger').forEach(trigger => {
+                trigger.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const newsId = trigger.dataset.newsId;
+                    openNewsModal(newsId);
+                });
+            });
+
+            // 既存の部分読み込みスクリプト
             loadPart('menu-placeholder', 'parts/menu.html');
             loadPart('cta-placeholder', 'parts/CTA.html');
             loadPart('footer-placeholder', 'parts/footer.html');
@@ -485,6 +625,20 @@
 
             document.querySelectorAll('.anime:not(.key)').forEach(el => observer.observe(el));
         });
+
+        // 既存の関数
+        async function loadPart(id, path) {
+            try {
+                const response = await fetch(path);
+                if (response.ok) {
+                    const html = await response.text();
+                    const el = document.getElementById(id);
+                    if (el) el.innerHTML = html;
+                }
+            } catch (e) {
+                console.error('パーツ読み込みエラー:', path);
+            }
+        }
 
         /* モバイルメニュー制御用関数 */
         function toggleMenu() {
