@@ -2,17 +2,12 @@
     /* 全体設定 */
     .cta-container {
         background: #fff;
-        /* 全体を明朝体に統一 */
         font-family: "Noto Serif JP", serif;
         font-weight: 600;
     }
-
-    /* 上部セクション（お問い合わせエリア） */
     .cta-upper {
         padding: 6rem 0 5rem;
     }
-
-    /* 左右の余白設定 */
     .cta-wrap {
         margin: 0 auto;
         max-width: 1160px;
@@ -20,15 +15,12 @@
         width: 100%;
         box-sizing: border-box;
     }
-
     .cta-main-row {
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 5rem;
     }
-
-    /* 左側：見出しと説明文 */
     .cta-title-col {
         flex: 1;
     }
@@ -59,14 +51,10 @@
         color: #555;
         line-height: 1.8;
     }
-
-    /* 右側：アクションエリア */
     .cta-action-col {
         width: 38rem;
         flex-shrink: 0;
     }
-    
-    /* 電話番号エリアをリンクとして調整 */
     .cta-tel-box {
         border: 1px solid #ddd;
         padding: 2.2rem 2.5rem;
@@ -82,7 +70,6 @@
         background: #f9f9f9;
         border-color: #bbb;
     }
-    
     .cta-tel-box svg {
         width: 24px;
         height: 24px;
@@ -106,7 +93,6 @@
         font-weight: 600;
         color: #666;
     }
-
     .cta-btn-red {
         background: #982020;
         color: #fff;
@@ -131,8 +117,6 @@
         width: 22px;
         height: 22px;
     }
-
-    /* 下部：4つの黒ボタン */
     .cta-lower {
         background: #f0f0f0;
         padding: 2rem 0;
@@ -168,8 +152,6 @@
         font-weight: 700;
         letter-spacing: 0.08em;
     }
-
-    /* レスポンシブ調整 */
     @media screen and (max-width: 1024px) {
         .cta-upper { padding: 4rem 0; }
         .cta-wrap { padding: 0 30px; }
@@ -178,15 +160,11 @@
         .cta-action-col { width: 100%; max-width: 500px; }
         .cta-nav-grid { grid-template-columns: repeat(2, 1fr); }
     }
-    
-    /* モバイル版拡大設定（スマホ表示） */
     @media screen and (max-width: 640px) {
         .cta-upper { padding: 5rem 0; }
         .cta-main-row { gap: 3.5rem; }
         .cta-title-col .jp { font-size: 2.2rem; }
         .cta-desc { font-size: 1.4rem; line-height: 1.6; }
-
-        /* 電話番号エリアを調整：1行に収まるサイズに微調整し、改行禁止 */
         .cta-tel-box { 
             padding: 2.5rem 1rem; 
             gap: 1.2rem; 
@@ -201,23 +179,19 @@
             width: auto;
         }
         .cta-tel-content .num { 
-            font-size: 2.8rem; /* 3.2remから少し縮小して1行に収めやすく */
+            font-size: 2.8rem;
             line-height: 1;
-            white-space: nowrap; /* 改行を禁止 */
+            white-space: nowrap;
         } 
         .cta-tel-content .info { 
             font-size: 1.3rem; 
             margin-top: 0;
             color: #888;
-            white-space: nowrap; /* 改行を禁止 */
+            white-space: nowrap;
         }
-        
-        /* お問い合わせボタンを拡大 */
         .cta-btn-red { padding: 2.5rem 2rem; }
         .cta-btn-red span { font-size: 1.8rem; } 
         .cta-btn-red svg { width: 24px; height: 24px; }
-
-        /* 下部ナビゲーションを大きく表示 */
         .cta-nav-grid { grid-template-columns: 1fr; gap: 10px; }
         .cta-nav-item { padding: 3rem 1.5rem; }
         .cta-nav-item span { font-size: 1.6rem; }
@@ -237,7 +211,6 @@
                     </p>
                 </div>
                 <div class="cta-action-col">
-                    <!-- 電話番号全体をタップ可能なリンク -->
                     <a href="tel:0752317711" class="cta-tel-box">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                         <div class="cta-tel-content">
@@ -245,7 +218,6 @@
                             <span class="info">窓口 [13:00〜20:00]</span>
                         </div>
                     </a>
-                    <!-- お問い合わせボタン -->
                     <a href="contact" class="cta-btn-red">
                         <span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
@@ -272,10 +244,10 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
                     <span>入会までの流れ</span>
                 </a>
-　　　　　　　　　<a href="access" class="cta-nav-item">
-    　　　　　　　　　<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M5 21V7l8-4v18"></path><path d="M19 21V11l-6-4"></path><line x1="9" y1="9" x2="9" y2="9.01"></line><line x1="9" y1="12" x2="9" y2="12.01"></line><line x1="9" y1="15" x2="9" y2="15.01"></line></svg>
-    　　　　　　　　　<span>教室案内</span>
-　　　　　　　　　</a>
+                <a href="access" class="cta-nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M5 21V7l8-4v18"></path><path d="M19 21V11l-6-4"></path><line x1="9" y1="9" x2="9" y2="9.01"></line><line x1="9" y1="12" x2="9" y2="12.01"></line><line x1="9" y1="15" x2="9" y2="15.01"></line></svg>
+                    <span>教室案内</span>
+                </a>
                 <a href="question" class="cta-nav-item">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                     <span>よくある質問</span>
