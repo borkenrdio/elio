@@ -288,9 +288,13 @@
             .pc-frame-right { width: 100%; }
             /* モバイル時に枠を消さない（幅だけ0にする） */
             .pc-frame-left { width: 0; height: 0; display: block; overflow: visible; position: absolute; top: 0; left: 0; }
+            #top-mv { height: calc(86vh - 74px); height: clamp(430px, calc(86svh - 74px), 560px); }
+            .lay-content { padding-bottom: 5vh; }
             section.sec { padding: 60px 0; }
-            .slide-main { font-size: 2.8rem; }
-            .slide-sub { font-size: 1.6rem; }
+            .slide-main { font-size: 2.6rem; margin-bottom: 0.8rem; line-height: 1.15; }
+            .slide-sub { font-size: 1.5rem; margin-bottom: 1.8rem; line-height: 1.45; }
+            .swiper-gauge { margin-bottom: 1.1rem; }
+            .md-btn { padding: 1.1rem 2.2rem; }
             .course-list, .point-list { grid-template-columns: 1fr; }
             .sec-head .main { font-size: 2.4rem; }
 
