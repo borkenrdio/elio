@@ -91,6 +91,18 @@
         .point-list .text { font-size: 1.45rem; color: #555; line-height: 2; }
         .md-btn.b-line { display: inline-flex; border: 1px solid #111; padding: 1.5rem 3rem; font-size: 1.4rem; font-weight: 700; transition: .3s; margin-top: 3rem; width: fit-content; text-decoration: none; color: #111; }
         .md-btn.b-line:hover { background: #111; color: #fff; }
+        .lecture-sec { padding: 10rem 0; background: #fff; border-top: 1px solid #eee; }
+        .lecture-sec .title-head { font-size: 1.4rem; color: #9e9779; margin-bottom: 1.5rem; font-weight: 700; display: block; text-align: center; letter-spacing: 0.1em; }
+        .lecture-sec h2 { font-size: 3rem; margin-bottom: 2rem; text-align: center; font-weight: 600; }
+        .lecture-sec .lead { font-size: 1.5rem; color: #555; line-height: 2.2; text-align: center; margin-bottom: 6rem; }
+        .lecture-item { display: flex; gap: 6rem; align-items: center; }
+        .lecture-item .img-box { width: 45%; flex-shrink: 0; box-shadow: 0 20px 40px rgba(0,0,0,0.05); overflow: hidden; border-radius: 4px; }
+        .lecture-item .img-box img { width: 100%; transition: 1s; }
+        .lecture-item:hover .img-box img { transform: scale(1.05); }
+        .lecture-item .text-box { flex-grow: 1; }
+        .lecture-item .tag { display: inline-block; font-size: 1.2rem; color: #9e9779; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 1.5rem; }
+        .lecture-item h3 { font-size: 2.4rem; font-weight: 700; margin-bottom: 2rem; color: #111; padding-left: 2rem; border-left: 4px solid #9e9779; line-height: 1.4; }
+        .lecture-item .text { font-size: 1.5rem; color: #444; line-height: 2.4; text-align: justify; }
         .message-sec { padding: 10rem 0; background: #fff; border-top: 1px solid #eee; }
         .message-sec .flex-box { display: flex; gap: 8rem; align-items: center; }
         .message-sec .img-box { width: 40%; flex-shrink: 0; }
@@ -111,6 +123,12 @@
             .main-list li, .main-list li:nth-child(even) { flex-direction: column; gap: 3rem; padding: 6rem 0; }
             .main-list .img-box { width: 100%; }
             .point-list { grid-template-columns: 1fr; gap: 2.5rem; }
+            .lecture-sec { padding: 6rem 0; }
+            .lecture-sec h2 { font-size: 2.2rem; }
+            .lecture-sec .lead { font-size: 1.4rem; text-align: left; margin-bottom: 3rem; }
+            .lecture-item { flex-direction: column; gap: 3rem; }
+            .lecture-item .img-box { width: 100%; }
+            .lecture-item h3 { font-size: 2rem; }
             .message-sec .flex-box { flex-direction: column; gap: 4rem; }
             .message-sec .img-box { width: 85%; margin: 0 auto; }
             .message-sec h2 { font-size: 2.2rem; text-align: center; }
@@ -176,6 +194,24 @@
                                         <p class="text">近年増加する英語選択入試などに、専門的な指導体制で対応。語学力だけでなく、入試形式に特化した対策カリキュラムを個別に設計します。多様な進路においても、お子様とご家庭の望む未来へ向けフルオーダーで伴走します。</p>
                                     </li>
                                 </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="lecture-sec">
+                        <div class="wrap">
+                            <div class="anime active bottom-in">
+                                <span class="title-head lora">LECTURE</span>
+                                <h2 class="serif">個別指導講座</h2>
+                                <p class="lead serif">個別指導コースの中に、目的に特化した講座を設けています。</p>
+                                <div class="lecture-item">
+                                    <div class="img-box"><img src="img/kokugo-kakomon.jpg" alt="志望校別の国語入試分析と過去問演習の様子"></div>
+                                    <div class="text-box">
+                                        <p class="tag serif">中学受験・小6｜国語</p>
+                                        <h3 class="serif">国語過去問個別指導講座</h3>
+                                        <p class="text serif">志望校の過去問を解く様子を講師が隣で観察し、一人ひとりの「解き方のクセ」を分析する国語特化の対面個別指導です。志望校が求める読み方・答え方に合わせて解き方を組み立て直し、文章理解を確実な得点へと変えていきます。</p>
+                                        <a href="/kokugo-kakomon/" class="md-btn b-line serif">講座の詳細を見る</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </section>
