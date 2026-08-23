@@ -202,9 +202,11 @@
             visibility: visible;
             display: flex;
             background: #fff;
+            /* 閉じている間は右端が画面左端(x=0)に重なり、境界線が1本残ってしまうため消す */
+            border-right: 0;
         }
 
-        body.is-active .l-side { transform: translateX(0); box-shadow: 5px 0 20px rgba(0,0,0,0.15); }
+        body.is-active .l-side { transform: translateX(0); border-right: 1px solid #dadada; box-shadow: 5px 0 20px rgba(0,0,0,0.15); }
 
         .l-side .logo-unit.pc { display: none; }
 
