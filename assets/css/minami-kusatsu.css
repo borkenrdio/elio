@@ -1,0 +1,1803 @@
+@charset "UTF-8";
+
+:root {
+    --mk-red: #982020;
+    --mk-red-dark: #761719;
+    --mk-gold: #a48c48;
+    --mk-ink: #181816;
+    --mk-muted: #6e6b63;
+    --mk-line: #ddd8cb;
+    --mk-ivory: #f7f5ef;
+    --mk-white: #fff;
+}
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+img,
+ul,
+li,
+dl,
+dt,
+dd,
+section,
+article,
+aside,
+main,
+footer,
+nav {
+    box-sizing: border-box;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--mk-white);
+    color: var(--mk-ink);
+    font-family: "Noto Serif JP", serif;
+    font-size: 1.6rem;
+    line-height: 1.9;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+.lora {
+    font-family: "Lora", serif;
+}
+
+.noto {
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.mk-frame {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.mk-frame-menu {
+    background: #fff;
+    flex: 0 0 18rem;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.mk-frame-content {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: calc(100% - 18rem);
+}
+
+.mk-wrap {
+    margin: 0 auto;
+    max-width: 1180px;
+    padding: 0 6rem;
+    width: 100%;
+}
+
+.mk-wrap-narrow {
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 0 6rem;
+    width: 100%;
+}
+
+.mk-section {
+    padding: 11rem 0;
+}
+
+.mk-section-ivory {
+    background: var(--mk-ivory);
+}
+
+.mk-section-red {
+    background: var(--mk-red);
+    color: #fff;
+}
+
+.mk-section-head {
+    margin-bottom: 6rem;
+}
+
+.mk-section-head-center {
+    text-align: center;
+}
+
+.mk-kicker {
+    color: var(--mk-gold);
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: .28em;
+    margin-bottom: 1.4rem;
+    text-transform: uppercase;
+}
+
+.mk-section-title {
+    font-size: 3.6rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    line-height: 1.55;
+}
+
+.mk-section-lead {
+    color: var(--mk-muted);
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.5rem;
+    line-height: 2.1;
+    margin-top: 2rem;
+    max-width: 720px;
+}
+
+.mk-section-head-center .mk-section-lead {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mk-hero {
+    background-image: url('../../img/student-4.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: clamp(620px, calc(100svh - 48px), 820px);
+    overflow: hidden;
+    position: relative;
+}
+
+.mk-hero::before {
+    background: rgba(247, 245, 239, .72);
+    content: "";
+    inset: 0;
+    position: absolute;
+}
+
+.mk-hero-inner {
+    align-items: center;
+    display: flex;
+    flex: 1 1 auto;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+.mk-hero-copy {
+    max-width: 720px;
+}
+
+.mk-hero-brand {
+    align-items: center;
+    color: var(--mk-red);
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: 700;
+    gap: 1.6rem;
+    letter-spacing: .26em;
+    margin-bottom: 3rem;
+}
+
+.mk-hero-brand::before {
+    background: var(--mk-red);
+    content: "";
+    height: 1px;
+    width: 42px;
+}
+
+.mk-hero-open {
+    align-items: baseline;
+    color: var(--mk-red);
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.mk-hero-open .year {
+    font-size: 2.7rem;
+    font-weight: 600;
+    letter-spacing: .05em;
+}
+
+.mk-hero-open .label {
+    border-left: 1px solid var(--mk-red);
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    padding-left: 1.2rem;
+}
+
+.mk-hero h1 {
+    color: var(--mk-red);
+    font-size: 6.8rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    line-height: 1.28;
+    margin-bottom: 2.5rem;
+    text-shadow: 0 1px 16px rgba(255, 255, 255, .8);
+}
+
+.mk-hero-lead {
+    color: #2a2925;
+    font-size: 1.9rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    line-height: 1.9;
+    margin-bottom: 3.6rem;
+}
+
+.mk-hero-actions,
+.mk-access-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+}
+
+.mk-button {
+    align-items: center;
+    border: 1px solid var(--mk-ink);
+    display: inline-flex;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    justify-content: space-between;
+    letter-spacing: .08em;
+    min-height: 58px;
+    min-width: 220px;
+    padding: 1.5rem 2.2rem;
+    transition: background-color .25s, border-color .25s, color .25s;
+}
+
+.mk-button::after {
+    content: "→";
+    font-family: sans-serif;
+    font-size: 1.7rem;
+    margin-left: 2.4rem;
+}
+
+.mk-button-primary {
+    background: var(--mk-red);
+    border-color: var(--mk-red);
+    color: #fff;
+}
+
+.mk-button-primary:hover,
+.mk-button-primary:focus-visible {
+    background: var(--mk-red-dark);
+    border-color: var(--mk-red-dark);
+}
+
+.mk-button-secondary {
+    background: rgba(255, 255, 255, .82);
+}
+
+.mk-button-secondary:hover,
+.mk-button-secondary:focus-visible {
+    background: var(--mk-ink);
+    color: #fff;
+}
+
+.mk-hero-facts {
+    background: rgba(255, 255, 255, .92);
+    border-top: 1px solid var(--mk-line);
+    display: grid;
+    flex: 0 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+    width: 100%;
+    z-index: 2;
+}
+
+.mk-hero-fact {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 88px;
+    padding: 1.4rem 2rem;
+    text-align: center;
+}
+
+.mk-hero-fact + .mk-hero-fact {
+    border-left: 1px solid var(--mk-line);
+}
+
+.mk-hero-fact .label {
+    color: var(--mk-muted);
+    display: block;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1rem;
+    letter-spacing: .16em;
+    margin-bottom: .4rem;
+}
+
+.mk-hero-fact strong {
+    color: var(--mk-red);
+    font-size: 1.65rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+}
+
+.mk-intro-head {
+    text-align: center;
+}
+
+.mk-intro-title {
+    color: var(--mk-red);
+    font-size: 4.2rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    line-height: 1.65;
+}
+
+/* --------------------------------------------------------------------------
+   教育方針のサブメッセージ。
+   本文に埋もれないよう、金の缫線と貝色の地で独立させる。
+   -------------------------------------------------------------------------- */
+.mk-statement {
+    background: var(--mk-ivory);
+    border-bottom: 1px solid var(--mk-gold);
+    border-top: 1px solid var(--mk-gold);
+    margin: 6rem auto 0;
+    max-width: 92rem;
+    padding: 6rem 4rem;
+    text-align: center;
+}
+
+.mk-statement-lead {
+    font-size: 2.6rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    line-height: 1.95;
+}
+
+.mk-statement-lead em,
+.mk-statement-lead em .mk-phrase {
+    color: var(--mk-red);
+    font-style: normal;
+    text-decoration: underline;
+    text-decoration-color: rgba(164, 140, 72, .55);
+    text-decoration-thickness: 1px;
+    text-underline-offset: .7rem;
+}
+
+.mk-statement-body {
+    color: #403e38;
+    font-size: 1.75rem;
+    letter-spacing: .04em;
+    line-height: 2.2;
+    margin-top: 3rem;
+}
+
+
+.mk-fit-grid {
+    align-items: stretch;
+    display: grid;
+    grid-template-columns: .66fr 1.34fr;
+}
+
+.mk-fit-photo {
+    min-height: 440px;
+    min-width: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.mk-fit-photo img {
+    height: 100%;
+    object-fit: cover;
+    object-position: 42% center;
+    width: 100%;
+}
+
+.mk-fit-content {
+    align-items: center;
+    background: var(--mk-red);
+    color: #fff;
+    display: flex;
+    padding: 6rem 6.5rem;
+}
+
+.mk-fit-content .mk-kicker,
+.mk-section-red .mk-kicker {
+    color: #e1ce8a;
+}
+
+.mk-fit-title {
+    font-size: 3.2rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    line-height: 1.65;
+    margin-bottom: 3.2rem;
+}
+
+.mk-fit-list li {
+    border-top: 1px solid rgba(255, 255, 255, .22);
+    font-size: 1.7rem;
+    letter-spacing: .05em;
+    line-height: 1.75;
+    padding: 1.7rem 0 1.7rem 4rem;
+    position: relative;
+}
+
+.mk-fit-list li:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, .22);
+}
+
+.mk-fit-list li::before {
+    color: #d7c582;
+    content: "✓";
+    font-family: sans-serif;
+    font-size: 1.8rem;
+    left: .5rem;
+    position: absolute;
+    top: 1.7rem;
+}
+
+.mk-approach-list {
+    border-top: 1px solid var(--mk-line);
+}
+
+.mk-approach-item {
+    align-items: center;
+    border-bottom: 1px solid var(--mk-line);
+    display: grid;
+    gap: 6rem;
+    grid-template-columns: 1fr 1fr;
+    padding: 5rem 0;
+}
+
+.mk-approach-item:nth-child(even) .mk-approach-image {
+    order: 2;
+}
+
+.mk-approach-image {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+}
+
+.mk-approach-image img {
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s ease;
+    width: 100%;
+}
+
+.mk-approach-item:hover .mk-approach-image img {
+    transform: scale(1.025);
+}
+
+.mk-approach-label {
+    align-items: baseline;
+    color: var(--mk-gold);
+    display: flex;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    gap: 1.4rem;
+    letter-spacing: .14em;
+    margin-bottom: 1.4rem;
+}
+
+.mk-approach-label .number {
+    color: var(--mk-red);
+    font-family: "Lora", serif;
+    font-size: 3.2rem;
+    font-weight: 500;
+}
+
+.mk-approach-title {
+    font-size: 2.7rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    line-height: 1.55;
+    margin-bottom: 1.8rem;
+}
+
+.mk-approach-text {
+    color: var(--mk-muted);
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.45rem;
+    line-height: 2.05;
+}
+
+.mk-teacher-grid {
+    display: grid;
+    gap: 2.4rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.mk-teacher {
+    background: #fff;
+    border: 1px solid var(--mk-line);
+    display: grid;
+    grid-template-columns: 36% 64%;
+    min-height: 310px;
+}
+
+.mk-teacher-photo {
+    overflow: hidden;
+}
+
+.mk-teacher-photo img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    width: 100%;
+}
+
+.mk-teacher-data {
+    padding: 3.4rem 3rem;
+}
+
+.mk-teacher-role {
+    color: var(--mk-red);
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+}
+
+.mk-teacher-name {
+    font-size: 2.4rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    margin-bottom: 1.5rem;
+}
+
+.mk-teacher-subject {
+    color: var(--mk-gold);
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-left: 1rem;
+}
+
+.mk-teacher-text {
+    color: var(--mk-muted);
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.95;
+}
+
+.mk-results {
+    background: var(--mk-red);
+    color: #fff;
+    padding: 8rem 0 7rem;
+}
+
+.mk-results .mk-kicker {
+    color: #e1ce8a;
+}
+
+.mk-results-head {
+    text-align: center;
+}
+
+.mk-results-title {
+    align-items: center;
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.mk-results-title-text {
+    font-size: 4.2rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    line-height: 1.5;
+}
+
+/* チラシの意匠に合わせた月桂樹。右側は反転させる。 */
+.mk-laurel {
+    color: #e1ce8a;
+    flex-shrink: 0;
+    height: 9.5rem;
+    width: 5.4rem;
+}
+
+.mk-results-title .mk-laurel:last-child {
+    transform: scaleX(-1);
+}
+
+.mk-results-lead {
+    font-size: 1.6rem;
+    letter-spacing: .04em;
+    margin-top: 2rem;
+    opacity: .92;
+}
+
+/* ---- 学校リスト面（貝色） ---- */
+.mk-results-lists {
+    background: var(--mk-ivory);
+    padding: 7rem 0 8rem;
+}
+
+.mk-results-block + .mk-results-block {
+    margin-top: 6rem;
+}
+
+.mk-results-block-title {
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.mk-results-block-title span {
+    color: var(--mk-red);
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    white-space: nowrap;
+}
+
+.mk-results-block-title::before,
+.mk-results-block-title::after {
+    background: var(--mk-gold);
+    content: "";
+    height: 1px;
+    max-width: 9rem;
+    width: 100%;
+}
+
+.mk-school-panel {
+    background: #fff;
+    border: 1px solid var(--mk-line);
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+}
+
+.mk-school-panel-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.mk-school-group {
+    padding: 3.5rem 3rem 3.8rem;
+    text-align: center;
+}
+
+.mk-school-group + .mk-school-group {
+    border-left: 1px solid var(--mk-line);
+}
+
+.mk-school-tag {
+    background: var(--mk-red);
+    color: #fff;
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    margin-bottom: 2.4rem;
+    padding: .7rem 2.4rem;
+}
+
+.mk-school-list {
+    list-style: none;
+    text-align: left;
+}
+
+.mk-school-list li {
+    font-size: 1.6rem;
+    letter-spacing: .04em;
+    line-height: 2.1;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.mk-school-list li::before {
+    color: #8a7338;
+    content: "・";
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.mk-cols-3 {
+    column-count: 3;
+    column-gap: 2rem;
+}
+
+.mk-cols-2 {
+    column-count: 2;
+    column-gap: 2rem;
+}
+
+.mk-results-footnote {
+    color: var(--mk-muted);
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.15rem;
+    margin-top: 2.5rem;
+    text-align: right;
+}
+
+.mk-admission-table {
+    border-top: 1px solid var(--mk-line);
+}
+
+.mk-admission-table dl {
+    border-bottom: 1px solid var(--mk-line);
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 12rem 1fr;
+    padding: 2.2rem 0;
+}
+
+.mk-admission-table dt {
+    color: var(--mk-red);
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+}
+
+.mk-admission-table dd {
+    font-size: 1.7rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+}
+
+.mk-admission-table .note {
+    color: var(--mk-muted);
+    display: block;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    margin-top: .5rem;
+}
+
+.mk-flow {
+    background: var(--mk-ivory);
+    border-left: 3px solid var(--mk-gold);
+    margin-top: 5rem;
+    padding: 3rem 3.5rem;
+}
+
+.mk-flow p {
+    max-width: 40em;
+}
+
+/* --------------------------------------------------------------------------
+   開校初年度のコアメンバー募集。
+   この節の主役なので、人数を押し出した強い枠として扱う。
+   -------------------------------------------------------------------------- */
+.mk-core {
+    align-items: center;
+    background: var(--mk-ivory);
+    border: 1px solid var(--mk-gold);
+    display: grid;
+    gap: 5rem;
+    grid-template-columns: auto 1fr;
+    padding: 5rem 5.5rem;
+}
+
+.mk-core-figure {
+    border-right: 1px solid var(--mk-line);
+    padding-right: 5rem;
+    text-align: center;
+}
+
+.mk-core-figure .small {
+    color: var(--mk-red);
+    display: block;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    margin-bottom: .8rem;
+}
+
+.mk-core-figure strong {
+    color: var(--mk-red);
+    display: block;
+    font-family: "Lora", serif;
+    font-size: 7.6rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1;
+}
+
+.mk-core-figure .unit {
+    font-family: "Noto Serif JP", serif;
+    font-size: 2.6rem;
+    margin-left: .4rem;
+}
+
+.mk-core-figure .caption {
+    color: var(--mk-muted);
+    display: block;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.25rem;
+    margin-top: 1.4rem;
+    white-space: nowrap;
+}
+
+.mk-core-body p {
+    font-size: 1.6rem;
+    line-height: 2.1;
+    text-wrap: pretty;
+    word-break: auto-phrase;
+}
+
+.mk-core-body p + p {
+    margin-top: 1.6rem;
+}
+
+/* 募集要項はコアメンバーの下に置く補足情報 */
+.mk-admission-block {
+    margin-top: 5.5rem;
+}
+
+.mk-sub-title {
+    font-size: 2.1rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    margin-bottom: 2rem;
+}
+
+/* ご入会までの流れ（4ステップ） */
+.mk-flow-steps {
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    list-style: none;
+    margin-top: 2.5rem;
+}
+
+.mk-flow-steps li {
+    border-top: 2px solid var(--mk-gold);
+    padding-top: 1.8rem;
+}
+
+.mk-flow-steps .step {
+    color: var(--mk-gold);
+    display: block;
+    font-family: "Lora", serif;
+    font-size: 1.1rem;
+    letter-spacing: .14em;
+    margin-bottom: .8rem;
+}
+
+.mk-flow-steps h4 {
+    font-size: 1.9rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    margin-bottom: 1rem;
+}
+
+.mk-flow-steps p {
+    color: #403e38;
+    font-size: 1.4rem;
+    line-height: 1.95;
+    text-wrap: pretty;
+    word-break: auto-phrase;
+}
+
+.mk-flow-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    margin-bottom: 1rem;
+}
+
+.mk-flow p {
+    color: var(--mk-muted);
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.9;
+}
+
+.mk-access-layout {
+    display: grid;
+    gap: 6rem;
+    grid-template-columns: .78fr 1.22fr;
+}
+
+/* fr トラックが子要素の自動最小幅で押し広げられないようにする。 */
+.mk-access-data,
+.mk-access-map {
+    min-width: 0;
+}
+
+.mk-access-data h2 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+}
+
+.mk-access-data dl {
+    border-top: 1px solid rgba(255, 255, 255, .28);
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 8rem 1fr;
+    padding: 1.8rem 0;
+}
+
+.mk-access-data dl:last-of-type {
+    border-bottom: 1px solid rgba(255, 255, 255, .28);
+    margin-bottom: 3rem;
+}
+
+.mk-access-data dt {
+    color: #d7c582;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+}
+
+.mk-access-data dd {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.8;
+}
+
+.mk-access-data dd strong {
+    font-family: "Noto Serif JP", serif;
+    font-size: 1.8rem;
+}
+
+/* グリッドの stretch で行高さに引き伸ばされると、aspect-ratio が
+   その高さから幅を逆算してカラム幅を超える。幅基準に固定する。 */
+.mk-access-map {
+    align-self: start;
+    aspect-ratio: 4 / 3;
+    background: #fff;
+    min-height: 420px;
+    width: 100%;
+}
+
+.mk-access-map iframe {
+    border: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.mk-section-red .mk-button-secondary {
+    background: transparent;
+    border-color: rgba(255, 255, 255, .65);
+    color: #fff;
+}
+
+.mk-section-red .mk-button-secondary:hover,
+.mk-section-red .mk-button-secondary:focus-visible {
+    background: #fff;
+    color: var(--mk-red);
+}
+
+.mk-consultation {
+    background-image: url('../../img/teach-math-2.jpg');
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    padding: 10rem 0;
+    position: relative;
+}
+
+.mk-consultation::before {
+    background: rgba(20, 20, 18, .76);
+    content: "";
+    inset: 0;
+    position: absolute;
+}
+
+.mk-consultation-inner {
+    align-items: center;
+    display: grid;
+    gap: 6rem;
+    grid-template-columns: 1fr auto;
+    position: relative;
+}
+
+.mk-consultation .mk-kicker {
+    color: #e1ce8a;
+}
+
+.mk-consultation h2 {
+    font-size: 3.8rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.mk-consultation p {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.9;
+    opacity: .86;
+}
+
+.mk-consultation-actions {
+    display: grid;
+    gap: 1rem;
+    width: 340px;
+}
+
+.mk-consultation-actions .mk-button {
+    width: 100%;
+}
+
+.mk-tel {
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, .65);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 66px;
+    padding: 1.4rem 2rem;
+}
+
+.mk-tel .hours {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.05rem;
+    letter-spacing: .04em;
+    margin-top: .5rem;
+    opacity: .8;
+}
+
+.mk-tel .label {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1rem;
+    margin-bottom: .4rem;
+    opacity: .75;
+}
+
+.mk-tel .number {
+    font-family: "Lora", serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+}
+
+.mk-breadcrumb {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    color: var(--mk-muted);
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.05rem;
+    padding: 1.2rem 0;
+}
+
+.mk-breadcrumb a:hover {
+    color: var(--mk-red);
+}
+
+.mk-breadcrumb span {
+    margin: 0 .8rem;
+}
+
+.mk-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.mk-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   本文中のインラインCTA。
+   ページが長いため、理解が進んだ位置に接点を置く。
+   セクションと竞合しないよう、高さを抑えた帯として扱う。
+   -------------------------------------------------------------------------- */
+.mk-inline-cta {
+    background: var(--mk-ivory);
+    border-bottom: 1px solid var(--mk-line);
+    border-top: 1px solid var(--mk-line);
+    padding: 5rem 0;
+}
+
+.mk-inline-cta-inner {
+    align-items: center;
+    display: grid;
+    gap: 5rem;
+    grid-template-columns: 1fr auto;
+}
+
+.mk-inline-cta-title {
+    font-size: 2.6rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+}
+
+.mk-inline-cta-text {
+    color: #403e38;
+    font-size: 1.5rem;
+    line-height: 2;
+    text-wrap: pretty;
+}
+
+.mk-inline-cta-actions {
+    align-items: center;
+    display: flex;
+    gap: 2.5rem;
+}
+
+.mk-inline-tel {
+    border-left: 1px solid var(--mk-line);
+    padding-left: 2.5rem;
+}
+
+.mk-inline-tel .number {
+    color: var(--mk-ink);
+    display: block;
+    font-family: "Lora", serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    line-height: 1.2;
+}
+
+.mk-inline-tel .hours {
+    color: var(--mk-muted);
+    display: block;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1.05rem;
+    letter-spacing: .04em;
+    margin-top: .4rem;
+}
+
+.mk-inline-tel:hover .number,
+.mk-inline-tel:focus-visible .number {
+    color: var(--mk-red);
+}
+
+/* --------------------------------------------------------------------------
+   日本語の改行制御
+   見出し・リードなど一目で読まれるテキストは、文節を inline-block で
+   包んで語中での分割を防ぐ（全ブラウザで有効）。
+   本文は auto-phrase 対応ブラウザでのみ文節折り返しになる。
+   -------------------------------------------------------------------------- */
+.mk-phrase {
+    display: inline-block;
+}
+
+/* 短い表示テキストは行長を揃える。未対応ブラウザでは無視されるだけ。 */
+.mk-hero-lead,
+.mk-intro-title,
+.mk-statement-lead,
+.mk-statement-body,
+.mk-fit-title,
+.mk-section-title,
+.mk-section-lead,
+.mk-results-title,
+.mk-approach-title,
+.mk-consultation-inner p {
+    text-wrap: balance;
+}
+
+body {
+    line-break: strict;
+}
+
+.mk-approach-text,
+.mk-teacher-text,
+.mk-flow p,
+.mk-admission-table dd,
+.mk-access-data dd,
+.mk-core-body p {
+    word-break: auto-phrase;
+}
+
+/* 最終行が1文節だけ取り残されるのを避ける。 */
+.mk-approach-text,
+.mk-teacher-text,
+.mk-flow p {
+    text-wrap: pretty;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .mk-reveal,
+    .mk-approach-image img {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   中間幅では緑パネルの折り返しが増えて帯が高くなるため、
+   写真列の比率を戻して細長い帯にならないようにする。
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 1280px) {
+    .mk-fit-grid {
+        grid-template-columns: .85fr 1.15fr;
+    }
+
+    .mk-fit-content {
+        padding: 5.5rem 5rem;
+    }
+
+    .mk-fit-title {
+        font-size: 2.9rem;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .mk-wrap,
+    .mk-wrap-narrow {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+    .mk-hero h1 {
+        font-size: 5.8rem;
+    }
+
+    .mk-fit-content {
+        padding: 5rem;
+    }
+
+    .mk-flow-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mk-inline-cta-inner {
+        gap: 3.5rem;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .mk-teacher {
+        grid-template-columns: 38% 62%;
+    }
+
+    .mk-teacher-data {
+        padding: 2.8rem 2.4rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   これ以下の幅では緑パネルの高さに写真が引き伸ばされ、
+   縦に細長い帯になってしまう。積み上げて横長で見せる。
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 1000px) {
+    .mk-fit-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .mk-fit-photo {
+        aspect-ratio: 16 / 9;
+        min-height: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding-top: 74px;
+    }
+
+    .mk-frame {
+        display: block;
+    }
+
+    .mk-frame-menu {
+        height: 0;
+        left: 0;
+        overflow: visible;
+        position: absolute;
+        top: 0;
+        width: 0;
+    }
+
+    .mk-frame-content {
+        width: 100%;
+    }
+
+    .mk-wrap,
+    .mk-wrap-narrow {
+        padding-left: 2.4rem;
+        padding-right: 2.4rem;
+    }
+
+    .mk-section {
+        padding: 7.5rem 0;
+    }
+
+    .mk-section-head {
+        margin-bottom: 4rem;
+    }
+
+    .mk-section-title {
+        font-size: 2.7rem;
+        line-height: 1.6;
+    }
+
+    .mk-section-lead {
+        font-size: 1.35rem;
+        line-height: 2;
+    }
+
+    .mk-hero {
+        background-position: 58% center;
+        min-height: clamp(520px, calc(100svh - 126px), 700px);
+    }
+
+    .mk-hero::before {
+        background: rgba(247, 245, 239, .79);
+    }
+
+    .mk-hero-brand {
+        font-size: 1rem;
+        letter-spacing: .18em;
+        margin-bottom: 2rem;
+    }
+
+    .mk-hero-open {
+        margin-bottom: 1.5rem;
+    }
+
+    .mk-hero-open .year {
+        font-size: 2rem;
+    }
+
+    .mk-hero-open .label {
+        font-size: 1.1rem;
+    }
+
+    .mk-hero h1 {
+        font-size: 4.2rem;
+        line-height: 1.35;
+        margin-bottom: 1.8rem;
+    }
+
+    .mk-hero-lead {
+        font-size: 1.45rem;
+        line-height: 1.8;
+        margin-bottom: 2.5rem;
+    }
+
+    .mk-hero-actions {
+        gap: .8rem;
+    }
+
+    .mk-hero-actions .mk-button {
+        min-height: 50px;
+        min-width: 0;
+        padding: 1.2rem 1.5rem;
+    }
+
+    .mk-button {
+        font-size: 1.2rem;
+    }
+
+    .mk-button::after {
+        margin-left: 1.3rem;
+    }
+
+    .mk-hero-fact {
+        min-height: 70px;
+        padding: .9rem .5rem;
+    }
+
+    .mk-hero-fact .label {
+        font-size: .8rem;
+        letter-spacing: .06em;
+    }
+
+    .mk-hero-fact strong {
+        font-size: 1.15rem;
+        letter-spacing: .02em;
+    }
+
+    .mk-approach-item,
+    .mk-access-layout,
+    .mk-consultation-inner {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .mk-results {
+        padding: 5.5rem 0 5rem;
+    }
+
+    .mk-results-title {
+        gap: 1.4rem;
+    }
+
+    .mk-results-title-text {
+        font-size: 2.6rem;
+    }
+
+    .mk-laurel {
+        height: 6.4rem;
+        width: 3.6rem;
+    }
+
+    .mk-results-lead {
+        font-size: 1.35rem;
+        margin-top: 1.6rem;
+    }
+
+    .mk-results-lists {
+        padding: 5rem 0 5.5rem;
+    }
+
+    .mk-results-block + .mk-results-block {
+        margin-top: 4rem;
+    }
+
+    .mk-results-block-title {
+        gap: 1.2rem;
+        margin-bottom: 2.2rem;
+    }
+
+    .mk-results-block-title span {
+        font-size: 1.75rem;
+        white-space: normal;
+    }
+
+    .mk-school-panel,
+    .mk-school-panel-3 {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .mk-school-group {
+        padding: 2.8rem 2rem 3rem;
+    }
+
+    .mk-school-group + .mk-school-group {
+        border-left: 0;
+        border-top: 1px solid var(--mk-line);
+    }
+
+    .mk-school-list li {
+        font-size: 1.45rem;
+    }
+
+    .mk-cols-3,
+    .mk-cols-2 {
+        column-count: 2;
+    }
+
+    .mk-results-footnote {
+        text-align: left;
+    }
+
+    .mk-school-group + .mk-school-group {
+        border-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, .28);
+    }
+
+
+    .mk-core {
+        gap: 2.8rem;
+        grid-template-columns: minmax(0, 1fr);
+        padding: 3.2rem 2.2rem 3.5rem;
+    }
+
+    .mk-core-figure {
+        border-bottom: 1px solid var(--mk-line);
+        border-right: 0;
+        padding-bottom: 2.6rem;
+        padding-right: 0;
+    }
+
+    .mk-core-figure strong {
+        font-size: 6rem;
+    }
+
+    .mk-core-body p {
+        font-size: 1.45rem;
+    }
+
+    .mk-admission-block {
+        margin-top: 4rem;
+    }
+
+    .mk-sub-title {
+        font-size: 1.8rem;
+    }
+
+    .mk-flow-steps {
+        gap: 2rem;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .mk-inline-cta {
+        padding: 4rem 0;
+    }
+
+    .mk-inline-cta-title {
+        font-size: 2rem;
+    }
+
+    .mk-inline-cta-text {
+        font-size: 1.4rem;
+    }
+
+    .mk-inline-cta-actions {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 1.8rem;
+    }
+
+    .mk-inline-tel {
+        border-left: 0;
+        border-top: 1px solid var(--mk-line);
+        padding-left: 0;
+        padding-top: 1.8rem;
+        text-align: center;
+    }
+
+    .mk-flow-steps h4 {
+        font-size: 1.7rem;
+    }
+
+    .mk-intro-title {
+        font-size: 3rem;
+    }
+
+    .mk-statement {
+        margin-top: 4rem;
+        padding: 4rem 2.2rem;
+    }
+
+    .mk-statement-lead {
+        font-size: 1.85rem;
+        line-height: 1.9;
+    }
+
+    .mk-statement-lead em {
+        text-underline-offset: .5rem;
+    }
+
+    .mk-statement-body {
+        font-size: 1.45rem;
+        line-height: 2.1;
+        margin-top: 2.2rem;
+    }
+
+    .mk-fit-photo {
+        aspect-ratio: 4 / 3;
+        min-height: 0;
+    }
+
+    .mk-fit-content {
+        padding: 4.5rem 2.4rem;
+    }
+
+    .mk-fit-title {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .mk-fit-list li {
+        font-size: 1.45rem;
+        padding-left: 3.2rem;
+    }
+
+    .mk-approach-item {
+        gap: 2.8rem;
+        padding: 3.5rem 0;
+    }
+
+    .mk-approach-item:nth-child(even) .mk-approach-image {
+        order: 0;
+    }
+
+    .mk-approach-title {
+        font-size: 2.2rem;
+    }
+
+    .mk-teacher-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mk-teacher {
+        grid-template-columns: 42% 58%;
+        min-height: 280px;
+    }
+
+    .mk-teacher-data {
+        padding: 2.4rem 2rem;
+    }
+
+    .mk-teacher-name {
+        font-size: 2rem;
+    }
+
+    .mk-results-title-text {
+        font-size: 2.2rem;
+    }
+
+    .mk-laurel {
+        height: 5.4rem;
+        width: 3rem;
+    }
+
+    .mk-cols-3,
+    .mk-cols-2 {
+        column-count: 2;
+        column-gap: 1.2rem;
+    }
+
+    .mk-results-block-title::before,
+    .mk-results-block-title::after {
+        display: none;
+    }
+
+    .mk-school-group p {
+        font-size: 1.55rem;
+    }
+
+    .mk-results-footnote {
+        text-align: left;
+    }
+
+    .mk-core-figure strong {
+        font-size: 5.2rem;
+    }
+
+    .mk-admission-table dl {
+        gap: 1.4rem;
+        grid-template-columns: 9rem 1fr;
+    }
+
+    .mk-admission-table dd {
+        font-size: 1.45rem;
+    }
+
+    .mk-flow {
+        margin-top: 3.5rem;
+        padding: 2.5rem 2.2rem;
+    }
+
+    .mk-access-layout {
+        gap: 4rem;
+    }
+
+    .mk-access-data,
+    .mk-access-map {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .mk-access-data h2 {
+        font-size: 2.7rem;
+    }
+
+    .mk-access-map {
+        min-height: 360px;
+    }
+
+    .mk-access-actions .mk-button {
+        width: 100%;
+    }
+
+    .mk-consultation {
+        padding: 7.5rem 0;
+    }
+
+    .mk-consultation-inner {
+        gap: 3.5rem;
+    }
+
+    .mk-consultation h2 {
+        font-size: 2.8rem;
+    }
+
+    .mk-consultation-actions {
+        width: 100%;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   共通メニューのドロワーは閉じている間 left:0 から translateX(-100%) されるため、
+   右端の境界線がちょうど画面左端（x=0）に残り、fixed なのでスクロール中ずっと
+   1本の線として見えてしまう。開いているときだけ線を戻す。
+   （根本原因は parts/menu.html 側。ここではこのページに限って抜いている）
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+    #menu-placeholder .l-side {
+        border-right: 0;
+    }
+
+    body.is-active #menu-placeholder .l-side {
+        border-right: 1px solid #dadada;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* --------------------------------------------------------------------
+       縦長の画面では横幅の約強弱しか映らない。
+       講師の顔が見える位置を優先し、見出しの右側に来るよう寄せる。
+       覆いは一様な平塗りではなく、文字側を濃く・顔側を薄くして
+       両立させる。
+       -------------------------------------------------------------------- */
+    .mk-hero {
+        background-position: 48% center;
+    }
+
+    .mk-hero::before {
+        background: linear-gradient(100deg,
+            rgba(247, 245, 239, .92) 0%,
+            rgba(247, 245, 239, .88) 42%,
+            rgba(247, 245, 239, .58) 100%);
+    }
+
+    .mk-consultation {
+        background-position: 16% center;
+    }
+
+    .mk-hero h1 {
+        font-size: 3.7rem;
+    }
+
+    .mk-hero-actions .mk-button {
+        flex: 1 1 100%;
+    }
+
+    .mk-teacher {
+        grid-template-columns: 1fr;
+    }
+
+    .mk-teacher-photo {
+        aspect-ratio: 4 / 3;
+    }
+
+    .mk-teacher-data {
+        padding: 2.8rem 2.4rem;
+    }
+
+    .mk-access-data dl {
+        grid-template-columns: 1fr;
+    }
+
+    .mk-access-map {
+        min-height: 320px;
+    }
+
+    .mk-tel {
+        align-items: center;
+        flex-direction: column;
+        gap: .2rem;
+    }
+
+    .mk-tel .label {
+        margin-right: 0;
+    }
+}
