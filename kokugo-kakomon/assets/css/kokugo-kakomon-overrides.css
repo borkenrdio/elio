@@ -6333,3 +6333,74 @@ body.lp-latest .final-trial .final-trial__steps > li h3{
   }
   .l-button--header::after{margin-left:8px!important;}
 }
+
+/* 2026-09-28 — Trial: four steps instead of three
+   (apply → 20-min practice → 30-min coaching → parent debrief).
+   Supersedes every earlier 3-card absolute-position pass above. */
+@media (min-width:781px){
+  .final-trial__steps>li{
+    width:224px!important;
+    height:252px!important;
+  }
+  .final-trial__steps>li:nth-child(1){left:126px!important;top:253px!important;}
+  .final-trial__steps>li:nth-child(2){left:414px!important;top:253px!important;}
+  .final-trial__steps>li:nth-child(3){left:702px!important;top:253px!important;}
+  .final-trial__steps>li:nth-child(4){left:990px!important;top:253px!important;}
+
+  .final-trial__steps>li:nth-child(1) .final-trial__icons,
+  .final-trial__steps>li:nth-child(2) .final-trial__icons,
+  .final-trial__steps>li:nth-child(3) .final-trial__icons,
+  .final-trial__steps>li:nth-child(4) .final-trial__icons{
+    left:50%!important;
+    transform:translateX(-50%)!important;
+    top:31px!important;
+    width:56px!important;
+    height:56px!important;
+  }
+  .final-trial__steps>li:nth-child(1) .final-trial__icons img,
+  .final-trial__steps>li:nth-child(2) .final-trial__icons img,
+  .final-trial__steps>li:nth-child(3) .final-trial__icons img,
+  .final-trial__steps>li:nth-child(4) .final-trial__icons img{
+    width:52px!important;
+    height:52px!important;
+    object-fit:contain!important;
+  }
+
+  .final-trial__steps>li:nth-child(1) h3,
+  .final-trial__steps>li:nth-child(2) h3,
+  .final-trial__steps>li:nth-child(3) h3,
+  .final-trial__steps>li:nth-child(4) h3{
+    left:12px!important;
+    right:12px!important;
+    width:auto!important;
+    top:117px!important;
+  }
+
+  .final-trial__steps>li:nth-child(1)>p,
+  .final-trial__steps>li:nth-child(2)>p,
+  .final-trial__steps>li:nth-child(3)>p,
+  .final-trial__steps>li:nth-child(4)>p{
+    left:12px!important;
+    right:12px!important;
+    width:auto!important;
+    top:158px!important;
+    font-size:13.5px!important;
+    line-height:21.5px!important;
+    white-space:normal!important;
+  }
+
+  .final-trial__steps>li:nth-child(1):after,
+  .final-trial__steps>li:nth-child(2):after,
+  .final-trial__steps>li:nth-child(3):after{
+    left:229px!important;
+    top:85.578px!important;
+  }
+}
+
+@media (max-width:780px){
+  /* Cards must never be clipped to a fixed height — step copy length varies. */
+  .final-trial__steps>li{
+    height:auto!important;
+    min-height:0!important;
+  }
+}

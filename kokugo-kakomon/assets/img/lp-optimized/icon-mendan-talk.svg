@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 170" fill="none">
+  <g stroke="#8f1a1d" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+    <!-- left person silhouette -->
+    <circle cx="55" cy="60" r="28"/>
+    <path d="M15 170 C15 108 30 92 55 92 C80 92 95 108 95 170"/>
+    <!-- right person silhouette -->
+    <circle cx="145" cy="60" r="28"/>
+    <path d="M105 170 C105 108 120 92 145 92 C170 92 185 108 185 170"/>
+  </g>
+</svg>
