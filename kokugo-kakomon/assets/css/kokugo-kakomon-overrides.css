@@ -6362,7 +6362,7 @@ body.lp-latest .final-trial .final-trial__steps > li h3{
     transform:translateX(calc(-50% + 8px))!important;
   }
   .final-trial__steps>li:nth-child(2) .final-trial__icons{
-    left:104px!important;
+    left:98px!important;
     transform:none!important;
     top:36px!important;
     width:114px!important;
