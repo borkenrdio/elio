@@ -6361,6 +6361,8 @@ body.lp-latest .final-trial .final-trial__steps > li h3{
     top:37px!important;
   }
   .final-trial__steps>li:nth-child(2) .final-trial__icons{
+    left:110px!important;
+    transform:none!important;
     top:34px!important;
     width:84px!important;
   }
