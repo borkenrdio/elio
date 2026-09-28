@@ -6357,12 +6357,20 @@ body.lp-latest .final-trial .final-trial__steps > li h3{
     width:56px!important;
     height:56px!important;
   }
+  .final-trial__steps>li:nth-child(2) .final-trial__icons,
+  .final-trial__steps>li:nth-child(4) .final-trial__icons{
+    top:37px!important;
+  }
   .final-trial__steps>li:nth-child(1) .final-trial__icons img,
-  .final-trial__steps>li:nth-child(2) .final-trial__icons img,
   .final-trial__steps>li:nth-child(3) .final-trial__icons img,
   .final-trial__steps>li:nth-child(4) .final-trial__icons img{
     width:52px!important;
     height:52px!important;
+    object-fit:contain!important;
+  }
+  .final-trial__steps>li:nth-child(2) .final-trial__icons img{
+    width:26px!important;
+    height:26px!important;
     object-fit:contain!important;
   }
 
