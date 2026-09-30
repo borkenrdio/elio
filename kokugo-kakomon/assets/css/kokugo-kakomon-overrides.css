@@ -6375,6 +6375,9 @@ body.lp-latest .final-trial .final-trial__steps > li h3{
     height:52px!important;
     object-fit:contain!important;
   }
+  .final-trial__steps>li:nth-child(2) .final-trial__icons img:nth-child(2){
+    margin-left:-10px!important;
+  }
 
   .final-trial__steps>li:nth-child(1) h3,
   .final-trial__steps>li:nth-child(2) h3,
