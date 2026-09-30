@@ -6417,3 +6417,29 @@ body.lp-latest .final-trial .final-trial__steps > li h3{
     min-height:0!important;
   }
 }
+
+@media (min-width:781px){
+  /* Instructor statement: updated copy is longer than the original fixed-geometry
+     text, so let paragraphs wrap instead of overflowing horizontally, and push
+     everything below it down to make room instead of overlapping. */
+  .final-instructor__statement p{
+    white-space:normal!important;
+  }
+  .final-instructor__statement{
+    height:auto!important;
+    min-height:351px!important;
+  }
+  .final-instructor{height:1010px!important;}
+  .final-instructor__photo{height:1010px!important;}
+  .final-instructor__photo>img:first-child{height:1010px!important;}
+  .final-instructor__copy{height:705px!important;}
+  .final-instructor__facts{top:722px!important;}
+  .final-instructor__cta{top:997px!important;}
+  .final-instructor-voices{height:2424px!important;min-height:2424px!important;}
+  .final-instructor-voices > .final-instructor{
+    transform-origin:top left!important;
+    transform:scale(calc(100cqw / 1440px))!important;
+  }
+  .final-instructor-voices > .answer-gallery.answer-gallery--embedded{top:calc(1070px * (100cqw / 1440px))!important;}
+  .final-instructor-voices > .final-voices{top:calc(1520px * (100cqw / 1440px))!important;}
+}
