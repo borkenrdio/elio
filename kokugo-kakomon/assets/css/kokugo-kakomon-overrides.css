@@ -6451,3 +6451,27 @@ body.lp-latest .final-trial .final-trial__steps > li h3{
     letter-spacing:.02em!important;
   }
 }
+
+/* Free-trial schedule note sits directly under the benefits band. */
+.final-trial__note{
+  margin:0;
+  text-align:center;
+  color:#8a7d6a;
+  font-size:14px;
+  line-height:22px;
+}
+@media (min-width:781px){
+  .final-trial__note{
+    position:absolute!important;
+    left:55px!important;
+    top:686px!important;
+    width:1330px!important;
+  }
+}
+@media (max-width:780px){
+  .final-trial__note{
+    margin:16px 0 0!important;
+    font-size:13px;
+    line-height:1.7;
+  }
+}
