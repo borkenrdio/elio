@@ -6443,3 +6443,11 @@ body.lp-latest .final-trial .final-trial__steps > li h3{
   .final-instructor-voices > .answer-gallery.answer-gallery--embedded{top:calc(1070px * (100cqw / 1440px))!important;}
   .final-instructor-voices > .final-voices{top:calc(1520px * (100cqw / 1440px))!important;}
 }
+
+@media (max-width:780px){
+  /* Lesson flow headings: scale with the viewport so each <br>-separated line stays on one line. */
+  .lesson-flow-v2__card h3{
+    font-size:min(19px, calc((100vw - 104px) / 16.5))!important;
+    letter-spacing:.02em!important;
+  }
+}
