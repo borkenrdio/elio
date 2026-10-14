@@ -6435,7 +6435,7 @@ body.lp-latest .final-trial .final-trial__steps > li h3{
   .final-instructor__copy{height:705px!important;}
   .final-instructor__facts{top:722px!important;}
   .final-instructor__cta{top:997px!important;}
-  .final-instructor-voices{height:2424px!important;min-height:2424px!important;}
+  .final-instructor-voices{height:calc(2424px * (100cqw / 1440px))!important;min-height:0!important;}
   .final-instructor-voices > .final-instructor{
     transform-origin:top left!important;
     transform:scale(calc(100cqw / 1440px))!important;
